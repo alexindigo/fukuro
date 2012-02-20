@@ -25,22 +25,158 @@ $.argv().env();
 // TODO: put to config file
 $.defaults(
 {
-    init: './teams.json',
+    teams: './data/teams.json',
     storage: './data',
     log_level: 1,
     port: 8000
 });
 
-// main
+// Routing
+var Routing =
+{
+  // client init
+  'helo': function(data, fn)
+  {
+    // send current state
+    fn(
+    {
+      status: $.get('dump:status'),
+      round: $.get('round'),
+      teams: $.get('teams')
+    });
+  },
+  // game status change
+  'status': function(data)
+  {
+    $.set('dump:status', data);
+
+    socket.broadcast.emit('status', data);
+
+    // save state
+    $.save(async);
+  },
+  // admin actions
+  'admin:action': function(data, fn)
+  {
+    $.set('dump:action', data);
+
+    switch (data.id)
+    {
+      case 'round':
+        $.set('round', $.get('round')+1);
+        socket.broadcast.emit('action', {id: 'round', number: $.get('round')});
+        fn({type: 'round', number: $.get('round')});
+        break;
+
+      case 'final':
+        $.set('round', 0);
+        socket.broadcast.emit('final', {teams: $.get('teams')});
+        fn({type: 'final', round: $.get('round'), teams: $.get('teams')});
+        break;
+
+      default:
+        socket.broadcast.emit('action', data);
+    }
+
+    // save state
+    $.save(async);
+  },
+  // TODO: Split it
+  'admin:check': function(data)
+  {
+    var teams = $.get('teams'),
+        rounds = $.get('rounds'),
+        r = $.get('round');
+
+    $.set('dump:check', data);
+
+    switch (data.type)
+    {
+      case 'team':
+        if (!$.get('round') || !(data.id in Teams)) return;
+
+        // set rounds log
+        if (!rounds[r]) rounds[r] = {};
+        // do toggle
+
+        // update total score
+        if (rounds[r][data.id])
+        {
+            delete rounds[r][data.id];
+            teams[Teams[data.id]].points--;
+        }
+        else
+        {
+            rounds[r][data.id] = 1;
+            teams[Teams[data.id]].points++;
+        }
+
+        // put objects back
+        $.set('teams', teams);
+        $.set('rounds', rounds);
+
+        // update scorebaords everywhere
+        io.sockets.emit('team', teams[Teams[data.id]]);
+        break;
+    }
+
+    // save state
+    $.save(async);
+  },
+  // reload all the clients
+  'admin:reload': function()
+  {
+    // tell everybody except me to reload the page
+    socket.broadcast.emit('reset');
+  },
+  // reset the game
+  'admin:reset': function()
+  {
+    // override storage file with initital values
+    fs.readFile($.get('init'), function (err, data)
+    {
+      if (err) return; // do nothing
+      fs.writeFile($.get('storage'), data, function(err, data)
+      {
+        if (err) throw err;
+        // reload config
+        $.load(function()
+        {
+          // tell everybody to reload
+          io.sockets.emit('reset');
+
+        });
+      });
+
+    });
+    // end of mess
+  }
+};
+// }}}
+
+// {{{ main
 function main()
 {
   // set the game
   reset();
 
+  io.set('log level', $.get('log_level'));
 
+  // init server
+  io.sockets.on('connection', function(socket)
+  {
+    _.each(Routing, function(method, handle)
+    {
+      socket.on(handle, method);
+    });
+  });
+
+  // start listening
+  app.listen($.get('port'));
 }
+// }}}
 
-// http requests handler
+// {{{ http requests handler
 function handler(req, res)
 {
     req.addListener('end', function()
@@ -48,8 +184,10 @@ function handler(req, res)
         file.serve(req, res);
     });
 }
+// }}}
 
-// reset storage/game
+// {{{ reset storage/game
+// increments file number for new storage
 function reset()
 {
   // find lastest file
@@ -60,13 +198,9 @@ function reset()
   getNextFile($.get('storage'), function(err, next)
   {
     if (err) throw new Exception('Unable to read '+$.get('storage')+' folder.', 500);
-console.log('next: '+next+'\n');
 
     $.use('file', {file: next});
   });
-
-// set file storage
-//$.use('file', {file: $.get('storage')});
 
   function getNextFile(path, callback)
   {
@@ -100,10 +234,10 @@ console.log('next: '+next+'\n');
       callback(null, file+'.json');
     });
   }
-
 }
+// }}}
 
-// exceptions
+// {{{ exceptions
 function Exception(message, code)
 {
   this.code = code || 0;
@@ -113,6 +247,7 @@ function Exception(message, code)
     return 'Exception'+(this.code ? ' ['+this.code+']' : '')+': '+this.message;
   };
 }
+// }}}
 
 // run the thing
 main();

@@ -1,0 +1,113 @@
+body
+{
+    font-family: "Ubuntu Condensed", sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    background-image: url("/i/default.png");
+    overflow: hidden;
+}
+p
+{
+    position: absolute;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: all 1.5s;
+}
+p>img
+{
+    min-height: 50%;
+    max-height: 90%;
+}
+p>video
+{
+    height: 90%;
+}
+#cover
+{
+    -webkit-transition: all 3s;
+}
+#cover>video
+{
+    width: 1000px;
+    height: 726px;
+}
+
+/* special */
+.active
+{
+    opacity: 1;
+}
+
+/* presentation types */
+
+/* scoreboard - default */
+
+#teams
+{
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5%;
+    font-size: 26px;
+    text-align: center;
+}
+
+#teams.final>.team:not(.checked)
+{
+    opacity: 0.5;
+    -webkit-transition: all 1.5s;
+    -webkit-transition-delay: 1.5s;
+}
+#teams.present>.team
+{
+    position: relative;
+}
+#teams.present .short
+{
+    color: #ffffff;
+}
+#teams.present .points
+{
+    display: none;
+}
+#teams.present .full
+{
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+#round,
+#final
+{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+}
+#round:before
+{
+    content: "Round";
+    margin-right: 1ex;
+    font-size: 24px;
+    font-family: "Ubuntu Condensed", sans-serif;
+}
