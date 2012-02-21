@@ -11,7 +11,7 @@
  * index.js: main server file
  */
 var async  = function() {}
-  , _      = require('underscore')
+  , _      = require('utile')
   , fs     = require('fs')
   , app    = require('http').createServer(handler)
   , io     = require('socket.io').listen(app)
@@ -26,6 +26,7 @@ $.argv().env();
 $.defaults(
 {
     teams: './data/teams.json',
+    content: './data/content.json',
     storage: './data',
     log_level: 1,
     port: 8000
@@ -160,6 +161,7 @@ function main()
   // set the game
   reset();
 
+  // socket io log level
   io.set('log level', $.get('log_level'));
 
   // init server
@@ -190,48 +192,65 @@ function handler(req, res)
 // increments file number for new storage
 function reset()
 {
-  // find lastest file
-//  var last = get
-
   // assume we're the only process
   // working with the storage folder
-  getNextFile($.get('storage'), function(err, next)
+  getFiles($.get('storage'), function(err, next)
   {
     if (err) throw new Exception('Unable to read '+$.get('storage')+' folder.', 500);
 
+    // use file for storage
     $.use('file', {file: next});
   });
 
-  function getNextFile(path, callback)
+  function getFiles(path, callback)
   {
     fs.readdir(path, function(err, files)
     {
-      if (err) return callback(err);
-
-      var file;
-
-      file = _.reduce(files, function(last, file)
+      if (err) // if error
       {
-        if (!file.match(/^\d+\.json$/)) return last;
-        if (!last) return file; // first entry
-        // get the highest number
-        if (parseInt(file, 10) > parseInt(last, 10)) return file;
-        // otherwise stick with what we have
-        return last;
-      }, file);
-
-      // if no files, return default one
-      if (!file) return callback(null, '0000.json');
-
-      // increment last file number
-      file = (parseInt(file, 10) + 1).toString();
-
-      while (file.length < 4)
-      {
-        file = '0' + file;
+        // try to create the folder
+        return _.mkdirp(path, function(err2)
+        {
+          if (err2) return callback(err);
+          // proceed with empty files list
+          getNextFile([], callback);
+        });
       }
 
-      callback(null, file+'.json');
+      // otherwise continue to breath normally
+      getNextFile(files, callback);
+    });
+  }
+
+  function getNextFile(files, callback)
+  {
+    _.async.reduce(files, '', function(last, f, callback)
+    {
+      if (!f.match(/^\d+\.json$/)) return callback(null, last);
+      if (!last) return callback(null, f); // first entry
+      // get the highest number
+      if (parseInt(f, 10) > parseInt(last, 10)) return callback(null, f);
+      // otherwise stick with what we have
+      return callback(null, last);
+    },
+    // when reduce finished
+    function(err, result)
+    {
+      if (err) return callback(err);
+
+      // if no files, return default one
+      if (!result) return callback(null, '0000.json');
+
+      // increment last file number
+      result = (parseInt(result, 10) + 1).toString();
+
+      while (result.length < 4)
+      {
+        result = '0' + result;
+      }
+
+      return callback(null, result+'.json');
+      // done here
     });
   }
 }
