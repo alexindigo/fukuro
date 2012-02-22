@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Fukurō [フクロウ] - Owl (jap.) symbol of TV version of the game.
+ * Fukurō [フクロウ] - Owl (jap.) symbol of the TV version of the game.
  *
  * Control panel for the russian intellectual game Cho? Gde? Kogda?
  * more info: http://en.wikipedia.org/wiki/What%3F_Where%3F_When%3F
@@ -10,8 +10,7 @@
  *
  * index.js: main server file
  */
-var async  = function() {}
-  , _      = require('utile')
+var _      = require('utile')
   , fs     = require('fs')
   , app    = require('http').createServer(handler)
   , io     = require('socket.io').listen(app)
@@ -28,9 +27,28 @@ $.defaults(
     teams: './data/teams.json',
     content: './data/content.json',
     storage: './data',
-    log_level: 1,
     port: 8000
 });
+
+var Teams = new $.Provider({store:
+  {
+    type: 'file',
+    file: $.get('teams')
+  }});
+
+var Content = new $.Provider({store:
+  {
+    type: 'file',
+    file: $.get('content')
+  }});
+
+console.dir(['Content', Content.get('cover:image')]);
+console.dir(['Teams', Teams.get('3')]);
+
+Teams.set('9', {full: 'A B', short: 'a a'});
+Teams.save();
+console.dir(['Teams3', Teams.get('9'), Teams.get('9:full')]);
+
 
 // Routing
 var Routing =
@@ -54,7 +72,7 @@ var Routing =
     socket.broadcast.emit('status', data);
 
     // save state
-    $.save(async);
+    $.save();
   },
   // admin actions
   'admin:action': function(data, fn)
@@ -80,7 +98,7 @@ var Routing =
     }
 
     // save state
-    $.save(async);
+    $.save();
   },
   // TODO: Split it
   'admin:check': function(data)
@@ -122,7 +140,7 @@ var Routing =
     }
 
     // save state
-    $.save(async);
+    $.save();
   },
   // reload all the clients
   'admin:reload': function()
@@ -162,7 +180,7 @@ function main()
   reset();
 
   // socket io log level
-  io.set('log level', $.get('log_level'));
+  io.set('log level', 1);
 
   // init server
   io.sockets.on('connection', function(socket)
