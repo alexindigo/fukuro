@@ -23,7 +23,7 @@ console.log(['helo', data]);
     $('footer').attr('data-round', data.round);
 
     // process teams
-    _.each(data.teams, function(t)
+    $.each(data.teams, function(t)
     {
         $('#data>.teams').append('<span id="team_'+t.handle+'" class="team"><span class="short">'+t.short+'</span><span class="full">'+t.full+'</span><span class="points">'+t.points+'</span></span>');
     });
