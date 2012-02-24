@@ -12,6 +12,12 @@ var Status = function(data)
     }
 };
 
+// sort teams by name
+var sortByShort = function(team)
+{
+  return team.short;
+};
+
 // handshake
 socket.emit('helo', {me: 'admin'}, function(data)
 {
@@ -23,7 +29,7 @@ console.log(['helo', data]);
     $('footer').attr('data-round', data.round);
 
     // process teams
-    $.each(data.teams, function(t)
+    $.each($.sortBy(data.teams, sortByShort), function(t)
     {
         $('#data>.teams').append('<span id="team_'+t.handle+'" class="team"><span class="short">'+t.short+'</span><span class="full">'+t.full+'</span><span class="points">'+t.points+'</span></span>');
     });

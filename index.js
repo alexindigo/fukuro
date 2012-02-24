@@ -18,6 +18,7 @@ var _      = require('utile')
   , file   = new (static.Server)('./web')
   , conf   = require('nconf')
   // lib stuff
+  , exception = require('./lib/exception')
   , game   = require('./lib/game')
   , router = require('./lib/router');
 
@@ -37,34 +38,39 @@ conf.defaults(
 // {{{ main
 function main()
 {
-  // set the game
-  game.reset(conf, function(err, storage)
+  // init the game
+  game.init(conf, function(err)
   {
-    if (err) throw new Exception('Unable to reset storage file.', 500);
-
-    // use file for storage
-    conf.set('data', storage);
-
-    // init server
-    init();
+    // and start the server
+    start();
   });
 }
 // }}}
 
-// init server
-function init()
+// start server
+function start()
 {
-  var R = router.router(conf);
+  var R = router.router();
+
+  router.game = game;
 
   // socket io log level
   io.set('log level', 1);
 
+  // TODO: wrap into try-catch
+
   // init server
   io.sockets.on('connection', function(socket)
   {
+    router.socket = socket;
+
     _.each(R, function(method, handle)
     {
-      socket.on(handle, method);
+      socket.on(handle, function()
+      {
+        var thisArg = _.mixin(this, {'game': game, 'socket': socket});
+        return method.apply(thisArg, Array.prototype.slice.call(arguments));
+      });
     });
   });
 
@@ -79,19 +85,6 @@ function handler(req, res)
     {
         file.serve(req, res);
     });
-}
-// }}}
-
-
-// {{{ exceptions
-function Exception(message, code)
-{
-  this.code = code || 0;
-  this.message = message;
-  this.toString = function()
-  {
-    return 'Exception'+(this.code ? ' ['+this.code+']' : '')+': '+this.message;
-  };
 }
 // }}}
 
