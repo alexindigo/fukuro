@@ -17,6 +17,7 @@ var _      = require('utile')
   , static = require('node-static')
   , file   = new (static.Server)('./web')
   , conf   = require('nconf')
+  , errs   = require('errs')
   // lib stuff
   , exception = require('./lib/exception')
   , game   = require('./lib/game')
@@ -69,7 +70,16 @@ function start()
       socket.on(handle, function()
       {
         var thisArg = _.mixin(this, {'game': game, 'socket': socket});
-        return method.apply(thisArg, Array.prototype.slice.call(arguments));
+        // catch stuff that goes wrong
+        try
+        {
+          return method.apply(thisArg, Array.prototype.slice.call(arguments));
+        }
+        catch (e)
+        {
+          // TODO: Add flatiron/errs
+          console.log(['ERROR', e]);
+        }
       });
     });
   });
