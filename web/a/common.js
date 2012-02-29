@@ -191,3 +191,30 @@ var oAudio = Base.extend(
     return this._parent.populate.apply(this, ['']);
   }
 });
+
+// teams object
+var oTeams = Base.extend(
+{
+  teams: {},
+  points: {},
+  addTeam: function(team)
+  {
+    var el = $('<span id="team_'+team.handle+'" class="team"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>').appendTo(this._el);
+
+    this.teams[team.handle] = el;
+    this.points[team.handle] = team.points;
+
+    return el;
+  },
+  setPoints: function(team, points)
+  {
+    if (team in this.teams)
+    {
+      $('.points', this.teams[team]).text(points);
+      // mark as checked if number of points raised
+      (points > this.points[team]) ? this.teams[team].addClass('checked') : this.teams[team].removeClass('checked');
+      this.points[team] = points;
+    }
+  }
+});
+
