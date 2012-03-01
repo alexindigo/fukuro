@@ -52,6 +52,7 @@ var connect = function(custom, helo)
 
 var Base =
 {
+  _deffered: null,
   _current: null,
   _el: null,
   current: function(o)
@@ -59,8 +60,10 @@ var Base =
     if (typeof o != 'undefined') this._current = o;
     return this._current;
   },
-  on: function()
+  on: function(deffered)
   {
+    // store deffered callback
+    if (deffered) this._deffered = deffered;
     if (this.current()) this.current().off();
     this.current(this);
     this._el.addClass('active');
@@ -69,6 +72,7 @@ var Base =
   {
     this.current(null);
     this._el.removeClass('active');
+    this._deffered = null;
   },
   extend: function(props)
   {
@@ -130,6 +134,8 @@ var oVideo = Base.extend(
     // off itself on stop
     $('video', this._el).on('ended', $.bind(function()
     {
+        // call deffered if there is one
+        if (this._deffered) this._deffered();
         this.off();
     }, this));
     // store mdeia element

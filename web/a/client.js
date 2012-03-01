@@ -1,240 +1,209 @@
-var socket = io.connect();
-
-var Final = false,
-    Round = 0,
-    Current,
-    Elements = {};
-
-var E = function(data)
+// Content controller
+var Content =
 {
-    // singleton, yay!
-    if (typeof data != 'object' && Elements[data])
+  init: function(data)
+  {
+    // {{{ get cover
+    if ('cover' in data)
     {
-        return Elements[data];
+      var el = $('<section id="cover"></section>').appendTo('body');
+      this.cover = make(el, data.cover);
     }
-    else if (typeof data != 'undefined' && Elements[data.id])
+    // }}}
+
+    // {{{
+    if ('questions' in data)
     {
-        return Elements[data.id].dump(data);
+      $.each(data.questions, $.bind(function(q, n)
+      {
+        var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').appendTo('body');
+        if (!this.questions) this.questions = {};
+        this.questions[n] = make(el, q);
+      }, this));
     }
+    // }}}
+  }
 
-    var self = {},
-        dump = data,
-        id = data.id || data,
-        type = data.type || ((id == 'cover') ? 'cover' : 'pic'),
-        el = $('#'+id);
-
-    if (!el) return false; // TODO: throw up
-
-    self =
-    {
-        handle: function()
-        {
-            return id;
-        },
-        el: function()
-        {
-            return el;
-        },
-        dump: function(data)
-        {
-            dump = data;
-            return self;
-        },
-        active: function()
-        {
-            return el.hasClass('active');
-        },
-        action: function()
-        {
-            // hack for round
-            if (id == 'round')
-            {
-                Round = dump.number;
-                el.text(Round);
-                // and hide everythiing
-                if (Current) Current.off();
-                Current = null;
-                // uncheck all checked
-                $('.team.checked').removeClass('checked');
-                return self;
-            }
-
-            // turn off current in any case
-            if (Current) Current.off();
-            // check if we need activate something
-            if (Current && Current.handle() == self.handle())
-            {
-                Current = null;
-            }
-            else
-            {
-                self.on();
-            }
-
-            return self;
-        },
-        on: function()
-        {
-            el.addClass('active');
-            // skip for labels
-            if (id == 'round' || id == 'final')
-            {
-                return self;
-            }
-            Current = self;
-            if (type == 'cover')
-            {
-                $('#'+id+'>video').get(0).play();
-            }
-            if (id == 'teams')
-            {
-                if (Round)
-                {
-                    E('round').on();
-                }
-                else
-                {
-                    if (Final)
-                    {
-                        el.addClass('final');
-                        E('final').on();
-                    }
-                    else
-                    {
-                        el.addClass('present');
-                    }
-                }
-            }
-            socket.emit('status', {id: id, on: true});
-
-            return self;
-        },
-        off: function()
-        {
-            // reset current should be only one anyway
-            el.removeClass('active');
-            if (id == 'round' || id == 'final')
-            {
-                return self;
-            }
-            if (type == 'cover')
-            {
-                $('#'+id+'>video').get(0).pause();
-                $('#'+id+'>video').get(0).currentTime = 0;
-            }
-            if (id == 'teams')
-            {
-                setTimeout(function()
-                {
-                    el.removeClass('present');
-                    el.removeClass('final');
-                }, 1500);
-                E('round').off();
-                E('final').off();
-            }
-            socket.emit('status', {id: id, on: false});
-
-            return self;
-        }
-    };
-
-    // add extra stuff
-    if (type == 'cover')
-    {
-        $('#'+id+'>video').on('ended', function()
-        {
-            self.off();
-        });
-    }
-
-    Elements[id] = self;
-
-    return self;
 };
 
-// handshake
-socket.emit('helo', {me: 'client'}, function(data)
+// Teams controller
+var Teams =
 {
-    console.log(['helo', data]);
+  init: function(data)
+  {
+    // create teams section
+    var el = $('<section id="teams"></section>').appendTo('body');
+    this.board = oTeams.init(el);
 
-    // round
-    E('round').el().text(Round = data.round);
-
-    // process initial state
-    if (data.status && data.status.on && data.status.id) E(data.status.id).on();
-
-    // process teams
-    _.each(data.teams, function(t)
+    if (!this.teams) this.teams = {};
+    $.each(data, $.bind(function(team)
     {
-        E('teams').el().append('<span id="team_'+t.handle+'" class="team"><span class="short">'+t.short+'</span><span class="full">'+t.full+'</span><span class="points">'+t.points+'</span></span>');
-    });
-});
+      this.board.addTeam(team);
+    }, this));
+  }
+};
 
-// handle action
-socket.on('action', function(data)
+// Stats controller
+var Stats =
 {
-    E(data).action();
-});
+  _el: null,
+  update: function(round)
+  {
+    if (!this._el) this._el = $('<div id="stats"><span class="round"></span></div>').appendTo('body');
 
-socket.on('team', function(data)
+    $('.round', this._el).text(round);
+  }
+};
+
+// set of misc helpers
+var misc =
 {
-    var oPoints;
-
-    if ($('#team_'+data.handle))
+  // dummy function to substitute callback
+  noCallback: function(){},
+  // deferred automatic off callback
+  // set on turning element on
+  deferredOff: function(data)
+  {
+    return function()
     {
-        oPoints = $('#team_'+data.handle+'>.points').text();
-        $('#team_'+data.handle+'>.points').text(data.points);
+      socket.emit('off', data);
+    }
+  }
+}
 
-        if (oPoints < data.points)
+// event handlers
+var handlers =
+{
+  'show': function(data, fn)
+  {
+    switch (data.item)
+    {
+      case 'cover':
+        Content.cover.on(misc.deferredOff(data));
+        fn({item: 'cover', status: 'on'});
+        break;
+      case 'question':
+        if (data.number && Content.questions[data.number])
         {
-            $('#team_'+data.handle).addClass('checked');
+          Content.questions[data.number].on(misc.deferredOff(data));
+          fn({item: 'questions', number: data.number, status: 'on'});
         }
         else
         {
-            $('#team_'+data.handle).removeClass('checked');
+          fn({item: 'questions', number: data.number, status: 'error'});
         }
+        break;
+      case 'teams':
+        Teams.board.on(misc.deferredOff(data));
+        fn({item: 'teams', status: 'on'});
+        break;
     }
-});
-
-socket.on('final', function(data)
-{
-    var topScore = 0;
-
-    Round = 0;
-    Final = true;
-
-    if (Current)
+  },
+  'hide': function(data, fn)
+  {
+    switch (data.item)
     {
-        Current.off();
-        Current = null;
+      case 'cover':
+        Content.cover.off();
+        fn({item: 'cover', status: 'off'});
+        break;
+      case 'question':
+        if (data.number && Content.questions[data.number])
+        {
+          Content.questions[data.number].off();
+          fn({item: 'questions', number: data.number, status: 'off'});
+        }
+        else
+        {
+          fn({item: 'questions', number: data.number, status: 'error'});
+        }
+        break;
+      case 'teams':
+        Teams.board.off();
+        fn({item: 'teams', status: 'off'});
+        break;
     }
+  },
+  'off': function(data)
+  {
+    // other peer asked to clean up leftovers
+    handlers.hide(data, misc.noCallback);
+  },
+  //
+  'round': function(data)
+  {
+    // clean up the screen
+    if (Base.current()) Base.current().off();
+    // and update round
+    Stats.update(data.round);
+  },
 
-    $('.team').removeClass('checked');
+  'team': function(data)
+  {
+    // set new score
+  },
 
-    setTimeout(function()
-    {
-        _.each(data.teams, function(t)
-        {
-            if (t.points > topScore) topScore = t.points;
-            $('#team_'+t.handle+'>.points').text(t.points);
-        });
-        // double trouble, yes but it's just a hack
-        _.each(data.teams, function(t)
-        {
-            if (t.points == topScore)
-            {
-                $('#team_'+t.handle).addClass('checked');
-            }
-        });
 
-        E('teams').on();
+  'final': function(data)
+  {
+      var topScore = 0;
 
-    }, 1500);
+      // current – off
 
-});
+      // all teams uncheck
 
-// hard reset
-socket.on('reset', function()
+      setTimeout(function()
+      {
+        // calculate topScore
+
+        // check top score team(s)
+
+        // show teams board
+
+      }, 1500);
+  }
+  // end fo handlers
+};
+
+// objects helpers
+var make = function(el, data)
 {
-    window.location.reload();
+  var res, poster = '';
+
+  if ('video' in data)
+  {
+    if ('image' in data) poster = ' poster="/content/'+data.image+'"';
+    //only video/mp4 for now
+    res = oVideo.init(el).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
+  }
+  else if ('image' in data)
+  {
+    res = oImage.init(el).populate('<img src="/content/'+data.image+'" alt="">');
+  }
+  else if ('audio' in data)
+  {
+    res = oAudio.init(el).populate('/content/'+data.audio);
+  }
+
+  return res;
+};
+
+// to the server
+connect(handlers,
+{
+  data: {me: 'client'},
+  callback: function(data)
+  {
+    // init content
+    Content.init(data.content);
+
+    // init teams
+    Teams.init(data.teams);
+
+    // set stats
+    Stats.update(data.round);
+
+    // check and set current
+    if (data.current) handlers.show(data.current, misc.noCallback);
+  }
 });
