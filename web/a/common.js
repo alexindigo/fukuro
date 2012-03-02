@@ -19,13 +19,14 @@ var common =
   // team's data modifications
   'team': function(data)
   {
-
+    // set new score
+    // resort teams
   },
 
   // hard reset
   'reset': function()
   {
-      window.location.reload();
+    window.location.reload();
   }
 };
 
@@ -102,6 +103,9 @@ var Base =
   }
 };
 
+// simple image
+var oImage = Base.extend();
+
 // extend video
 var oVideo = Base.extend(
 {
@@ -145,9 +149,6 @@ var oVideo = Base.extend(
   }
 });
 
-// simple image
-var oImage = Base.extend();
-
 // basic audio
 var oAudio = Base.extend(
 {
@@ -186,7 +187,9 @@ var oAudio = Base.extend(
         // off itself on stop
         $(window.__audio[path]).on('ended', $.bind(function()
         {
-            this.off();
+          // call deffered if there is one
+          if (this._deffered) this._deffered();
+          this.off();
         }, this));
       }
       // store mdeia element
@@ -223,4 +226,25 @@ var oTeams = Base.extend(
     }
   }
 });
+
+/**
+ * common controllers
+ */
+
+// Teams controller
+var Teams =
+{
+  init: function(data)
+  {
+    // create teams section
+    var el = $('<section id="teams"></section>').appendTo('body');
+    this.board = oTeams.init(el);
+
+    if (!this.teams) this.teams = {};
+    $.each(data, $.bind(function(team)
+    {
+      this.board.addTeam(team);
+    }, this));
+  }
+};
 

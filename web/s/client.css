@@ -1,113 +1,155 @@
+/* frame */
 body
 {
-    font-family: "Ubuntu Condensed", sans-serif;
-    color: #ffffff;
-    background-color: #000000;
-    background-image: url("/i/default.png");
-    overflow: hidden;
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  overflow: hidden;
 }
-p
+/* cover up */
+body:after
 {
-    position: absolute;
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    overflow: hidden;
-    opacity: 0;
-    -webkit-transition: all 1.5s;
+  content: "";
+  position: fixed;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
-p>img
-{
-    min-height: 50%;
-    max-height: 90%;
-}
-p>video
-{
-    height: 90%;
-}
-#cover
-{
-    -webkit-transition: all 3s;
-}
-#cover>video
-{
-    width: 1000px;
-    height: 726px;
-}
+
+/* control */
 
 /* special */
 .active
 {
-    opacity: 1;
+  opacity: 1;
+}
+
+/* content */
+section
+{
+  position: absolute;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+}
+section>img
+{
+  min-height: 50%;
+  max-height: 90%;
+}
+section>video
+{
+  height: 90%;
+}
+
+/* special */
+#cover
+{
+  -webkit-transition: all 3s;
+}
+#cover>video
+{
+  width: 1000px;
+  height: 726px;
 }
 
 /* presentation types */
 
-/* scoreboard - default */
+/* cover */
+/* show some credits on top of the video */
+#cover:after
+{
+  content: "chtogdekogda.us   +   facebook.com/djwizard";
+  position: absolute;
+  display: block;
+  bottom: 6%;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 28px;
+  color: #ffffff;
+  text-shadow: 0px 0px 2px #000000, 0px 0px 4px #000000, 0px 0px 6px #000000, 0px 0px 8px #000000;
+  white-space: pre;
+  z-index: 100;
+}
+
+/* scoreboard */
 
 #teams
 {
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 5%;
-    font-size: 26px;
-    text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5%;
+  font-size: 26px;
+  text-align: center;
 }
 
+/* what? */
 #teams.final>.team:not(.checked)
 {
-    opacity: 0.5;
-    -webkit-transition: all 1.5s;
-    -webkit-transition-delay: 1.5s;
+  opacity: 0.5;
+  -webkit-transition: all 1.5s;
+  -webkit-transition-delay: 1.5s;
 }
 #teams.present>.team
 {
-    position: relative;
+  position: relative;
 }
 #teams.present .short
 {
-    color: #ffffff;
+  color: #ffffff;
 }
 #teams.present .points
 {
-    display: none;
+  display: none;
 }
 #teams.present .full
 {
-    position: absolute;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    padding: 5px;
-    font-size: 18px;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
 }
+
+
+/* to kill */
+
 
 #round,
 #final
 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    font-size: 28px;
-    font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
-    color: #ffffff;
-    background-color: transparent;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 28px;
+  font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
+  color: #ffffff;
+  background-color: transparent;
 }
 #round:before
 {
-    content: "Round";
-    margin-right: 1ex;
-    font-size: 24px;
-    font-family: "Ubuntu Condensed", sans-serif;
+  content: "Round";
+  margin-right: 1ex;
+  font-size: 24px;
+  font-family: "Ubuntu Condensed", sans-serif;
 }

@@ -1,3 +1,15 @@
+/**
+ * Fukurō [フクロウ] - Owl (jap.) symbol of the TV version of the game.
+ *
+ * Control panel for the russian intellectual game Cho? Gde? Kogda?
+ * more info: http://en.wikipedia.org/wiki/What%3F_Where%3F_When%3F
+ *
+ * (c) 2012 Alex Indigo <iam@alexindigo.com>
+ * Fukurō may be freely distributed under the MIT license.
+ *
+ * client.js: clientUI controller
+ */
+
 // Content controller
 var Content =
 {
@@ -24,23 +36,6 @@ var Content =
     // }}}
   }
 
-};
-
-// Teams controller
-var Teams =
-{
-  init: function(data)
-  {
-    // create teams section
-    var el = $('<section id="teams"></section>').appendTo('body');
-    this.board = oTeams.init(el);
-
-    if (!this.teams) this.teams = {};
-    $.each(data, $.bind(function(team)
-    {
-      this.board.addTeam(team);
-    }, this));
-  }
 };
 
 // Stats controller
@@ -86,11 +81,11 @@ var handlers =
         if (data.number && Content.questions[data.number])
         {
           Content.questions[data.number].on(misc.deferredOff(data));
-          fn({item: 'questions', number: data.number, status: 'on'});
+          fn({item: 'question', number: data.number, status: 'on'});
         }
         else
         {
-          fn({item: 'questions', number: data.number, status: 'error'});
+          fn({item: 'question', number: data.number, status: 'error'});
         }
         break;
       case 'teams':
@@ -111,11 +106,11 @@ var handlers =
         if (data.number && Content.questions[data.number])
         {
           Content.questions[data.number].off();
-          fn({item: 'questions', number: data.number, status: 'off'});
+          fn({item: 'question', number: data.number, status: 'off'});
         }
         else
         {
-          fn({item: 'questions', number: data.number, status: 'error'});
+          fn({item: 'question', number: data.number, status: 'error'});
         }
         break;
       case 'teams':
@@ -137,12 +132,6 @@ var handlers =
     // and update round
     Stats.update(data.round);
   },
-
-  'team': function(data)
-  {
-    // set new score
-  },
-
 
   'final': function(data)
   {
@@ -188,7 +177,7 @@ var make = function(el, data)
   return res;
 };
 
-// to the server
+// to the server and beyond!
 connect(handlers,
 {
   data: {me: 'client'},

@@ -69,7 +69,7 @@ function start()
     {
       socket.on(handle, function()
       {
-        var thisArg = _.mixin(this, {'game': game, 'socket': socket});
+        var thisArg = _.mixin(this, {'game': game, 'socket': socket, 'all': io.sockets});
         // catch stuff that goes wrong
         try
         {
@@ -93,7 +93,13 @@ function handler(req, res)
 {
     req.addListener('end', function()
     {
-        file.serve(req, res);
+      var match;
+      // serve top level html files as simple uris
+      if (match = req.url.match(/^(\/[a-z]+)\/?$/)) req.url = match[1]+'.html';
+      // continue breath normally
+      file.serve(req, res);
+
+      // TODO: Add 404 error handler
     });
 }
 // }}}

@@ -1,96 +1,127 @@
 body
 {
-    font-family: "Ubuntu", sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
 }
 nav
 {
-    width: 100%;
-    height: 50px;
-    text-align: center;
-}
-nav:before
-{
-    content: "Pictures:";
-    margin-right: 15px;
-    font-size: 24px;
-    color: #999999;
+  width: 100%;
+  height: 50px;
+  text-align: center;
 }
 footer
 {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    height: 60px;
-    text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
 }
 footer:before
 {
-    content: "Round: " attr(data-round);
-    margin-right: 15px;
-    font-size: 24px;
-    color: #999999;
+  content: "Round: " attr(data-round);
+  margin-right: 15px;
+  font-size: 24px;
+  color: #999999;
 }
 
 hr
 {
-    display: inline-block;
-    width: 0px;
-    height: 20px;
-    margin: 25px 22px 0px 20px;
-    border-left: 1px solid #cccccc;
+  display: inline-block;
+  width: 0px;
+  height: 20px;
+  margin: 25px 18px 0px 16px;
+  border-left: 1px solid #cccccc;
 }
 button
 {
-    display: inline-block;
-    min-width: 50px;
-    width: auto;
-    height: 50px;
-    margin: 0px 10px;
-    padding: 0px 15px;
-    border-radius: 50px;
-    font-size: 24px;
-    color: #444444;
-    background-color: #cccccc;
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
-    cursor: pointer;
-    box-shadow: 0px 0px 1px 1px #ffffff;
-    text-shadow: 0px 0px 1px 1px #444444;
+  display: inline-block;
+  min-width: 50px;
+  width: auto;
+  height: 50px;
+  margin: 0px 10px;
+  padding: 0px 15px;
+  border-radius: 50px;
+  font-size: 24px;
+  color: #444444;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #ffffff;
+  text-shadow: 0px 0px 1px 1px #444444;
 }
-    button:hover
+  button.answer
+  {
+    color: #cc0000;
+  }
+  button.active
+  {
+    color: #3333ff;
+    text-shadow: 0px 0px 12px #0000ff;
+  }
+  button.busy
+  {
+    opacity: 0.4;
+    cursor: default;
+  }
+  button:hover
+  {
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cccccc), color-stop(1, #777777));
+  }
+  button:active,
+  button.busy
+  {
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #777777), color-stop(1, #cccccc));
+  }
+  /* custom buttons */
+  button[data-item=timer]
+  {
+    color: #ffffff;
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00ee00), color-stop(1, #009900));
+    box-shadow: 0px 0px 1px 1px #00ff00;
+    text-shadow: 0px 0px 1px 1px #004400;
+  }
+    button[data-item=timer]:hover
     {
-        background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cccccc), color-stop(1, #777777));
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00cc00), color-stop(1, #007700));
     }
-    button:active
+    button[data-item=timer]:active,
+    button[data-item=timer].busy
     {
-        background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #999999), color-stop(1, #eeeeee));
-    }
-    button.active
-    {
-        color: #ff0000;
-/*         color: #7600dc; */
-    }
-    button#reset
-    {
-        color: #ffffff;
-        background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #ee0000), color-stop(1, #990000));
-        box-shadow: 0px 0px 1px 1px #ff0000;
-        text-shadow: 0px 0px 1px 1px #440000;
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #007700), color-stop(1, #00cc00));
     }
 
-/* scoreboard - default */
+  button[data-item=reset]
+  {
+    color: #ffffff;
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #ee0000), color-stop(1, #990000));
+    box-shadow: 0px 0px 1px 1px #ff0000;
+    text-shadow: 0px 0px 1px 1px #440000;
+  }
+    button[data-item=reset]:hover
+    {
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cc0000), color-stop(1, #770000));
+    }
+    button[data-item=reset]:active,
+    button[data-item=reset].busy
+    {
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #770000), color-stop(1, #cc0000));
+    }
 
-#data>.teams
+
+/* scoreboard */
+
+#teams
 {
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 100px 5%;
-    font-size: 26px;
-    text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 100px 5%;
+  font-size: 26px;
+  text-align: center;
 }
 
