@@ -55,8 +55,11 @@ function start()
 
   router.game = game;
 
-  // socket io log level
+  // socket io config
   io.set('log level', 1);
+  io.set('transports', ['websocket']);
+  io.set('heartbeat interval', 20);
+  io.set('heartbeat timeout', 60);
 
   // TODO: wrap into try-catch
 
@@ -69,7 +72,7 @@ function start()
     {
       socket.on(handle, function()
       {
-        var thisArg = _.mixin(this, {'game': game, 'socket': socket, 'all': io.sockets});
+        var thisArg = _.mixin(this, {'game': game, 'socket': socket, 'all': io.sockets, 'rooms': io.rooms});
         // catch stuff that goes wrong
         try
         {

@@ -1727,7 +1727,7 @@
   var module = { exports: {} }, exports = module.exports;
 
   /*!
-    * Bonzo: DOM Utility (c) Dustin Diaz 2011
+    * Bonzo: DOM Utility (c) Dustin Diaz 2012
     * https://github.com/ded/bonzo
     * License MIT
     */
@@ -1742,21 +1742,23 @@
       , html = doc.documentElement
       , parentNode = 'parentNode'
       , query = null
-      , specialAttributes = /^checked|value|selected$/
-      , specialTags = /select|fieldset|table|tbody|tfoot|td|tr|colgroup/i
+      , specialAttributes = /^(checked|value|selected)$/i
+      , specialTags = /^(select|fieldset|table|tbody|tfoot|td|tr|colgroup)$/i // tags that we have trouble inserting *into*
       , table = [ '<table>', '</table>', 1 ]
       , td = [ '<table><tbody><tr>', '</tr></tbody></table>', 3 ]
       , option = [ '<select>', '</select>', 1 ]
-      , tagMap = {
-          thead: table, tbody: table, tfoot: table, colgroup: table, caption: table
+      , noscope = [ '_', '', 0, 1 ]
+      , tagMap = { // tags that we have trouble *inserting*
+            thead: table, tbody: table, tfoot: table, colgroup: table, caption: table
           , tr: [ '<table><tbody>', '</tbody></table>', 2 ]
           , th: td , td: td
           , col: [ '<table><colgroup>', '</colgroup></table>', 2 ]
           , fieldset: [ '<form>', '</form>', 1 ]
           , legend: [ '<form><fieldset>', '</fieldset></form>', 2 ]
-          , option: option
-          , optgroup: option }
-      , stateAttributes = /^checked|selected$/
+          , option: option, optgroup: option
+          , script: noscope, style: noscope, link: noscope, param: noscope, base: noscope
+        }
+      , stateAttributes = /^(checked|selected)$/
       , ie = /msie/i.test(navigator.userAgent)
       , hasClass, addClass, removeClass
       , uidMap = {}
@@ -1785,6 +1787,8 @@
           }
         }()
       , trimReplace = /(^\s*|\s*$)/g
+      , whitespaceRegex = /\s+/
+      , toString = String.prototype.toString
       , unitless = { lineHeight: 1, zoom: 1, zIndex: 1, opacity: 1 }
       , trim = String.prototype.trim ?
           function (s) {
@@ -1834,9 +1838,13 @@
       uid && (delete uidMap[uid])
     }
   
-    function dataValue(d) {
+    function dataValue(d, f) {
       try {
-        return d === 'true' ? true : d === 'false' ? false : d === 'null' ? null : !isNaN(d) ? parseFloat(d) : d;
+        return (d === null || d === undefined) ? undefined :
+          d === 'true' ? true :
+            d === 'false' ? false :
+              d === 'null' ? null :
+                (f = parseFloat(d)) == d ? f : d;
       } catch(e) {}
       return undefined
     }
@@ -1845,7 +1853,7 @@
       return node && node.nodeName && node.nodeType == 1
     }
   
-    function some(ar, fn, scope, i) {
+    function some(ar, fn, scope, i, j) {
       for (i = 0, j = ar.length; i < j; ++i) if (fn.call(scope, ar[i], i, ar)) return true
       return false
     }
@@ -1899,10 +1907,22 @@
           var n = !el[parentNode] || (el[parentNode] && !el[parentNode][parentNode]) ?
             function () {
               var c = el.cloneNode(true)
+                , cloneElems
+                , elElems
+  
               // check for existence of an event cloner
               // preferably https://github.com/fat/bean
               // otherwise Bonzo won't do this for you
-              self.$ && self.cloneEvents && self.$(c).cloneEvents(el)
+              if (self.$ && self.cloneEvents) {
+                self.$(c).cloneEvents(el)
+  
+                // clone events from every child node
+                cloneElems = self.$(c).find('*')
+                elElems = self.$(el).find('*')
+  
+                for (var i = 0; i < elElems.length; i++)
+                  self.$(cloneElems[i]).cloneEvents(elElems[i])
+              }
               return c
             }() : el
           fn(t, n)
@@ -1939,25 +1959,29 @@
     }
   
     // classList support for class management
-    // altho to be fair, the api sucks because it won't accept multiple classes at once,
-    // so we have to iterate. bullshit
+    // altho to be fair, the api sucks because it won't accept multiple classes at once
+    // so we iterate down below
     if (features.classList) {
       hasClass = function (el, c) {
-        return some(c.toString().split(' '), function (c) {
-          return el.classList.contains(c)
-        })
+        return el.classList.contains(c)
       }
       addClass = function (el, c) {
-        each(c.toString().split(' '), function (c) {
-          el.classList.add(c)
-        })
+        el.classList.add(c)
       }
-      removeClass = function (el, c) { el.classList.remove(c) }
+      removeClass = function (el, c) {
+        el.classList.remove(c)
+      }
     }
     else {
-      hasClass = function (el, c) { return classReg(c).test(el.className) }
-      addClass = function (el, c) { el.className = trim(el.className + ' ' + c) }
-      removeClass = function (el, c) { el.className = trim(el.className.replace(classReg(c), ' ')) }
+      hasClass = function (el, c) {
+        return classReg(c).test(el.className)
+      }
+      addClass = function (el, c) {
+        el.className = trim(el.className + ' ' + c)
+      }
+      removeClass = function (el, c) {
+        el.className = trim(el.className.replace(classReg(c), ' '))
+      }
     }
   
   
@@ -1979,15 +2003,13 @@
             elements :
             [elements]
         this.length = elements.length
-        for (var i = 0; i < elements.length; i++) {
-          this[i] = elements[i]
-        }
+        for (var i = 0; i < elements.length; i++) this[i] = elements[i]
       }
     }
   
     Bonzo.prototype = {
   
-        // indexr method, because jQueriers want this method
+        // indexr method, because jQueriers want this method. Jerks
         get: function (index) {
           return this[index] || null
         }
@@ -2016,7 +2038,7 @@
             html.textContent === undefined ?
               'innerText' :
               'textContent' :
-            'innerHTML', m;
+            'innerHTML';
           function append(el) {
             each(normalize(h), function (node) {
               el.appendChild(node)
@@ -2024,8 +2046,8 @@
           }
           return typeof h !== 'undefined' ?
               this.empty().each(function (el) {
-                !text && (m = el.tagName.match(specialTags)) ?
-                  append(el, m[0]) :
+                !text && specialTags.test(el.tagName) ?
+                  append(el) :
                   !function() {
                     try { (el[method] = h) }
                     catch(e) { append(el) }
@@ -2112,28 +2134,45 @@
   
         // class management
       , addClass: function (c) {
+          c = toString.call(c).split(whitespaceRegex)
           return this.each(function (el) {
-            hasClass(el, setter(el, c)) || addClass(el, setter(el, c))
+            // we `each` here so you can do $el.addClass('foo bar')
+            each(c, function (c) {
+              if (c && !hasClass(el, setter(el, c)))
+                addClass(el, setter(el, c))
+            })
           })
         }
   
       , removeClass: function (c) {
+          c = toString.call(c).split(whitespaceRegex)
           return this.each(function (el) {
-            hasClass(el, setter(el, c)) && removeClass(el, setter(el, c))
+            each(c, function (c) {
+              if (c && hasClass(el, setter(el, c)))
+                removeClass(el, setter(el, c))
+            })
           })
         }
   
       , hasClass: function (c) {
+          c = toString.call(c).split(whitespaceRegex)
           return some(this, function (el) {
-            return hasClass(el, c)
+            return some(c, function (c) {
+              return c && hasClass(el, c)
+            })
           })
         }
   
       , toggleClass: function (c, condition) {
+          c = toString.call(c).split(whitespaceRegex)
           return this.each(function (el) {
-            typeof condition !== 'undefined' ?
-              condition ? addClass(el, c) : removeClass(el, c) :
-              hasClass(el, c) ? removeClass(el, c) : addClass(el, c)
+            each(c, function (c) {
+              if (c) {
+                typeof condition !== 'undefined' ?
+                  condition ? addClass(el, c) : removeClass(el, c) :
+                  hasClass(el, c) ? removeClass(el, c) : addClass(el, c)
+              }
+            })
           })
         }
   
@@ -2176,8 +2215,8 @@
         }
   
       , parent: function() {
-        return this.related('parentNode')
-      }
+          return this.related(parentNode)
+        }
   
       , related: function (method) {
           return this.map(
@@ -2196,7 +2235,8 @@
   
         // meh. use with care. the ones in Bean are better
       , focus: function () {
-          return this.length > 0 ? this[0].focus() : null
+          this.length && this[0].focus()
+          return this
         }
   
       , blur: function () {
@@ -2278,6 +2318,7 @@
         }
   
       , dim: function () {
+          if (!this.length) return { height: 0, width: 0 }
           var el = this[0]
             , orig = !el.offsetWidth && !el.offsetHeight ?
                // el isn't visible, can't be measured properly, so fix that
@@ -2314,7 +2355,7 @@
             return this
           }
           return typeof v == 'undefined' ?
-            specialAttributes.test(k) ?
+            !el ? null : specialAttributes.test(k) ?
               stateAttributes.test(k) && typeof el[k] == 'string' ?
                 true : el[k] : (k == 'href' || k =='src') && features.hrefExtended ?
                   el[getAttribute](k, 2) : el[getAttribute](k) :
@@ -2330,7 +2371,9 @@
         }
   
       , val: function (s) {
-          return (typeof s == 'string') ? this.attr('value', s) : this[0].value
+          return (typeof s == 'string') ?
+            this.attr('value', s) :
+            this.length ? this[0].value : null
         }
   
         // use with care and knowledge. this data() method uses data attributes on the DOM nodes
@@ -2338,15 +2381,17 @@
       , data: function (k, v) {
           var el = this[0], uid, o, m
           if (typeof v === 'undefined') {
+            if (!el) return null
             o = data(el)
             if (typeof k === 'undefined') {
               each(el.attributes, function(a) {
-                (m = (''+a.name).match(dattr)) && (o[camelize(m[1])] = dataValue(a.value))
+                (m = ('' + a.name).match(dattr)) && (o[camelize(m[1])] = dataValue(a.value))
               })
               return o
             } else {
-              return typeof o[k] === 'undefined' ?
-                (o[k] = dataValue(this.attr('data-' + decamelize(k)))) : o[k]
+              if (typeof o[k] === 'undefined')
+                o[k] = dataValue(this.attr('data-' + decamelize(k)))
+              return o[k]
             }
           } else {
             return this.each(function (el) { data(el)[k] = v })
@@ -2395,6 +2440,7 @@
   
     function scroll(x, y, type) {
       var el = this[0]
+      if (!el) return this
       if (x == null && y == null) {
         return (isBody(el) ? getWindowScroll() : { x: el.scrollLeft, y: el.scrollTop })[type]
       }
@@ -2440,11 +2486,14 @@
             , els = []
             , p = tag ? tagMap[tag[1].toLowerCase()] : null
             , dep = p ? p[2] + 1 : 1
+            , ns = p && p[3]
             , pn = parentNode
             , tb = features.autoTbody && p && p[0] == '<table>' && !(/<tbody/i).test(node)
   
           el.innerHTML = p ? (p[0] + node + p[1]) : node
           while (dep--) el = el.firstChild
+          // for IE NoScope, we may insert cruft at the begining just to get it to work
+          if (ns && el && el.nodeType !== 1) el = el.nextSibling
           do {
             // tbody special case for IE<8, creates tbody on any empty table
             // we don't want it if we're just after a <thead>, <caption>, etc.
@@ -2499,7 +2548,7 @@
       }
   
     return bonzo
-  })
+  }); // the only line we care about using a semi-colon. placed here for concatenation tools
   
 
   provide("bonzo", module.exports);
@@ -2541,6 +2590,7 @@
   
     $.ender({
       parents: function (selector, closest) {
+        if (!this.length) return this
         var collection = $(selector), j, k, p, r = []
         for (j = 0, k = this.length; j < k; j++) {
           p = this[j]
@@ -2616,24 +2666,19 @@
       }
   
     , height: function (v) {
-        return dimension(v, this, 'height')
+        return dimension.call(this, 'height', v)
       }
   
     , width: function (v) {
-        return dimension(v, this, 'width')
+        return dimension.call(this, 'width', v)
       }
     }, true)
   
-    function dimension(v, self, which) {
-      return v ?
-        self.css(which, v) :
-        function (r) {
-          if (!self[0]) return 0
-          r = parseInt(self.css(which), 10);
-          return isNaN(r) ? self[0]['offset' + which.replace(/^\w/, function (m) {return m.toUpperCase()})] : r
-        }()
+    function dimension(type, v) {
+      return typeof v == 'undefined'
+        ? b(this).dim()[type]
+        : this.css(type, v)
     }
-  
   }(ender);
   
 
@@ -2643,10 +2688,13 @@
 
   var module = { exports: {} }, exports = module.exports;
 
+  /*!
+    * domready (c) Dustin Diaz 2012 - License MIT
+    */
   !function (name, definition) {
-    if (typeof define == 'function') define(definition)
-    else if (typeof module != 'undefined') module.exports = definition()
-    else this[name] = this['domReady'] = definition()
+    if (typeof module != 'undefined') module.exports = definition()
+    else if (typeof define == 'function' && typeof define.amd == 'object') define(definition)
+    else this[name] = definition()
   }('domready', function (ready) {
   
     var fns = [], fn, f = false
@@ -2656,7 +2704,8 @@
       , domContentLoaded = 'DOMContentLoaded'
       , addEventListener = 'addEventListener'
       , onreadystatechange = 'onreadystatechange'
-      , loaded = /^loade|c/.test(doc.readyState)
+      , readyState = 'readyState'
+      , loaded = /^loade|c/.test(doc[readyState])
   
     function flush(f) {
       loaded = 1
@@ -2669,12 +2718,12 @@
     }, f)
   
   
-    hack && doc.attachEvent(onreadystatechange, (fn = function () {
-      if (/^c/.test(doc.readyState)) {
+    hack && doc.attachEvent(onreadystatechange, fn = function () {
+      if (/^c/.test(doc[readyState])) {
         doc.detachEvent(onreadystatechange, fn)
         flush()
       }
-    }))
+    })
   
     return (ready = hack ?
       function (fn) {

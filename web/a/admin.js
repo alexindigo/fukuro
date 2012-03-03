@@ -52,7 +52,19 @@ var handlers =
   {
     $('body>footer').attr('data-round', data.round);
   },
-
+  'timer': function(data)
+  {
+    if (data.time)
+    {
+      $('body>nav').attr('data-timer', data.time);
+      $('#button_timer').addClass('active');
+    }
+    else
+    {
+      $('body>nav').removeAttr('data-timer');
+      $('#button_timer').removeClass('active');
+    }
+  },
 
 
 
@@ -126,7 +138,7 @@ var statActions = function(e)
     button.addClass('busy');
 
     // notify the server
-    socket.emit('admin:'+action, {}, function(data)
+    socket.emit('admin:'+action, function(data)
     {
       // got the answer, unflag button
       button.removeClass('busy');
@@ -154,7 +166,9 @@ console.log(['helo', data]);
     if (data.current) handlers.on(data.current);
 
     // start listening
-    $('body>nav').on('button', 'click touchstart', contentActions);
+    $('body>nav').on('button:not([data-item=timer])', 'click touchstart', contentActions);
+    // special treatment for the timer
+    $('body>nav').on('button[data-item=timer]', 'click touchstart', statActions);
     $('body>footer').on('button', 'click touchstart', statActions);
   }
 });

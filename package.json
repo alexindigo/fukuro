@@ -10,9 +10,9 @@
     "ender": "~0.8.5",
     "ender-js": "~0.3.6",
     "jeesh": "0.0.6",
-    "utile": "0.0.10",
+    "utile": "~0.0.10",
     "errs": "~0.1.1",
-    "socket.io": "~0.9.0"
+    "socket.io": "~0.9.1-1"
   },
   "devDependencies": {}
 }

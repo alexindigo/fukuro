@@ -10,6 +10,16 @@ nav
   height: 50px;
   text-align: center;
 }
+nav:after
+{
+  content: attr(data-timer);
+  position: absolute;
+  top: 10px;
+  margin-left: 15px;
+  line-height: 50px;
+  font-size: 24px;
+  color: #999999;
+}
 footer
 {
   position: absolute;
@@ -25,7 +35,6 @@ footer:before
   font-size: 24px;
   color: #999999;
 }
-
 hr
 {
   display: inline-block;
@@ -49,16 +58,16 @@ button
   background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
   cursor: pointer;
   box-shadow: 0px 0px 1px 1px #ffffff;
-  text-shadow: 0px 0px 1px 1px #444444;
+  text-shadow: 0px 0px 1px #666666;
 }
   button.answer
   {
-    color: #cc0000;
+    color: #ff0000;
   }
   button.active
   {
-    color: #3333ff;
-    text-shadow: 0px 0px 12px #0000ff;
+    color: rgba(51, 51, 255, 0.8);
+    text-shadow: 0px 0px 1px #666666, 0px 0px 12px rgba(0, 0, 255, 0.5);
   }
   button.busy
   {
@@ -90,6 +99,11 @@ button
     button[data-item=timer].busy
     {
       background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #007700), color-stop(1, #00cc00));
+    }
+    button[data-item=timer].active
+    {
+      color: rgba(51, 51, 51, 0.8);
+      text-shadow: 0px 0px 1px #666666, 0px 0px 12px rgba(255, 255, 255, 1);
     }
 
   button[data-item=reset]
