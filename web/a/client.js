@@ -30,7 +30,8 @@ var Content =
       {
         var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').prependTo('body');
         if (!this.questions) this.questions = {};
-        this.questions[n] = make(el, q, {stay: true, stop: q.stop});
+        // stay: true – no-auto off for questions
+        this.questions[n] = make(el, q, {stay: true, stop: q.stop, text: q.text});
       }, this));
     }
     // }}}
@@ -69,7 +70,7 @@ var handlers =
       case 'question':
         if (data.number && Content.questions[data.number])
         {
-          Content.questions[data.number].on(); // no auto-off for questions: misc.deferredOff(data);
+          Content.questions[data.number].on(misc.deferredOff(data));
           fn({item: 'question', number: data.number, status: 'on'});
         }
         else

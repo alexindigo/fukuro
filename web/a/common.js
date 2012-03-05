@@ -152,8 +152,6 @@ var oVideo = Base.extend(
     // off itself on stop
     $('video', this._el).on('ended', $.bind(function()
     {
-        // call deffered if there is one
-        if (this._deffered) this._deffered();
         // check options if it needs to stay
         if (this.options.stay)
         {
@@ -161,6 +159,8 @@ var oVideo = Base.extend(
         }
         else
         {
+          // call deffered if there is one
+          if (this._deffered) this._deffered();
           this.off();
         }
     }, this));
@@ -209,13 +209,22 @@ var oAudio = Base.extend(
         // off itself on stop
         $(window.__audio[path]).on('ended', $.bind(function()
         {
-          // call deffered if there is one
-          if (this._deffered) this._deffered();
-          this.off();
+          // check options if it needs to stay
+          if (!this.options.stay || !this.options.text)
+          {
+            // call deffered if there is one
+            if (this._deffered) this._deffered();
+            this.off();
+          }
         }, this));
       }
       // store mdeia element
       this._media = window.__audio[path];
+    }
+
+    if (this.options.text)
+    {
+      this._el.attr('data-text', this.options.text);
     }
 
     // call parent method, emulate empty string

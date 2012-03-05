@@ -51,6 +51,22 @@ section>video
 {
   height: 90%;
 }
+/* custom/extra text */
+section:before
+{
+  content: attr(data-text);
+  -webkit-box-flex: 0;
+  position: relative;
+  display: inline-block;
+  padding: 0px 15px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
 
 /* special */
 #cover
