@@ -18,7 +18,7 @@ var Content =
     // {{{ get cover
     if ('cover' in data)
     {
-      var el = $('<section id="cover"></section>').appendTo('body');
+      var el = $('<section id="cover"></section>').prependTo('body');
       this.cover = make(el, data.cover);
     }
     // }}}
@@ -28,9 +28,9 @@ var Content =
     {
       $.each(data.questions, $.bind(function(q, n)
       {
-        var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').appendTo('body');
+        var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').prependTo('body');
         if (!this.questions) this.questions = {};
-        this.questions[n] = make(el, q);
+        this.questions[n] = make(el, q, {stay: true, stop: q.stop});
       }, this));
     }
     // }}}
@@ -38,17 +38,6 @@ var Content =
 
 };
 
-// Stats controller
-var Stats =
-{
-  _el: null,
-  update: function(round)
-  {
-    if (!this._el) this._el = $('<div id="stats"><span class="round"></span></div>').appendTo('body');
-
-    $('.round', this._el).text(round);
-  }
-};
 
 // set of misc helpers
 var misc =
@@ -80,7 +69,7 @@ var handlers =
       case 'question':
         if (data.number && Content.questions[data.number])
         {
-          Content.questions[data.number].on(misc.deferredOff(data));
+          Content.questions[data.number].on(); // no auto-off for questions: misc.deferredOff(data);
           fn({item: 'question', number: data.number, status: 'on'});
         }
         else
@@ -122,16 +111,30 @@ var handlers =
   'off': function(data)
   {
     // other peer asked to clean up leftovers
-    handlers.hide(data, misc.noCallback);
+    if (data) handlers.hide(data, misc.noCallback);
   },
   //
   'round': function(data)
   {
-    // clean up the screen
-    if (Base.current()) Base.current().off();
     // and update round
-    Stats.update(data.round);
+    Round.update(data.round, 2000);
   },
+  // listen to the timer
+  'timer': function(data)
+  {
+    if (data.time > -1)
+    {
+      Timer.on(data.time);
+    }
+    else
+    {
+      Timer.off();
+    }
+  },
+
+
+
+
 
   'final': function(data)
   {
@@ -155,7 +158,7 @@ var handlers =
 };
 
 // objects helpers
-var make = function(el, data)
+var make = function(el, data, options)
 {
   var res, poster = '';
 
@@ -163,15 +166,15 @@ var make = function(el, data)
   {
     if ('image' in data) poster = ' poster="/content/'+data.image+'"';
     //only video/mp4 for now
-    res = oVideo.init(el).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
+    res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
   }
   else if ('image' in data)
   {
-    res = oImage.init(el).populate('<img src="/content/'+data.image+'" alt="">');
+    res = oImage.init(el, options).populate('<img src="/content/'+data.image+'" alt="">');
   }
   else if ('audio' in data)
   {
-    res = oAudio.init(el).populate('/content/'+data.audio);
+    res = oAudio.init(el, options).populate('/content/'+data.audio);
   }
 
   return res;
@@ -183,16 +186,103 @@ connect(handlers,
   data: {me: 'client'},
   callback: function(data)
   {
+    // set stats
+    Round.update(data.round);
+
     // init content
     Content.init(data.content);
 
     // init teams
-    Teams.init(data.teams);
-
-    // set stats
-    Stats.update(data.round);
+    Teams.init(data.teams, data.points);
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);
+
+    // load other media
+    Timer.init();
   }
 });
+
+// helpers
+
+// Teams controller
+var Timer =
+{
+  _el: null,
+  _media: null,
+  init: function()
+  {
+    var path = '/content/minute.mp3';
+
+    // create visial part
+    this._el = $('<ul id="timer"></ul>').appendTo('body');
+
+    for (var i=0; i<60; i++)
+    {
+      this._el.append('<li class="fill"></li>');
+    }
+
+    // init sound
+    if ('Audio' in window)
+    {
+      if (!window.__audio) window.__audio = {};
+      if (!(path in window.__audio))
+      {
+        window.__audio[path] = new Audio();
+        window.__audio[path].src = path;
+
+        // off itself on stop
+        $(window.__audio[path]).on('ended', $.bind(function()
+        {
+          // call deffered if there is one
+          if (this._deffered) this._deffered();
+          this.off();
+        }, this));
+      }
+      // store mdeia element
+      this._media = window.__audio[path];
+    }
+
+    // return itself
+    return this;
+  },
+  on: function(time)
+  {
+    // create element if needed
+    if (!this._media) this.init();
+
+    this._el.addClass('playing');
+    if (time < 11) this._el.addClass('ending');
+
+    $('li:nth-last-child(-n+'+Math.max(60-time, 0)+')', this._el).removeClass('fill');
+
+    if (!this.isPlaying)
+    {
+      // small hack to accomodate current audio file
+      this._media.currentTime = Math.max(this._media.duration - time - 0.5, 0);
+      this._media.play();
+      this.isPlaying = true;
+    }
+  },
+  off: function()
+  {
+    // clean up defferend
+    this._deffered = null;
+
+    // reset visual
+    this._el.removeClass('playing').removeClass('ending');
+
+    // wait for the transition to finish
+    setTimeout(function()
+    {
+      $('li', this._el).addClass('fill');
+    }, 1500);
+
+    if (this._media)
+    {
+      // small hack to prevent cutting off the last piece
+      if (this._media.currentTime < 61) this._media.pause();
+      this.isPlaying = false;
+    }
+  }
+};

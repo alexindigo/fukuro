@@ -4,23 +4,26 @@ body
   background-color: #000000;
   color: #ffffff;
 }
-nav
+body>nav
 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  height: 50px;
+  min-height: 50px;
   text-align: center;
 }
-nav:after
+body>nav:after
 {
   content: attr(data-timer);
   position: absolute;
-  top: 10px;
+  bottom: 0px;
   margin-left: 15px;
   line-height: 50px;
   font-size: 24px;
   color: #999999;
 }
-footer
+body>footer
 {
   position: absolute;
   bottom: 15px;
@@ -28,13 +31,15 @@ footer
   height: 60px;
   text-align: center;
 }
-footer:before
+/* stats in the footer */
+body>footer:before
 {
-  content: "Round: " attr(data-round);
+  content: "Round " attr(data-round);
   margin-right: 15px;
   font-size: 24px;
   color: #999999;
 }
+/* elements */
 hr
 {
   display: inline-block;
@@ -126,16 +131,8 @@ button
 
 /* scoreboard */
 
-#teams
+.team.busy
 {
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 100px 5%;
-  font-size: 26px;
-  text-align: center;
+  opacity: 0.5;
 }
 

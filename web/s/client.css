@@ -84,20 +84,129 @@ section>video
   z-index: 100;
 }
 
-/* scoreboard */
-
-#teams
+/* stats in the footer */
+body>footer
 {
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 5%;
-  font-size: 26px;
+  position: absolute;
+  display: block;
+  opacity: 0;
+  top: 45px;
+  left: 0px;
+  width: 100%;
+  margin-top: -25px;
+  line-height: 50px;
+  font-size: 24px;
   text-align: center;
+  -webkit-transition: all 0.5s 0s;
+  z-index: 1;
 }
+  body.waiting>footer,
+  body.final>footer,
+  body.playing>#teams.active~footer
+  {
+    opacity: 1;
+    -webkit-transition: all 1s 0s;
+  }
+  /* don't show anything other than cover */
+  body>#cover.active~footer
+  {
+    opacity: 0;
+    -webkit-transition: all 0.15s 0s;
+  }
+body>footer:before
+{
+  display: inline-block;
+  padding: 0px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+  /* During the game show round number
+   * only together with scoreboard */
+  body.playing>footer:before
+  {
+    content: "Round " attr(data-round);
+  }
+  body.waiting>footer:before
+  {
+    content: "Are you game?";
+  }
+  body.final>footer:before
+  {
+    content: "Final Score";
+  }
+  /* when there is no teams section
+   * show round in the middle */
+  body.waiting>#teams:not(.active)~footer
+  {
+    top: 350px;
+    -webkit-transition: all 1s 0.3s;
+  }
+/* timer */
+#timer
+{
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  height: 24px;
+  margin-left: -376px;
+  padding: 10px;
+  opacity: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  background-clip: padding-box;
+  z-index: 2;
+  -webkit-transition: opacity 0.8s;
+}
+  #timer.playing
+  {
+    opacity: 0.85;
+  }
+#timer>li
+{
+  list-style: none;
+  display: inline-block;
+  width: 5px;
+  height: 22px;
+  border: 1px solid #ff0000;
+  margin-right: 5px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.8);
+}
+  #timer>li:last-child
+  {
+    margin-right: 0px;
+  }
+  #timer>li.fill
+  {
+    background-color: #ff0000;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff0000), to(#c00000));
+  }
+  #timer.ending>li
+  {
+    -webkit-animation-name: flashing;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+  }
+@-webkit-keyframes flashing
+{
+  0%
+  {
+    opacity: 1;
+  }
+  20%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+
 
 /* what? */
 #teams.final>.team:not(.checked)
@@ -129,27 +238,3 @@ section>video
   font-size: 18px;
 }
 
-
-/* to kill */
-
-
-#round,
-#final
-{
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  font-size: 28px;
-  font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
-  color: #ffffff;
-  background-color: transparent;
-}
-#round:before
-{
-  content: "Round";
-  margin-right: 1ex;
-  font-size: 24px;
-  font-family: "Ubuntu Condensed", sans-serif;
-}

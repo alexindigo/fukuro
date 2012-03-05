@@ -50,11 +50,15 @@ var handlers =
   // update round
   'round': function(data)
   {
-    $('body>footer').attr('data-round', data.round);
+    Round.update(data.round);
+    // update new round button
+    // TODO: Add support for Final, round: -1
+    $('#button_round').text(data.round ? 'New Round' : 'Start Game');
   },
+  // listen to the timer
   'timer': function(data)
   {
-    if (data.time)
+    if (data.time > -1)
     {
       $('body>nav').attr('data-timer', data.time);
       $('#button_timer').addClass('active');
@@ -65,7 +69,6 @@ var handlers =
       $('#button_timer').removeClass('active');
     }
   },
-
 
 
 
@@ -146,21 +149,45 @@ var statActions = function(e)
   }
 };
 
+// listen to the team related events
+var teamActions = function(e)
+{
+  var id
+    , team = $(this);
+
+  e.preventDefault();
+  // already doing something don't disturb
+  if (team.hasClass('busy')) return;
+
+  // prepare action
+  if (id = team.attr('id').replace(/^team_/, ''))
+  {
+    // flag team as busy
+    team.addClass('busy');
+
+    // notify the server
+    socket.emit('admin:team', {id: id}, function(data)
+    {
+      // got the answer, unflag team
+      team.removeClass('busy');
+    });
+  }
+};
+
 // to the server and beyond!
 connect(handlers,
 {
   data: {me: 'admin'},
   callback: function(data)
   {
-console.log(['helo', data]);
+    // set round
+    handlers.round({round: data.round});
+
     // init navigation
     Nav.init(data.content);
 
     // init teams
-    Teams.init(data.teams);
-
-    // set round
-    handlers.round({round: data.round});
+    Teams.init(data.teams, data.points);
 
     // check and set current
     if (data.current) handlers.on(data.current);
@@ -170,6 +197,8 @@ console.log(['helo', data]);
     // special treatment for the timer
     $('body>nav').on('button[data-item=timer]', 'click touchstart', statActions);
     $('body>footer').on('button', 'click touchstart', statActions);
+    // teams
+    $('#teams').on('.team', 'click touchstart', teamActions);
   }
 });
 
@@ -237,67 +266,5 @@ function getRidOf()
           socket.emit(action);
       }
   };
-
-  $('button').on('click', function()
-  {
-      var id = $(this).attr('id'),
-          type = (id == 'cover') ? 'cover' : 'pic';
-
-      if (id)
-      {
-          if (id == 'reset' || id == 'reload') return reset(id);
-
-          socket.emit('admin:action', {id: id, type: type}, function(data)
-          {
-              switch (data.type)
-              {
-                  case 'round':
-                      $('footer').attr('data-round', data.number);
-                      $('.team').removeClass('checked');
-                      break;
-
-                  case 'final':
-                      $('footer').attr('data-round', data.round);
-                      $('.team').removeClass('checked');
-                      break;
-              }
-          });
-      }
-  });
-
-  $('#data').on('.team', 'click', function()
-  {
-      var id = $(this).attr('id').substr(5);
-      if (id)
-      {
-          socket.emit('admin:check', {id: id, type: 'team'});
-      }
-  });
-
-  socket.on('team', function(data)
-  {
-      var oPoints;
-
-      if ($('#team_'+data.handle))
-      {
-          oPoints = $('#team_'+data.handle+'>.points').text();
-          $('#team_'+data.handle+'>.points').text(data.points);
-
-          if (oPoints < data.points)
-          {
-              $('#team_'+data.handle).addClass('checked');
-          }
-          else
-          {
-              $('#team_'+data.handle).removeClass('checked');
-          }
-      }
-  });
-
-  // hard reset
-  socket.on('reset', function()
-  {
-      window.location.reload();
-  });
 
 }

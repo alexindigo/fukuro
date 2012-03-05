@@ -19,10 +19,22 @@ var common =
   // team's data modifications
   'team': function(data)
   {
-    // set new score
-    // resort teams
-  },
+    var team;
 
+    if (team = $('#team_'+data.handle))
+    {
+      if ($('.points', team).text() < data.points)
+      {
+        team.addClass('checked');
+      }
+      else
+      {
+        team.removeClass('checked');
+      }
+      // update score
+      $('.points', team).text(data.points);
+    }
+  },
   // hard reset
   'reset': function()
   {
@@ -56,6 +68,7 @@ var Base =
   _deffered: null,
   _current: null,
   _el: null,
+  options: {},
   current: function(o)
   {
     if (typeof o != 'undefined') this._current = o;
@@ -90,8 +103,9 @@ var Base =
     defs['_parent'] = {value: this};
     return Object.create(this, defs);
   },
-  init: function(el)
+  init: function(el, options)
   {
+    this.options = options || {};
     // attach current to the Base
     this.current = $.bind(this.current, Base);
     return Object.create(this, {_el: {value: el, enumerable: true}});
@@ -140,7 +154,15 @@ var oVideo = Base.extend(
     {
         // call deffered if there is one
         if (this._deffered) this._deffered();
-        this.off();
+        // check options if it needs to stay
+        if (this.options.stay)
+        {
+          this._media.currentTime = this.options.stop ? this.options.stop : 0;
+        }
+        else
+        {
+          this.off();
+        }
     }, this));
     // store mdeia element
     this._media = $('video', this._el).get(0);
@@ -231,20 +253,73 @@ var oTeams = Base.extend(
  * common controllers
  */
 
+function sortByName(data)
+{
+  return $.sortBy(data, function(item)
+  {
+    return item.short;
+  });
+}
+
 // Teams controller
 var Teams =
 {
-  init: function(data)
+  init: function(data, points)
   {
     // create teams section
-    var el = $('<section id="teams"></section>').appendTo('body');
+    var el = $('<section id="teams"></section>').prependTo('body');
     this.board = oTeams.init(el);
 
     if (!this.teams) this.teams = {};
-    $.each(data, $.bind(function(team)
+    $.each(sortByName(data), $.bind(function(team)
     {
-      this.board.addTeam(team);
+      var el = this.board.addTeam(team);
+
+      // check if it has points added this round
+      if (points && points[team.handle]) el.addClass('checked');
+
     }, this));
   }
 };
 
+// Round controller
+var Round =
+{
+  update: function(round, delayed)
+  {
+    $('body>footer').attr('data-round', round);
+
+    // clean all checked team
+    // add some time out to allow css transition to play
+    // css trainsition is set to 1.5s so 2s shoudl be enough
+    // don't think hooking to actual transition end would help,
+    // since if there is no transition it won't fire anyway
+    // TODO: This FkSh should be refactored
+    if (delayed)
+    {
+      setTimeout(function()
+      {
+        $('.team').removeClass('checked');
+      }, delayed);
+    }
+    else // and we don't need any delay for adminUI
+    {
+      $('.team').removeClass('checked');
+    }
+
+    // flag body with different game states
+    switch (round)
+    {
+      case 0: // about to start
+        $('body').removeClass('final').removeClass('playing').addClass('waiting');
+        break;
+
+      case -1: // final
+        $('body').removeClass('waiting').removeClass('playing').addClass('final');
+        break;
+
+      default: // normal state
+        $('body').removeClass('waiting').removeClass('final').addClass('playing');
+    }
+  }
+};
