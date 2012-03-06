@@ -1,9 +1,3 @@
-body
-{
-  font-family: "Ubuntu", sans-serif;
-  background-color: #000000;
-  color: #ffffff;
-}
 body>nav
 {
   position: fixed;
@@ -57,6 +51,7 @@ button
   margin: 0px 10px;
   padding: 0px 15px;
   border-radius: 50px;
+  background-clip: padding-box;
   font-size: 24px;
   color: #444444;
   background-color: #cccccc;
@@ -128,7 +123,6 @@ button
       background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #770000), color-stop(1, #cc0000));
     }
 
-
 /* scoreboard */
 
 .team.busy
@@ -136,3 +130,106 @@ button
   opacity: 0.5;
 }
 
+/* setup specific */
+
+.team.selected
+{
+  color: #ff0000;
+}
+
+/* adjusting round points */
+.team>ol
+{
+  position: absolute;
+  max-width: 560px;
+  width: auto;
+  margin-top: -10px;
+  padding: 0px 10px;
+  background-color: #222222;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-clip: padding-box;
+  text-align: left;
+  box-shadow: 0px 0px 0px 3px rgba(180, 180, 180, 0.5);
+  cursor: default;
+  z-index: 1;
+}
+  .team>ol.reverse
+  {
+    right: 0px;
+    text-align: right;
+  }
+.team>ol:before
+{
+  content: "";
+  position: absolute;
+  display: block;
+  left: 30px;
+  top: -7px;
+  width: 16px;
+  height: 16px;
+  background-color: #222222;
+  box-shadow: 1px 1px 0px #ffffff, 4px 4px 0px rgba(180, 180, 180, 0.5);
+  -webkit-transform: rotate(-135deg);
+  z-index: -1;
+}
+  .team>ol.reverse:before
+  {
+    left: auto;
+    right: 30px;
+  }
+.team>ol>li
+{
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  line-height: 40px;
+  border-radius: 40px;
+  font-size: 20px;
+  color: #444444;
+  text-align: center;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
+  cursor: pointer;
+  opacity: 0.5;
+  box-shadow: 0px 0px 1px 1px #888888;
+  text-shadow: 0px 0px 1px #888888;
+}
+  .team>ol>li.point
+  {
+    opacity: 1;
+  }
+.team>ol>li.point:before
+{
+  content: "\2713";
+  position: absolute;
+  right: -3px;
+  bottom: -5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00dd00;
+  text-shadow: 0px 0px 3px #333333;
+}
+  .team>ol>li:hover
+  {
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cccccc), color-stop(1, #777777));
+  }
+  .team>ol>li.active
+  {
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #777777), color-stop(1, #cccccc));
+  }
+
+/* hide add team button when game started */
+
+body:not(.waiting) button[data-item=team]
+{
+  display: none;
+}
+/* and another hack to hr before team button */
+body:not(.waiting) button[data-item=reload] + hr
+{
+  display: none;
+}

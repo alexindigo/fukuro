@@ -9,6 +9,8 @@ body
   width: 100%;
   height: 100%;
   font-family: "Ubuntu", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -38,7 +40,6 @@ body
 {
   background: transparent;
 }
-
 
 /* generic content */
 

@@ -35,6 +35,23 @@ var common =
       $('.points', team).text(data.points);
     }
   },
+  // add team
+  'add': function(data)
+  {
+console.log(['add', data]);
+    Teams.add(data.team);
+  },
+  // remove team
+  'remove': function(data)
+  {
+    var team;
+
+    // remove team
+    if (data.team && (team = $('#team_'+data.team)))
+    {
+      team.remove();
+    }
+  },
   // hard reset
   'reset': function()
   {
@@ -237,9 +254,19 @@ var oTeams = Base.extend(
 {
   teams: {},
   points: {},
-  addTeam: function(team)
+  addTeam: function(team, before)
   {
-    var el = $('<span id="team_'+team.handle+'" class="team"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>').appendTo(this._el);
+
+    var el = $('<span id="team_'+team.handle+'" class="team"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>');
+
+    if (before)
+    {
+      el.insertBefore(before);
+    }
+    else
+    {
+      el.appendTo(this._el);
+    }
 
     this.teams[team.handle] = el;
     this.points[team.handle] = team.points;
@@ -279,7 +306,6 @@ var Teams =
     var el = $('<section id="teams"></section>').prependTo('body');
     this.board = oTeams.init(el);
 
-    if (!this.teams) this.teams = {};
     $.each(sortByName(data), $.bind(function(team)
     {
       var el = this.board.addTeam(team);
@@ -288,6 +314,17 @@ var Teams =
       if (points && points[team.handle]) el.addClass('checked');
 
     }, this));
+  },
+  add: function(team)
+  {
+    // place it alphabetically
+    var before = $.find(this.board.teams, function(item)
+    {
+      return team.short < $('.short', item).text();
+    });
+
+    // add team to the board
+    this.board.addTeam(team, before);
   }
 };
 
