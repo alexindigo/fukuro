@@ -12,6 +12,7 @@
  */
 var _      = require('utile')
   , fs     = require('fs')
+  , url    = require('url') // for streaming
   , app    = require('http').createServer(handler)
   , io     = require('socket.io').listen(app)
   , static = require('node-static')
@@ -99,11 +100,37 @@ function handler(req, res)
       var match;
       // serve top level html files as simple uris
       if (match = req.url.match(/^(\/[a-z]+)\/?$/)) req.url = match[1]+'.html';
+      // add mime type
+//      if (req.headers.range) return stream(req, res);
+      if (req.url.match(/\.m4v$/)) res.setHeader("Content-Type", "video/mp4"); //Content-Length: 1647961
       // continue breath normally
       file.serve(req, res);
 
       // TODO: Add 404 error handler
     });
+}
+// }}}
+
+// {{{ stream html5 video
+function stream(req, res)
+{
+  var pathname = decodeURI(url.parse(req.url).pathname);
+//console.log(['pathname', pathname]);
+  fs.readFile('./web'+pathname, function (err, file)
+  {
+    if (err) throw err;
+
+    var range = req.headers.range;
+    var total = file.length;
+    var parts = range.replace(/bytes=/, "").split("-");
+    var partialstart = parts[0];
+    var partialend = parts[1];
+    var start = parseInt(partialstart, 10);
+    var end = partialend ? parseInt(partialend, 10) : total;
+    var chunksize = (end-start);
+    res.writeHead(206, { "Content-Range": "bytes " + start + "-" + end + "/" + total, "Accept-Ranges": "bytes", "Content-Length": chunksize, "Content-Type": "video/mp4" });
+    res.end(file.slice(start, end), "binary");
+  });
 }
 // }}}
 

@@ -1,0 +1,24 @@
+body
+{
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 300%;
+  height: 100%;
+}
+#teams,
+section
+{
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+#teams
+{
+  padding: 0px;
+}

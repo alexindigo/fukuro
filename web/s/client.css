@@ -60,7 +60,22 @@ section:before
   line-height: 50px;
   font-size: 24px;
   text-align: center;
-  border: 1px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+video:before
+{
+  content: attr(data-text);
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  width: 100%;
+  margin-top: -25px;
+  padding: 0px 15px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
   background-clip: padding-box;
@@ -139,7 +154,7 @@ body>footer:before
    * only together with scoreboard */
   body.playing>footer:before
   {
-    content: "Round " attr(data-round);
+    content: "Round " attr(data-round) " of 12";
   }
   body.waiting>footer:before
   {

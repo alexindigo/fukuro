@@ -105,6 +105,27 @@ button
       color: rgba(51, 51, 51, 0.8);
       text-shadow: 0px 0px 1px #666666, 0px 0px 12px rgba(255, 255, 255, 1);
     }
+    /* disable timer button until game starts
+     * and paint Start button as call to action
+    */
+    body.waiting button[data-item=timer],
+    body.waiting button[data-item=final],
+    body.waiting .questions>button
+    {
+      color: #444444;
+      background-color: #cccccc;
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
+      box-shadow: 0px 0px 1px 1px #ffffff;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    body.waiting button[data-item=round]
+    {
+      color: #ffffff;
+      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00ee00), color-stop(1, #009900));
+      box-shadow: 0px 0px 1px 1px #00ff00;
+      text-shadow: 0px 0px 1px 1px #004400;
+    }
 
   button[data-item=reset]
   {
@@ -226,10 +247,10 @@ button
 
 body:not(.waiting) button[data-item=team]
 {
-  display: none;
-}
-/* and another hack to hr before team button */
-body:not(.waiting) button[data-item=reload] + hr
-{
-  display: none;
+  color: #444444;
+  background-color: #cccccc;
+  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
+  box-shadow: 0px 0px 1px 1px #ffffff;
+  opacity: 0.3;
+  pointer-events: none;
 }

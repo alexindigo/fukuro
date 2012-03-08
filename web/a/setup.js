@@ -10,24 +10,6 @@
  * setup.js: setupUI controller
  */
 
-// Navigation controller
-var Nav =
-{
-  init: function(data)
-  {
-    // {{{
-    if ('questions' in data)
-    {
-      $.each(data.questions, $.bind(function(q, n)
-      {
-        var el = $('<button id="button_question_'+n+'" data-item="question" data-number="'+n+'" class="'+q.type+'">'+n+'</button>').appendTo('body>nav>.questions');
-      }, this));
-    }
-    // }}}
-  }
-
-};
-
 // event handlers
 var handlers =
 {
@@ -75,7 +57,7 @@ var addTeam = function(button)
   if (full.length > 15)
   {
     short = prompt('Name is too long, please enter short version:');
-    if (!short) return button.removeClass('busy');
+    if (!short || short.length > 15) return button.removeClass('busy');
   }
   else
   {
@@ -237,7 +219,7 @@ var teamActions = function(e)
 // to the server and beyond!
 connect(handlers,
 {
-  data: {me: 'admin'},
+  data: {me: 'setup'},
   callback: function(data)
   {
     // set round

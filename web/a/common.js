@@ -33,12 +33,28 @@ var common =
       }
       // update score
       $('.points', team).text(data.points);
+
+      // resort teams
+      var item, arr = $('#teams>.team');
+      for (var i=0, s=arr.length; i<s; i++)
+      {
+        item = arr[i];
+        if ($('.points', item).text() == data.points && $('.short', item).text() > data.short)
+        {
+          team.insertBefore(item);
+          break;
+        }
+        else if ($('.points', item).text() < data.points)
+        {
+          team.insertBefore(item);
+          break;
+        }
+      }
     }
   },
   // add team
   'add': function(data)
   {
-console.log(['add', data]);
     Teams.add(data.team);
   },
   // remove team
@@ -85,7 +101,6 @@ var Base =
   _deffered: null,
   _current: null,
   _el: null,
-  options: {},
   current: function(o)
   {
     if (typeof o != 'undefined') this._current = o;
@@ -122,10 +137,14 @@ var Base =
   },
   init: function(el, options)
   {
-    this.options = options || {};
+    var child = Object.create(this, {_el: {value: el, enumerable: true}});
+
+    // store the options
+    child.options = options || {};
+
     // attach current to the Base
-    this.current = $.bind(this.current, Base);
-    return Object.create(this, {_el: {value: el, enumerable: true}});
+    child.current = $.bind(child.current, Base);
+    return child;
   },
   populate: function(html)
   {
@@ -135,7 +154,9 @@ var Base =
 };
 
 // simple image
-var oImage = Base.extend();
+var oImage = Base.extend(
+{
+});
 
 // extend video
 var oVideo = Base.extend(
@@ -166,13 +187,23 @@ var oVideo = Base.extend(
   {
     // add elements first
     var res = this._parent.populate.apply(this, arguments);
+    // store mdeia element
+    this._media = $('video', this._el).get(0);
+
+    // add options
+    for (opt in this.options)
+    {
+      // filter out custom options
+      if (opt[0] != '_') this._media[opt] = this.options[opt];
+    }
+
     // off itself on stop
-    $('video', this._el).on('ended', $.bind(function()
+    $(this._media).on('ended', $.bind(function()
     {
         // check options if it needs to stay
-        if (this.options.stay)
+        if (this.options['_keep-alive'])
         {
-          this._media.currentTime = this.options.stop ? this.options.stop : 0;
+          this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0;
         }
         else
         {
@@ -181,8 +212,13 @@ var oVideo = Base.extend(
           this.off();
         }
     }, this));
-    // store mdeia element
-    this._media = $('video', this._el).get(0);
+
+    // add text
+    if (this.options['_text'])
+    {
+      $(this._media).attr('data-text', this.options['_text']);
+    }
+
     // continue normal flow
     return res;
   }
@@ -237,11 +273,17 @@ var oAudio = Base.extend(
       }
       // store mdeia element
       this._media = window.__audio[path];
+
+      // add options
+      for (opt in this.options)
+      {
+        this._media[opt] = this.options[opt];
+      }
     }
 
-    if (this.options.text)
+    if (this.options['_text'])
     {
-      this._el.attr('data-text', this.options.text);
+      this._el.attr('data-text', this.options['_text']);
     }
 
     // call parent method, emulate empty string

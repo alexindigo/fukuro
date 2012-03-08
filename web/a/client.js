@@ -31,8 +31,15 @@ var Content =
         var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').prependTo('body');
         if (!this.questions) this.questions = {};
         // stay: true – no-auto off for questions
-        this.questions[n] = make(el, q, {stay: true, stop: q.stop, text: q.text});
+        this.questions[n] = make(el, q);
       }, this));
+    }
+    // }}}
+
+    // {{{ Timer
+    if (data.timer)
+    {
+      Timer.init(data.timer);
     }
     // }}}
   }
@@ -163,10 +170,11 @@ var make = function(el, data, options)
 {
   var res, poster = '';
 
+  options = $.extend(options || {}, data.params || {});
+
   if ('video' in data)
   {
     if ('image' in data) poster = ' poster="/content/'+data.image+'"';
-    //only video/mp4 for now
     res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
   }
   else if ('image' in data)
@@ -198,9 +206,6 @@ connect(handlers,
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);
-
-    // load other media
-    Timer.init();
   }
 });
 
@@ -211,14 +216,16 @@ var Timer =
 {
   _el: null,
   _media: null,
-  init: function()
+  options: {},
+  init: function(data)
   {
-    var path = '/content/minute.mp3';
+console.log(['timer', data]);
+    this.options = data;
 
     // create visial part
     this._el = $('<ul id="timer"></ul>').appendTo('body');
 
-    for (var i=0; i<60; i++)
+    for (var i=0; i<this.options.length; i++)
     {
       this._el.append('<li class="fill"></li>');
     }
@@ -227,13 +234,13 @@ var Timer =
     if ('Audio' in window)
     {
       if (!window.__audio) window.__audio = {};
-      if (!(path in window.__audio))
+      if (!(this.options.audio in window.__audio))
       {
-        window.__audio[path] = new Audio();
-        window.__audio[path].src = path;
+        window.__audio[this.options.audio] = new Audio();
+        window.__audio[this.options.audio].src = '/content/'+this.options.audio;
 
         // off itself on stop
-        $(window.__audio[path]).on('ended', $.bind(function()
+        $(window.__audio[this.options.audio]).on('ended', $.bind(function()
         {
           // call deffered if there is one
           if (this._deffered) this._deffered();
@@ -241,7 +248,14 @@ var Timer =
         }, this));
       }
       // store mdeia element
-      this._media = window.__audio[path];
+      this._media = window.__audio[this.options.audio];
+
+      // add options
+      for (opt in this.options.params)
+      {
+        // filter out custom options
+        if (opt[0] != '_') this._media[opt] = this.options.params[opt];
+      }
     }
 
     // return itself
@@ -255,12 +269,12 @@ var Timer =
     this._el.addClass('playing');
     if (time < 11) this._el.addClass('ending');
 
-    $('li:nth-last-child(-n+'+Math.max(60-time, 0)+')', this._el).removeClass('fill');
+    $('li:nth-last-child(-n+'+Math.max(this.options.length-time, 0)+')', this._el).removeClass('fill');
 
     if (!this.isPlaying)
     {
       // small hack to accomodate current audio file
-      this._media.currentTime = Math.max(this._media.duration - time - 0.5, 0);
+      this._media.currentTime = Math.max(this._media.duration - time - 0.5, 0.1);
       this._media.play();
       this.isPlaying = true;
     }
@@ -282,7 +296,7 @@ var Timer =
     if (this._media)
     {
       // small hack to prevent cutting off the last piece
-      if (this._media.currentTime < 61) this._media.pause();
+      if (this._media.currentTime < this.options.length) this._media.pause();
       this.isPlaying = false;
     }
   }
