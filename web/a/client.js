@@ -139,28 +139,105 @@ var handlers =
       Timer.off();
     }
   },
+  'team': function(data, parent)
+  {
+    // do parent first
+    parent.apply(this, arguments);
 
+    var team, action = 'insertBefore';
 
+    if (team = $('#team_'+data.handle))
+    {
+      // resort teams
+      var placeholder, item, arr = $('#teams>.team');
+      for (var i=0, s=arr.length; i<s; i++)
+      {
+        item = arr[i];
+        // skip itself
+        if (item == team[0]) continue;
 
+        if ($('.points', item).text() == data.points && $('.short', item).text() > data.short)
+        {
+          placeholder = item;
+          break;
+        }
+        else if ($('.points', item).text() < data.points)
+        {
+          placeholder = item;
+          break;
+        }
+      }
+      // on the way back reverse the animation a bit
+      if (!team.hasClass('checked'))
+      {
+        action = 'insertAfter';
+        placeholder = (placeholder) ? $(placeholder).previous()[0] : $('#teams>.team').last()[0];
+      }
+      // continue breath normally
+      if (placeholder && placeholder != team[0]
+          && (placeholder != team.next()[0] || action == 'insertAfter') )
+      {
+        var origTop  = team.offset().top
+          , origLeft = team.offset().left
+          , destTop  = $(placeholder).offset().top
+          , destLeft = $(placeholder).offset().left;
 
+        team.addClass('moving');
 
+        team.css(
+        {
+          position: 'absolute',
+          top: (origTop-12)+'px',
+          left: (origLeft-35)+'px'
+        });
+
+        // flush changes to the DOM
+        team.offset();
+
+        // move
+        team.css(
+        {
+          position: 'absolute',
+          top: (destTop-12)+'px',
+          left: (destLeft-35)+'px'
+        });
+
+        setTimeout(function()
+        {
+          team[action](placeholder);
+          team.css(
+          {
+            position: 'static',
+            top: 'auto',
+            left: 'auto'
+          });
+
+          team.removeClass('moving');
+
+        }, 900);
+      }
+
+    }
+  },
   'final': function(data)
   {
-      var topScore = 0;
+    // get top score
+    var score = $('#teams>.team>.points').text();
+console.log(['score', score]);
+    // all teams uncheck
+    Round.update(-1, 2000);
 
-      // current – off
+$('.team').first().addClass('winner');
 
-      // all teams uncheck
+    setTimeout(function()
+    {
+    // calculate topScore
 
-      setTimeout(function()
-      {
-        // calculate topScore
+    // check top score team(s)
 
-        // check top score team(s)
+    // show teams board
 
-        // show teams board
-
-      }, 1500);
+    }, 1500);
   }
   // end fo handlers
 };
@@ -185,9 +262,23 @@ var make = function(el, data, options)
   {
     res = oAudio.init(el, options).populate('/content/'+data.audio);
   }
+  else if ('text' in data)
+  {
+    res = oText.init(el, options).populate('<p>'+data.text+'</p>');
+  }
 
   return res;
 };
+
+// override team sorting
+function sortTeams(data)
+{
+  return $.sortBy(data, function(item)
+  {
+    // there is no chance for more than 50 round/points
+    return (99-item.points)+item.short;
+  });
+}
 
 // to the server and beyond!
 connect(handlers,
@@ -219,7 +310,6 @@ var Timer =
   options: {},
   init: function(data)
   {
-console.log(['timer', data]);
     this.options = data;
 
     // create visial part
@@ -271,12 +361,13 @@ console.log(['timer', data]);
 
     $('li:nth-last-child(-n+'+Math.max(this.options.length-time, 0)+')', this._el).removeClass('fill');
 
-    if (!this.isPlaying)
+    // canplay gives us HAVE_FUTURE_DATA(3), checking that it's great than HAVE_CURRENT_DATA(2)
+    if (!this.isPlaying && this._media.readyState > this._media.HAVE_CURRENT_DATA)
     {
       // small hack to accomodate current audio file
+      this.isPlaying = true;
       this._media.currentTime = Math.max(this._media.duration - time - 0.5, 0.1);
       this._media.play();
-      this.isPlaying = true;
     }
   },
   off: function()
@@ -296,8 +387,11 @@ console.log(['timer', data]);
     if (this._media)
     {
       // small hack to prevent cutting off the last piece
-      if (this._media.currentTime < this.options.length) this._media.pause();
       this.isPlaying = false;
+      if (!this._media.paused)
+      {
+        if (this._media.currentTime < this.options.length) this._media.pause();
+      }
     }
   }
 };

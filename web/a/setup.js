@@ -18,27 +18,9 @@ var handlers =
   {
     Round.update(data.round);
   },
-
-
-
-
   'final': function(data)
   {
-      var topScore = 0;
-
-      // current – off
-
-      // all teams uncheck
-
-      setTimeout(function()
-      {
-        // calculate topScore
-
-        // check top score team(s)
-
-        // show teams board
-
-      }, 1500);
+    Round.update(-1);
   }
   // end fo handlers
 };

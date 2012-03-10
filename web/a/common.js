@@ -20,7 +20,6 @@ var common =
   'team': function(data)
   {
     var team;
-
     if (team = $('#team_'+data.handle))
     {
       if ($('.points', team).text() < data.points)
@@ -33,23 +32,6 @@ var common =
       }
       // update score
       $('.points', team).text(data.points);
-
-      // resort teams
-      var item, arr = $('#teams>.team');
-      for (var i=0, s=arr.length; i<s; i++)
-      {
-        item = arr[i];
-        if ($('.points', item).text() == data.points && $('.short', item).text() > data.short)
-        {
-          team.insertBefore(item);
-          break;
-        }
-        else if ($('.points', item).text() < data.points)
-        {
-          team.insertBefore(item);
-          break;
-        }
-      }
     }
   },
   // add team
@@ -82,8 +64,35 @@ var connect = function(custom, helo)
 {
   socket = io.connect();
 
-  // merge custom handlers with common
-  var handlers = $.extend(common, custom);
+  var handlers = (function(base, child)
+  {
+    var method;
+
+    for (var key in child)
+    {
+      if (child.hasOwnProperty(key))
+      {
+        method = child[key];
+
+        // check for the one in base
+        if (base.hasOwnProperty(key))
+        {
+          method = (function(child, parent)
+          {
+            return function()
+            {
+              return child.apply(this, $.toArray(arguments).concat(parent));
+            };
+          })(method, base[key]);
+        }
+
+        base[key] = method;
+      }
+    }
+
+    return base;
+
+  })(common, custom);
 
   // add handlers
   $.each(handlers, function(method, handle)
@@ -177,8 +186,11 @@ var oVideo = Base.extend(
 
     if (this._media)
     {
-      this._media.pause();
-      this._media.currentTime = 0;
+      if (!this._media.paused)
+      {
+        this._media.pause();
+        this._media.currentTime = 0.1;
+      }
     }
 
     return res;
@@ -203,7 +215,7 @@ var oVideo = Base.extend(
         // check options if it needs to stay
         if (this.options['_keep-alive'])
         {
-          this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0;
+          this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0.1;
         }
         else
         {
@@ -243,8 +255,11 @@ var oAudio = Base.extend(
 
     if (this._media)
     {
-      this._media.pause();
-      this._media.currentTime = 0;
+      if (!this._media.paused)
+      {
+        this._media.pause();
+        this._media.currentTime = 0.1;
+      }
     }
 
     return res;
@@ -291,6 +306,11 @@ var oAudio = Base.extend(
   }
 });
 
+// text only question
+var oText = Base.extend(
+{
+});
+
 // teams object
 var oTeams = Base.extend(
 {
@@ -331,7 +351,7 @@ var oTeams = Base.extend(
  * common controllers
  */
 
-function sortByName(data)
+function sortTeams(data)
 {
   return $.sortBy(data, function(item)
   {
@@ -348,7 +368,7 @@ var Teams =
     var el = $('<section id="teams"></section>').prependTo('body');
     this.board = oTeams.init(el);
 
-    $.each(sortByName(data), $.bind(function(team)
+    $.each(sortTeams(data), $.bind(function(team)
     {
       var el = this.board.addTeam(team);
 
@@ -381,7 +401,7 @@ var Round =
     // add some time out to allow css transition to play
     // css trainsition is set to 1.5s so 2s shoudl be enough
     // don't think hooking to actual transition end would help,
-    // since if there is no transition it won't fire anyway
+    // since if there is no transition it won't fire at all
     // TODO: This FkSh should be refactored
     if (delayed)
     {

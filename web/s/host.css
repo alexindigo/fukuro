@@ -6,19 +6,37 @@ body
   -webkit-box-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 300%;
+  width: 3000px;
   height: 100%;
+  overflow: hidden;
 }
-#teams,
 section
 {
   position: relative;
   display: -webkit-box;
   -webkit-box-flex: 1;
-  height: 100%;
-  overflow: auto;
-}
-#teams
-{
+  width: 600px;
+  height: 700px;
   padding: 0px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+outline: 1px solid #0000ff;
+}
+#projector
+{
+  -webkit-box-flex: 2;
+  width: 1000px;
+}
+section>object,
+section>iframe
+{
+  width: 600px;
+  height: 100%;
+  overflow: hidden;
+outline: 1px solid #ff0000;
+}
+#projector>iframe
+{
+  width: 1000px;
+  height: 700px;
 }

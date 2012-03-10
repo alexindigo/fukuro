@@ -18,27 +18,9 @@ var handlers =
   {
     Round.update(data.round);
   },
-
-
-
-
-  'final': function(data)
+  'reset': function()
   {
-      var topScore = 0;
-
-      // current – off
-
-      // all teams uncheck
-
-      setTimeout(function()
-      {
-        // calculate topScore
-
-        // check top score team(s)
-
-        // show teams board
-
-      }, 1500);
+    // do nothing
   }
   // end fo handlers
 };
@@ -83,16 +65,19 @@ connect(handlers,
     // set round
     handlers.round({round: data.round});
 
-    $('<iframe id="teams" src="/"></iframe>').prependTo('body');
+//    $('<iframe id="teams" src="/"></iframe>').prependTo('body');
+
+//    $('<iframe id="questions" src="/content/questions.pdf"></iframe>').insertAfter('#teams');
+
 
     // init teams
     //Teams.init(data.teams, data.points);
 
     // init questions
-    Questions.init();
+//    Questions.init();
 
     // init screenplay
-    Screenplay.init();
+//    Screenplay.init();
 
   }
 });
