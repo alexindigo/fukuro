@@ -222,12 +222,75 @@ var handlers =
   'final': function(data)
   {
     // get top score
-    var score = $('#teams>.team>.points').text();
+    var winners
+      , scale = 2
+      , body = $('body').dim()
+      , unit = $('#teams>.team').dim()
+      , score = $('#teams>.team>.points').text();
+
 console.log(['score', score]);
     // all teams uncheck
-    Round.update(-1, 2000);
+    Round.update(-1);
 
-$('.team').first().addClass('winner');
+    $('#teams>.team').each(function(item)
+    {
+      if ($('.points', item).text() == score)
+      {
+        $(item).addClass('winner');
+      }
+    });
+
+console.log(['dim', body]);
+
+    winners = $('#teams>.team.winner').length;
+
+    // assume there could no tie break for more than 4 teams. Seriously.
+    $('#teams>.team.winner').each(function(item, num)
+    {
+      var x, y, p = $(item).offset();
+
+      // TODO: Build now, optimize later
+      switch (winners)
+      {
+        case 1:
+          scale = 4;
+          x = unit.width*0.075 + Math.floor(body.width/2) - unit.width*2  + (unit.width*2 * (num%2) + unit.width ) + (parseInt($('#teams').css('padding-left'), 10)*(2+(num%2)) );
+          y = Math.floor(body.height/2) - unit.height*2 + (unit.height*2 * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(2+Math.floor(num/2)) );
+          break;
+
+        case 2:
+        case 3:
+          x = Math.floor(body.width/2) - unit.width*2  + (unit.width*2 * (num%2) + (num==2 ? unit.width : 0)  ) + (parseInt($('#teams').css('padding-left'), 10)*(2+(num%2)) );
+          y = Math.floor(body.height/2) - unit.height*2 + (unit.height*2 * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(2+Math.floor(num/2)) );
+          break;
+
+        case 4:
+          x = Math.floor(body.width/2) - unit.width*scale  + (unit.width*scale * (num%2) ) + (parseInt($('#teams').css('padding-left'), 10)*(scale+(num%2)) );
+          y = Math.floor(body.height/2) - unit.height*scale + (unit.height*scale * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(scale+Math.floor(num/2)) );
+          break;
+
+        case 5:
+        case 6:
+          scale = 1.5;
+          x = Math.floor(body.width/2) - unit.width*scale  + (unit.width*scale * (num%2) ) + (parseInt($('#teams').css('padding-left'), 10)*(scale+(num%2)) );
+          y = (unit.height*scale * -1) + Math.floor(body.height/2) - unit.height*scale + (unit.height*scale * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(scale+Math.floor(num/2)) );
+
+        default:
+          scale = 1;
+          x = (unit.width*scale * -0.4) + Math.floor(body.width/2) - unit.width*scale  + (unit.width*scale * (num%2) ) + (parseInt($('#teams').css('padding-left'), 10)*(scale+(num%2)) );
+          y = (unit.height*scale * (-3 + scale ) ) + Math.floor(body.height/2) - unit.height*scale + (unit.height*scale * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(scale+Math.floor(num/2)) );
+      }
+
+console.log(['pos', num, x, y, p.left, p.top, 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)', parseInt($('#teams').css('padding-top'), 10), parseInt($('#teams').css('padding-left'), 10)]);
+
+      $(item).css({transform: 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)'});
+    });
+
+
+//$('.team').first().addClass('winner');
+
+//  -webkit-transform: scale(2) translate(0px, 0px);
+
 
     setTimeout(function()
     {

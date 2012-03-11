@@ -70,7 +70,7 @@ body
   font-family: "Ubuntu Condensed", sans-serif;
   color: #808080;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   background-clip: padding-box;
   -webkit-transition: top 0.8s, left 0.8s;

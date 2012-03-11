@@ -15,6 +15,7 @@ body:before
   width: 100%;
   height: 100%;
   opacity: 1;
+  background-color: #000000;
   background-image: url("/content/owl.png");
   background-size: 70% auto;
   background-position: bottom left;
@@ -136,7 +137,6 @@ body>footer
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
 }
-  body.waiting>footer,
   body.final>footer,
   body.playing>#teams.active~footer
   {
@@ -239,10 +239,14 @@ body>footer:before
 /* final */
 body.final .team
 {
-  -webkit-transition: all 1.2s;
+  opacity: 0.65;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 1.2s;
 }
 body.final .team.winner
 {
+  position: relative !important;
   color: #ffffff;
-  -webkit-transform: scale(2) translate(100px, 200px);
+  opacity: 1;
+  z-index: 10;
 }
