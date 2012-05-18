@@ -54,7 +54,7 @@ body
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 4%;
+  padding: 5% 0.5% 2%;
   font-size: 26px;
   text-align: center;
 }
@@ -63,9 +63,9 @@ body
   position: relative;
   display: inline-block;
   -webkit-box-flex: 0;
-  width: 18%;
+  width: 14%;
   height: 80px;
-  margin: 0.3em 0.7em;
+  margin: 0.2em 0.6em;
   padding: 0.2em 0.3em;
   font-family: "Ubuntu Condensed", sans-serif;
   color: #808080;
@@ -92,6 +92,7 @@ body
 }
 .team>.short
 {
+  white-space: nowrap;
   border-bottom: 1px dotted #888888;
 }
 .team>.full

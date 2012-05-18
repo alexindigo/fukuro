@@ -20,14 +20,15 @@ body:before
   background-size: 70% auto;
   background-position: bottom left;
   background-repeat: no-repeat;
+  z-index: -2;
 }
 body:after
 {
-  content: "chtogdekogda.us";
+  content: "facebook.com/djwizard";
   position: fixed;
   display: block;
-  bottom: 3%;
-  right: 4%;
+  bottom: 90px;
+  right: 6%;
   z-index: -1;
   text-align: center;
   font-family: "Ubuntu Condensed", sans-serif;
@@ -63,11 +64,11 @@ section
 section>img
 {
   min-height: 50%;
-  max-height: 90%;
+  max-height: 75%;
 }
 section>video
 {
-  height: 90%;
+  height: 75%;
 }
 section>p
 {
@@ -115,9 +116,9 @@ video:before
 }
 #cover>video
 {
-  width: 1000px;
+/*  width: 1000px;
   height: 726px;
-}
+*/}
 
 /* presentation types */
 
@@ -127,20 +128,19 @@ body>footer
   position: absolute;
   display: block;
   opacity: 0;
-  top: 50px;
-  left: 0px;
+  bottom: 70px;
+  left: 30px;
   width: 100%;
-  margin-top: -25px;
   line-height: 50px;
   font-size: 24px;
-  text-align: center;
+  text-align: left;
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
 }
   body.final>footer,
   body.playing>#teams.active~footer
   {
-    opacity: 1;
+    opacity: 0.8;
     -webkit-transition: all 1s 0s;
   }
   /* don't show anything other than cover */
@@ -161,7 +161,7 @@ body>footer:before
    * only together with scoreboard */
   body.playing>footer:before
   {
-    content: "Round " attr(data-round) " of 12";
+    content: attr(data-round);
   }
   body.waiting>footer:before
   {
@@ -175,7 +175,7 @@ body>footer:before
 #timer
 {
   position: absolute;
-  top: 25px;
+  bottom: 70px;
   left: 50%;
   height: 24px;
   margin-left: -376px;
