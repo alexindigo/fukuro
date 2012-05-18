@@ -1,0 +1,45 @@
+{
+  "cover":
+  {
+    "image": "cover.png",
+    "video": "cover.m4v",
+    "params":
+    {
+      "muted": true
+    }
+  },
+  "timer":
+  {
+    "audio": "minute.mp3",
+    "length": 60,
+    "params":
+    {
+      "volume": 0.4
+    }
+  },
+  "questions":
+  {
+    "5":
+    {
+      "type": "question",
+      "image": "5.jpg"
+    },
+    "7":
+    {
+      "type": "question",
+      "image": "monkey.png",
+      "video": "monkey.m4v",
+      "params":
+      {
+        "_keep-alive": true,
+        "_stop": 7,
+        "muted": true
+      }
+    },
+    "11":
+    {
+      "type": "question",
+      "text": "O you song! Little song of a young girl,\nFly over the river and in the sunlight go.\nAnd fly to my hero far from me,\nFrom his girl bring him a sweet hello."
+    }
+  }
+}
