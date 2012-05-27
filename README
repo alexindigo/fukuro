@@ -1,5 +1,10 @@
 WARNING! Dev version – a lot of garbage. Check out stable branch for less buggy thing.
 
+WARNING 2: Right now all styles kinda busted since I'm trying to fit it into very strange setup,
+with two old projectors and misaligned screens. For proper styles check out Stable branch.
+
+
+
 Fukurō [フクロウ] - Owl (jap.) symbol of the TV version of the game.
 
 Control panel for the russian intellectual game Cho? Gde? Kogda?
@@ -7,3 +12,16 @@ more info: http://en.wikipedia.org/wiki/What%3F_Where%3F_When%3F
 
 (c) 2012 Alex Indigo <iam@alexindigo.com>
 Fukurō may be freely distributed under the MIT license.
+
+
+
+
+Just download it, and run the index file:
+
+node index.js [--port=<port_number|8000>]
+
+Then you can access it in your browser (Chrome!)
+– Client: localhost:8000/ – shows teams, scores and questions
+– Admin: localhost:8000/admin – controls the game flow: start game, add points, show/hide questions
+– Setup: localhost:8000/setup – pre game setup: add/remove teams
+

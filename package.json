@@ -1,7 +1,7 @@
 {
   "name": "fukuro",
-  "description": "Control panel for the russian intellectual game Cho? Gde? Kogda?",
-  "version": "0.1.0",
+  "description": "Control panel for the russian intellectual game What? Where? When? (Cho? Gde? Kogda?)",
+  "version": "0.1.2",
   "author": "Alex Indigo <iam@alexindigo.com>",
   "dependencies": {
     "node-static": "~0.5.9",
@@ -13,5 +13,14 @@
     "errs": "~0.1.1",
     "reqwest": "~0.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node" : ">=0.6.12"
+  },
+  "license": "MIT",
+  "repository":
+  { 
+    "type": "git",
+    "url": "https://github.com/alexindigo/fukuro"
+  }
 }

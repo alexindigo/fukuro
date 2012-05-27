@@ -148,8 +148,11 @@ var handlers =
 
     if (team = $('#team_'+data.handle))
     {
+      // skip this part for static teams
+      if (team.hasClass('static')) return true;
+
       // resort teams
-      var placeholder, item, arr = $('#teams>.team');
+      var placeholder, item, arr = $('#teams>.team:not(.static)');
       for (var i=0, s=arr.length; i<s; i++)
       {
         item = arr[i];
@@ -167,11 +170,16 @@ var handlers =
           break;
         }
       }
+
       // on the way back reverse the animation a bit
       if (!team.hasClass('checked'))
       {
         action = 'insertAfter';
-        placeholder = (placeholder) ? $(placeholder).previous()[0] : $('#teams>.team').last()[0];
+        placeholder = (placeholder) ? $(placeholder).previous()[0] : $('#teams>.team:not(.static)').last()[0];
+        // quick hack, two would be enough
+        // TODO: enchance (bonzo) .previous and .next to accept selectors
+        if ($(placeholder).hasClass('static')) placeholder = $(placeholder).previous()[0];
+        if ($(placeholder).hasClass('static')) placeholder = $(placeholder).previous()[0];
       }
       // continue breath normally
       if (placeholder && placeholder != team[0]
@@ -228,7 +236,6 @@ var handlers =
       , unit = $('#teams>.team').dim()
       , score = $('#teams>.team>.points').text();
 
-console.log(['score', score]);
     // all teams uncheck
     Round.update(-1);
 
@@ -239,8 +246,6 @@ console.log(['score', score]);
         $(item).addClass('winner');
       }
     });
-
-console.log(['dim', body]);
 
     winners = $('#teams>.team.winner').length;
 
@@ -280,8 +285,6 @@ console.log(['dim', body]);
           x = (unit.width*scale * -0.4) + Math.floor(body.width/2) - unit.width*scale  + (unit.width*scale * (num%2) ) + (parseInt($('#teams').css('padding-left'), 10)*(scale+(num%2)) );
           y = (unit.height*scale * (-3 + scale ) ) + Math.floor(body.height/2) - unit.height*scale + (unit.height*scale * Math.floor(num/2)) + (parseInt($('#teams').css('padding-top'), 10)*(scale+Math.floor(num/2)) );
       }
-
-console.log(['pos', num, x, y, p.left, p.top, 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)', parseInt($('#teams').css('padding-top'), 10), parseInt($('#teams').css('padding-left'), 10)]);
 
       $(item).css({transform: 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)'});
     });
@@ -356,7 +359,7 @@ connect(handlers,
     Content.init(data.content);
 
     // init teams
-    Teams.init(data.teams, data.points);
+    Teams.init(data.teams, data.points, data.flags);
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);
@@ -365,7 +368,7 @@ connect(handlers,
 
 // helpers
 
-// Teams controller
+// Timer controller
 var Timer =
 {
   _el: null,

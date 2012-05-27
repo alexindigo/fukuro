@@ -318,8 +318,12 @@ var oTeams = Base.extend(
   points: {},
   addTeam: function(team, before)
   {
+    var el, isGuest, isCollective;
 
-    var el = $('<span id="team_'+team.handle+'" class="team"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>');
+    isGuest = team.guest ? ' guest static' : '';
+    isCollective = team.collective ? ' collective static' : '';
+
+    el = $('<span id="team_'+team.handle+'" class="team'+isGuest+isCollective+'"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>');
 
     if (before)
     {
@@ -362,10 +366,18 @@ function sortTeams(data)
 // Teams controller
 var Teams =
 {
-  init: function(data, points)
+  init: function(data, points, flags)
   {
+    var specialGuest = '';
+
+    // check flags
+    if (flags && flags.guest && flags.collective)
+    {
+      specialGuest = ' special_guest';
+    }
+
     // create teams section
-    var el = $('<section id="teams"></section>').prependTo('body');
+    var el = $('<section id="teams" class="'+specialGuest+'"></section>').prependTo('body');
     this.board = oTeams.init(el);
 
     $.each(sortTeams(data), $.bind(function(team)

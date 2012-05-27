@@ -1,9 +1,55 @@
-/* frame */
-body
+/* DEV STUFF */
+#dev
 {
-  font-family: "Ubuntu Condensed", sans-serif;
-  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 5% 0.5% 2%;
+  font-size: 26px;
+  text-align: center;
+  background-color: transparent;
 }
+#dev:before
+{
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+  margin: 110px 25px 65px;
+  padding: 0px;
+  outline: 1px dotted #ff0000;
+}
+#dev:after
+{
+  content: "";
+  position: absolute;
+  display: block;
+  top: 110px;
+  right: auto;
+  bottom: auto;
+  left: 25px;
+  width: 750px;
+  height: 425px;
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+  outline: 1px dotted #00ff00;
+}
+
+
+
+
+
 /* cover up */
 body:before
 {
@@ -78,7 +124,7 @@ section>p
   white-space: pre;
 }
 /* custom/extra text */
-section:before
+section:after
 {
   content: attr(data-text);
   -webkit-box-flex: 0;
@@ -92,7 +138,7 @@ section:before
   border-radius: 8px;
   background-clip: padding-box;
 }
-video:before
+video:after
 {
   content: attr(data-text);
   position: absolute;
@@ -125,8 +171,9 @@ video:before
 /* stats in the footer */
 body>footer
 {
+  display: none;
+  /* don't have room for it right now */
   position: absolute;
-  display: block;
   opacity: 0;
   bottom: 70px;
   left: 30px;
@@ -175,10 +222,11 @@ body>footer:before
 #timer
 {
   position: absolute;
+/*   top: 110px; */
   bottom: 70px;
   left: 50%;
   height: 24px;
-  margin-left: -376px;
+  margin-left: -370px;
   padding: 10px;
   opacity: 0;
   text-align: center;

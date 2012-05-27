@@ -59,5 +59,33 @@
   {
     "full": "Мушкетёры",
     "short": "Мушкетёры"
+  },
+  {
+    "full": "Rövşən Ənvər oğlu Əsgərov",
+    "short": "Rovshan Askerov",
+    "guest": true
+  },
+  {
+    "full": "San Francisco Сollective",
+    "short": "San Francisco",
+    "collective": true
+  },
+  {
+    "full": "Twenty"
+  },
+  {
+    "full": "Twenty One"
+  },
+  {
+    "full": "Twenty Two"
+  },
+  {
+    "full": "Twenty Three"
+  },
+  {
+    "full": "Twenty Four"
+  },
+  {
+    "full": "Twenty Five"
   }
 ]
