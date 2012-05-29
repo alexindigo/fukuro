@@ -146,18 +146,37 @@ button
 
 /* scoreboard */
 
-.team.busy
+#teams
 {
-  opacity: 0.5;
+  padding: 7% 1% 4%;
+  font-size: 24px;
 }
-
-/* setup specific */
-
-.team.selected
+  /* no need for special guest separator */
+  #teams.special_guest:before
+  {
+    content: none;
+  }
+.team
 {
-  color: #ff0000;
+  height: 70px;
 }
-
+  #teams.special_guest>.team.static
+  {
+    top: 50px;
+  }
+  .team.busy
+  {
+    opacity: 0.5;
+  }
+  /* setup specific */
+  .team.selected
+  {
+    color: #ff0000;
+  }
+.team:hover
+{
+  text-shadow: 0px 0px 15px #ffffff;
+}
 /* adjusting round points */
 .team>ol
 {

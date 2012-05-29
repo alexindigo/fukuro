@@ -13,6 +13,7 @@
   font-size: 26px;
   text-align: center;
   background-color: transparent;
+display: none;
 }
 #dev:before
 {

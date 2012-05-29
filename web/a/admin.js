@@ -137,7 +137,8 @@ var teamActions = function(e)
 
   e.preventDefault();
   // already doing something don't disturb
-  if (team.hasClass('busy')) return;
+  // and collective team is not an actual team to assign points to manually
+  if (team.hasClass('busy') || team.hasClass('collective')) return;
 
   // prepare action
   if (id = team.attr('id').replace(/^team_/, ''))
@@ -167,7 +168,7 @@ connect(handlers,
     Nav.init(data.content);
 
     // init teams
-    Teams.init(data.teams, data.points);
+    Teams.init(data.teams, data.points, data.flags);
 
     // check and set current
     if (data.current) handlers.on(data.current);

@@ -19,6 +19,26 @@
   },
   "questions":
   {
+    "1":
+    {
+      "type": "question",
+      "text": "First question"
+    },
+    "2":
+    {
+      "type": "question",
+      "text": "Second question"
+    },
+    "3":
+    {
+      "type": "question",
+      "text": "Third question"
+    },
+    "4":
+    {
+      "type": "question",
+      "text": "Fourth question"
+    },
     "5":
     {
       "type": "question",
