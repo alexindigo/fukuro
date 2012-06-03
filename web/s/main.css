@@ -55,8 +55,8 @@ body
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 5% 0.5% 2%;
-  font-size: 20px;
+  padding: 7% 1% 4%;
+  font-size: 24px;
   text-align: center;
 }
   #teams:after
@@ -69,9 +69,9 @@ body
   display: inline-block;
   -webkit-box-flex: 0;
   width: 14%;
-  height: 60px;
-  margin: 0.1em 0.6em;
-  padding: 0.2em 0.3em;
+  height: 70px;
+  margin: 0.1em 0.5em;
+  padding: 0.4em;
   font-family: "Ubuntu Condensed", sans-serif;
   color: #808080;
   cursor: pointer;
@@ -106,8 +106,8 @@ body
   display: none;
   position: absolute;
   width: 100%;
-  padding: 5px 6px;
-  margin-left: -6px;
+  padding: 5px 9px;
+  margin-left: -9px;
   font-size: 18px;
   opacity: 0.7;
 }
@@ -115,6 +115,30 @@ body
 {
   font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
 }
+
+  /* address different number of teams */
+  #teams.atleast_15,
+  #teams.atleast_20,
+  #teams.atleast_25
+  {
+    padding: 5% 0.5% 2%;
+    font-size: 20px;
+  }
+  #teams.atleast_15>.team,
+  #teams.atleast_20>.team,
+  #teams.atleast_25>.team
+  {
+    height: 9%;
+    padding: 0.75% 0.4em;
+  }
+  #teams.atleast_15>.team>.full,
+  #teams.atleast_20>.team>.full,
+  #teams.atleast_25>.team>.full
+  {
+    height: 1.6em;
+    overflow: hidden;
+  }
+
 /* show full name when waiting for the game */
 body.waiting .team>.full
 {
@@ -180,6 +204,8 @@ body.waiting .team>.points
 {
   -webkit-box-flex: 0;
   display: block;
+  max-height: none;
+  height: auto;
 }
   #teams.special_guest>.team.static>span.full
   {

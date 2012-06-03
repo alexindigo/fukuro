@@ -53,14 +53,6 @@
     "short": "Last Minute"
   },
   {
-    "full": "Лампочка",
-    "short": "Лампочка"
-  },
-  {
-    "full": "Мушкетёры",
-    "short": "Мушкетёры"
-  },
-  {
     "full": "Rövşən Ənvər oğlu Əsgərov",
     "short": "Rovshan Askerov",
     "guest": true
@@ -71,12 +63,11 @@
     "collective": true
   },
   {
-    "full": "Twenty"
+    "full": "Master Twister",
+    "short": "Master Twister"
   },
   {
-    "full": "Twenty One"
-  },
-  {
-    "full": "Twenty Two"
+    "full": "Team Purple",
+    "short": "Team Purple"
   }
 ]

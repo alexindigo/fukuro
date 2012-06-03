@@ -5,7 +5,7 @@
     "video": "cover.m4v",
     "params":
     {
-      "muted": true
+      "muted": false
     }
   },
   "timer":

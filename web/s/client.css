@@ -13,7 +13,7 @@
   font-size: 26px;
   text-align: center;
   background-color: transparent;
-display: none;
+/* display: none; */
 }
 #dev:before
 {
@@ -63,7 +63,7 @@ body:before
   height: 100%;
   opacity: 1;
   background-color: #000000;
-  background-image: url("/content/owl.png");
+  background-image: url("/content/semi_owl.png");
   background-size: 70% auto;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -163,9 +163,8 @@ video:after
 }
 #cover>video
 {
-/*  width: 1000px;
-  height: 726px;
-*/}
+  max-width: 1000px;
+}
 
 /* presentation types */
 
@@ -299,3 +298,32 @@ body.final .team.winner
   opacity: 1;
   z-index: 10;
 }
+
+/* address different number of teams */
+
+#teams.atleast_20,
+#teams.atleast_25
+{
+  padding: 5% 0.5% 2%;
+  font-size: 20px;
+}
+#teams.atleast_20>.team,
+#teams.atleast_25>.team
+{
+  height: 9%;
+  padding: 0.75% 0.4em;
+}
+#teams.atleast_20>.team>.short,
+#teams.atleast_25>.team>.short
+{
+  box-sizing: border-box;
+  max-height: 48%;
+  overflow: hidden;
+}
+#teams.atleast_20>.team>.full,
+#teams.atleast_25>.team>.full
+{
+  height: 1.6em;
+  overflow: hidden;
+}
+

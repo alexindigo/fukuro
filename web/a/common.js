@@ -368,16 +368,24 @@ var Teams =
 {
   init: function(data, points, flags)
   {
-    var specialGuest = '';
+    var specialGuest = '', limit = 0;
+
+    // calculate limit
+    // in most cases it would be 5 teams per row
+    limit = Math.floor((Object.keys(data).length-1)/5)*5;
 
     // check flags
     if (flags && flags.guest && flags.collective)
     {
       specialGuest = ' special_guest';
+      // don't include special teams into limit
+
+      // adjust for special guest
+      limit = Math.floor((Object.keys(data).length-3)/5)*5;
     }
 
     // create teams section
-    var el = $('<section id="teams" class="'+specialGuest+'"></section>').prependTo('body');
+    var el = $('<section id="teams" class="atleast_'+limit+specialGuest+'"></section>').prependTo('body');
     this.board = oTeams.init(el);
 
     $.each(sortTeams(data), $.bind(function(team)
