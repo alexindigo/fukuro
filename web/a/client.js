@@ -13,8 +13,16 @@
 // Content controller
 var Content =
 {
+  lang: 'en', // english by default
+
   init: function(data)
   {
+    // check for alternate language
+    if ($('body').data('lang'))
+    {
+      this.lang = $('body').data('lang');
+    }
+
     // {{{ get cover
     if ('cover' in data)
     {
@@ -26,12 +34,19 @@ var Content =
     // {{{
     if ('questions' in data)
     {
-      $.each(data.questions, $.bind(function(q, n)
+      $.each(data.questions, $.bind(function(item, n)
       {
-        var el = $('<section id="question_'+n+'" class="question '+q.type+'"></section>').prependTo('body');
+        var q = $('<section id="question_'+n+'" class="question"></section>').prependTo('body')
+          , a = $('<section id="answer_'+n+'" class="answer"></section>').prependTo('body')
+          ;
+
         if (!this.questions) this.questions = {};
-        // stay: true – no-auto off for questions
-        this.questions[n] = make(el, q);
+        if (!this.answers) this.answers = {};
+
+        // populate questions list
+        this.questions[n] = make(q, item.question);
+        this.answers[n]   = make(a, item.answer);
+
       }, this));
     }
     // }}}
@@ -74,6 +89,7 @@ var handlers =
         Content.cover.on(misc.deferredOff(data));
         fn({item: 'cover', status: 'on'});
         break;
+
       case 'question':
         if (data.number && Content.questions[data.number])
         {
@@ -85,6 +101,7 @@ var handlers =
           fn({item: 'question', number: data.number, status: 'error'});
         }
         break;
+
       case 'teams':
         Teams.board.on(misc.deferredOff(data));
         fn({item: 'teams', status: 'on'});
@@ -311,7 +328,7 @@ var handlers =
 // objects helpers
 var make = function(el, data, options)
 {
-  var res, poster = '';
+  var res, text, poster = '';
 
   options = $.extend(options || {}, data.params || {});
 
@@ -330,7 +347,10 @@ var make = function(el, data, options)
   }
   else if ('text' in data)
   {
-    res = oText.init(el, options).populate('<p>'+data.text+'</p>');
+    // check if there is version for current language
+    // fallback to the default
+    text = (Content.lang in data) ? data[Content.lang] : data.text;
+    res = oText.init(el, options).populate('<p>'+text+'</p>');
   }
 
   return res;
