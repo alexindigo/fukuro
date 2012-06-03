@@ -100,9 +100,11 @@ function start()
 // {{{ http requests handler
 function handler(req, res)
 {
+
     req.addListener('end', function()
     {
       var match;
+
       // serve top level html files as simple uris
       if (match = req.url.match(/^(\/[a-z]+)\/?$/)) req.url = match[1]+'.html';
       // add mime type

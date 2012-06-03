@@ -21,45 +21,159 @@
   {
     "1":
     {
-      "type": "question",
-      "text": "First question"
+      "question":
+      {
+        "text": "First question",
+        "ru": "Первый вопрос"
+      },
+      "answer":
+      {
+        "text": "First answer",
+        "ru": "Первый ответ"
+      }
     },
     "2":
     {
-      "type": "question",
-      "text": "Second question"
+      "question":
+      {
+        "text": "Second question",
+        "ru": "Второй вопрос"
+      },
+      "answer":
+      {
+        "text": "Second answer",
+        "ru": "Второй ответ"
+      }
     },
     "3":
     {
-      "type": "question",
-      "text": "Third question"
+      "question":
+      {
+        "text": "Third question",
+        "ru": "Третий вопрос"
+      },
+      "answer":
+      {
+        "text": "Third answer",
+        "ru": "Третий ответ"
+      }
     },
     "4":
     {
-      "type": "question",
-      "text": "Fourth question"
+      "question":
+      {
+        "text": "Fourth question",
+        "ru": "Четвертый вопрос"
+      },
+      "answer":
+      {
+        "text": "Fourth answer",
+        "ru": "Четвертый ответ"
+      }
     },
     "5":
     {
-      "type": "question",
-      "image": "5.jpg"
+      "question":
+      {
+        "text": "Fifth question",
+        "ru": "Пятый вопрос",
+        "image": "5.jpg"
+      },
+      "answer":
+      {
+        "text": "Fifth answer",
+        "ru": "Пятый ответ"
+      }
+    },
+    "6":
+    {
+      "question":
+      {
+        "text": "Sixth question",
+        "ru": "Шестой вопрос"
+      },
+      "answer":
+      {
+        "text": "Sixth answer",
+        "ru": "Шестой ответ"
+      }
     },
     "7":
     {
-      "type": "question",
-      "image": "monkey.png",
-      "video": "monkey.m4v",
-      "params":
+      "question":
       {
-        "_keep-alive": true,
-        "_stop": 7,
-        "muted": true
+        "text": "Seventh question",
+        "ru": "Седьмой вопрос"
+      },
+      "answer":
+      {
+        "text": "Seventh answer",
+        "ru": "Седьмой ответ",
+        "image": "monkey.png"
+      }
+    },
+    "8":
+    {
+      "question":
+      {
+        "text": "Eighth question",
+        "ru": "Восьмой вопрос"
+      },
+      "answer":
+      {
+        "text": "Eighth answer",
+        "ru": "Восьмой ответ"
+      }
+    },
+    "9":
+    {
+      "question":
+      {
+        "text": "Nineth question",
+        "ru": "Девятый вопрос"
+      },
+      "answer":
+      {
+        "text": "Nineth answer",
+        "ru": "Девятый ответ"
+      }
+    },
+    "10":
+    {
+      "question":
+      {
+        "text": "Tenth question",
+        "ru": "Десятый вопрос"
+      },
+      "answer":
+      {
+        "text": "Tenth answer",
+        "ru": "Десятый ответ"
       }
     },
     "11":
     {
-      "type": "question",
-      "text": "O you song! Little song of a young girl,\nFly over the river and in the sunlight go.\nAnd fly to my hero far from me,\nFrom his girl bring him a sweet hello."
+      "question":
+      {
+        "text": "O you song! Little song of a young girl,\nFly over the river and in the sunlight go.\nAnd fly to my hero far from me,\nFrom his girl bring him a sweet hello."
+      },
+      "answer":
+      {
+        "text": "Ой ты песня, песенка девичья\nТы лети за ясным солнцем в след\nИ бойцу на дальнем пограничье\nОт Катюши передай привет."
+      }
+    },
+    "12":
+    {
+      "question":
+      {
+        "text": "Twelfth question",
+        "ru": "Двенадцатый вопрос"
+      },
+      "answer":
+      {
+        "text": "Twelfth answer",
+        "ru": "Двенадцатый ответ"
+      }
     }
   }
 }
