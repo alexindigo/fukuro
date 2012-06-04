@@ -1,21 +1,23 @@
+body
+{
+  background-image: url("/i/dark_pixels.png");
+  background-position: 0px 0px;
+  background-repeat: repeat;
+}
+  body[data-panel=setup]
+  {
+    background-image: url("/i/tape.png"), url("/i/dark_pixels.png");
+    background-position: 0px 0px;
+    background-repeat: repeat-x, repeat;
+  }
 body>nav
 {
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
-  min-height: 50px;
+  min-height: 110px;
   text-align: center;
-}
-body>nav:after
-{
-  content: attr(data-timer);
-  position: absolute;
-  bottom: 0px;
-  margin-left: 15px;
-  line-height: 50px;
-  font-size: 24px;
-  color: #999999;
 }
 body>footer
 {
@@ -29,6 +31,8 @@ body>footer
 body>footer:before
 {
   content: "Round " attr(data-round);
+  position: relative;
+  top: 7px;
   margin-right: 15px;
   font-size: 24px;
   color: #999999;
@@ -37,114 +41,37 @@ body>footer:before
 hr
 {
   display: inline-block;
-  width: 0px;
-  height: 20px;
-  margin: 25px 18px 0px 16px;
-  border-left: 1px solid #cccccc;
+  width: 8px;
+  height: 8px;
+  margin: 0px 10px -8px 8px;
+  background-image: -webkit-gradient( linear, center top, center bottom, color-stop(0, #606060), color-stop(1, #303030) );
+  border: 1px solid #404040;
+  border-radius: 8px;
 }
-button
-{
-  display: inline-block;
-  min-width: 50px;
-  width: auto;
-  height: 50px;
-  margin: 0px 10px;
-  padding: 0px 15px;
-  border-radius: 50px;
-  background-clip: padding-box;
-  font-size: 24px;
-  color: #444444;
-  background-color: #cccccc;
-  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
-  cursor: pointer;
-  box-shadow: 0px 0px 1px 1px #ffffff;
-  text-shadow: 0px 0px 1px #666666;
-}
-  button.answer
-  {
-    color: #ff0000;
-  }
-  button.active
-  {
-    color: rgba(51, 51, 255, 0.8);
-    text-shadow: 0px 0px 1px #666666, 0px 0px 12px rgba(0, 0, 255, 0.5);
-  }
-  button.busy
-  {
-    opacity: 0.4;
-    cursor: default;
-  }
-  button:hover
-  {
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cccccc), color-stop(1, #777777));
-  }
-  button:active,
-  button.busy
-  {
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #777777), color-stop(1, #cccccc));
-  }
-  /* custom buttons */
-  button[data-item=timer]
-  {
-    color: #ffffff;
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00ee00), color-stop(1, #009900));
-    box-shadow: 0px 0px 1px 1px #00ff00;
-    text-shadow: 0px 0px 1px 1px #004400;
-  }
-    button[data-item=timer]:hover
-    {
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00cc00), color-stop(1, #007700));
-    }
-    button[data-item=timer]:active,
-    button[data-item=timer].busy
-    {
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #007700), color-stop(1, #00cc00));
-    }
-    button[data-item=timer].active
-    {
-      color: rgba(51, 51, 51, 0.8);
-      text-shadow: 0px 0px 1px #666666, 0px 0px 12px rgba(255, 255, 255, 1);
-    }
-    /* disable timer button until game starts
-     * and paint Start button as call to action
-    */
-    body.waiting button[data-item=timer],
-    body.waiting button[data-item=final],
-    body.waiting .questions>button
-    {
-      color: #444444;
-      background-color: #cccccc;
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
-      box-shadow: 0px 0px 1px 1px #ffffff;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-    body.waiting button[data-item=round]
-    {
-      color: #ffffff;
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #00ee00), color-stop(1, #009900));
-      box-shadow: 0px 0px 1px 1px #00ff00;
-      text-shadow: 0px 0px 1px 1px #004400;
-    }
 
-  button[data-item=reset]
-  {
-    color: #ffffff;
-    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #ee0000), color-stop(1, #990000));
-    box-shadow: 0px 0px 1px 1px #ff0000;
-    text-shadow: 0px 0px 1px 1px #440000;
-  }
-    button[data-item=reset]:hover
-    {
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #cc0000), color-stop(1, #770000));
-    }
-    button[data-item=reset]:active,
-    button[data-item=reset].busy
-    {
-      background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #770000), color-stop(1, #cc0000));
-    }
+#button_timer:before
+{
+  content: attr(data-label) attr(data-timer);
+}
+
+/* game states */
+
+body:not(.waiting) button[data-item=team],
+body.waiting button[data-item=final],
+body.waiting button[data-item=timer],
+body.waiting .questions>button
+{
+  opacity: 0.4;
+  pointer-events: none;
+}
 
 /* scoreboard */
+
+/* add top spacing for the nav panel, but not for setup page */
+body:not([data-panel=setup]) #teams
+{
+  border-top: 80px solid transparent;
+}
 
 /* no need for special guest separator */
 #teams.special_guest:before
@@ -152,9 +79,13 @@ button
   content: none;
 }
 
-#teams.special_guest>.team.static
+body:not([data-panel=setup]) #teams.special_guest>.team.static
 {
-  top: 50px;
+  top: 80px;
+}
+.team
+{
+  background-color: transparent;
 }
 .team.busy
 {
@@ -254,15 +185,3 @@ button
   {
     background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #777777), color-stop(1, #cccccc));
   }
-
-/* hide add team button when game started */
-
-body:not(.waiting) button[data-item=team]
-{
-  color: #444444;
-  background-color: #cccccc;
-  background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #eeeeee), color-stop(1, #999999));
-  box-shadow: 0px 0px 1px 1px #ffffff;
-  opacity: 0.3;
-  pointer-events: none;
-}

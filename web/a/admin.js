@@ -13,17 +13,51 @@
 // Navigation controller
 var Nav =
 {
+  base: 'body>nav>.questions',
+  played: [],
   init: function(data)
   {
-    // {{{
+    // {{{ create questions
     if ('questions' in data)
     {
       $.each(data.questions, $.bind(function(q, n)
       {
-        var el = $('<button id="button_question_'+n+'" data-item="question" data-number="'+n+'" class="'+q.type+'">'+n+'</button>').appendTo('body>nav>.questions');
+        // add (show) question button
+        $('<button id="button_question_'+n+'" data-item="question" data-number="'+n+'">'+n+'</button>').appendTo(this.base);
+        // add (show) answer button
+        $('<button id="button_answer_'+n+'" class="careful" data-item="answer" data-number="'+n+'">'+n+'</button>').appendTo(this.base);
       }, this));
     }
     // }}}
+  },
+  addPlayed: function(question)
+  {
+    this.played[Round.round] = question;
+    // do the DOM
+    this.refresh();
+  },
+  setPlayed: function(data)
+  {
+    this.played = data;
+    this.refresh();
+  },
+  refresh: function()
+  {
+    // start from scratch each time to keep things clean
+    $('button', this.base).removeClass('current').removeClass('played');
+
+    // loop thru: question, round
+    $.each(this.played, $.bind(function(q, r)
+    {
+      // massage DOM, add played
+      $('#button_question_'+q).addClass('played');
+      // and current classes
+      if (r == Round.round)
+      {
+        // current is not played
+        $('#button_question_'+q).addClass('current').removeClass('played');
+      }
+    }, this));
   }
 
 };
@@ -37,6 +71,11 @@ var handlers =
     if (item)
     {
       item.addClass('active');
+    }
+    // update list of played questions
+    if (data.item == 'question')
+    {
+      Nav.addPlayed(data.number);
     }
   },
   'off': function(data)
@@ -53,20 +92,20 @@ var handlers =
     Round.update(data.round);
     // update new round button
     // TODO: Add support for Final, round: -1
-    $('#button_round').text(data.round ? 'New Round' : 'Start Game');
+    $('#button_round').attr('data-label', data.round ? 'New Round' : 'Start Game');
+    // update current question in the nav
+    Nav.refresh();
   },
   // listen to the timer
   'timer': function(data)
   {
     if (data.time > -1)
     {
-      $('body>nav').attr('data-timer', data.time);
-      $('#button_timer').addClass('active');
+      $('#button_timer').addClass('active').attr('data-timer', ' '+data.time);
     }
     else
     {
-      $('body>nav').removeAttr('data-timer');
-      $('#button_timer').removeClass('active');
+      $('#button_timer').removeClass('active').removeAttr('data-timer');
     }
   },
   'final': function(data)
@@ -92,9 +131,13 @@ var contentActions = function(e)
 
   // prepare action
   action = button.hasClass('active') ? 'hide' : 'show';
+
   // get item data
   item.item = button.data('item');
   if (button.data('number')) item.number = button.data('number');
+
+  // mark question as currently playing
+  if (item.item == 'question') button.addClass('playing');
 
   // notify the server
   socket.emit('admin:'+action, item, function(data)
@@ -161,11 +204,15 @@ connect(handlers,
   data: {me: 'admin'},
   callback: function(data)
   {
+console.log(['data', data]);
     // set round
     handlers.round({round: data.round});
 
     // init navigation
     Nav.init(data.content);
+
+    // get already played questions
+    Nav.setPlayed(data.played);
 
     // init teams
     Teams.init(data.teams, data.points, data.flags);
@@ -174,10 +221,14 @@ connect(handlers,
     if (data.current) handlers.on(data.current);
 
     // start listening
-    $('body>nav').on('button:not([data-item=timer])', 'click touchstart', contentActions);
+    $('body>nav').on('button:not([data-item=timer])', 'mousedown touchstart', contentActions);
     // special treatment for the timer
-    $('body>nav').on('button[data-item=timer]', 'click touchstart', statActions);
-    $('body>footer').on('button', 'click touchstart', statActions);
+    $('body>nav').on('button[data-item=timer]', 'mousedown touchstart', statActions);
+
+    $('body>footer').on('button:not([data-item=cover])', 'mousedown touchstart', statActions);
+    // special treatment for the cover
+    $('body>footer').on('button[data-item=cover]', 'mousedown touchstart', contentActions);
+
     // teams
     $('#teams').on('.team', 'click touchstart', teamActions);
   }

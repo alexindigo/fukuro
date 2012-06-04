@@ -1,0 +1,204 @@
+/* based on http://lab.simurai.com/ */
+
+button:not(.careful)
+{
+  box-sizing: content-box;
+  position: relative;
+  display: inline-block;
+  top: 12px;
+  width: 100px;
+  height: 50px;
+  margin: 3px;
+  padding-top: 8px;
+  color: transparent;
+  background-color: #000000;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  cursor: pointer;
+  -webkit-perspective: 200;
+}
+  button:not(.careful):active,
+  button:not(.careful).active,
+  button:not(.careful).busy
+  {
+    -webkit-box-shadow: inset 5px 0px 5px #000000, inset -5px 0px 5px #000000 ;
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop( 0, #000000 ), color-stop( 0.14, #383838 ), color-stop( 0.15, #000000 ) );
+  }
+
+button:not(.careful):before
+{
+  content: attr(data-label);
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 92px;
+  height: 50px;
+  margin: 4px;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-image: -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-radius: 3px;
+  text-shadow: 0px -1px 0px rgba(255,255,255,0.08);
+  z-index: 10;
+}
+  button:not(.careful):hover:before
+  {
+    background-image: -webkit-gradient( linear, left top, left bottom, from(   hsl(0,0%,19.5%) ), to( hsl(0,0%,14%) ) );
+    text-shadow: rgba(0,0,0,0.5) 0 1px 1px, rgba(255, 255, 255, 0.8) 0 0 10px;
+  }
+  button:not(.careful):active:before,
+  button:not(.careful).active:before,
+  button:not(.careful).busy:before
+  {
+    color: hsl(200,100%,50%);
+    background-image: -webkit-gradient( linear, left top, left bottom, from(   hsl(0,0%,19%) ), to( hsl(0,0%,12%) ) );
+    border: 0px;
+    border-top: 1px solid transparent;
+    text-shadow:  rgba(0,0,0,0.5) 0 1px 1px, #0589c8 0 0 10px;
+    -webkit-box-shadow: 0px 2px 1px 1px hsl(0,0%,13%);
+    -webkit-border-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0,  hsla(200,100%,85%,.05)), color-stop(.5, hsl(200,20%,50%)), color-stop(1,  hsla(200,100%,80%,.05)) ) 50% 100%;
+    z-index: 11;
+    -webkit-transform: rotateX(-25deg) scaleX(.95) translateY(4px);
+  }
+
+button:not(.careful):after
+{
+  content: "";
+  position: absolute;
+  left: 6px;
+  bottom: 8px;
+  width: 82px;
+  height: 5px;
+  margin: 3px;
+  font-size: 18px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset rgba(0,0,0, 0.2) 0 -1px 2px, inset rgba(255,255,255, 0.1) 0 1px 1px;
+  z-index: 12;
+}
+  button:not(.careful):active:after,
+  button:not(.careful).active:after,
+  button:not(.careful).busy:after
+  {
+    bottom: 5px;
+    -webkit-transform: scale(.9);
+    opacity: .4;
+  }
+
+/* question */
+
+  .questions>button:not(.careful)
+  {
+    width: 50px;
+  }
+  .questions>button:not(.careful):before
+  {
+    content: attr(data-number);
+    width: 42px;
+    font-size: 18px;
+    background-image: url("/i/ready.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    background-position: 3px 34px, 0px 0px;
+    background-repeat: no-repeat, repeat;
+  }
+    .questions>button:not(.careful):active:before,
+    .questions>button:not(.careful).active:before,
+    .questions>button:not(.careful).busy:before
+    {
+      background-position: 3px 36px, 0px 0px;
+      background-size: 9px 9px, auto;
+    }
+    .questions>button:not(.careful).played:before
+    {
+      background-image: url("/i/off.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+    .questions>button:not(.careful).current:before
+    {
+      background-image: url("/i/waiting.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+    body.waiting .questions>button:not(.careful):before
+    {
+      background-image: url("/i/off.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+  .questions>button:not(.careful):after
+  {
+    width: 32px;
+  }
+
+/* answer buttons, careful not ot press ones */
+
+button.careful
+{
+  box-sizing: content-box;
+  position: absolute;
+  width: 47px;
+  height: 29px;
+  margin: 80px 0px 0px -50px;
+  color: transparent;
+  background-color: #000000;
+  border: 0px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  cursor: pointer;
+  -webkit-perspective: 200;
+}
+button.careful:before
+{
+  content: attr(data-number);
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 38px;
+  height: 11px;
+  padding: 5px 0px 4px 0px;
+  line-height: 10px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+  background-color: #ee432e;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee432e), color-stop(50%, #c63929), color-stop(50%, #b51700), color-stop(100%, #891100));
+  border: 1px solid #951100;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333;
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333;
+}
+  button.careful:hover:before
+  {
+    background-color: #f37873;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f37873), color-stop(50%, #db504d), color-stop(50%, #cb0500), color-stop(100%, #a20601));
+  }
+  /* press */
+  button.careful:active:before,
+  button.careful.active:before,
+  button.careful.busy:before
+  {
+    background-color: #d43c28;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #891100), color-stop(50%, #b51700), color-stop(50%, #c63929), color-stop(100%,  #ee432e));
+    text-shadow:  rgba(0,0,0,0.5) 0 1px 1px, #0589c8 0 0 10px;
+    box-shadow: 0px 0px 16px 1px rgba(255, 115, 100, 0.8);
+    -webkit-transform: translateZ(-20px);
+  }
+
+/* hide answer buttons by default */
+
+button.careful
+{
+  opacity: 0;
+  pointer-events: none;
+}
+/*
+ * always show after current question
+ * or active button
+ * or hover on already played questions
+ */
+button.careful.active,
+button.current + button.careful
+{
+  opacity: 1;
+  pointer-events: auto;
+}

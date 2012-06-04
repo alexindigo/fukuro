@@ -413,8 +413,12 @@ var Teams =
 // Round controller
 var Round =
 {
+  round: 0,
   update: function(round, delayed)
   {
+    this.round = round;
+
+    // push it to the page
     $('body>footer').attr('data-round', round);
 
     // clean all checked team

@@ -102,6 +102,18 @@ var handlers =
         }
         break;
 
+      case 'answer':
+        if (data.number && Content.answers[data.number])
+        {
+          Content.answers[data.number].on(misc.deferredOff(data));
+          fn({item: 'answer', number: data.number, status: 'on'});
+        }
+        else
+        {
+          fn({item: 'answer', number: data.number, status: 'error'});
+        }
+        break;
+
       case 'teams':
         Teams.board.on(misc.deferredOff(data));
         fn({item: 'teams', status: 'on'});
@@ -116,6 +128,7 @@ var handlers =
         Content.cover.off();
         fn({item: 'cover', status: 'off'});
         break;
+
       case 'question':
         if (data.number && Content.questions[data.number])
         {
@@ -127,6 +140,19 @@ var handlers =
           fn({item: 'question', number: data.number, status: 'error'});
         }
         break;
+
+      case 'answer':
+        if (data.number && Content.answers[data.number])
+        {
+          Content.answers[data.number].off();
+          fn({item: 'answer', number: data.number, status: 'off'});
+        }
+        else
+        {
+          fn({item: 'answer', number: data.number, status: 'error'});
+        }
+        break;
+
       case 'teams':
         Teams.board.off();
         fn({item: 'teams', status: 'off'});

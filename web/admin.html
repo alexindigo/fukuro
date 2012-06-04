@@ -8,27 +8,28 @@
  <title>Admin &bull; ChtoGdeKogda.us</title>
  <link rel="stylesheet" href="/s/fonts.css">
  <link rel="stylesheet" href="/s/main.css">
+ <link rel="stylesheet" href="/s/button.css">
  <link rel="stylesheet" href="/s/admin.css">
  <link rel="apple-touch-icon" href="/i/logo.png" />
 </head>
 <body>
 
 <nav>
- <button id="button_cover" data-item="cover">Cover</button>
+ <button id="button_teams" data-item="teams" data-label="Teams">Teams</button>
  <hr>
  <span class="questions"></span>
  <hr>
- <button id="button_teams" data-item="teams">Teams</button>
- <hr>
- <button id="button_timer" data-item="timer">Timer</button>
+ <button id="button_timer" data-item="timer" data-label="Timer">Timer</button>
 </nav>
 
 <footer data-round="0">
- <button id="button_round" data-item="round">Start Game</button>
+ <button id="button_round" data-item="round" data-label="Start Game">Start Game</button>
  <hr>
- <button id="button_final" data-item="final">Final Score</button>
+ <button id="button_reload" data-item="reload" data-label="Reload">Reload</button>
  <hr>
- <button id="button_reload" data-item="reload">Reload</button>
+ <button id="button_final" data-item="final" data-label="Final Score">Final Score</button>
+ <hr>
+ <button id="button_cover" data-item="cover" data-label="Cover">Cover</button>
 </footer>
 
 <script src="/socket.io/socket.io.js"></script>
