@@ -16,6 +16,33 @@ var socket;
 // set of the common handler
 var common =
 {
+  'password': function(callback)
+  {
+    // TODO: make it real
+    // check if we have any candidates
+    if (window._password)
+    {
+      // already tried something, ask user
+      window._password = prompt('Please enter correct password.');
+    }
+    // check if we have anything in the cookie
+    else if (window._password = getCookie('password'))
+    {
+      // store it for future reference
+    }
+    // nothing, ask user
+    else
+    {
+      window._password = prompt('Password is required');
+    }
+
+    // submit password to the server
+    callback(window._password);
+
+    // store in the cookie
+    addCookie('password', window._password);
+  },
+
   // team's data modifications
   'team': function(data)
   {
@@ -100,7 +127,17 @@ var connect = function(custom, helo)
     socket.on(handle, method);
   });
 
+  // {{{ TODO: Should be refactored
+  socket.on('connect', function(zzz)
+  {
+    // assume new session, reset stored password
+    // TODO: make it right
+    window._password = null;
+  });
+
   socket.emit('helo', helo.data, helo.callback);
+  // }}}
+
 };
 
 /* Lego */
@@ -455,3 +492,27 @@ var Round =
     }
   }
 };
+
+// Can't live without cookies, can you?
+
+function getCookie(name)
+{
+  var marker;
+
+  pattern = '\\b'+name+'=([^;]+)(;|$)';
+
+  if (!(marker = document.cookie.match(pattern))) return false;
+
+  return unescape(marker[1]);
+}
+
+function addCookie(name, value)
+{
+  var token;
+
+  token = name + '=' + escape(value) + '; path=/; expires=' + (new Date(+new Date() + 60*60*24*365*1000).toUTCString());
+
+  document.cookie = token;
+
+  return true;
+}

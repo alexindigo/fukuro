@@ -33,7 +33,8 @@ conf.defaults(
     teams: './data/teams.json',
     content: './data/content.json',
     storage: './data',
-    port: 8000
+    port: 8000,
+    password: null
 });
 // }}}
 
@@ -78,17 +79,74 @@ function start()
     {
       socket.on(handle, function()
       {
-        var thisArg = _.mixin(this, {'game': game, 'socket': socket, 'all': io.sockets, 'rooms': io.rooms});
-        // catch stuff that goes wrong
-        try
+        var thisArg = _.mixin(this, {'game': game, 'socket': socket, 'all': io.sockets, 'rooms': io.rooms})
+          , funArgs = Array.prototype.slice.call(arguments)
+          ;
+
+        // if password is set as clients for the password
+        // TODO: make it real
+        if (conf.get('password'))
         {
-          return method.apply(thisArg, Array.prototype.slice.call(arguments));
+          socket.get('password', function(err, password)
+          {
+            // kust formality
+            if (err) return console.log(['ERROR', err]);
+
+            // check the password
+            // double equal to compare nothing with empty string
+            if (conf.get('password') == password)
+            {
+              process();
+            }
+            else // don't match ask (again)
+            {
+              requestPassword(conf.get('password'));
+            }
+          });
         }
-        catch (e)
+        else // no need for password
         {
-          // TODO: Add flatiron/errs
-          console.log(['ERROR', e]);
+          process();
         }
+
+        // subroutines
+
+        // to make deferred
+        function process()
+        {
+          // catch stuff that goes wrong
+          try
+          {
+            return method.apply(thisArg, funArgs);
+          }
+          catch (e)
+          {
+            // TODO: Add flatiron/errs
+            console.log(['ERROR', e]);
+          }
+        }
+
+        // request password
+        function requestPassword(original)
+        {
+          socket.emit('password', function(password)
+          {
+            if (original == password)
+            {
+              // store new password
+              socket.set('password', password, function(err)
+              {
+                // don't really care about errors at this point
+                process();
+              });
+            }
+            else // don't match, everything all over again
+            {
+              requestPassword(original);
+            }
+          });
+        }
+        
       });
     });
   });

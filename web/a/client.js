@@ -354,11 +354,30 @@ var handlers =
 // objects helpers
 var make = function(el, data, options)
 {
-  var res, text, poster = '';
+  var res, text, flags = [], poster = '';
 
   options = $.extend(options || {}, data.params || {});
 
-  if ('video' in data)
+  // pre question text information
+  if ('desc' in data)
+  {
+    // reset flags
+    flags = ['desc'];
+
+    // check if there is version for current language
+    // fallback to the default
+    text = (Content.lang in data.desc) ? data.desc[Content.lang] : data.desc.text;
+
+    // for long text add modifying class
+    if (text.length > 100) flags.push('long');
+    if (text.length > 400) flags.push('extra');
+
+    // check for images
+    // TODO: audio/video support?
+    if ('image' in data) poster = ' data-poster="'+data.image+'"';
+    res = oText.init(el, options).populate('<p'+poster+' class="'+flags.join(' ')+'">'+text+'</p>');
+  }
+  else if ('video' in data)
   {
     if ('image' in data) poster = ' poster="/content/'+data.image+'"';
     res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
@@ -371,12 +390,22 @@ var make = function(el, data, options)
   {
     res = oAudio.init(el, options).populate('/content/'+data.audio);
   }
-  else if ('text' in data)
+
+  // we should have text most of the time
+  if ('text' in data)
   {
+    // reset flags
+    flags = ['text'];
+
     // check if there is version for current language
     // fallback to the default
     text = (Content.lang in data) ? data[Content.lang] : data.text;
-    res = oText.init(el, options).populate('<p>'+text+'</p>');
+
+    // for long text add modifying class
+    if (text.length > 100) flags.push('long');
+    if (text.length > 400) flags.push('extra');
+
+    res = oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
   }
 
   return res;
@@ -425,7 +454,7 @@ var Timer =
     this.options = data;
 
     // create visial part
-    this._el = $('<ul id="timer"></ul>').appendTo('body');
+    this._el = $('<ul id="timer"></ul>').prependTo('body');
 
     for (var i=0; i<this.options.length; i++)
     {

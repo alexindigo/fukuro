@@ -17,6 +17,9 @@ var Nav =
   played: [],
   init: function(data)
   {
+    // clean up
+    $('button', this.base).remove();
+
     // {{{ create questions
     if ('questions' in data)
     {

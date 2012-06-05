@@ -98,7 +98,7 @@ section
 {
   position: absolute;
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-pack: center;
   -webkit-box-align: center;
   width: 100%;
@@ -108,10 +108,16 @@ section
   opacity: 0;
   -webkit-transition: all 1.5s;
 }
+section>*
+{
+  -webkit-box-flex: 0;
+  display: block;
+  -webkit-transition: all 0.5s;
+}
 section>img
 {
-  min-height: 50%;
   max-height: 75%;
+  max-width: 90%;
 }
 section>video
 {
@@ -119,11 +125,114 @@ section>video
 }
 section>p
 {
+  max-width: 85%;
   font-family: "Ubuntu", sans-serif;
   font-size: 42px;
   line-height: 72px;
   white-space: pre;
+  overflow: hidden;
 }
+  section>p.desc
+  {
+    font-size: 36px;
+    line-height: 60px;
+    white-space: pre-line;
+  }
+  section>p.long
+  {
+    font-size: 24px;
+    line-height: 42px;
+  }
+    section>p.desc.long
+    {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    section>p.desc.long.extra
+    {
+      font-size: 16px;
+      line-height: 24px;
+    }
+/* images inside desc */
+/* TODO: refactor it MUST */
+section>p.desc[data-poster]
+{
+  box-sizing: border-box;
+  position: relative;
+  min-height: 250px;
+  padding-left: 30%;
+}
+section>p.desc[data-poster]:before
+{
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 30%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+section>p.desc[data-poster="3q.jpg"]:before
+{
+  background-image: url("/content/3q.jpg");
+}
+section>p.desc[data-poster="7q.jpg"]:before
+{
+  background-image: url("/content/7q.jpg");
+}
+section>p.desc[data-poster="11q.jpg"]:before
+{
+  background-image: url("/content/11q.jpg");
+}
+
+/* show questions only with timer */
+#timer:not(.playing) ~ section.question>p.text:not(:first-child)
+{
+  font-size: 0px;
+  line-height: 0px;
+  margin-top: 0px;
+}
+/* when timer shrink image and show text */
+#timer.playing ~ section.question>img
+{
+  max-height: 40%;
+}
+/* when timer grey out desc text */
+#timer.playing ~ section.question>p.desc
+{
+  font-size: 24px;
+  line-height: 42px;
+  color: #808080;
+}
+  #timer.playing ~ section.question>p.desc.long
+  {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #timer.playing ~ section.question>p.desc.long.extra
+  {
+    font-size: 16px;
+    line-height: 24px;
+  }
+/* add gap between desc and actual question */
+section.question>p.desc ~ p
+{
+  margin-top: 1em;
+}
+/* make text smaller if there is image for the question */
+section.question>p.desc.long ~ p,
+section.question>img ~ p,
+section.answer>img ~ p
+{
+  margin-top: 1em;
+  font-size: 24px;
+  line-height: 42px;
+}
+
+
 /* custom/extra text */
 section:after
 {
