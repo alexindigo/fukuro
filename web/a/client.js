@@ -386,28 +386,7 @@ var make = function(el, data, options)
 
   options = $.extend(options || {}, data.params || {});
 
-  // pre question text information
-  if ('desc' in data)
-  {
-    // reset flags
-    flags = ['desc'];
-
-    // check if there is version for current language
-    // fallback to the default
-    text = (Content.lang in data.desc) ? data.desc[Content.lang] : data.desc.text;
-
-//    text = scrableText(text, Content.lang);
-
-    // for long text add modifying class
-    if (text.length > 100) flags.push('long');
-    if (text.length > 400) flags.push('extra');
-
-    // check for images
-    // TODO: audio/video support?
-    if ('image' in data) poster = ' data-poster="'+data.image+'"';
-    res = oText.init(el, options).populate('<p'+poster+' class="'+flags.join(' ')+'">'+text+'</p>');
-  }
-  else if ('video' in data)
+  if ('video' in data)
   {
     if ('image' in data) poster = ' poster="/content/'+data.image+'"';
     res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
@@ -430,8 +409,6 @@ var make = function(el, data, options)
     // check if there is version for current language
     // fallback to the default
     text = (Content.lang in data) ? data[Content.lang] : data.text;
-
-//    text = scrableText(text, Content.lang);
 
     // for long text add modifying class
     if (text.length > 100) flags.push('long');

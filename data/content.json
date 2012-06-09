@@ -36,13 +36,8 @@
     {
       "question":
       {
-        "text": "Why is S-Bend corset called 'S-Bend'?",
-        "ru": "Почему S-Bend corset так называется?",
-        "desc":
-        {
-          "text": "Attention to my assistant: S-Bend corset.",
-          "ru": "Внимание на мою ассистентку: S-Bend корсет."
-        }
+        "text": "Attention to my assistant: S-Bend corset.\n\nQuestion is: Why is S-Bend corset called 'S-Bend'?",
+        "ru": "Внимание на мою ассистентку: S-Bend корсет.\n\nВопрос: Почему S-Bend corset так называется?"
       },
       "answer":
       {
@@ -53,14 +48,9 @@
     {
       "question":
       {
-        "text": "What is in the black box?",
-        "ru": "Что в чёрном ящике?",
-        "image": "3q.jpg",
-        "desc":
-        {
-          "text": "What you see is an instructional book for teaching about what is in the black box.\n\nIt was popularized in United States during Panama Pacific International Exposition in 1915 in San Francisco.",
-          "ru": "На картинке самоучитель того что в чёрном ящике.\n\nТо что в чёрном ящике стало популярно в США во время Panama Pacific International Exposition в 1915-м в Сан Франциско."
-        }
+        "text": "What you see is an instructional book for teaching about what is in the black box.\n\nIt was popularized in United States during Panama Pacific International Exposition in 1915 in San Francisco.\n\nQuestion is: What is in the black box?",
+        "ru": "На картинке самоучитель того что в чёрном ящике.\n\nТо что в чёрном ящике стало популярно в США во время Panama Pacific International Exposition в 1915-м в Сан Франциско.\n\nВопрос: Что в чёрном ящике?",
+        "image": "3q.jpg"
       },
       "answer":
       {
@@ -71,13 +61,8 @@
     {
       "question":
       {
-        "text": "Please name job titles of people\nwho need to give these 2 signatures.",
-        "ru": "Назовите профессии этих 2х людей\nкоторые должны дать эти 2 подписи.",
-        "desc":
-        {
-          "text": "An 18th century I.O.U. (I Owe You):\n\n«This note drawn by Lord John for 10 cows, which becomes due in 3 months' time»\n\nI.O.U. - is an informal document acknowledging debt \n\nI.O.U. - does not carry anything behind itself anything except for an author's promise.\n\nHowever in United States, a modern form of I.O.U needs 2 signatures so creditor is required by U.S. law to accept it.",
-          "ru": "Долговая расписка (I.O.U.) 18го века:\n\n«Эта бумага написана Лордом Джоном на 10 коров, которые нужно отдать через 3 месяца»\n\nI.O.U. - это неформальный долговой документ.\n\nI.O.U. - не несёт за собой ничего кроме как обещание автора.\n\nНо, в США, современной форме I.O.U нужно всего 2 подписи чтобы кредитор был обязан принять её согласно законам США."
-        }
+        "text": "An 18th century I.O.U. (I Owe You):\n\n«This note drawn by Lord John for 10 cows, which becomes due in 3 months' time»\n\nI.O.U. - is an informal document acknowledging debt \n\nI.O.U. - does not carry anything behind itself anything except for an author's promise.\n\nHowever in United States, a modern form of I.O.U needs 2 signatures so creditor is required by U.S. law to accept it.\n\nQuestion is: Please name job titles of people\nwho need to give these 2 signatures.",
+        "ru": "Долговая расписка (I.O.U.) 18го века:\n\n«Эта бумага написана Лордом Джоном на 10 коров, которые нужно отдать через 3 месяца»\n\nI.O.U. - это неформальный долговой документ.\n\nI.O.U. - не несёт за собой ничего кроме как обещание автора.\n\nНо, в США, современной форме I.O.U нужно всего 2 подписи чтобы кредитор был обязан принять её согласно законам США.\n\nВопрос: Назовите профессии этих 2х людей\nкоторые должны дать эти 2 подписи."
       },
       "answer":
       {
@@ -88,13 +73,8 @@
     {
       "question":
       {
-        "text": "Tell me exactly which sections of department stores\nare devoted to 40.",
-        "ru": "Скажите, абсолютно точно, какая секция в универмаге\nпосвящена 40.",
-        "desc":
-        {
-          "text": "In typical American department store you can see sections devoted to 40.\nActually, about &#8531; of our audience is about 40 right now.",
-          "ru": "В обычном Американском универмаге можно увидеть разделы посвящённые 40.\nПримерно &#8531; наших зрителей сейчас 40."
-        }
+        "text": "In typical American department store you can see sections devoted to 40. Actually, about &#8531; of our audience is about 40 right now.\n\nQuestion is: Tell me exactly which sections of department stores are devoted to 40.",
+        "ru": "В обычном Американском универмаге можно увидеть разделы посвящённые 40. Примерно &#8531; наших зрителей сейчас 40.\n\nВопрос: Скажите, абсолютно точно, какая секция в универмаге посвящена 40."
       },
       "answer":
       {
@@ -105,13 +85,8 @@
     {
       "question":
       {
-        "text": "What method Antonio Vivaldi was forced to use?",
-        "ru": "Какой метод Antonio Vivaldi был вынужден использовать?",
-        "desc":
-        {
-          "text": "Researcher Richard Vendome proved that Antonio Vivaldi (a teacher and a priest) was forced to use a method, similar but opposite, to that of William Shakespeare.",
-          "ru": "Учёный Richard Vendome доказал что Antonio Vivaldi (учитель и священник) был вынужден использовать метод похожий, но противоположный методу который вынужден был использовать William Shakespeare."
-        }
+        "text": "Researcher Richard Vendome proved that Antonio Vivaldi (a teacher and a priest) was forced to use a method, similar but opposite, to that of William Shakespeare.\n\nQuestion is: What method Antonio Vivaldi was forced to use?",
+        "ru": "Учёный Richard Vendome доказал что Antonio Vivaldi (учитель и священник) был вынужден использовать метод похожий, но противоположный методу который вынужден был использовать William Shakespeare.\n\nВопрос: Какой метод Antonio Vivaldi был вынужден использовать?"
       },
       "answer":
       {
@@ -122,14 +97,9 @@
     {
       "question":
       {
-        "text": "Lucy Stone is considered to be first ever\nin United States to do what?",
-        "ru": "Lucy Stone считается первой\nв истории США сделавшей что?",
-        "image": "7q.jpg",
-        "desc":
-        {
-          "text": "Here are some facts about a famous female rights advocate Lucy Stone:\n\nShe was born in 1818 the eighth child of Marion Stone (nee Wilkins) and Francis Stone.\n\nIn 1855 she married. In 1857 gave birth.\n\nAnd here is a photo of her in 1858 with a title «A studio portrait of Stone and baby Alice taken in Boston, 1858».",
-          "ru": "Вот некоторые факты про известную активистку борьбы за женские права Lucy Stone:\n\nОна родилась в 1818, 8-м ребёнком Marion Stone (nee Wilkins) и Francis Stone.\n\nВ 1855 она вышла замуж. В 1857 родила.\n\nПеред вами её фотография 1858-го года под названием: «A studio portrait of Stone and baby Alice taken in Boston, 1858»."
-        }
+        "text": "Here are some facts about a famous female rights advocate Lucy Stone:\n\nShe was born in 1818 the eighth child of Marion Stone (nee Wilkins) and Francis Stone.\n\nIn 1855 she married. In 1857 gave birth.\n\nAnd here is a photo of her in 1858 with a title «A studio portrait of Stone and baby Alice taken in Boston, 1858».\n\nQuestion is: Lucy Stone is considered to be first ever in United States to do what?",
+        "ru": "Вот некоторые факты про известную активистку борьбы за женские права Lucy Stone:\n\nОна родилась в 1818, 8-м ребёнком Marion Stone (nee Wilkins) и Francis Stone.\n\nВ 1855 она вышла замуж. В 1857 родила.\n\nПеред вами её фотография 1858-го года под названием: «A studio portrait of Stone and baby Alice taken in Boston, 1858».\n\nВопрос: Lucy Stone считается первой в истории США сделавшей что?",
+        "image": "7q.jpg"
       },
       "answer":
       {
@@ -140,17 +110,12 @@
     {
       "question":
       {
-        "text": "Name that person OR name that double punctuation mark.",
-        "ru": "Назовите его ИЛИ назовите этот типографский знак.",
-        "desc":
-        {
-          "text": "He publicly apologized in a 2009 'Times' article for writing in 1989 a double punctuation mark, which according to him was 'unnecessary'.",
-          "ru": "Он публично извинился в 2009 году в журнале 'Times' за написание в 1989 году двойного типографского знака, который, согласно ему, был 'не нужен'."
-        }
+        "text": "He publicly apologized in a 2009 'Times' article for writing in 1989 a double punctuation mark, which according to him was 'unnecessary'.\n\nQuestion is: Name that person OR name that double punctuation mark.",
+        "ru": "Он публично извинился в 2009 году в журнале 'Times' за написание в 1989 году двойного типографского знака, который, согласно ему, был 'не нужен'.\n\nВопрос: Назовите его ИЛИ назовите этот типографский знак."
       },
       "answer":
       {
-        "text": "In a Times article in October 2009,\nthe inventor of the World Wide Web,\nSir Berners-Lee admitted that '//' in 'http://'\nwas actually unnecessary."
+        "text": "In a Times article in October 2009, the inventor of the World Wide Web, Sir Berners-Lee admitted that '//' in 'http://' was actually unnecessary."
       }
     },
     "9":
@@ -171,13 +136,8 @@
     {
       "question":
       {
-        "text": "What object am I talking about if all of you\nhad to deal with it today multiple times\nand some of you can even see it right now?",
-        "ru": "Про какой объект я говорю учитывая то что каждый\nиз вас имел с этим дело сегодня несколько раз\nи некоторые даже видят это сейчас?",
-        "desc":
-        {
-          "text": "When it comes to the world's largest, there is not just one, in fact there are four of THEM and THEY all belong to NASA.\n\nAnd all of THEM are in Vehicle Assembly Building.\n\nEach one of THEM is 139 meters (456 feet).",
-          "ru": "Если говорить про самые большие в мире, то существует не один а четыре ИХ, и все ОНИ принадлежат NASA (National Aeronautics and Space Administration).\n\nВсе ОНИ в Vehicle Assembly Building.\n\nКаждый из НИХ 139 метров (456 футов)."
-        }
+        "text": "When it comes to the world's largest, there is not just one, in fact there are four of THEM and THEY all belong to NASA.\n\nAnd all of THEM are in Vehicle Assembly Building.\n\nEach one of THEM is 139 meters (456 feet).\n\nQuestion is: What object am I talking about if all of you\nhad to deal with it today multiple times\nand some of you can even see it right now?",
+        "ru": "Если говорить про самые большие в мире, то существует не один а четыре ИХ, и все ОНИ принадлежат NASA (National Aeronautics and Space Administration).\n\nВсе ОНИ в Vehicle Assembly Building.\n\nКаждый из НИХ 139 метров (456 футов).\n\nВопрос: Про какой объект я говорю учитывая то что каждый\nиз вас имел с этим дело сегодня несколько раз\nи некоторые даже видят это сейчас?"
       },
       "answer":
       {
@@ -189,14 +149,9 @@
     {
       "question":
       {
-        "text": "Name that city in England.",
-        "ru": "Назовите этот город в Англии.",
-        "image": "11q.jpg",
-        "desc":
-        {
-          "text": "Because of its strategic position, Robert Curthose, son of William the Conqueror, rebuild this structure in this city in the year 1080.",
-          "ru": "Из-за своей стратегической позиции, Robert Curthose, сын William the Conqueror, перестроил это здание в этом городе в 1080 году."
-        }
+        "text": "Because of its strategic position, Robert Curthose, son of William the Conqueror, rebuild this structure in this city in the year 1080.\n\nQuestion is: Name that city in England.",
+        "ru": "Из-за своей стратегической позиции, Robert Curthose, сын William the Conqueror, перестроил это здание в этом городе в 1080 году.\n\nВопрос: Назовите этот город в Англии.",
+        "image": "11q.jpg"
       },
       "answer":
       {
