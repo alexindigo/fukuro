@@ -1,73 +1,59 @@
 [
   {
-    "full": "Полуостров"
+    "full": "Astral Cats"
   },
   {
-    "full": "South Bay"
+    "full": "Bison"
   },
   {
-    "short": "Berkeley",
-    "full": "UC Berkeley"
+    "full": "Buzina"
   },
   {
-    "short": "Belarus",
-    "full": "Republic of Belarus"
+    "full": "East Bay"
   },
   {
-    "full": "Hikers"
+    "full": "GosDep"
   },
   {
-    "full": "12.5&deg;"
+    "full": "Last Romantics",
+    "short": "Romantics"
   },
   {
-    "full": "Смеха Ради"
+    "full": "Livejournal"
   },
   {
     "full": "Mercury"
   },
   {
-    "short": "Романтики",
-    "full": "Последние Романтики"
+    "full": "Musketeers"
   },
   {
-    "full": "Twin Peaks"
+    "full": "Russians without borders",
+    "short": "Russians"
   },
   {
-    "full": "East Bay",
-    "short": "East Bay"
+    "full": "Silicon Malina",
+    "short": "Malina"
   },
   {
-    "full": "Most",
-    "short": "Most"
+    "full": "Song and poetry club",
+    "short": "Peninsula"
   },
   {
-    "full": "Связь",
-    "short": "Связь"
+    "full": "South Bay"
   },
   {
-    "full": "Бузина",
-    "short": "Бузина"
+    "full": "The Hikers",
+    "short": "Hikers"
   },
   {
-    "full": "Last Minute",
-    "short": "Last Minute"
-  },
-  {
-    "full": "Rövşən Ənvər oğlu Əsgərov",
+    "full": "Baku, Azerbaijan",
     "short": "Rovshan Askerov",
     "guest": true
   },
   {
-    "full": "San Francisco Сollective",
+    "full": "San Francisco Bay Area",
     "short": "San Francisco",
     "collective": true
-  },
-  {
-    "full": "Master Twister",
-    "short": "Master Twister"
-  },
-  {
-    "full": "Team Purple",
-    "short": "Team Purple"
   }
 ]

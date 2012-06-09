@@ -351,6 +351,34 @@ var handlers =
   // end fo handlers
 };
 
+function scrableText(text, lang)
+{
+  var en = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    , ru = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщьэюя'
+    , res = ''
+    ;
+
+  for (var i=0; i<text.length; i++)
+  {
+    if (text[i] != ' ' && text[i] != '\n')
+    {
+      if (lang == 'ru')
+      {
+        res += ru[Math.floor(Math.random() * ru.length)];
+      }
+      else
+      {
+        res += en[Math.floor(Math.random() * en.length)];
+      }
+    }
+    else
+    {
+      res += text[i];
+    }
+  }
+  return res;
+}
+
 // objects helpers
 var make = function(el, data, options)
 {
@@ -367,6 +395,8 @@ var make = function(el, data, options)
     // check if there is version for current language
     // fallback to the default
     text = (Content.lang in data.desc) ? data.desc[Content.lang] : data.desc.text;
+
+//    text = scrableText(text, Content.lang);
 
     // for long text add modifying class
     if (text.length > 100) flags.push('long');
@@ -400,6 +430,8 @@ var make = function(el, data, options)
     // check if there is version for current language
     // fallback to the default
     text = (Content.lang in data) ? data[Content.lang] : data.text;
+
+//    text = scrableText(text, Content.lang);
 
     // for long text add modifying class
     if (text.length > 100) flags.push('long');
