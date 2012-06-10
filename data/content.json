@@ -61,12 +61,12 @@
     {
       "question":
       {
-        "text": "An 18th century I.O.U. (I Owe You):\n\n«This note drawn by Lord John for 10 cows, which becomes due in 3 months' time»\n\nI.O.U. - is an informal document acknowledging debt \n\nI.O.U. - does not carry anything behind itself anything except for an author's promise.\n\nHowever in United States, a modern form of I.O.U needs 2 signatures so creditor is required by U.S. law to accept it.\n\nQuestion is: Please name job titles of people\nwho need to give these 2 signatures.",
-        "ru": "Долговая расписка (I.O.U.) 18го века:\n\n«Эта бумага написана Лордом Джоном на 10 коров, которые нужно отдать через 3 месяца»\n\nI.O.U. - это неформальный долговой документ.\n\nI.O.U. - не несёт за собой ничего кроме как обещание автора.\n\nНо, в США, современной форме I.O.U нужно всего 2 подписи чтобы кредитор был обязан принять её согласно законам США.\n\nВопрос: Назовите профессии этих 2х людей\nкоторые должны дать эти 2 подписи."
+        "text": "An 18th century I.O.U. (I Owe You):\n\n«This note drawn by Lord John for 10 cows, which becomes due in 3 months' time»\n\nI.O.U. - is an informal document acknowledging debt \n\nI.O.U. - does not carry anything behind itself anything except for an author's promise.\n\nHowever in United States, a modern form of I.O.U needs 2 signatures so creditor is required by U.S. law to accept it.\n\nQuestion is: Please name job titles of people who need to give these 2 signatures.",
+        "ru": "Долговая расписка (I.O.U.) 18го века:\n\n«Эта бумага написана Лордом Джоном на 10 коров, которые нужно отдать через 3 месяца»\n\nI.O.U. - это неформальный долговой документ.\n\nI.O.U. - не несёт за собой ничего кроме как обещание автора.\n\nНо, в США, современной форме I.O.U нужно всего 2 подписи чтобы кредитор был обязан принять её согласно законам США.\n\nВопрос: Назовите профессии этих 2х людей которые должны дать эти 2 подписи."
       },
       "answer":
       {
-        "text": "Treasurer of the United States\nand the United States Secretary\nof the Treasury."
+        "text": "Treasurer of the United States and the United States Secretary of the Treasury."
       }
     },
     "5":
@@ -103,7 +103,7 @@
       },
       "answer":
       {
-        "text": "She was first known woman\nin United States to keep\nher name after marriage."
+        "text": "She was first known woman in United States to keep her name after marriage."
       }
     },
     "8":
