@@ -11,15 +11,15 @@
     "jeesh": "0.0.6",
     "utile": "~0.0.10",
     "errs": "~0.1.1",
-    "reqwest": "~0.4.1"
+    "reqwest": "~0.4.1",
+    "socket.io-client": "~0.9.10"
   },
   "devDependencies": {},
   "engines": {
-    "node" : ">=0.6.12"
+    "node": ">=0.6.12"
   },
   "license": "MIT",
-  "repository":
-  { 
+  "repository": {
     "type": "git",
     "url": "https://github.com/alexindigo/fukuro"
   }
