@@ -428,6 +428,11 @@ var make = function(el, data, options)
     if (text.length > 400) flags.push('extra');
 
     res = oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
+
+    if ('desc' in data)
+    {
+      el.append('<p class="desc">'+data.desc+'</p>');
+    }
   }
 
   return res;

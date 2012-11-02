@@ -121,6 +121,22 @@ section.answer>img ~ p
     line-height: 44px;
   }
 
+/* no desc for questions */
+section.question .desc
+{
+  display: none;
+}
+
+section.answer .desc
+{
+  margin-top: 5em;
+  padding-top: 20px;
+  font-size: 22px;
+  line-height: 26px;
+  border-top: 1px dotted #999999;
+  text-align: justify;
+}
+
 
 /* custom/extra text */
 section:after
