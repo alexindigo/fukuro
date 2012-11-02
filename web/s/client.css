@@ -233,7 +233,7 @@ body>footer:before
   z-index: 2;
   -webkit-transition: opacity 0.8s;
 }
-  #timer.playing
+  #timer.playing:not(.hold)
   {
     opacity: 0.85;
   }

@@ -507,7 +507,7 @@ var Timer =
     // create element if needed
     if (!this._media) this.init();
 
-    this._el.addClass('playing');
+    this._el.addClass('playing').removeClass('hold');
     if (time < 11) this._el.addClass('ending');
 
     $('li:nth-last-child(-n+'+Math.max(this.options.length-time, 0)+')', this._el).removeClass('fill');
@@ -527,7 +527,10 @@ var Timer =
     this._deffered = null;
 
     // reset visual
-    this._el.removeClass('playing').removeClass('ending');
+//    this._el.removeClass('playing').removeClass('ending');
+    // special for Jim
+    this._el.removeClass('ending');
+    this._el.addClass('hold');
 
     // wait for the transition to finish
     setTimeout(function()

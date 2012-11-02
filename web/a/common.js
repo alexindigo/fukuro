@@ -165,6 +165,8 @@ var Base =
     this.current(null);
     this._el.removeClass('active');
     this._deffered = null;
+    // reset time
+    $('#timer').removeClass('playing').removeClass('hold');
   },
   extend: function(props)
   {

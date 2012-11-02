@@ -11,7 +11,7 @@
  * wingman.js: audience facing server
  */
 var _        = require('utile')
-  , app      = require('http').createServer()
+  , app      = require('http').createServer(handler)
   , io       = require('socket.io').listen(app)
   , ioClient = require('socket.io-client')
   , static   = require('node-static')
@@ -27,7 +27,7 @@ conf.argv().env().use('memory');
 // TODO: put to config file
 conf.defaults(
 {
-    master: '10.0.8.2:31337',
+    master: '127.0.0.1:31337',
     port: 80,
     password: null
 });
@@ -37,6 +37,7 @@ conf.defaults(
 function main()
 {
   // connect to the master
+  console.log('connecting... '+ conf.get('master'));
   var master = ioClient.connect('ws://'+conf.get('master'));
 
   master.on('connect', function()
@@ -45,19 +46,21 @@ function main()
 
     master.emit('helo', {me: 'admin'}, function(state)
     {
-      console.log('successful handshake');
+      console.log(['successful handshake']);
 
       // and start the server
-      start(master, state);
+      start(master, state.teams);
     });
   });
 }
 // }}}
 
 // start server
-function start(master, state)
+function start(master, teams)
 {
-  var R = router.router();
+  var R     = router.router()
+    , state = {teams: teams}
+    ;
 
   // listen for master emitted events
   master.on('on', function(data, fn)
@@ -70,10 +73,6 @@ function start(master, state)
 
   });
 
-  // pass master
-  router.master = master;
-  router.state = state;
-
   // socket io config
   io.set('log level', 1);
   io.set('heartbeat interval', 20);
@@ -84,17 +83,17 @@ function start(master, state)
   {
     router.socket = socket;
 
-    // reload client's page
-    socket.emit('reset');
+    // // reload client's page
+    // socket.emit('reset');
 
-    // timer from time := 60 .. -1
-    socket.emit('timer', {time: time});
+    // // timer from time := 60 .. -1
+    // socket.emit('timer', {time: time});
 
     _.each(R, function(method, handle)
     {
       socket.on(handle, function()
       {
-        var thisArg = _.mixin(this, {'socket': socket, 'all': io.sockets, 'master': master, 'rooms': io.rooms})
+        var thisArg = _.mixin(this, {'state': state, 'socket': socket, 'all': io.sockets, 'master': master, 'rooms': io.rooms})
           , funArgs = Array.prototype.slice.call(arguments)
           ;
 
@@ -168,8 +167,18 @@ function start(master, state)
 
   // start listening
   app.listen(conf.get('port'));
+  console.log('running webserver on port '+ conf.get('port'));
 }
 
+// {{{ http requests handler
+function handler(req, res)
+{
+  req.addListener('end', function()
+  {
+    file.serve(req, res);
+  });
+}
+// }}}
 
 // run the thing
 main();

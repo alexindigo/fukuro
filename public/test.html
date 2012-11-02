@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>ChtoGdeKogda.us</title>
+</head>
+<body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect();
+
+var token
+  , teams
+  ;
+
+socket.emit('helo', {token: 'bla'}, function(data)
+{
+  console.log(['cb-err', data]);
+
+  socket.emit('helo', null, function(data)
+  {
+    token = data.token;
+    teams = data.teams;
+
+    console.log(['cb-ok', data]);
+
+    socket.emit('helo', {token: token}, function(data)
+    {
+      console.log(['cb-teams', data]);
+    });
+
+    // test names
+    socket.emit('join', {name: 'Alex'}, function(data)
+    {
+      console.log(['name-1', data]);
+
+      socket.emit('join', {name: 'Alex2'}, function(data)
+      {
+        console.log(['name-2', data]);
+      });
+    });
+
+    // test teams
+    socket.emit('team', {team: 'bela'}, function(data)
+    {
+      console.log(['team-err', data]);
+    });
+    socket.emit('team', {team: 'belarus'}, function(data)
+    {
+      console.log(['team-ok', data]);
+    });
+
+    // test answer
+    socket.emit('answer', {answer: 'belarus 2 9 gggg'}, function(data)
+    {
+      console.log(['answer-err', data]);
+    });
+    socket.emit('answer', {answer: 'belarus 29 gggg'}, function(data)
+    {
+      console.log(['answer-good', data]);
+    });
+
+  });
+
+
+
+});
+
+</script>
+</body>
+</html>
