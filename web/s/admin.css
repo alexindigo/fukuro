@@ -37,6 +37,64 @@ body>footer:before
   font-size: 24px;
   color: #999999;
 }
+/* audience */
+#audience
+{
+  position: absolute;
+  top: 170px;
+  left: 0px;
+  width: 100%;
+  line-height: 24px;
+  font-size: 18px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transition: all 0.5s 0s;
+  z-index: 1;
+}
+  #audience:not(.active)
+  {
+    display: none;
+  }
+#audience>.player
+{
+  display: inline-block;
+  max-width: 25%;
+  padding-right: 20px;
+  vertical-align: top;
+  text-align: right;
+}
+#audience>.player:before
+{
+  content: attr(data-team) " • ";
+  opacity: 0.5;
+}
+#audience>.answer
+{
+  display: inline-block;
+  max-width: 60%;
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  opacity: 0.8;
+}
+#audience:before
+{
+  content: "Правильно ответил";
+  position: absolute;
+  opacity: 0.5;
+  top: -35px;
+  left: 50%;
+  width: 75%;
+  margin-left: -38%;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  border-bottom: 1px dotted #999999;
+  z-index: 1;
+}
+
 /* elements */
 hr
 {

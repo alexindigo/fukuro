@@ -84,6 +84,9 @@ var handlers =
 {
   'show': function(data, fn)
   {
+    // hack
+    $('#audience').removeClass('active').html('');
+
     switch (data.item)
     {
       case 'cover':
@@ -118,6 +121,18 @@ var handlers =
       case 'teams':
         Teams.board.on(misc.deferredOff(data));
         fn({item: 'teams', status: 'on'});
+        break;
+
+      case 'audience':
+        if (data.player && data.answer)
+        {
+          $('#audience').html('<p>'+data.player+'</p>').addClass('active');
+          fn({item: 'audience', player: data.player, status: 'on'});
+        }
+        else
+        {
+          fn({item: 'audience', player: data.player, status: 'error'});
+        }
         break;
     }
   },
@@ -333,21 +348,6 @@ var handlers =
       $(item).css({transform: 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)'});
     });
 
-
-//$('.team').first().addClass('winner');
-
-//  -webkit-transform: scale(2) translate(0px, 0px);
-
-
-    setTimeout(function()
-    {
-    // calculate topScore
-
-    // check top score team(s)
-
-    // show teams board
-
-    }, 1500);
   }
   // end fo handlers
 };

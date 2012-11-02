@@ -85,6 +85,14 @@ var handlers =
 {
   'on': function(data)
   {
+    // {{{ hack
+    if (data.item == 'audience')
+    {
+      $('#audience').html('<span class="player" data-team="'+data.team+'">'+data.player+'</span><span class="answer">'+data.answer+'</span>').addClass('active');
+      return;
+    }
+    // }}}
+
     var item = $('#button_'+data.item+(data.number ? '_'+makeHandle(data.number) : ''));
     if (item)
     {
@@ -107,6 +115,9 @@ var handlers =
   // update round
   'round': function(data)
   {
+    // hack
+    $('#audience').removeClass('active').html('');
+
     Round.update(data.round);
     // update new round button
     // TODO: Add support for Final, round: -1

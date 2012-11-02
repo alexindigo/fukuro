@@ -169,8 +169,6 @@ video:after
 /* stats in the footer */
 body>footer
 {
-  display: none;
-  /* don't have room for it right now */
   position: absolute;
   opacity: 0;
   bottom: 70px;
@@ -214,8 +212,23 @@ body>footer:before
   }
   body.final>footer:before
   {
-    content: "Final Score";
+/*    content: "Final Score"; */
   }
+/* audience */
+#audience:before
+{
+  content: "Правильно ответил";
+  position: absolute;
+  opacity: 0.5;
+  top: 70px;
+  left: 0px;
+  width: 100%;
+  line-height: 50px;
+  font-size: 24px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  z-index: 1;
+}
 /* timer */
 #timer
 {
