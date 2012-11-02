@@ -95,6 +95,18 @@ var handlers =
         break;
 
       case 'question':
+
+        if (data.number == 'audience')
+        {
+          // set round to audience
+          Round.update('audience');
+        }
+        else if (data.number == 'playoff 1' || data.number == 'playoff 2')
+        {
+          // set round to audience
+          Round.update('playoff');
+        }
+
         if (data.number && Content.questions[data.number])
         {
           Content.questions[data.number].on(misc.deferredOff(data));
@@ -416,6 +428,11 @@ var make = function(el, data, options)
     if (text.length > 400) flags.push('extra');
 
     res = oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
+
+    if ('desc' in data)
+    {
+      el.append('<p class="desc">'+data.desc+'</p>');
+    }
   }
 
   return res;

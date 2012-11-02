@@ -121,6 +121,22 @@ section.answer>img ~ p
     line-height: 44px;
   }
 
+/* no desc for questions */
+section.question .desc
+{
+  display: none;
+}
+
+section.answer .desc
+{
+  margin-top: 5em;
+  padding-top: 20px;
+  font-size: 22px;
+  line-height: 26px;
+  border-top: 1px dotted #999999;
+  text-align: justify;
+}
+
 
 /* custom/extra text */
 section:after
@@ -172,11 +188,11 @@ body>footer
   position: absolute;
   opacity: 0;
   bottom: 70px;
-  left: 30px;
+  left: 0px;
   width: 100%;
   line-height: 50px;
   font-size: 24px;
-  text-align: left;
+  text-align: center;
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
 }
@@ -204,7 +220,15 @@ body>footer:before
    * only together with scoreboard */
   body.playing>footer:before
   {
-    content: attr(data-round);
+    content: "Раунд " attr(data-round);
+  }
+  body.audience>footer:before
+  {
+    content: "Игра со зрителями";
+  }
+  body.playoff>footer:before
+  {
+    content: "Playoff";
   }
   body.waiting>footer:before
   {

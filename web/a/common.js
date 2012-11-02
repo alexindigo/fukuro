@@ -482,15 +482,23 @@ var Round =
     switch (round)
     {
       case 0: // about to start
-        $('body').removeClass('final').removeClass('playing').addClass('waiting');
+        $('body').removeClass('audience').removeClass('playoff').removeClass('final').removeClass('playing').addClass('waiting');
         break;
 
       case -1: // final
-        $('body').removeClass('waiting').removeClass('playing').addClass('final');
+        $('body').removeClass('audience').removeClass('playoff').removeClass('waiting').removeClass('playing').addClass('final');
+        break;
+
+      case 'audience': // audience
+        $('body').removeClass('playoff').removeClass('waiting').removeClass('final').addClass('playing').addClass('audience');
+        break;
+
+      case 'playoff': // playoff
+        $('body').removeClass('audience').removeClass('waiting').removeClass('final').addClass('playing').addClass('playoff');
         break;
 
       default: // normal state
-        $('body').removeClass('waiting').removeClass('final').addClass('playing');
+        $('body').removeClass('audience').removeClass('playoff').removeClass('waiting').removeClass('final').addClass('playing');
     }
   }
 };
