@@ -95,6 +95,18 @@ var handlers =
         break;
 
       case 'question':
+
+        if (data.number == 'audience')
+        {
+          // set round to audience
+          Round.update('audience');
+        }
+        else if (data.number == 'playoff 1' || data.number == 'playoff 2')
+        {
+          // set round to audience
+          Round.update('playoff');
+        }
+
         if (data.number && Content.questions[data.number])
         {
           Content.questions[data.number].on(misc.deferredOff(data));
