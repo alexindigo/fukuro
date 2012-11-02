@@ -18,8 +18,7 @@ function showForm() {
 		return;
 	}
 	if(!wingmanApp.team||wingmanApp.team===''){
-        htmlTeamList();
-		$('#step2').show();
+        $('#step2').show();
 		return;
 	}else{
 
@@ -49,7 +48,6 @@ handleTeamResponse = function (data){
     console.log(data);
     if (data.status==='ok'){
         wingmanApp.setToken(data.token);
-
         showForm();
     }else{
         wingmanApp.setTeam();
@@ -72,6 +70,7 @@ handleHeloResponse = function(data) {
     if (data.status==='ok'){
         wingmanApp.setToken(data.token);
         wingmanApp.setTeams(data.teams);
+        htmlTeamList();
         showForm();
     }else{
         wingmanApp.setToken('');
@@ -96,10 +95,6 @@ handleSetFullname= function(e) {
     wingmanApp.emitJoin(handleJoinResponse);
 };
 
-
-
-
-
 $(document).ready(
 		function() {
             wingmanApp = new Wingman(socket);
@@ -108,6 +103,8 @@ $(document).ready(
 			$('#start-button').on('click', showForm);
 			$('#set-user-button').on('click', handleSetFullname);
             $('#teambox').on('click', handleSelectTeam);
+            $('#edit-user-button').on('click', function() {$('section.form').hide();$('#step1').show();});
+            $('#edit-team').on('click',  function() {$('section.form').hide();$('#step2').show();});
 
             /**
 			 *  Prepopulate form with user and team data
@@ -125,8 +122,21 @@ $(document).ready(
 				}
 			});
 
-			socket.on('message', function(message) {
-				var newElement = $('<div></div>').text(message.text);
-				$('#messages').append(newElement);
-			});
+            socket.on('timer', function(data)
+            {
+                if (data.time<0){
+                    alert ('Время истекло');
+                    // show completed
+                }else{
+                    // show answer
+                    alert ('Осталось '+data.time+ ' секунд');
+                    console.log(['timer', data.time]);
+                }
+            });
+
+            socket.on('reset', function(data)
+            {
+                window.location.reload();
+            });
+
 		});

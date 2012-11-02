@@ -45,7 +45,10 @@ ul{
 
 }
 
-#teambox li{
+#teambox li,
+#step3 p,
+#info
+{
     font-size:1.5em;
     padding-left: 15px;
     list-style: none;
@@ -89,4 +92,16 @@ a.button:hover{
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
+}
+
+#step3 p a.button{
+    background-color:#8B7D7B;
+}
+
+#info{
+    height:200px;
+    text-align: center;
+}
+#info.status {
+    line-height:200px;
 }

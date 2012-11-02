@@ -22,7 +22,7 @@
 				<ul>
 					<li>Введите ваше имя</li>
 					<li>Выберите команду</li>
-					<li>Ответье на вопрос</li>
+					<li>Ответьте на вопрос</li>
 				</ul>
 				<p class="note">
 					<strong>Заметка:</strong> Игрок может поменять команду и свои
@@ -35,7 +35,7 @@
 			<section class="form" id="step1" style="display: none;">
 				  <header>Введите ваше имя</header>
                 <label for="fullname">Полное имя игрока:</label>
-                <input id='fullname' type="text" required/>
+                <input id='fullname' type="text" maxlength="10" required/>
                 <input class="action-button" id='set-user-button' type='button' value='Сохранить' />
 			</section>
 
@@ -49,12 +49,11 @@
 
 
 			<section class="form" id="step3" style="display: none;">
-				 <header>Ответье на вопрос:</header>
-			    Игрок: <span id="txtFullname"></span></br>
-			    Команда: <span id="txtTeam"></span></br>
-			    <div id="info">
-			        Игрок активирован
-			        Ждите вопроса...
+				<p>Игрок: <span id="txtFullname"></span><a class="button" id="edit-user-button">изменить</a></p>
+                <p>Команда: <span id="txtTeam"></span><a class="button" id="edit-team">изменить</a></p>
+                <header>Ответьте на вопрос:</header>
+			    <div id="info" class="status">
+                    Ждите вопроса
 			    </div>
 			</section>
     	</article>
