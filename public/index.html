@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8">
+    <title>Wingman</title>
+
+    <link rel='stylesheet' href='/stylesheets/normalize.css'></link>
+    <link rel='stylesheet' href='/stylesheets/style.css'></link>
+    <link rel='stylesheet' href='/stylesheets/fonts.css'></link>
+    <link rel="apple-touch-icon" href="/i/logo.png" />
+</head>
+<body>
+<form id='send-form'>
+	<article class='content'>
+			<section class="form" id="step0">
+				<header>Правила игры</header>
+				<p>Для участия активизируйте игрока:</p>
+				<ul>
+					<li>Укажите данные игрока</li>
+					<li>Выберите команду</li>
+					<li>Ответье правильно на вопрос</li>
+				</ul>
+				<p class="note">
+					<strong>Заметка:</strong> Игрок может поменять команду и свои
+					данные в любой момент.
+				</p>
+				<input class="action-button" id='start-button' type='button'
+					value='Продолжить' />
+			</section>
+
+			<section class="form" id="step1" style="display: none;">
+				  <header>Укажите данные игрока</header>
+                <label for="fullname">Полное имя игрока:</label>
+                <input id='fullname' type="text"/>
+                <input class="action-button" id='set-user-button' type='button' value='Сохранить' />
+			</section>
+
+			<section class="form" id="step2" style="display: none;">
+				 <header>Выберите команду:</header>
+				 <ul>
+				     <li id="team_tesla">tesls <span>выбрать</span></li>
+				     <li id="team_marta">Marta <span>выбрать</span></li>
+				     <li id="team_paul">Paul <span>выбрать</span></li>
+				     <li id="team_bob">Bob <span>выбрать</span></li>
+				 </ul>
+			    <div id="teams">
+			    </div>
+			</section>
+
+
+			<section class="form" id="step3" style="display: none;">
+				 <header>Выберите команду:</header>
+			    Игрок: <span id="txtFullname"></span>
+			    Команда: <span id="txtTeam"></span>
+			    <div id="info">
+			        Игрок активирован
+			        Ждите вопроса...
+			    </div>
+			</section>
+    	</article>
+		</form>
+	<script src='/socket.io/socket.io.js'></script>
+	<script src="/javascripts/ender.min.js"></script>
+	<script src='/javascripts/wingman.js'></script>
+	<script src='/javascripts/wingman_ui.js'></script>
+</body>

@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+
+article,
+header,
+footer{
+    max-width: 85%;
+    font-family: "Ubuntu", sans-serif;
+	margin: 10px auto;
+	width:100%;
+    max-width: 490px;
+}
+
+article.content {
+	background-color:#ffa;
+	border: 3px solid #b6ba5b;
+	min-height:490px;
+	height:auto !important;
+	height:490px;
+	width:100%;
+}
+
+section#step0 {
+	display:block;
+}
