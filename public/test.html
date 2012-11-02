@@ -63,6 +63,10 @@ socket.emit('helo', {token: 'bla'}, function(data)
 
   });
 
+  socket.on('timer', function(data)
+  {
+console.log(['timer', data.time]);
+  });
 
 
 });
