@@ -183,6 +183,15 @@ button.careful:before
     box-shadow: 0px 0px 16px 1px rgba(255, 115, 100, 0.8);
     -webkit-transform: translateZ(-20px);
   }
+footer>.special>button.careful
+{
+  width: 97px;
+  margin: -20px 0px 0px -101px;
+}
+footer>.special>button.careful:before
+{
+  width: 88px;
+}
 
 /* hide answer buttons by default */
 

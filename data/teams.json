@@ -1,59 +1,169 @@
 [
-  {
-    "full": "Astral Cats"
-  },
-  {
-    "full": "Bison"
-  },
-  {
-    "full": "Buzina"
-  },
-  {
-    "full": "East Bay"
-  },
-  {
-    "full": "GosDep"
-  },
-  {
-    "full": "Last Romantics",
-    "short": "Romantics"
-  },
-  {
-    "full": "Livejournal"
-  },
-  {
-    "full": "Mercury"
-  },
-  {
-    "full": "Musketeers"
-  },
-  {
-    "full": "Russians without borders",
-    "short": "Russians"
-  },
-  {
-    "full": "Silicon Malina",
-    "short": "Malina"
-  },
-  {
-    "full": "Song and poetry club",
-    "short": "Peninsula"
-  },
-  {
-    "full": "South Bay"
-  },
-  {
-    "full": "The Hikers",
-    "short": "Hikers"
-  },
-  {
-    "full": "Baku, Azerbaijan",
-    "short": "Rovshan Askerov",
-    "guest": true
-  },
-  {
-    "full": "San Francisco Bay Area",
-    "short": "San Francisco",
-    "collective": true
-  }
+    {
+        "full": "TwinPeaks",
+        "person": "Николай Белогорский",
+        "email": "nbilogorskiy@gmail.com",
+        "captain": "Николай Белогорский",
+        "player2": "Лёня Ночной",
+        "player3": "Лёня Апельсин",
+        "player4": "Ира Коновалова",
+        "player5": "Марианна Сумина",
+        "player6": "Дима Головин"
+    },
+    {
+        "full": "12.5 Degrees",
+        "person": "Mikhail Appak",
+        "email": "mappak@gmail.com",
+        "captain": "Anna Eychis",
+        "player2": "Mikhail Appak",
+        "player3": "Yuliya Polonskaya",
+        "player4": "Yaroslav Vinogradskiy",
+        "player5": "Marina Sirota",
+        "player6": "Eugene Davydov"
+    },
+    {
+        "full": "Rockstars",
+        "person": "Maria Svetlakova",
+        "email": "svetlamari@gmail.com",
+        "captain": "Мария Светлакова",
+        "player2": "Мария Полянская",
+        "player3": "Дмитрий Думик",
+        "player4": "Тим Жариков",
+        "player5": "Эра Зеленко",
+        "player6": "Миша Кашафутдинов"
+    },
+    {
+        "full": "Poslednie Romantiki",
+        "short": "Romantiki",
+        "person": "Irina Lozhkina",
+        "email": "irinalozhkina@gmail.com",
+        "captain": "Irina Lozhkina",
+        "player2": "Max Skibinsky",
+        "player3": "Alexander Rendar",
+        "player4": "Ilja Gruien",
+        "player5": "Artem Fokin",
+        "player6": "Alexander Gilman"
+    },
+    {
+        "full": "Belarus",
+        "person": "Vitali Kniazeu",
+        "email": "vitali@kniazeu.com",
+        "captain": "Vitali Kniazeu",
+        "player2": "Pavаl Kniha",
+        "player3": "Svyatlana Arlova",
+        "player4": "Dzimitry San'ko",
+        "player5": "Vadzim Zakharau",
+        "player6": "Аleh Zaretski"
+    },
+    {
+        "full": "Poluostrov",
+        "person": "Grigoriy Kotlyar",
+        "email": "grisha.kotlyar.3@facebook.com",
+        "captain": "Grigoriy Kotlyar",
+        "player2": "Vadim Kogan",
+        "player3": "Anna Veksler",
+        "player4": "Zhora Semenov",
+        "player5": "Igor Rabin",
+        "player6": "Irina Konovalova"
+    },
+    {
+        "full": "South Bay",
+        "person": "Евгений Фуксман",
+        "email": "eugene@fooksman.com",
+        "captain": "Евгений Фуксман",
+        "player2": "Максим Майданский",
+        "player3": "Алексей Спиридонов",
+        "player4": "Анна Коган",
+        "player5": "Вита Райскина",
+        "player6": "Гриша Линшиц"
+    },
+    {
+        "full": "ГосДеп",
+        "person": "Елена Сапегина/ Elena Sapegina",
+        "email": "sapegka@gmail.com",
+        "captain": "Елена Рыхлевская/ Elena Rykhlevskaya",
+        "player2": "Elena Sapegina",
+        "player3": "Tamara Shketava",
+        "player4": "Tatyana Sklyamina",
+        "player5": "Igor Shoifot",
+        "player6": "Alex Pisarchik"
+    },
+    {
+        "full": "Hikers",
+        "person": "Ivan Maleev",
+        "email": "ivan_maleev@yahoo.com",
+        "captain": "Ivan Maleev",
+        "player2": "Ilya Khasin",
+        "player3": "Inga Kuznetsova",
+        "player4": "Katya Shrayber",
+        "player5": "Ura Katin",
+        "player6": "Larissa Bruter"
+    },
+    {
+        "full": "Бузина",
+        "person": "Сергей Кныш",
+        "email": "s2.718rg@gmail.com",
+        "captain": "Сергей Кныш",
+        "player2": "Евгений Нудельман",
+        "player3": "Александра Капутерко",
+        "player4": "Сергей Барабаш",
+        "player5": "T B D",
+        "player6": "T B D"
+    },
+    {
+        "full": "Livejournal",
+        "person": "Igor Meyerovich",
+        "email": "mim_sf@yahoo.com",
+        "captain": "Igor Meyerovich",
+        "player2": "Lena Bilyak",
+        "player3": "Tatiana Stepanova",
+        "player4": "Nina Knirel",
+        "player5": "Julia Berzoy",
+        "player6": "Olga Donich"
+    },
+    {
+        "full": "Musketeers",
+        "person": "Dima Nita",
+        "email": "dima@rspromo.com",
+        "captain": "Dima Nita",
+        "player2": "Gosha Novitsky",
+        "player3": "Gleb Gudkov",
+        "player4": "Anya Zatsepina",
+        "player5": "Natasha Kolesnik",
+        "player6": "Grisha Gruzman"
+    },
+    {
+        "full": "Чекисты",
+        "person": "Slavik Kulin",
+        "email": "Spartak7@gmail.com",
+        "captain": "Slava Kulin",
+        "player2": "Lesha Frolov",
+        "player3": "Maksim Belyakov",
+        "player4": "Maksim Red Square",
+        "player5": "Marina Kulin",
+        "player6": "Sveta Maxsim"
+    },
+    {
+        "full": "Astral Cats",
+        "person": "Pavel Aronov",
+        "email": "paaronov@gmail.com",
+        "captain": "Pavel Aronov",
+        "player2": "Iryna Leashkevich",
+        "player3": "Andrew Belov",
+        "player4": "Marianna Sumina",
+        "player5": "Alex Skhorohodov",
+        "player6": "Ilya Mironov"
+    },
+    {
+        "full": "Moishe House SF",
+        "short": "Moishe House",
+        "person": "Anna Mnuskina",
+        "email": "amnuskina@facebook.com",
+        "captain": "Alex Varum",
+        "player2": "Misha Berman",
+        "player3": "Eileen Prywes",
+        "player4": "Dima Zil",
+        "player5": "Yelena Sheftelevich",
+        "player6": "Natasha Kriegel"
+    }
 ]

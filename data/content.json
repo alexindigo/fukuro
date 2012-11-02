@@ -5,7 +5,7 @@
     "video": "cover.m4v",
     "params":
     {
-      "muted": true
+      "muted": false
     }
   },
   "timer":
@@ -23,112 +23,100 @@
     {
       "question":
       {
-        "text": "Please answer exactly: who is the primary\ntarget for the design of this fork?",
-        "ru": "Ответьте абсолютно точно: кто является целевой\nаудиторией для дизайнеров этих вилок?",
-        "image": "1q.jpg"
+        "text": "История обычно повторяется: Этот танец, середины 19-го века, был скандальным так же как рок-н-ролл. Его так же запрещали как и рок-н-ролл. Он так же вышел из рабочего класса. Он считался очень эротичным.\n\nА вот Американская сеть супермаркетов ShopRite  использовала этот танец как рекламу консервных банок.\n\nВопрос: Назовите этот танец."
       },
       "answer":
       {
-        "text": "Those who want to lose weight."
+        "video": "1a.mp4",
+        "image": "1a.png"
       }
     },
     "2":
     {
       "question":
       {
-        "text": "Attention to my assistant: S-Bend corset.\n\nQuestion is: Why is S-Bend corset called 'S-Bend'?",
-        "ru": "Внимание на мою ассистентку: S-Bend корсет.\n\nВопрос: Почему S-Bend corset так называется?"
+        "text": "Вообще-то ЭТО родилось в Греции, а не в Италии.\n\nНо, в 1889 году, во время визита королевы Маргариты в Неаполь, ЭТО было подарено ей в цветах флага Италии: красный, зелёный и белый.\n\nС этого времени это и является традиционными цветами ЭТОГО.\n\nВопрос: Что ЭТО?"
       },
       "answer":
       {
-        "text": "Because in a side view it creates\nan S-shape out of women's body."
+        "text": "Pizza."
       }
     },
     "3":
     {
       "question":
       {
-        "text": "What you see is an instructional book for teaching about what is in the black box.\n\nIt was popularized in United States during Panama Pacific International Exposition in 1915 in San Francisco.\n\nQuestion is: What is in the black box?",
-        "ru": "На картинке самоучитель того что в чёрном ящике.\n\nТо что в чёрном ящике стало популярно в США во время Panama Pacific International Exposition в 1915-м в Сан Франциско.\n\nВопрос: Что в чёрном ящике?",
-        "image": "3q.jpg"
+        "text": "Почему континент Америка, назвали Америкой?\n\nИменно женским Америка, а не мужским Америго?"
       },
       "answer":
       {
-        "text": "Ukulele."
+        "text": "Так как другие континенты получили свои имена тоже от женщин: Европа, Азия, ..."
       }
     },
     "4":
     {
       "question":
       {
-        "text": "An 18th century I.O.U. (I Owe You):\n\n«This note drawn by Lord John for 10 cows, which becomes due in 3 months' time»\n\nI.O.U. - is an informal document acknowledging debt \n\nI.O.U. - does not carry anything behind itself anything except for an author's promise.\n\nHowever in United States, a modern form of I.O.U needs 2 signatures so creditor is required by U.S. law to accept it.\n\nQuestion is: Please name job titles of people who need to give these 2 signatures.",
-        "ru": "Долговая расписка (I.O.U.) 18го века:\n\n«Эта бумага написана Лордом Джоном на 10 коров, которые нужно отдать через 3 месяца»\n\nI.O.U. - это неформальный долговой документ.\n\nI.O.U. - не несёт за собой ничего кроме как обещание автора.\n\nНо, в США, современной форме I.O.U нужно всего 2 подписи чтобы кредитор был обязан принять её согласно законам США.\n\nВопрос: Назовите профессии этих 2х людей которые должны дать эти 2 подписи."
+        "text": "Если вы видите X, то согласно федеральному закону США, вы должны от 15-ти до 20-ти секунд делать 2 длинных, 1 короткий, 1 длинный.\n\nВопрос:  Кем вы должны работать чтобы попасть под действие этого закона?"
       },
       "answer":
       {
-        "text": "Treasurer of the United States and the United States Secretary of the Treasury."
+        "text": "Машинистом поезда (например Caltrain)."
       }
     },
     "5":
     {
       "question":
       {
-        "text": "In typical American department store you can see sections devoted to 40. Actually, about &#8531; of our audience is about 40 right now.\n\nQuestion is: Tell me exactly which sections of department stores are devoted to 40.",
-        "ru": "В обычном Американском универмаге можно увидеть разделы посвящённые 40. Примерно &#8531; наших зрителей сейчас 40.\n\nВопрос: Скажите, абсолютно точно, какая секция в универмаге посвящена 40."
+        "text": "Rolling Stones, Beatles, Animals, Beach Boys &mdash; в 1969-ом году в СССР появляется рок группа, которая начинает исполнять песни этих групп, и даже подражает им в своём творчестве. Эта, наверно самая известная Российская рок группа, существует до сих пор, и часто играет в музыкальных паузах Что? Где? Когда? на 1ом канале, и даже приезжала в Сан Франциско.\n\nВнимание вопрос: а какая буква на какую была заменена в названии группы с 1969 года?."
       },
       "answer":
       {
-        "text": "XL (Roman numeral XL = 40)"
+        "text": "Ы на А (МашинЫ Времени на МашинА Времени)."
       }
     },
     "6":
     {
       "question":
       {
-        "text": "Researcher Richard Vendome proved that Antonio Vivaldi (a teacher and a priest) was forced to use a method, similar but opposite, to that of William Shakespeare.\n\nQuestion is: What method Antonio Vivaldi was forced to use?",
-        "ru": "Учёный Richard Vendome доказал что Antonio Vivaldi (учитель и священник) был вынужден использовать метод похожий, но противоположный методу который вынужден был использовать William Shakespeare.\n\nВопрос: Какой метод Antonio Vivaldi был вынужден использовать?"
+        "text": "Вот загадка которую годами не могло разгадать всё Британское Адмиралтейство. А вы это сделайте за 60 секунд:\n\nБлагодаря чему в середине XVIII века американские моряки пересекали Атлантический океан быстрее, чем английские?"
       },
       "answer":
       {
-        "text": "To use only girls in his choir."
+        "text": "Течение Гольфстрим."
       }
     },
     "7":
     {
       "question":
       {
-        "text": "Here are some facts about a famous female rights advocate Lucy Stone:\n\nShe was born in 1818 the eighth child of Marion Stone (nee Wilkins) and Francis Stone.\n\nIn 1855 she married. In 1857 gave birth.\n\nAnd here is a photo of her in 1858 with a title «A studio portrait of Stone and baby Alice taken in Boston, 1858».\n\nQuestion is: Lucy Stone is considered to be first ever in United States to do what?",
-        "ru": "Вот некоторые факты про известную активистку борьбы за женские права Lucy Stone:\n\nОна родилась в 1818, 8-м ребёнком Marion Stone (nee Wilkins) и Francis Stone.\n\nВ 1855 она вышла замуж. В 1857 родила.\n\nПеред вами её фотография 1858-го года под названием: «A studio portrait of Stone and baby Alice taken in Boston, 1858».\n\nВопрос: Lucy Stone считается первой в истории США сделавшей что?",
-        "image": "7q.jpg"
+        "text": "Это Азербайджана имеет больше углов чем это Австралии. Это Австралии имеет больше углов чем это Израиля, а это Израиля имеет больше углов чем это СССР.\n\nВнимание вопрос: А сколько у этого углов в СССР?"
       },
       "answer":
       {
-        "text": "She was first known woman in United States to keep her name after marriage."
+        "text": "10."
       }
     },
     "8":
     {
       "question":
       {
-        "text": "He publicly apologized in a 2009 'Times' article for writing in 1989 a double punctuation mark, which according to him was 'unnecessary'.\n\nQuestion is: Name that person OR name that double punctuation mark.",
-        "ru": "Он публично извинился в 2009 году в журнале 'Times' за написание в 1989 году двойного типографского знака, который, согласно ему, был 'не нужен'.\n\nВопрос: Назовите его ИЛИ назовите этот типографский знак."
+        "text": "В каком известном детском Советском стихотворении описывается однополый брак?"
       },
       "answer":
       {
-        "text": "In a Times article in October 2009, the inventor of the World Wide Web, Sir Berners-Lee admitted that '//' in 'http://' was actually unnecessary."
+        "text": "Муха-Цокотуха."
       }
     },
     "9":
     {
       "question":
       {
-        "text": "Please draw the first member of this sequence.",
-        "ru": "Пожалуйста нарисуйте первого члена этой последовательности.",
-        "image": "9q.png"
+        "text": "Это известная музыкальная группа из западно-европейского портового города. Члены этой группы удостоились королевских наград, причём от некоторых даже отказались. С их участием в СССР был сделан музыкальный мультфильм с продолжением.\n\nОсновных участников этой группы четыре, но был и пятый, тоже довольно известный.\n\nВопрос: Назовите его."
       },
       "answer":
       {
-        "text": "A, B, C, D, E (mirror horizontal reflection)",
+        "video": "9a.mp4",
         "image": "9a.png"
       }
     },
@@ -136,38 +124,68 @@
     {
       "question":
       {
-        "text": "When it comes to the world's largest, there is not just one, in fact there are four of THEM and THEY all belong to NASA.\n\nAnd all of THEM are in Vehicle Assembly Building.\n\nEach one of THEM is 139 meters (456 feet).\n\nQuestion is: What object am I talking about if all of you\nhad to deal with it today multiple times\nand some of you can even see it right now?",
-        "ru": "Если говорить про самые большие в мире, то существует не один а четыре ИХ, и все ОНИ принадлежат NASA (National Aeronautics and Space Administration).\n\nВсе ОНИ в Vehicle Assembly Building.\n\nКаждый из НИХ 139 метров (456 футов).\n\nВопрос: Про какой объект я говорю учитывая то что каждый\nиз вас имел с этим дело сегодня несколько раз\nи некоторые даже видят это сейчас?"
+        "text": "В октябре 2012 года в специально построенных для этого телестудиях прошли дебаты: Барак Обама против Джона Керри и Митт Ромни против Роба Портмана.\n\nВопрос: Почему эти дебаты никогда не были показаны по телевидению?"
       },
       "answer":
       {
-        "text": "Doors.",
-        "image": "10a.jpg"
+        "text": "Это были ТРЕНИРОВОЧНЫЕ дебаты."
       }
     },
     "11":
     {
       "question":
       {
-        "text": "Because of its strategic position, Robert Curthose, son of William the Conqueror, rebuild this structure in this city in the year 1080.\n\nQuestion is: Name that city in England.",
-        "ru": "Из-за своей стратегической позиции, Robert Curthose, сын William the Conqueror, перестроил это здание в этом городе в 1080 году.\n\nВопрос: Назовите этот город в Англии.",
-        "image": "11q.jpg"
+        "text": "У нас всё таки Маскарад. Внимание: Чёрный Ящик!\n\nНе мал вклад Русских в истроию моды.\n\nВначале эта маска стала популярна во Дворцах.\n\nА носить во всём мире её стали после того как один Русский посетил Канаду.\n\nВопрос: Назовите дизайн маски, находящейся чёрном ящике."
       },
       "answer":
       {
-        "text": "Newcastle."
+        "text": "Вратарская маска (хоккей)."
       }
     },
     "12":
     {
       "question":
       {
-        "text": "Why does Canada recently started to allow only neutral facial expressions on passport photos?",
-        "ru": "Почему Канада недавно начала разрешать только нейтральное выражение лица на паспортных фотографиях?"
+        "text": "В. Ванзот изобразил арабские цифры примерно так как они выглядят перед вами. И таким образом объяснил чем форма каждой цифры связана с её значением.\n\nВопрос: Так чем же?",
+        "image": "12q.jpg"
       },
       "answer":
       {
-        "text": "Because of Facial Recognition System.\n(It is less effective if expressions vary)"
+        "text": "Количеством УГЛОВ в каждой цифре.",
+        "image": "12a.jpg"
+      }
+    },
+    "audience":
+    {
+      "question":
+      {
+        "text": "Одна из электронных служб компании Microsoft выдаёт электронный сертификат на 2 года. Например выданный сегодня сертификат (2012 плюс 2 года) истекает в 2014.\n\nВсё бы хорошо, но какое-то время назад эта система, которой пользуются миллионы, перестала работать практически на целые сутки.\n\nВнимание вопрос: Когда это случилось?"
+      },
+      "answer":
+      {
+        "text": "29 февраля."
+      }
+    },
+    "playoff 1":
+    {
+      "question":
+      {
+        "text": "Facebook позаимствовал ЭТО у Американских пилотов 1940-х годов и американских бродяг проезжающих автостопом.\n\nВопрос: что ЭТО?"
+      },
+      "answer":
+      {
+        "image": "playoff_1a.jpg"
+      }
+    },
+    "playoff 2":
+    {
+      "question":
+      {
+        "text": "Обри ди Грей сравнил процесс, внутри человека, который превращает калории в энергию, с костром. Он объяснил что этот процесс пищеварения, поглощает много того что и костёр. И именно из-за этого человек должен постоянно ...\n\nВопрос: Что делать?"
+      },
+      "answer":
+      {
+        "text": "Дышать."
       }
     }
   }

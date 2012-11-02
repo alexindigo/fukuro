@@ -77,20 +77,20 @@ section>p
 {
   max-width: 85%;
   font-family: "Ubuntu", sans-serif;
-  font-size: 38px;
-  line-height: 70px;
+  font-size: 46px;
+  line-height: 72px;
   white-space: pre-line;
   overflow: hidden;
 }
   section>p.long
   {
-    font-size: 28px;
-    line-height: 44px;
+    font-size: 36px;
+    line-height: 52px;
   }
     section>p.long.extra
     {
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 26px;
+      line-height: 44px;
     }
 
 /* show questions only with timer */
@@ -105,38 +105,20 @@ section>p
 {
   max-height: 40%;
 }
-/*
-#timer.playing ~ section.question>p.desc
-{
-  font-size: 32px;
-  line-height: 60px;
-  color: #808080;
-}
-  #timer.playing ~ section.question>p.desc.long
-  {
-    font-size: 24px;
-    line-height: 32px;
-  }
-  #timer.playing ~ section.question>p.desc.long.extra
-  {
-    font-size: 18px;
-    line-height: 24px;
-  }
-*/
 /* make text smaller if there is image for the question */
 section.question>img ~ p,
 section.answer>img ~ p
 {
   margin-top: 1em;
-  font-size: 24px;
-  line-height: 42px;
+  font-size: 36px;
+  line-height: 52px;
 }
   section.question>img ~ p.long,
   section.answer>img ~ p.long
   {
     margin-top: 2em;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 26px;
+    line-height: 44px;
   }
 
 

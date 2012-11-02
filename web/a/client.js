@@ -36,8 +36,9 @@ var Content =
     {
       $.each(data.questions, $.bind(function(item, n)
       {
-        var q = $('<section id="question_'+n+'" class="question"></section>').prependTo('body')
-          , a = $('<section id="answer_'+n+'" class="answer"></section>').prependTo('body')
+        var id = makeHandle(n)
+          , q = $('<section id="question_'+id+'" class="question"></section>').prependTo('body')
+          , a = $('<section id="answer_'+id+'" class="answer"></section>').prependTo('body')
           ;
 
         if (!this.questions) this.questions = {};

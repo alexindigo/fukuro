@@ -14,6 +14,7 @@
 var Nav =
 {
   base: 'body>nav>.questions',
+  special: 'body>footer>.special',
   played: [],
   init: function(data)
   {
@@ -25,10 +26,23 @@ var Nav =
     {
       $.each(data.questions, $.bind(function(q, n)
       {
-        // add (show) question button
-        $('<button id="button_question_'+n+'" data-item="question" data-number="'+n+'">'+n+'</button>').appendTo(this.base);
-        // add (show) answer button
-        $('<button id="button_answer_'+n+'" class="careful" data-item="answer" data-number="'+n+'">'+n+'</button>').appendTo(this.base);
+        var id = makeHandle(n);
+
+        // separate regular and special questions
+        if (n == parseInt(n, 10))
+        {
+          // add (show) question button
+          $('<button id="button_question_'+id+'" data-item="question" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
+          // add (show) answer button
+          $('<button id="button_answer_'+id+'" class="careful" data-item="answer" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
+        }
+        else
+        {
+          // add (show) question button
+          $('<button id="button_question_'+id+'" data-label="'+n+'" data-item="question" data-number="'+n+'">'+n+'</button>').appendTo(this.special);
+          // add (show) answer button
+          $('<button id="button_answer_'+id+'" class="careful" data-item="answer" data-number="'+n+'">'+n+'</button>').appendTo(this.special);
+        }
       }, this));
     }
     // }}}
@@ -48,17 +62,18 @@ var Nav =
   {
     // start from scratch each time to keep things clean
     $('button', this.base).removeClass('current').removeClass('played');
+    $('button', this.special).removeClass('current').removeClass('played');
 
     // loop thru: question, round
     $.each(this.played, $.bind(function(q, r)
     {
       // massage DOM, add played
-      $('#button_question_'+q).addClass('played');
+      $('#button_question_'+makeHandle(q)).addClass('played');
       // and current classes
       if (r == Round.round)
       {
         // current is not played
-        $('#button_question_'+q).addClass('current').removeClass('played');
+        $('#button_question_'+makeHandle(q)).addClass('current').removeClass('played');
       }
     }, this));
   }
@@ -70,7 +85,7 @@ var handlers =
 {
   'on': function(data)
   {
-    var item = $('#button_'+data.item+(data.number ? '_'+data.number : ''));
+    var item = $('#button_'+data.item+(data.number ? '_'+makeHandle(data.number) : ''));
     if (item)
     {
       item.addClass('active');
@@ -83,7 +98,7 @@ var handlers =
   },
   'off': function(data)
   {
-    var item = $('#button_'+data.item+(data.number ? '_'+data.number : ''));
+    var item = $('#button_'+data.item+(data.number ? '_'+makeHandle(data.number) : ''));
     if (item)
     {
       item.removeClass('active');
@@ -207,7 +222,7 @@ connect(handlers,
   data: {me: 'admin'},
   callback: function(data)
   {
-console.log(['data', data]);
+
     // set round
     handlers.round({round: data.round});
 
@@ -231,6 +246,10 @@ console.log(['data', data]);
     $('body>footer').on('button:not([data-item=cover])', 'mousedown touchstart', statActions);
     // special treatment for the cover
     $('body>footer').on('button[data-item=cover]', 'mousedown touchstart', contentActions);
+
+    // special questions
+    $('body>footer>.special').on('button', 'mousedown touchstart', contentActions);
+
 
     // teams
     $('#teams').on('.team', 'click touchstart', teamActions);

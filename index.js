@@ -33,7 +33,7 @@ conf.defaults(
     teams: './data/teams.json',
     content: './data/content.json',
     storage: './data',
-    port: 8000,
+    port: 31337,
     password: null
 });
 // }}}
@@ -67,8 +67,6 @@ function start()
   io.set('transports', ['websocket']);
   io.set('heartbeat interval', 20);
   io.set('heartbeat timeout', 60);
-
-  // TODO: wrap into try-catch
 
   // init server
   io.sockets.on('connection', function(socket)
@@ -146,7 +144,7 @@ function start()
             }
           });
         }
-        
+
       });
     });
   });

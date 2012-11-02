@@ -493,6 +493,11 @@ var Round =
   }
 };
 
+function makeHandle(name)
+{
+  return String(name).toLowerCase().replace(/[^a-z0-9-]/g, '_');
+}
+
 // Can't live without cookies, can you?
 
 function getCookie(name)
