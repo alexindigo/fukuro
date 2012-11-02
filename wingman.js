@@ -59,18 +59,41 @@ function main()
 function start(master, teams)
 {
   var R     = router.router()
-    , state = {teams: teams}
+    , state = {teams: teams, timer: -1}
     ;
 
   // listen for master emitted events
   master.on('on', function(data, fn)
   {
+    if (data.item == 'question' && data.number == 'audience')
+    {
+      state.ready = true;
+    }
+  });
 
+  master.on('off', function(data, fn)
+  {
+    state.ready = false;
+    state.timer = -1;
+
+    if (data.item == 'question' && data.number == 'audience')
+    {
+      io.sockets.emit('timer', {time: -1});
+    }
   });
 
   master.on('timer', function(data, fn)
   {
+    state.timer = data.time;
 
+    if (state.ready && data.time > -1)
+    {
+      io.sockets.volatile.emit('timer', {time: data.time})
+    }
+    else if (state.ready)
+    {
+      io.sockets.emit('timer', {time: -1})
+    }
   });
 
   // socket io config
@@ -82,12 +105,6 @@ function start(master, teams)
   io.sockets.on('connection', function(socket)
   {
     router.socket = socket;
-
-    // // reload client's page
-    // socket.emit('reset');
-
-    // // timer from time := 60 .. -1
-    // socket.emit('timer', {time: time});
 
     _.each(R, function(method, handle)
     {
