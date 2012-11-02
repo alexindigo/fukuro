@@ -38,3 +38,55 @@ section header {
 section#step0 {
 	display:block;
 }
+
+ul{
+    padding:0;
+
+
+}
+
+#teambox li{
+    font-size:1.5em;
+    padding-left: 15px;
+    list-style: none;
+    margin-top: 3px;;
+    position: relative;
+    border:1px #000 solid;
+    line-height:50px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#teambox li.selected{
+    background-color:#FFE7BA;
+}
+
+#teambox li.selected a{
+    display:none;
+}
+
+a.button,
+a.button:hover{
+    cursor: pointer;
+    cursor: hand;
+    color:#fff;
+    text-decoration:none;
+    text-decoration:underline;
+    position: absolute;
+    right: 0;
+    margin: 5px;;
+    font-size:0.8em;
+    background-color:#4169E1;
+    line-height:40px;
+    vertical-align:middle;
+    text-align:center;
+    text-decoration: none;
+    margin-left:5px;
+    padding:0 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}

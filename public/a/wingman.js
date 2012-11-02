@@ -19,6 +19,7 @@ function setCookie(c_name, value, exdays) {
 }
 
 var Wingman = function(socket) {
+    this.teams=[];
 	this.socket = socket;
 	this.setFullname(getCookie("fullname"));
 	this.setTeam(getCookie("team"));
@@ -43,6 +44,14 @@ Wingman.prototype.setTeam = function(value) {
 };
 
 /**
+ * Team setter
+ * @param value
+ */
+Wingman.prototype.setTeams = function(value) {
+    this.teams = value||[];
+};
+
+/**
  * Token setter
  * @param value
  */
@@ -60,6 +69,21 @@ Wingman.prototype.helo = function(fn) {
 		};
 	console.log(message);
 	this.socket.emit('helo', message, fn);
+};
+
+Wingman.prototype.emitTeam = function(fn) {
+    message =  {
+        team : getCookie("team")||null
+    };
+    this.socket.emit('team', message, fn);
+};
+
+Wingman.prototype.emitJoin = function(fn) {
+    message =  {
+        name : getCookie("fullname")||null
+    };
+    console.log(message);
+    this.socket.emit('join', message, fn);
 };
 
 /**
