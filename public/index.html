@@ -7,21 +7,22 @@
     <meta charset="utf-8">
     <title>Wingman</title>
 
-    <link rel='stylesheet' href='/stylesheets/normalize.css'></link>
-    <link rel='stylesheet' href='/stylesheets/style.css'></link>
-    <link rel='stylesheet' href='/stylesheets/fonts.css'></link>
+    <link rel='stylesheet' href='/s/normalize.css'></link>
+    <link rel='stylesheet' href='/s/style.css'></link>
+    <link rel='stylesheet' href='/s/fonts.css'></link>
+    <link rel='stylesheet' href='/s/form.css'></link>
     <link rel="apple-touch-icon" href="/i/logo.png" />
 </head>
 <body>
 <form id='send-form'>
-	<article class='content'>
+	<article class='content rounded-corners'>
 			<section class="form" id="step0">
 				<header>Правила игры</header>
-				<p>Для участия активизируйте игрока:</p>
+				<p>Для участия:</p>
 				<ul>
-					<li>Укажите данные игрока</li>
+					<li>Введите ваше имя</li>
 					<li>Выберите команду</li>
-					<li>Ответье правильно на вопрос</li>
+					<li>Ответье на вопрос</li>
 				</ul>
 				<p class="note">
 					<strong>Заметка:</strong> Игрок может поменять команду и свои
@@ -32,9 +33,9 @@
 			</section>
 
 			<section class="form" id="step1" style="display: none;">
-				  <header>Укажите данные игрока</header>
+				  <header>Введите ваше имя</header>
                 <label for="fullname">Полное имя игрока:</label>
-                <input id='fullname' type="text"/>
+                <input id='fullname' type="text" required/>
                 <input class="action-button" id='set-user-button' type='button' value='Сохранить' />
 			</section>
 
@@ -63,7 +64,7 @@
     	</article>
 		</form>
 	<script src='/socket.io/socket.io.js'></script>
-	<script src="/javascripts/ender.min.js"></script>
-	<script src='/javascripts/wingman.js'></script>
-	<script src='/javascripts/wingman_ui.js'></script>
+	<script src="/a/ender.min.js"></script>
+	<script src='/a/wingman.js'></script>
+	<script src='/a/wingman_ui.js'></script>
 </body>

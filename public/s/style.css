@@ -1,5 +1,12 @@
 @CHARSET "UTF-8";
 
+.rounded-corners {
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -khtml-border-radius: 25px;
+    border-radius: 25px;
+}
+
 
 article,
 header,
@@ -8,16 +15,24 @@ footer{
     font-family: "Ubuntu", sans-serif;
 	margin: 10px auto;
 	width:100%;
-    max-width: 490px;
+    max-width: 470px;
 }
 
 article.content {
-	background-color:#ffa;
-	border: 3px solid #b6ba5b;
+	background:#fff url(/i/logo.png) n-repeat;
+	border: 3px solid #ccc;
 	min-height:490px;
 	height:auto !important;
-	height:490px;
+	height:470px;
 	width:100%;
+}
+
+section {
+	margin: 30px 40px;
+}
+
+section header {
+	font-weight: bold;
 }
 
 section#step0 {

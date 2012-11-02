@@ -19,6 +19,19 @@ function showForm() {
 	}
 }
 
+htmlTeamList = function (teams){
+	console.log(teams);
+	for (team in teams){
+		teambox+='<input type="radio" name="team" value="'+team.handle+'">'+team.short+'<br>';
+	}
+	//TODO generate the list of teams
+	//
+	var teambox= '<li></li>';
+	$('#teambox').html(teambox);
+	// TODO check team
+}
+
+
 var socket = io.connect();
 $(document).ready(
 		function() {
@@ -27,7 +40,21 @@ $(document).ready(
 			$('#set-user-button').on('click', showForm);
 
 			var wingmanApp = new Wingman(socket);
-			wingmanApp.checkin();
+
+			handleHeloResponse = function(data) {
+				console.log(data);
+				if (data.status==='ok'){
+					wingmanApp.setToken(data.token);
+					htmlTeamList(data.teams);
+					showForm();
+				}else{
+					wingmanApp.setToken('');
+					wingmanApp.helo(handleHeloResponse);
+				}
+			};
+
+			wingmanApp.helo(handleHeloResponse);
+
 
 			/**
 			 *  Prepopulate form with user and team data

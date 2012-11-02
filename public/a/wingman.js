@@ -20,23 +20,8 @@ function setCookie(c_name, value, exdays) {
 
 var Wingman = function(socket) {
 	this.socket = socket;
-	this.initToken();
 	this.setFullname(getCookie("fullname"));
 	this.setTeam(getCookie("team"));
-};
-
-/**
- * Init token
- * If token is not set in cookie generates and sets one
- */
-Wingman.prototype.initToken = function() {
-
-	this.token=getCookie("token");
-	if (!this.token)
-	{
-		this.token = Math.random().toString(36).substring(7);
-		setCookie("token",this.token,1);
-	}
 };
 
 /**
@@ -58,16 +43,23 @@ Wingman.prototype.setTeam = function(value) {
 };
 
 /**
+ * Token setter
+ * @param value
+ */
+Wingman.prototype.setToken = function(value) {
+	setCookie("token",value,1);
+};
+
+/**
  * Sends user information to the server
  *
  */
-Wingman.prototype.checkin = function() {
-	var message = {
-		token : this.token,
-		fullname : this.fullname,
-		team : this.team
-	};
-	this.socket.emit('checkin', message);
+Wingman.prototype.helo = function(fn) {
+		message =  {
+				token : getCookie("token")||null
+		};
+	console.log(message);
+	this.socket.emit('helo', message, fn);
 };
 
 /**
