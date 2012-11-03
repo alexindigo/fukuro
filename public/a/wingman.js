@@ -21,8 +21,8 @@ function setCookie(c_name, value, exdays) {
 var Wingman = function(socket) {
     this.teams=[];
 	this.socket = socket;
-	this.setFullname(getCookie("fullname"));
-	this.setTeam(getCookie("team"));
+    this.fullname = getCookie("fullname")||'';
+    this.team = getCookie("team")||'';
 };
 
 /**
@@ -90,9 +90,9 @@ Wingman.prototype.emitJoin = function(fn) {
  * Sends answer to the server
  * @param text
  */
-Wingman.prototype.answer = function(text) {
+Wingman.prototype.emitAnswer = function(text,fn) {
 	var message = {
 			answer : text
 		};
-		this.socket.emit('answer', message);
+		this.socket.emit('answer', message, fn);
 };

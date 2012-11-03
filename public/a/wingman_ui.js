@@ -8,25 +8,18 @@ var socket = io.connect()
  */
 function showForm() {
 	$('section.form').hide();
-    console.log(wingmanApp);
-
     $('#fullname').val(wingmanApp.fullname);
-    $('#teambox li#'+wingmanApp.team).addClass('selected');
-
 	if (!wingmanApp.fullname||wingmanApp.fullname===''){
 		$('#step1').show();
 		return;
 	}
 	if(!wingmanApp.team||wingmanApp.team===''){
         $('#step2').show();
-		return;
 	}else{
-
+        console.log(wingmanApp);
         $('#txtFullname').html(wingmanApp.fullname);
         $('#txtTeam').html(wingmanApp.teams[wingmanApp.team]['short']);
-
 		$('#step3').show();
-		return;
 	}
 }
 
@@ -71,7 +64,13 @@ handleHeloResponse = function(data) {
         wingmanApp.setToken(data.token);
         wingmanApp.setTeams(data.teams);
         htmlTeamList();
-        showForm();
+
+        if (wingmanApp.fullname||wingmanApp.team){
+            showForm();
+        }else{
+            $('section.form').hide();
+            $('#step0').show();
+        }
     }else{
         wingmanApp.setToken('');
         wingmanApp.helo(handleHeloResponse);
@@ -85,7 +84,8 @@ handleJoinResponse = function(data) {
     if (data.status==='ok'){
         showForm();
     }else{
-        alert(data.message);
+        wingmanApp.setFullname('');
+        alert('Игрок уже зарегистрирован');
     }
 };
 
@@ -94,6 +94,20 @@ handleSetFullname= function(e) {
     wingmanApp.setFullname($('#fullname').val());
     wingmanApp.emitJoin(handleJoinResponse);
 };
+
+handleAnswerResponse= function() {
+    $('#info').addClass('completed');
+    $('#info').html('Спасибо за ответ!');
+};
+
+handleAnswerRequest= function(e) {
+    var answer =$('#fullname').val();
+    if (!answer){
+        alert('Введите ответ');
+    }
+    wingmanApp.emitAnswer(answer,handleAnswerResponse);
+};
+
 
 $(document).ready(
 		function() {
@@ -125,12 +139,19 @@ $(document).ready(
             socket.on('timer', function(data)
             {
                 if (data.time<0){
-                    alert ('Время истекло');
-                    // show completed
+                    $('#info').addClass('completed');
+                    $('#info').html('Время истекло');
                 }else{
-                    // show answer
-                    alert ('Осталось '+data.time+ ' секунд');
-                    console.log(['timer', data.time]);
+                    if ($('#info').hasClass('wait')&&!$('#info').hasClass('completed')){
+                        html = '<p id="timer"></p>';
+                        html = '<label for="answer">Ваш ответ:</label>';
+                        html +='<input id="answer" type="text" required/>';
+                        html +='<input class="action-button" id="answer-button" type="button" value="Ответить" />';
+                        $('#info').removeClass('wait');
+                        $('#info').html(html);
+                        $('#answer-button').on('click', handleAnswerRequest);
+                    };
+                    $('#timer').html('Осталось '+data.time+' сек.');
                 }
             });
 

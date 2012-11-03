@@ -15,7 +15,7 @@ footer{
     font-family: "Ubuntu", sans-serif;
 	margin: 10px auto;
 	width:100%;
-    max-width: 470px;
+    max-width: 460px;
 }
 
 article.content {
@@ -41,8 +41,6 @@ section#step0 {
 
 ul{
     padding:0;
-
-
 }
 
 #teambox li,
@@ -102,6 +100,7 @@ a.button:hover{
     height:200px;
     text-align: center;
 }
-#info.status {
+#info.completed,
+#info.wait {
     line-height:200px;
 }
