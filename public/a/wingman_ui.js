@@ -7,34 +7,34 @@ var socket = io.connect()
  * user profile's completion
  */
 function showForm() {
-	$('section.form').hide();
+  $('section.form').hide();
     $('#fullname').val(wingmanApp.fullname);
-	if (!wingmanApp.fullname||wingmanApp.fullname===''){
-		$('#step1').show();
-		return;
-	}
-	if(!wingmanApp.team||wingmanApp.team===''){
+  if (!wingmanApp.fullname||wingmanApp.fullname===''){
+    $('#step1').show();
+    return;
+  }
+  if(!wingmanApp.team||wingmanApp.team===''){
         $('#step2').show();
-	}else{
+  }else{
         console.log(wingmanApp);
         $('#txtFullname').html(wingmanApp.fullname);
         $('#txtTeam').html(wingmanApp.teams[wingmanApp.team]['short']);
-		$('#step3').show();
-	}
+    $('#step3').show();
+  }
 }
 
 htmlTeamList = function (){
     var html = '';
-	for (team in wingmanApp.teams){
+  for (team in wingmanApp.teams){
         objTeam = wingmanApp.teams[team];
         var selected ='';
         if(team===wingmanApp.team){
             selected = 'selected';
         }
 
-       	html+='<li id="'+team+'" class="'+selected+'">'+objTeam.short+'<a  class="button">выбрать</a></li>';
-	}
-	$('#teambox').html(html);
+        html+='<li id="'+team+'" class="'+selected+'">'+objTeam.short+'<a  class="button">выбрать</a></li>';
+  }
+  $('#teambox').html(html);
 }
 
 handleTeamResponse = function (data){
@@ -101,7 +101,7 @@ handleAnswerResponse= function() {
 };
 
 handleAnswerRequest= function(e) {
-    var answer =$('#fullname').val();
+    var answer =$('#answer').val();
     if (!answer){
         alert('Введите ответ');
     }
@@ -110,38 +110,41 @@ handleAnswerRequest= function(e) {
 
 
 $(document).ready(
-		function() {
+    function() {
             wingmanApp = new Wingman(socket);
             wingmanApp.helo(handleHeloResponse);
 
-			$('#start-button').on('click', showForm);
-			$('#set-user-button').on('click', handleSetFullname);
+      $('#start-button').on('click', showForm);
+      $('#set-user-button').on('click', handleSetFullname);
             $('#teambox').on('click', handleSelectTeam);
             $('#edit-user-button').on('click', function() {$('section.form').hide();$('#step1').show();});
             $('#edit-team').on('click',  function() {$('section.form').hide();$('#step2').show();});
 
             /**
-			 *  Prepopulate form with user and team data
-			 */
-			socket.on('checkinResult', function(result) {
-				if (result.success) {
-					wingmanApp.setFullname(result.fullname);
-					wingmanApp.setTeam(result.team);
-					$('#fullname').val(result.fullname);
-					$('#team').val(result.team);
-					showForm();
-					return;
-				} else {
-					alert(result.message);
-				}
-			});
+       *  Prepopulate form with user and team data
+       */
+      socket.on('checkinResult', function(result) {
+        if (result.success) {
+          wingmanApp.setFullname(result.fullname);
+          wingmanApp.setTeam(result.team);
+          $('#fullname').val(result.fullname);
+          $('#team').val(result.team);
+          showForm();
+          return;
+        } else {
+          alert(result.message);
+        }
+      });
 
             socket.on('timer', function(data)
             {
-                if (data.time<0){
+                if (data.time<0)
+                {
                     $('#info').addClass('completed');
-                    $('#info').html('Время истекло');
-                }else{
+                    if ($('#info').html() != 'Спасибо за ответ!') $('#info').html('Время истекло');
+                }
+                else
+                {
                     if ($('#info').hasClass('wait')&&!$('#info').hasClass('completed')){
                         html = '<p id="timer"></p>';
                         html = '<label for="answer">Ваш ответ:</label>';
@@ -160,4 +163,4 @@ $(document).ready(
                 window.location.reload();
             });
 
-		});
+    });

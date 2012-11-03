@@ -361,3 +361,31 @@ body.final .team.winner
   overflow: hidden;
 }
 
+
+/* settings */
+#settings
+{
+  position: absolute;
+  top: 90px;
+  right: 6%;
+  height: 500px;
+  z-index: -1;
+  text-align: right;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 32px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+#settings:after
+{
+  content: "";
+  position: absolute;
+  display: block;
+  top: 200px;
+  left: 40px;
+  width: 200px;
+  height: 200px;
+  background-image: url("/content/ip.png");
+  opacity: 0.6;
+}
