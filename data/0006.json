@@ -1,0 +1,129 @@
+{
+  "current": null,
+  "round": 0,
+  "rounds": [],
+  "played": [],
+  "teams": {
+    "twinpeaks": {
+      "full": "TwinPeaks",
+      "short": "TwinPeaks",
+      "handle": "twinpeaks",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "degrees": {
+      "full": "12.5 Degrees",
+      "short": "12.5 Degrees",
+      "handle": "degrees",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "rockstars": {
+      "full": "Rockstars",
+      "short": "Rockstars",
+      "handle": "rockstars",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "romantiki": {
+      "full": "Poslednie Romantiki",
+      "short": "Romantiki",
+      "handle": "romantiki",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "belarus": {
+      "full": "Belarus",
+      "short": "Belarus",
+      "handle": "belarus",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "poluostrov": {
+      "full": "Poluostrov",
+      "short": "Poluostrov",
+      "handle": "poluostrov",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "south_bay": {
+      "full": "South Bay",
+      "short": "South Bay",
+      "handle": "south_bay",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "gosdep": {
+      "full": "ГосДеп",
+      "short": "ГосДеп",
+      "handle": "gosdep",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "hikers": {
+      "full": "Hikers",
+      "short": "Hikers",
+      "handle": "hikers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "buzina": {
+      "full": "Бузина",
+      "short": "Бузина",
+      "handle": "buzina",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "livejournal": {
+      "full": "Livejournal",
+      "short": "Livejournal",
+      "handle": "livejournal",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "musketeers": {
+      "full": "Musketeers",
+      "short": "Musketeers",
+      "handle": "musketeers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "xekisty": {
+      "full": "Чекисты",
+      "short": "Чекисты",
+      "handle": "xekisty",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "astral_cats": {
+      "full": "Astral Cats",
+      "short": "Astral Cats",
+      "handle": "astral_cats",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "moishe_house": {
+      "full": "Moishe House SF",
+      "short": "Moishe House",
+      "handle": "moishe_house",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    }
+  },
+  "flags": {}
+}
