@@ -97,19 +97,16 @@ var handlers =
     switch (data.item)
     {
       case 'cover':
-console.log(['on0', data]);
         Content.cover.on(misc.deferredOff(data));
         fn({item: 'cover', status: 'on'});
         break;
 
       case 'rules':
-console.log(['on1', data]);
         Content.rules.on(misc.deferredOff(data));
         fn({item: 'rules', status: 'on'});
         break;
 
       case 'wifi':
-console.log(['on2', data]);
         Content.wifi.on(misc.deferredOff(data));
         fn({item: 'wifi', status: 'on'});
         break;
@@ -122,7 +119,7 @@ console.log(['on2', data]);
           // set round to audience
           Round.update('audience');
         }
-        else if (data.number.match(/^playoff /))
+        else if ((''+data.number).match(/^playoff /))
         {
           // set round to playoff
           Round.update('playoff');

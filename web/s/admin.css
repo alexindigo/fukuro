@@ -41,7 +41,7 @@ body>footer:before
 #audience
 {
   position: absolute;
-  top: 170px;
+  top: 130px;
   left: 0px;
   width: 100%;
   line-height: 24px;
@@ -139,7 +139,7 @@ body:not([data-panel=setup]) #teams
 
 body:not([data-panel=setup]) #teams.special_guest>.team.static
 {
-  top: 80px;
+  top: 110px;
 }
 .team
 {

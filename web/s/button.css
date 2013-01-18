@@ -183,15 +183,57 @@ button.careful:before
     box-shadow: 0px 0px 16px 1px rgba(255, 115, 100, 0.8);
     -webkit-transform: translateZ(-20px);
   }
-footer>.special>button.careful
-{
-  width: 97px;
-  margin: -20px 0px 0px -101px;
-}
-footer>.special>button.careful:before
-{
-  width: 88px;
-}
+
+  /* special questions */
+  .special>button:not(.careful)
+  {
+    width: 50px;
+  }
+  .special>button:not(.careful):before
+  {
+    width: 42px;
+    background-image: url("/i/ready.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    background-position: 3px 34px, 0px 0px;
+    background-repeat: no-repeat, repeat;
+  }
+    .special>button:not(.careful):active:before,
+    .special>button:not(.careful).active:before,
+    .special>button:not(.careful).busy:before
+    {
+      background-position: 3px 36px, 0px 0px;
+      background-size: 9px 9px, auto;
+    }
+    .special>button:not(.careful).played:before
+    {
+      background-image: url("/i/off.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+    .special>button:not(.careful).current:before
+    {
+      background-image: url("/i/waiting.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+    body.waiting .special>button:not(.careful):before
+    {
+      background-image: url("/i/off.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+  .special>button:not(.careful):after
+  {
+    width: 32px;
+  }
+
+  /* red buttons */
+  .special>button.careful:before
+  {
+    content: attr(data-label);
+  }
+    .special>button.careful
+    {
+      width: 47px;
+      margin: -20px 0px 0px -52px;
+    }
+    .special>button.careful:before
+    {
+      width: 38px;
+    }
 
 /* hide answer buttons by default */
 

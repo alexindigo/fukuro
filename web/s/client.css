@@ -236,7 +236,7 @@ body>footer:before
   }
   body.audience>footer:before
   {
-    content: "Игра со зрителями";
+    content: "Помощь клуба";
   }
   body.playoff>footer:before
   {
@@ -382,6 +382,15 @@ body.final .team.winner
 {
   top: 50px;
   font-size: 30px;
+}
+
+/* rules */
+#rules ol
+{
+  list-style: "1.";
+
+  font-size: 32px;
+  line-height: 64px;
 }
 
 /* settings */

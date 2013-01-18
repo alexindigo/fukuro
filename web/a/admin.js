@@ -26,7 +26,9 @@ var Nav =
     {
       $.each(data.questions, $.bind(function(q, n)
       {
-        var id = makeHandle(n);
+        var id = makeHandle(n)
+          , t
+          ;
 
         // separate regular and special questions
         if (n == parseInt(n, 10))
@@ -38,10 +40,12 @@ var Nav =
         }
         else
         {
+          // show playoffs as shorten label
+          t = (n == 'audience') ? 'Club' : n.replace(/^playoff/, 'PO').replace(/^PO X/, 'EX ');
           // add (show) question button
-          $('<button id="button_question_'+id+'" data-label="'+n+'" data-item="question" data-number="'+n+'">'+n+'</button>').appendTo(this.special);
+          $('<button id="button_question_'+id+'" data-label="'+t+'" data-item="question" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
           // add (show) answer button
-          $('<button id="button_answer_'+id+'" class="careful" data-item="answer" data-number="'+n+'">'+n+'</button>').appendTo(this.special);
+          $('<button id="button_answer_'+id+'" class="careful" data-label="'+t+'" data-item="answer" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
         }
       }, this));
     }
