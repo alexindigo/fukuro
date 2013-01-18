@@ -254,9 +254,10 @@ connect(handlers,
     // special treatment for the timer
     $('body>nav').on('button[data-item=timer]', 'mousedown touchstart', statActions);
 
-    $('body>footer').on('button:not([data-item=cover])', 'mousedown touchstart', statActions);
-    // special treatment for the cover
-    $('body>footer').on('button[data-item=cover]', 'mousedown touchstart', contentActions);
+    $('body>footer').on('button:not(.content)', 'mousedown touchstart', statActions);
+
+    // special treatment for the cover, rules and wifi
+    $('body>footer').on('button.content', 'mousedown touchstart', contentActions);
 
     // special questions
     $('body>footer>.special').on('button', 'mousedown touchstart', contentActions);

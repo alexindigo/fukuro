@@ -76,21 +76,22 @@ section>video
 section>p
 {
   max-width: 85%;
+  padding: 0.5em 0px;
   font-family: "Ubuntu", sans-serif;
-  font-size: 46px;
-  line-height: 72px;
+  font-size: 52px;
+  line-height: 76px;
   white-space: pre-line;
   overflow: hidden;
 }
   section>p.long
   {
-    font-size: 36px;
-    line-height: 52px;
+    font-size: 38px;
+    line-height: 54px;
   }
     section>p.long.extra
     {
-      font-size: 26px;
-      line-height: 44px;
+      font-size: 28px;
+      line-height: 46px;
     }
 
 /* show questions only with timer */
@@ -105,20 +106,26 @@ section>p
 {
   max-height: 40%;
 }
+#timer.playing ~ section.question>video
+{
+  max-height: 0px;
+}
 /* make text smaller if there is image for the question */
 section.question>img ~ p,
 section.answer>img ~ p
+section.answer>video ~ p
 {
   margin-top: 1em;
-  font-size: 36px;
-  line-height: 52px;
+  font-size: 38px;
+  line-height: 54px;
 }
   section.question>img ~ p.long,
-  section.answer>img ~ p.long
+  section.answer>img ~ p.long,
+  section.answer>video ~ p.long
   {
     margin-top: 2em;
-    font-size: 26px;
-    line-height: 44px;
+    font-size: 30px;
+    line-height: 48px;
   }
 
 /* no desc for questions */
@@ -129,10 +136,10 @@ section.question .desc
 
 section.answer .desc
 {
-  margin-top: 5em;
-  padding-top: 20px;
-  font-size: 22px;
-  line-height: 26px;
+  margin-top: 2.5em;
+  padding: 25px 0px 0px;
+  font-size: 26px;
+  line-height: 30px;
   border-top: 1px dotted #999999;
   text-align: justify;
 }
@@ -149,6 +156,7 @@ section:after
   line-height: 50px;
   font-size: 24px;
   text-align: center;
+  white-space: pre-line;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
   background-clip: padding-box;
@@ -165,13 +173,16 @@ video:after
   line-height: 50px;
   font-size: 24px;
   text-align: center;
+  white-space: pre-line;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
   background-clip: padding-box;
 }
 
 /* special */
-#cover
+#cover,
+#rules,
+#wifi
 {
   -webkit-transition: all 3s;
 }
@@ -187,11 +198,12 @@ body>footer
 {
   position: absolute;
   opacity: 0;
-  bottom: 70px;
+  bottom: 10px;
   left: 0px;
   width: 100%;
   line-height: 50px;
-  font-size: 24px;
+  font-size: 20px;
+  color: #cccccc;
   text-align: center;
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
@@ -335,6 +347,11 @@ body.final .team.winner
 
 /* address different number of teams */
 
+#teams.atleast_15
+{
+  padding: 5% 0.5% 2%;
+  font-size: 24px;
+}
 #teams.atleast_20,
 #teams.atleast_25
 {
@@ -361,6 +378,11 @@ body.final .team.winner
   overflow: hidden;
 }
 
+#teams.special_guest>.team.static
+{
+  top: 50px;
+  font-size: 30px;
+}
 
 /* settings */
 #settings
@@ -377,15 +399,13 @@ body.final .team.winner
   color: rgba(255, 255, 255, 0.8);
   white-space: nowrap;
 }
-#settings:after
+#settings i
 {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 200px;
-  left: 40px;
-  width: 200px;
-  height: 200px;
-  background-image: url("/content/ip.png");
-  opacity: 0.6;
+  margin: 0px 4px;
+  font-style: normal;
+}
+#settings .extra
+{
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.6);
 }

@@ -17,6 +17,8 @@ var Content =
 
   init: function(data)
   {
+    var el;
+
     // check for alternate language
     if ($('body').data('lang'))
     {
@@ -26,9 +28,14 @@ var Content =
     // {{{ get cover
     if ('cover' in data)
     {
-      var el = $('<section id="cover"></section>').prependTo('body');
+      el = $('<section id="cover"></section>').prependTo('body');
       this.cover = make(el, data.cover);
     }
+    // }}}
+
+    // {{{ prepare rules and wifi
+    this.rules = make($('#rules'), {});
+    this.wifi = make($('#wifi'), {});
     // }}}
 
     // {{{
@@ -90,9 +97,23 @@ var handlers =
     switch (data.item)
     {
       case 'cover':
+console.log(['on0', data]);
         Content.cover.on(misc.deferredOff(data));
         fn({item: 'cover', status: 'on'});
         break;
+
+      case 'rules':
+console.log(['on1', data]);
+        Content.rules.on(misc.deferredOff(data));
+        fn({item: 'rules', status: 'on'});
+        break;
+
+      case 'wifi':
+console.log(['on2', data]);
+        Content.wifi.on(misc.deferredOff(data));
+        fn({item: 'wifi', status: 'on'});
+        break;
+
 
       case 'question':
 
@@ -101,9 +122,9 @@ var handlers =
           // set round to audience
           Round.update('audience');
         }
-        else if (data.number == 'playoff 1' || data.number == 'playoff 2')
+        else if (data.number.match(/^playoff /))
         {
-          // set round to audience
+          // set round to playoff
           Round.update('playoff');
         }
 
@@ -155,6 +176,16 @@ var handlers =
       case 'cover':
         Content.cover.off();
         fn({item: 'cover', status: 'off'});
+        break;
+
+      case 'rules':
+        Content.rules.off();
+        fn({item: 'rules', status: 'off'});
+        break;
+
+      case 'wifi':
+        Content.wifi.off();
+        fn({item: 'wifi', status: 'off'});
         break;
 
       case 'question':
@@ -427,12 +458,27 @@ var make = function(el, data, options)
     if (text.length > 100) flags.push('long');
     if (text.length > 400) flags.push('extra');
 
-    res = oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
+    // {{{ quick hack, will fix it after the game
+    if (!res)
+    {
+      res = oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
+    }
+    else
+    {
+      oText.init(el, options).populate('<p class="'+flags.join(' ')+'">'+text+'</p>');
+    }
+    // }}}
 
     if ('desc' in data)
     {
       el.append('<p class="desc">'+data.desc+'</p>');
     }
+  }
+
+  // still nothing?
+  if (!res)
+  {
+    res = oBlank.init(el, options);
   }
 
   return res;

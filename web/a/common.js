@@ -201,6 +201,12 @@ var Base =
   }
 };
 
+// blank
+var oBlank = Base.extend(
+{
+});
+
+
 // simple image
 var oImage = Base.extend(
 {
@@ -229,6 +235,7 @@ var oVideo = Base.extend(
       {
         this._media.pause();
         this._media.currentTime = 0.1;
+        if (typeof this._media.load == 'function') this._media.load();
       }
     }
 
@@ -245,7 +252,16 @@ var oVideo = Base.extend(
     for (opt in this.options)
     {
       // filter out custom options
-      if (opt[0] != '_') this._media[opt] = this.options[opt];
+      if (opt[0] != '_')
+      {
+        this._media[opt] = this.options[opt];
+      }
+    }
+
+    // start loading video
+    if (typeof this._media.load == 'function')
+    {
+      this._media.load();
     }
 
     // off itself on stop
@@ -317,7 +333,7 @@ var oAudio = Base.extend(
         $(window.__audio[path]).on('ended', $.bind(function()
         {
           // check options if it needs to stay
-          if (!this.options.stay || !this.options.text)
+          if (!this.options.stay)
           {
             // call deffered if there is one
             if (this._deffered) this._deffered();
