@@ -105,7 +105,8 @@ section>p
 {
   max-height: 40%;
 }
-#timer.playing ~ section.question>video
+#timer.playing ~ section.question>video,
+#timer.playing ~ section.question>.video
 {
   max-height: 0px;
 }
