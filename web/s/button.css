@@ -105,6 +105,11 @@ button:not(.careful):after
     background-position: 3px 34px, 0px 0px;
     background-repeat: no-repeat, repeat;
   }
+    .questions>button.manual:not(.careful):before
+    {
+      background-image: url("/i/danger.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+
     .questions>button:not(.careful):active:before,
     .questions>button:not(.careful).active:before,
     .questions>button:not(.careful).busy:before
@@ -196,6 +201,11 @@ button.careful:before
     background-position: 3px 34px, 0px 0px;
     background-repeat: no-repeat, repeat;
   }
+    .special>button.manual:not(.careful):before
+    {
+      background-image: url("/i/danger.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
+    }
+
     .special>button:not(.careful):active:before,
     .special>button:not(.careful).active:before,
     .special>button:not(.careful).busy:before

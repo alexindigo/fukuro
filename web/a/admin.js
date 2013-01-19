@@ -28,13 +28,19 @@ var Nav =
       {
         var id = makeHandle(n)
           , t
+          , isManual = false
           ;
+
+        if (q.question && q.question.manual)
+        {
+          isManual = true;
+        }
 
         // separate regular and special questions
         if (n == parseInt(n, 10))
         {
           // add (show) question button
-          $('<button id="button_question_'+id+'" data-item="question" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
+          $('<button id="button_question_'+id+'" class="'+(isManual ? 'manual' : '')+'" data-item="question" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
           // add (show) answer button
           $('<button id="button_answer_'+id+'" class="careful" data-item="answer" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
         }
@@ -43,7 +49,7 @@ var Nav =
           // show playoffs as shorten label
           t = (n == 'audience') ? 'Club' : n.replace(/^playoff/, 'PO').replace(/^PO X/, 'EX ');
           // add (show) question button
-          $('<button id="button_question_'+id+'" data-label="'+t+'" data-item="question" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
+          $('<button id="button_question_'+id+'" class="'+(isManual ? 'manual' : '')+'" data-label="'+t+'" data-item="question" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
           // add (show) answer button
           $('<button id="button_answer_'+id+'" class="careful" data-label="'+t+'" data-item="answer" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
         }

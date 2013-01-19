@@ -49,6 +49,7 @@
     {
       "question":
       {
+        "manual": true,
         "video": "3q.mp4",
         "params":
         {
@@ -146,6 +147,7 @@
     {
       "question":
       {
+        "manual": true,
         "audio": "9q.mp3",
         "params":
         {
@@ -169,7 +171,7 @@
       "answer":
       {
         "image": "10a.jpg",
-        "text": "СТРЕЛКА. Между буквами Е и Х."
+        "text": "СТРЕЛА. Между буквами Е и Х."
       }
     },
     "11":
