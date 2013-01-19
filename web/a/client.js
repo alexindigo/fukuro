@@ -429,8 +429,15 @@ var make = function(el, data, options)
 
   if ('video' in data)
   {
-    if ('image' in data) poster = ' poster="/content/'+data.image+'"';
-    res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
+    if (window.x.isIPad && 'image' in data)
+    {
+      res = oImage.init(el, options).populate('<img class="video" src="/content/'+data.image+'" alt="">');
+    }
+    else
+    {
+      if ('image' in data) poster = ' poster="/content/'+data.image+'"';
+      res = oVideo.init(el, options).populate('<video'+poster+'><source src="/content/'+data.video+'" type="video/mp4"></video>');
+    }
   }
   else if ('image' in data)
   {

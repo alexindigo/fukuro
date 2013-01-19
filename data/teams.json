@@ -1,72 +1,73 @@
 [
-    {
-        "full": "12.5 Degrees"
-    },
-    {
-        "full": "Astral Cats"
-    },
-    {
-        "full": "Belarus"
-    },
-    {
-        "full": "Berkeley"
-    },
-    {
-        "full": "Бузина"
-    },
-    {
-        "full": "East Bay"
-    },
-    {
-        "full": "ГосДеп"
-    },
-    {
-        "full": "Hikers"
-    },
-    {
-        "full": "Hikers"
-    },
-    {
-        "full": "Livejournal"
-    },
-    {
-        "full": "Musketeers"
-    },
-    {
-        "full": "Нормальная Группа",
-        "short": "Нормальные"
-    },
-    {
-        "full": "Poluostrov"
-    },
-    {
-        "full": "Poslednie Romantiki",
-        "short": "Romantiki"
-    },
-    {
-        "full": "Russians Without Borders",
-        "short": "Russians"
-    },
-    {
-        "full": "South Bay"
-    },
-    {
-        "full": "Stanford"
-    },
-    {
-        "full": "TwinPeaks"
-    },
-    {
-        "full": "Walnut Geek"
-    },
-    {
-      "full": "Александр Друзь",
-      "short": "Друзь",
-      "guest": true
-    },
-    {
-      "full": "Сборная Сан-Франциско",
-      "short": "Сан-Франциско",
-      "collective": true
-    }
+  {
+    "full": "12.5 Degrees"
+  },
+  {
+    "full": "Astral Cats"
+  },
+  {
+    "full": "Berkeley"
+  },
+  {
+    "full": "Бузина"
+  },
+  {
+    "full": "East Bay"
+  },
+  {
+    "full": "ГосДеп"
+  },
+  {
+    "full": "Hikers"
+  },
+  {
+    "full": "Hikers"
+  },
+  {
+    "full": "Livejournal"
+  },
+  {
+    "full": "Musketeers"
+  },
+  {
+    "full": "Нормальная Группа",
+    "short": "Нормальные"
+  },
+  {
+    "full": "Poluostrov"
+  },
+  {
+    "full": "Poslednie Romantiki",
+    "short": "Romantiki"
+  },
+  {
+    "full": "Russians Without Borders",
+    "short": "Russians"
+  },
+  {
+    "full": "South Bay"
+  },
+  {
+    "full": "Stanford"
+  },
+  {
+    "full": "TwinPeaks"
+  },
+  {
+    "full": "Walnut Geek"
+  },
+  {
+    "full": "Александр Друзь",
+    "short": "Друзь",
+    "guest": true
+  },
+  {
+    "full": "Сборная Сан-Франциско",
+    "short": "Сан-Франциско",
+    "collective": true
+  },
+  {
+    "full": "Belarus",
+    "short": "Belarus"
+  }
 ]

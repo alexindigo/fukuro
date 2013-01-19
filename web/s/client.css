@@ -1,4 +1,3 @@
-
 /* cover up */
 body:before
 {
@@ -198,17 +197,16 @@ body>footer
 {
   position: absolute;
   opacity: 0;
-  bottom: 10px;
+  bottom: -40px;
   left: 0px;
   width: 100%;
-  line-height: 50px;
-  font-size: 20px;
+  line-height: 40px;
+  font-size: 16px;
   color: #cccccc;
   text-align: center;
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
 }
-  body.final>footer,
   body.playing>#teams.active~footer
   {
     opacity: 0.8;
@@ -250,6 +248,11 @@ body>footer:before
   {
 /*    content: "Final Score"; */
   }
+body>footer:after
+{
+  content: " (прошло)";
+  display: block;
+}
 /* audience */
 #audience:before
 {
@@ -418,3 +421,56 @@ body.final .team.winner
   font-size: 24px;
   color: rgba(255, 255, 255, 0.6);
 }
+
+
+/* platform specific modifications */
+
+/* ipad hacks */
+html.x-ipad
+{
+  -webkit-text-size-adjust: 80%;
+}
+
+/* surface hacks */
+html.x-msie body>footer
+{
+  bottom: 10px;
+  line-height: 30px;
+  opacity: 0.8;
+}
+
+html.x-msie #teams
+{
+  padding-top: 180px;
+}
+html.x-msie #teams.special_guest > .team.static > .points,
+html.x-msie #teams.special_guest > .team.static > .full
+{
+  position: absolute;
+  top: 10px;
+}
+html.x-msie #teams.special_guest > .team.static.guest > .full
+{
+  right: 0px;
+}
+html.x-msie #teams.special_guest > .team.static.collective > .short
+{
+  position: absolute;
+  left: 110px;
+}
+html.x-msie #teams.special_guest > .team.static.collective::before
+{
+  top: -15px;
+}
+
+html.x-msie section.question,
+html.x-msie section.answer
+{
+  padding: 80px 50px 50px 100px;
+}
+
+/*html.x-msie #teams.special_guest *
+{
+  outline: 1px dashed #ff0000;
+}
+*/

@@ -234,7 +234,7 @@ var oVideo = Base.extend(
       if (!this._media.paused)
       {
         this._media.pause();
-        this._media.currentTime = 0.1;
+//        this._media.currentTime = 0.1;
         if (typeof this._media.load == 'function') this._media.load();
       }
     }
