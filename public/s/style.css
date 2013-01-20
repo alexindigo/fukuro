@@ -1,45 +1,43 @@
-@CHARSET "UTF-8";
-
-.rounded-corners {
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -khtml-border-radius: 25px;
-    border-radius: 25px;
+body
+{
+  background: #000000;
+  color: #ffffff;
 }
-
 
 article,
 header,
-footer{
-    max-width: 85%;
-    font-family: "Ubuntu", sans-serif;
-	margin: 10px auto;
-	width:100%;
-    max-width: 460px;
+footer
+{
+  max-width: 85%;
+  font-family: "Ubuntu", sans-serif;
+  margin: 10px auto;
+  width:100%;
+  max-width: 460px;
 }
 
-article.content {
-	background:#fff url(/i/logo.png) n-repeat;
-	border: 3px solid #ccc;
-	min-height:490px;
-	height:auto !important;
-	height:470px;
-	width:100%;
+article.content
+{
+  min-height: 490px;
+  height: auto;
+  min-height: 470px;
+  width: 100%;
 }
 
 section {
-	margin: 30px 40px;
+  margin: 30px 40px;
 }
 
 section header {
-	font-weight: bold;
+  font-weight: bold;
 }
 
-section#step0 {
-	display:block;
+#step0
+{
+  display:block;
 }
 
-ul{
+ul
+{
     padding:0;
 }
 
@@ -47,52 +45,43 @@ ul{
 #step3 p,
 #info
 {
-    font-size:1.5em;
     padding-left: 15px;
     list-style: none;
     margin-top: 3px;;
     position: relative;
-    border:1px #000 solid;
-    line-height:50px;
-    -moz-border-radius: 5px;
+    line-height: 50px;
     -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
     border-radius: 5px;
 }
 
-#teambox li.selected{
-    background-color:#FFE7BA;
-}
-
-#teambox li.selected a{
-    display:none;
+#teambox li.selected
+{
+    background-color: #666666;
 }
 
 a.button,
-a.button:hover{
+a.button:hover
+{
     cursor: pointer;
-    cursor: hand;
-    color:#fff;
+    color: #fff;
     text-decoration:none;
-    text-decoration:underline;
     position: absolute;
     right: 0;
-    margin: 5px;;
-    font-size:0.8em;
-    background-color:#4169E1;
+    margin: 5px;
+    font-size: 0.8em;
+    background-color: #4169E1;
     line-height:40px;
     vertical-align:middle;
     text-align:center;
     text-decoration: none;
     margin-left:5px;
     padding:0 5px;
-    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
     border-radius: 5px;
 }
 
-#step3 p a.button{
+#step3 p a.button
+{
     background-color:#8B7D7B;
 }
 
@@ -101,6 +90,7 @@ a.button:hover{
     text-align: center;
 }
 #info.completed,
-#info.wait {
+#info.wait
+{
     line-height:200px;
 }

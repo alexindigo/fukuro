@@ -1,5 +1,14 @@
-function getCookie(c_name) {
+var setCookie = function (c_name, value)
+{
+  document.cookie = c_name + "=" + escape(value) + ';' +
+    'expires=0; ' +
+    'path=/';
+}
+
+var getCookie = function (c_name)
+{
   var i, x, y, ARRcookies = document.cookie.split(";");
+
   for (i = 0; i < ARRcookies.length; i++) {
     x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
     y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
@@ -10,27 +19,21 @@ function getCookie(c_name) {
   }
 }
 
-function setCookie(c_name, value, exdays) {
-  var exdate = new Date();
-  exdate.setDate(exdate.getDate() + exdays);
-  var c_value = escape(value)
-      + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-  document.cookie = c_name + "=" + c_value;
-}
-
-var Wingman = function(socket) {
-    this.teams=[];
+var Wingman = function(socket)
+{
+  this.teams=[];
   this.socket = socket;
-    this.fullname = '';//getCookie("fullname")||'';
-    this.team = '';//getCookie("team")||'';
+  this.fullname = ''; //getCookie("fullname") || '';
+  this.team = ''; //getCookie("team") || '';
 };
 
 /**
  * Full name setter
  * @param value
  */
-Wingman.prototype.setFullname = function(value) {
-    this.fullname = value||'';
+Wingman.prototype.setFullname = function(value)
+{
+  this.fullname = value||'';
   setCookie("fullname",value,1);
 };
 
@@ -55,7 +58,8 @@ Wingman.prototype.setTeams = function(value) {
  * Token setter
  * @param value
  */
-Wingman.prototype.setToken = function(value) {
+Wingman.prototype.setToken = function(value)
+{
   setCookie("token",value,1);
 };
 
@@ -63,26 +67,30 @@ Wingman.prototype.setToken = function(value) {
  * Sends user information to the server
  *
  */
-Wingman.prototype.helo = function(fn) {
-    message =  {
-        token : getCookie("token")||null
+Wingman.prototype.helo = function(fn)
+{
+  var message =
+    {
+        token: getCookie("token")
     };
-  console.log(message);
   this.socket.emit('helo', message, fn);
 };
 
-Wingman.prototype.emitTeam = function(fn) {
-    message =  {
-        team : getCookie("team")||null
+Wingman.prototype.emitTeam = function(fn)
+{
+  var message =
+    {
+        team : this.team
     };
     this.socket.emit('team', message, fn);
 };
 
-Wingman.prototype.emitJoin = function(fn) {
-    message =  {
-        name : getCookie("fullname")||null
+Wingman.prototype.emitJoin = function(fn)
+{
+  var message =
+    {
+        name : this.fullname
     };
-    console.log(message);
     this.socket.emit('join', message, fn);
 };
 
@@ -90,8 +98,12 @@ Wingman.prototype.emitJoin = function(fn) {
  * Sends answer to the server
  * @param text
  */
-Wingman.prototype.emitAnswer = function(text,fn) {
-  var message = {
+Wingman.prototype.emitAnswer = function(text,fn)
+{
+  var message =
+    {
+      name: this.fullname,
+      team: this.team,
       answer : text
     };
     this.socket.emit('answer', message, fn);

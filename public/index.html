@@ -15,52 +15,49 @@
 </head>
 <body>
 <form id='send-form'>
-	<article class='content rounded-corners'>
-			<section class="form" id="step0">
-				<header>Правила игры</header>
-				<p>Для участия:</p>
-				<ul>
-					<li>Введите ваше имя</li>
-					<li>Выберите команду</li>
-					<li>Ответьте на вопрос</li>
-				</ul>
-				<p class="note">
-					<strong>Заметка:</strong> Игрок может поменять команду и свои
-					данные в любой момент.
-				</p>
-				<input class="action-button" id='start-button' type='button'
-					value='Продолжить' />
-			</section>
+  <article class='content'>
+      <section class="form" id="step0">
+        <header>Правила игры</header>
+        <p>Для участия:</p>
+        <ul>
+          <li>Введите ваше имя</li>
+          <li>Выберите команду</li>
+          <li>Ответьте на вопрос</li>
+        </ul>
+        <p class="note">
+          <strong>Заметка:</strong> Игрок может поменять команду и свои данные в любой момент.
+        </p>
+        <input class="action-button" id='start-button' type='button' value='Продолжить' />
+      </section>
 
-			<section class="form" id="step1" style="display: none;">
-				  <header>Введите ваше имя</header>
-                <label for="fullname">Полное имя игрока:</label>
-                <input id='fullname' type="text" maxlength="10" required/>
-                <input class="action-button" id='set-user-button' type='button' value='Сохранить' />
-			</section>
+      <section class="form" id="step1" style="display: none;">
+          <header>Введите ваше имя</header>
+          <input id='fullname' type="text" maxlength="10" required/>
+          <input class="action-button" id='set-user-button' type='button' value='Сохранить' />
+      </section>
 
-			<section class="form" id="step2" style="display: none;">
-				 <header>Выберите команду:</header>
-				 <ul id="teambox">
-                     <li>Список команд недоступен</li>
-				 </ul>
-                <input type="hidden" name="team" id="team" value=""/>
-            </section>
+      <section class="form" id="step2" style="display: none;">
+         <header>Выберите команду:</header>
+         <ul id="teambox">
+           <li>Список команд недоступен</li>
+         </ul>
+          <input type="hidden" name="team" id="team" value=""/>
+      </section>
 
 
-			<section class="form" id="step3" style="display: none;">
+      <section class="form" id="step3" style="display: none;">
                 Игрок:<br>
-				<p><span id="txtFullname"></span><a class="button" id="edit-user-button">изменить</a></p>
+        <p><span id="txtFullname"></span><a class="button" id="edit-user-button">изменить</a></p>
                 Команда:<br>
                 <p><span id="txtTeam"></span><a class="button" id="edit-team">изменить</a></p>
                 <div id="info" class="wait">
                     Ждите вопроса
-			    </div>
-			</section>
-    	</article>
-		</form>
-	<script src='/socket.io/socket.io.js'></script>
-	<script src="/a/ender.min.js"></script>
-	<script src='/a/wingman.js'></script>
-	<script src='/a/wingman_ui.js'></script>
+          </div>
+      </section>
+      </article>
+    </form>
+  <script src='/socket.io/socket.io.js'></script>
+  <script src="/a/ender.min.js"></script>
+  <script src='/a/wingman.js'></script>
+  <script src='/a/wingman_ui.js'></script>
 </body>

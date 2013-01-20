@@ -198,13 +198,15 @@ body>footer
 {
   position: absolute;
   opacity: 0;
-  bottom: -40px;
+  bottom: 0px;
   left: 0px;
   width: 100%;
+  height: 40px;
   line-height: 40px;
   font-size: 16px;
   color: #cccccc;
   text-align: center;
+  overflow: hidden;
   -webkit-transition: all 0.5s 0s;
   z-index: 1;
 }
@@ -389,12 +391,31 @@ body.final .team.winner
 }
 
 /* rules */
-#rules ol
+#rules ol,
+#wifi ol
 {
   list-style: "1.";
 
   font-size: 32px;
   line-height: 64px;
+}
+#rules ol li
+{
+  margin: 10px 0px;
+}
+
+#wifi ol
+{
+  font-size: 40px;
+}
+#wifi ol li
+{
+  margin: 20px 0px;
+}
+#wifi i
+{
+  font-style: normal;
+  opacity: 0.6;
 }
 
 /* settings */
@@ -431,11 +452,14 @@ html.x-ipad
 {
   -webkit-text-size-adjust: 80%;
 }
-
+html.x-ipad body>footer
+{
+  height: 30px;
+}
 /* surface hacks */
 html.x-msie body>footer
 {
-  bottom: 10px;
+  height: 80px;
   line-height: 30px;
   opacity: 0.8;
 }
