@@ -1,0 +1,75 @@
+body
+{
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+
+.timer
+{
+  margin: 10px 20px;
+}
+
+.timer:not(:empty):before
+{
+  content: "Timer: ";
+  color: #cccccc;
+}
+
+.new_player,
+.answer
+{
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  text-align: center;
+  font-size: 24px;
+  opacity: 0;
+  -webkit-animation: dropping 2s linear 1s;
+  animation: dropping 2s linear 1s;
+}
+  .answer
+  {
+    width: 400px;
+    margin-left: -200px;
+  }
+.new_player:before,
+.answer:before
+{
+  content: "joined";
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #cccccc;
+}
+  .answer:before
+  {
+    content: attr(data-player);
+  }
+
+@-webkit-keyframes dropping
+{
+  from
+  {
+    top: 0px;
+    opacity: 1;
+  }
+  to
+  {
+    top: 100%;
+    opacity: 0;
+  }
+}
+@keyframes dropping
+{
+  from
+  {
+    top: 0px;
+    opacity: 1;
+  }
+  to
+  {
+    top: 100%;
+    opacity: 0;
+  }
+}
