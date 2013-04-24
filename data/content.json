@@ -10,11 +10,94 @@
   },
   "timer":
   {
-    "audio": "minute.mp3",
+    "audio": "sounds/minute.mp3",
     "length": 60,
     "params":
     {
       "volume": 0.2
+    }
+  },
+  "sounds":
+  {
+    "intro":
+    {
+      "audio": "sounds/intro.mp3",
+      "desc": "Alan Parsons Project",
+      "params":
+      {
+        "loop": false,
+        "volume": 1
+      }
+    },
+    "teams":
+    {
+      "audio": "sounds/teams.mp3",
+      "desc": "Zarustra",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "rules":
+    {
+      "audio": "sounds/rules.mp3",
+      "desc": "Space Wind",
+      "params":
+      {
+        "loop": true,
+        "volume": 0.6
+      }
+    },
+    "horse":
+    {
+      "audio": "sounds/horse.mp3",
+      "desc": "Wild Horse",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "blackbox":
+    {
+      "audio": "sounds/blackbox.mp3",
+      "desc": "Ra-ta-ta",
+      "params":
+      {
+        "loop": false,
+        "volume": 1
+      }
+    },
+    "place_3rd":
+    {
+      "audio": "sounds/place_3rd.mp3",
+      "desc": "Homage to the Mountaints",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "place_2nd":
+    {
+      "audio": "sounds/place_2nd.mp3",
+      "desc": "Blue Raprosdy",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "place_1st":
+    {
+      "audio": "sounds/place_1st.mp3",
+      "desc": "Dance Macabre",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
     }
   },
   "questions":
@@ -152,18 +235,16 @@
     {
       "question":
       {
-        "manual": true,
-        "audio": "9q.mp3",
-        "params":
-        {
-          "stay": true
-        },
         "text": "Песня Юрия Визбора и Оскара Гингсбурга: \"Мадагаскар\".\n\nПо свидетельствам студентов присутствующих при рождении первой песни Юрия Визбора, название песни \"пришло к ним как рифма к ...\".\n\nВопрос: Рифма к чему?"
       },
       "answer":
       {
+        "audio": "9a.mp3",
+        "params":
+        {
+          "stay": true
+        },
         "text": "ОскАр.",
-        "desc": "Рифма к имени одного из авторов ОскАра Гингсбурга."
       }
     },
     "10":
