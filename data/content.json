@@ -49,6 +49,16 @@
         "volume": 0.6
       }
     },
+    "playoff":
+    {
+      "audio": "sounds/place_2nd.mp3",
+      "desc": "Blue Raprosdy",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
     "horse":
     {
       "audio": "sounds/horse.mp3",
@@ -106,6 +116,7 @@
     {
       "question":
       {
+        "manual": true,
         "text": "What word did authors encode at the end of this puzzle book?",
         "image": "1q.png"
       },
@@ -120,6 +131,7 @@
     {
       "question":
       {
+        "manual": true,
         "text": "Attention: Iohannes Vermeer. \"A Maid Asleep\"\n\nWhere exactly on this painting is number 4?",
         "image": "2q.jpg"
       },
@@ -135,13 +147,14 @@
     {
       "question":
       {
+        "manual": true,
         "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be definitely answered by science, but can be answered using a dictionary.\n\nAll subjects of this question are in the black box.\n\nWhat is in Black Box?"
       },
       "answer":
       {
         "text": "Chicken and Egg.",
         "desc": "In dictionary \"C\" in Chicken comes before \"E\" in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
-        "keyword": ["chicken", "egg"]
+        "keyword": ["chicken egg"]
       }
     },
     "4":
@@ -153,7 +166,7 @@
       "answer":
       {
         "text": "Hussein (Barack Hussein Obama)",
-        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George Herbert Bush\nBill Jefferson Clinton\nGeorge Walker Bush</span>",
+        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <span style=\"font-size: 32px;\">Herbert</span> Bush\nBill Jefferson Clinton\nGeorge Walker Bush</span>",
         "keyword": ["hussein", "husein", "husine"]
       }
     },
@@ -161,17 +174,20 @@
     {
       "question":
       {
-        "text": "Here is an English translation of this famous hit song:\n\n<span style=\"display: block; text-align: center;\">Beautiful, loveable\nYes you, hey, yes you, hey\nBeautiful, loveable\nYes you, hey, yes you, hey\nNow let’s go until the end\nBig brother is ...</span>\nFinish this hit with words in the original language or in English."
+        "text": "Here is an English translation of this famous hit song:\n\n<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is ...</span>\nFinish this hit with words in the original language or in English."
       },
       "answer":
       {
         "audio": "5a.mp3",
         "params":
         {
-          "stay": true
+          "loop": false,
+          "volume": 1,
+          "_keep_alive": true
         },
         "text": "Gangnam Style.",
-        "keyword": "style"
+        "desc": "<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is Gangnam Style.</span>",
+        "keyword": ["gangnam", "style"]
       }
     },
     "6":
@@ -197,13 +213,15 @@
       {
         "text": "Because they did not want to date it April 1st",
         "desc": "Conviction about April's Fool's Day was so strong in Poland that they did not want to risk people thinking this alliance was a joke.",
-        "keyword": ["april", "fools"]
+        "keyword": ["april", "fool", "fools"]
       }
     },
     "8":
     {
       "question":
       {
+        "manual": true,
+        "image": "8q.png",
         "text": "Yahoo, Walmart Stores, Ruby Sky\n\nWhat is wrong with all those trademarks?"
       },
       "answer":
@@ -217,13 +235,13 @@
     {
       "question":
       {
-        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is not on a tea itself but blow ... how?"
+        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is <span style=\"font-size: 42px;\">not</span> on a tea itself but blow ... how?"
       },
       "answer":
       {
         "text": "Above the tea.",
         "desc": "• The way hot liquid cools off is by interacting with much cooler air.\n\n• Heat, which escapes from hot liquid, creates a BUFFER ABOVE THE CUP.\n\n• So we blow to blow away that BUFFER OF HOT AIR ABOVE THE CUP.",
-        "keyword": "above"
+        "keyword": ["above", "over"]
       }
     },
     "10":
@@ -243,7 +261,7 @@
     {
       "question":
       {
-        "text": "This country does not have the Government of its own.\n\nThis country does not have the Constitution at all.\n\nThis country's language even though used by other countries is not regulated by any authority.\n\nName that country."
+        "text": "This country does not have the Government of its own.\n\nThis country does not have the Constitution at all.\n\nThis country's language, even though used by other countries, is not regulated by any authority.\n\nName that country."
       },
       "answer":
       {
@@ -256,13 +274,13 @@
     {
       "question":
       {
-        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\nThere were two main rival gangs: Metropolitans and Municipals.\nMunicipals whore shiny metal badges and Metropolitans did not.\nWhat term, widely used today, do we call Municipals now and why?"
+        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\nThere were two main rival gangs: Metropolitans and Municipals.\nMunicipals whore shiny metal badges and Metropolitans did not.\nWhat term, widely used today, do we call Municipals now <b>and</b> why?"
       },
       "answer":
       {
-        "text": "Cops. Badges were made of copper.",
+        "text": "Cops. Badges were made of <b>copper</b>.",
         "desc": "Private security gangs developed into Police Officers.\n\nRival gang of Metropolitans called Municipals \"cops\" (short from \"copper\" because they wore copper badges) this is how the name for Police Officers came about.",
-        "keyword": "cop"
+        "keyword": ["cop", "copper"]
       }
     },
     "playoff 1":
@@ -274,7 +292,7 @@
       "answer":
       {
         "text": "May the 4th.",
-        "desc": "\"May the Force be with you\"."
+        "desc": "\"<b>May the Force</b> be with you\"."
       }
     },
     "playoff 2":

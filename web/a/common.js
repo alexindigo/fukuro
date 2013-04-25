@@ -245,7 +245,8 @@ var oVideo = Base.extend(
   {
     // add elements first
     var res = this._parent.populate.apply(this, arguments);
-    // store mdeia element
+
+    // store media element
     this._media = $('video', this._el).get(0);
 
     // add options
@@ -313,7 +314,7 @@ var oAudio = Base.extend(
       if (!this._media.paused)
       {
         this._media.pause();
-        this._media.currentTime = 0.1;
+        if (typeof this._media.load == 'function') this._media.load();
       }
     }
 
@@ -321,43 +322,51 @@ var oAudio = Base.extend(
   },
   populate: function(path)
   {
-    if ('Audio' in window)
+    // add elements first
+    var res = this._parent.populate.apply(this, arguments);
+
+    // store media element
+    this._media = $('audio', this._el).get(0);
+
+    // add options
+    for (opt in this.options)
     {
-      if (!window.__audio) window.__audio = {};
-      if (!(path in window.__audio))
-      {
-        window.__audio[path] = new Audio();
-        window.__audio[path].src = path;
-
-        // off itself on stop
-        $(window.__audio[path]).on('ended', $.bind(function()
-        {
-          // check options if it needs to stay
-          if (!this.options.stay)
-          {
-            // call deffered if there is one
-            if (this._deffered) this._deffered();
-            this.off();
-          }
-        }, this));
-      }
-      // store mdeia element
-      this._media = window.__audio[path];
-
-      // add options
-      for (opt in this.options)
+      // filter out custom options
+      if (opt[0] != '_')
       {
         this._media[opt] = this.options[opt];
       }
     }
 
+    // start loading video
+    if (typeof this._media.load == 'function')
+    {
+      this._media.load();
+    }
+
+    // off itself on stop
+    $(this._media).on('ended', $.bind(function()
+    {
+        // check options if it needs to stay
+        if (this.options['_keep-alive'])
+        {
+          this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0.1;
+        }
+        else
+        {
+          // call deffered if there is one
+          if (this._deffered) this._deffered();
+          this.off();
+        }
+    }, this));
+
+    // add text
     if (this.options['_text'])
     {
       this._el.attr('data-text', this.options['_text']);
     }
 
-    // call parent method, emulate empty string
-    return this._parent.populate.apply(this, ['']);
+    return res;
   }
 });
 

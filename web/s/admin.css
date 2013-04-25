@@ -1,5 +1,7 @@
 body
 {
+  box-sizing: border-box;
+  padding-bottom: 150px;
   background-image: url("/i/dark_pixels.png");
   background-position: 0px 0px;
   background-repeat: repeat;
@@ -22,10 +24,11 @@ body>nav
 body>footer
 {
   position: absolute;
-  bottom: 15px;
+  bottom: 80px;
   width: 100%;
-  height: 60px;
+  height: 90px;
   text-align: center;
+  border-bottom: 1px dotted #cccccc;
 }
 /* stats in the footer */
 body>footer:before
@@ -36,6 +39,17 @@ body>footer:before
   margin-left: 16px;
   font-size: 18px;
   color: #999999;
+}
+/* sounds */
+#sounds
+{
+  position: absolute;
+  bottom: 15px;
+  width: 125%;
+  height: 60px;
+  text-align: center;
+  -webkit-transform: scale(0.8);
+  -webkit-transform-origin: 0px 0px;
 }
 /* audience */
 #audience

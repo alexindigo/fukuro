@@ -122,6 +122,14 @@ var handlers =
       item.removeClass('active');
     }
   },
+  'sound_stop': function(key)
+  {
+    var item = $('#button_sound_'+key);
+    if (item)
+    {
+      item.removeClass('active');
+    }
+  },
   // update round
   'round': function(data)
   {
@@ -139,14 +147,14 @@ var handlers =
   'sound': function(data)
   {
 console.log(['sound', data]);
-    // if (data.time > -1)
-    // {
-    //   $('#button_timer').addClass('active').attr('data-timer', ' '+data.time);
-    // }
-    // else
-    // {
-    //   $('#button_timer').removeClass('active').removeAttr('data-timer');
-    // }
+    if (data.action == 'play')
+    {
+      $('#button_sound_'+data.key).addClass('active');
+    }
+    else
+    {
+      $('#button_sound_'+data.key).removeClass('active');
+    }
   },
   // listen to the timer
   'timer': function(data)
@@ -197,7 +205,47 @@ var contentActions = function(e)
     // got the answer, unflag button
     button.removeClass('busy');
   });
+
+  // turn on teams music together with cover video
+  if (item.item == 'cover')
+  {
+    socket.emit('admin:sound', {key: 'teams', action: (action == 'show' ? 'play' : 'stop')}, function(){});
+  }
+
+  if (item.item == 'rules')
+  {
+    socket.emit('admin:sound', {key: 'rules', action: (action == 'show' ? 'play' : 'stop')}, function(){});
+  }
 };
+
+// listen to the sound button events
+var soundActions = function(e)
+{
+  var action
+    , key
+    , button = $(this);
+
+  e.preventDefault();
+  // already doing something don't disturb
+  if (button.hasClass('busy')) return;
+
+  // flag button as busy
+  button.addClass('busy');
+
+  // prepare action
+  action = button.hasClass('active') ? 'stop' : 'play';
+
+  // get item data
+  key = button.data('item');
+
+  // notify the server
+  socket.emit('admin:sound', {key: key, action: action}, function(data)
+  {
+    // got the answer, unflag button
+    button.removeClass('busy');
+  });
+};
+
 
 // listen to the footer button events
 var statActions = function(e)
@@ -284,6 +332,9 @@ connect(handlers,
 
     // special questions
     $('body>footer>.special').on('button', 'mousedown touchstart', contentActions);
+
+    // sounds
+    $('#sounds').on('button', 'mousedown touchstart', soundActions);
 
 
     // teams

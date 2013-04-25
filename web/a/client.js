@@ -64,9 +64,8 @@ console.log(['cc', data]);
     {
       $.each(data.sounds, $.bind(function(item, key)
       {
-        var s = $('<div id="sound_'+key+'" class="sound"></div>').prependTo('body');
         if (!this.sounds) this.sounds = {};
-        this.sounds[key] = make(s, item);
+        this.sounds[key] = Sound.create(item);
       }, this));
 console.log(['sounds', this.sounds]);
     }
@@ -74,7 +73,7 @@ console.log(['sounds', this.sounds]);
     // {{{ Timer
     if (data.timer)
     {
-      Timer.init(data.timer);
+      Timer.create(data.timer);
     }
     // }}}
   }
@@ -100,7 +99,8 @@ var misc =
   {
     return function()
     {
-      socket.emit('sound', {key: key, action: 'stop'});
+console.log(['stop all', key]);
+      socket.emit('sound_stop', key);
     }
   }
 }
@@ -482,7 +482,7 @@ var make = function(el, data, options)
   }
   else if ('audio' in data)
   {
-    res = oAudio.init(el, options).populate('/content/'+data.audio);
+    res = oAudio.init(el, options).populate('<audio preload="auto" '+(options.loop ? 'loop ' : '')+'><source src="/content/'+data.audio+'" type="audio/mpeg"></audio>');
   }
 
   // we should have text most of the time
@@ -563,7 +563,7 @@ var Timer =
   _el: null,
   _media: null,
   options: {},
-  init: function(data)
+  create: function(data)
   {
     this.options = data;
 
@@ -575,6 +575,10 @@ var Timer =
       this._el.append('<li class="fill"></li>');
     }
 
+    return this;
+  },
+  init: function()
+  {
     // init sound
     if ('Audio' in window)
     {
@@ -651,5 +655,142 @@ var Timer =
         if (this._media.currentTime < this.options.length) this._media.pause();
       }
     }
+  }
+};
+
+// Sound controller
+var Sound =
+{
+  _el: null,
+  _media: null,
+  _current: null,
+  options: {},
+  current: function(o)
+  {
+    if (typeof o != 'undefined') this._current = o;
+    return this._current;
+  },
+  create: function(data)
+  {
+    var child = Object.create(this);
+
+    // store the options
+    child.options = data.params || {};
+
+    // attach current to the Base
+    child.current = $.bind(child.current, Sound);
+
+    child.init(data.audio);
+
+    return child;
+  },
+  init: function(path)
+  {
+    // add element first
+    this._el0 = $('<audio preload><source src="/content/'+path+'" type="audio/mpeg"></audio>').appendTo(document.body);
+    this._el1 = $('<audio preload><source src="/content/'+path+'" type="audio/mpeg"></audio>').appendTo(document.body);
+
+    // store media element
+    this._media0 = this._el0.get(0);
+    this._media1 = this._el1.get(0);
+
+    // for others
+    if (!this._media0.load) this._media0.load = function(){};
+    if (!this._media1.load) this._media1.load = function(){};
+
+    // add options
+    for (opt in this.options)
+    {
+      // filter out custom options
+      // do manual loops, html5 rocks, not
+      if (opt[0] != '_' && opt != 'loop')
+      {
+        this._media0[opt] = this.options[opt];
+        this._media1[opt] = this.options[opt];
+      }
+    }
+
+    // start loading video
+    this._media0.load();
+    this._media1.load();
+
+    // off itself on stop
+    $(this._media1).on('ended', $.bind(function()
+    {
+      if (this.options['loop'])
+      {
+        this._media1.load();
+        this._media0.play();
+        return;
+      }
+    }, this));
+    $(this._media0).on('ended', $.bind(function()
+    {
+      if (this.options['loop'])
+      {
+        this._media0.load();
+        this._media1.play();
+        return;
+      }
+
+      // check options if it needs to stay
+      if (this.options['_keep-alive'])
+      {
+        this._media0.load();
+      }
+      else
+      {
+        // call deffered if there is one
+        if (this._deffered) this._deffered();
+        this.off();
+      }
+    }, this));
+
+    return this;
+  },
+  on: function(deffered)
+  {
+    var previous;
+
+console.log(['play', this]);
+    if (deffered) this._deffered = deffered;
+
+    // race condition
+    if (previous = this.current())
+    {
+      if (previous._deffered) previous._deffered();
+      previous.off();
+    }
+    this.current(this);
+
+    if (this._media0)
+    {
+      this._media0.play();
+    }
+  },
+  off: function()
+  {
+console.log(['stop', this]);
+    // clean up defferend
+    this._deffered = null;
+    this.current(null);
+
+    if (this._media0)
+    {
+      if (!this._media0.paused)
+      {
+        this._media0.pause();
+      }
+      this._media0.load();
+    }
+    if (this._media1)
+    {
+      if (!this._media1.paused)
+      {
+        this._media1.pause();
+      }
+      this._media1.load();
+    }
+
   }
 };
