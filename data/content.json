@@ -106,250 +106,221 @@
     {
       "question":
       {
-        "text": "Чёрный ящик.\n\nРюмки, электрические лампочки, цветочный горшок, кегли.\n\nВопрос: Где в романе Льва Кассиля дети всё это находили (ответ в Чёрном Ящике)?"
+        "text": "What word did authors encode at the end of this puzzle book?",
+        "image": "1q.png"
       },
       "answer":
       {
-        "text": "Шахматная коробка (шахматы).",
-        "desc": "Тура - похожа на рюмку, шашечки офицеров - на лампочки, королева - на цветочный горшок, и конечно пешки - на кегли."
+        "text": "Puzzle (look upside down).",
+        "image": "1a.png",
+        "keyword": "puzzle"
       }
     },
     "2":
     {
       "question":
       {
-        "text": "Скажите пожалуйста от чего в хозяйстве журнал \"Идеи для дома\" предлагает использовать вот эту вещь?",
+        "text": "Attention: Iohannes Vermeer. \"A Maid Asleep\"\n\nWhere exactly on this painting is number 4?",
         "image": "2q.jpg"
       },
       "answer":
       {
-        "image": "2a.jpg",
-        "text": "От хлопанья дверей (при сквозняках).",
-        "desc": "Она помогает от сквозняков. Её ручки одеваются на ручки дверей с двух сторон и двери не хлопают от сквозняков."
+        "image": "2a.png",
+        "text": "Signature (IVMeer)",
+        "desc": "Roman numeral \"IV\" - 4.",
+        "keyword": ["signature", "iv"]
       }
     },
     "3":
     {
       "question":
       {
-        "manual": true,
-        "image": "3q.jpg",
-        "video": "3q.mp4",
-        "params":
-        {
-          "_keep-alive": true,
-          "loop": true,
-          "volume": 0
-        },
-        "text": "Вы посмотрели фрагмент фильма \"Огненные Колесницы\" про Британских бегунов на Олимпиаде 1924 года.\n\nВопрос: А для чего главному герою на Олимпиаде нужен был этот прибор (напоминающим известный столовый прибор)?"
+        "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be definitely answered by science, but can be answered using a dictionary.\n\nAll subjects of this question are in the black box.\n\nWhat is in Black Box?"
       },
       "answer":
       {
-        "image": "3a.jpg",
-        "video": "3a.mp4",
-        "params":
-        {
-          "_keep-alive": true,
-          "loop": true,
-          "volume": 0
-        },
-        "text": "Для того чтобы вырыть стартовыe ямки."
+        "text": "Chicken and Egg.",
+        "desc": "In dictionary \"C\" in Chicken comes before \"E\" in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
+        "keyword": ["chicken", "egg"]
       }
     },
     "4":
     {
       "question":
       {
-        "manual": true,
-        "image": "4q.jpg",
-        "video": "4q.mp4",
-        "params":
-        {
-          "_keep-alive": true,
-          "loop": true,
-          "volume": 0
-        },
-        "text": "В оригинальной версии, главный герой отправлялся Назад в Будущее, в фильме с одноимённым названием, используя для этого холодильник.\n\nВопрос: Почему же американские продюсеры решили изменить холодильник на автомобиль?"
+        "text": "Listen to these names (in order)\n\nHerbert, Jefferson, Walker, ???\n\nQuestion: What is the next name in this sequence?"
       },
       "answer":
       {
-        "text": "Из-за безопасности. Потому что они боялись что дети полезут в холодильники и их засудят."
+        "text": "Hussein (Barack Hussein Obama)",
+        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George Herbert Bush\nBill Jefferson Clinton\nGeorge Walker Bush</span>",
+        "keyword": ["hussein", "husein", "husine"]
       }
     },
     "5":
     {
       "question":
       {
-        "text": "1 США\n2 Египет\n3 Греция\n4 Румыния\n5 Фолклендские острова\n6 Малайзия\n7 Россия\n8 UIFN\n9 Турция\n\nВопрос: Это список чего?"
+        "text": "Here is an English translation of this famous hit song:\n\n<span style=\"display: block; text-align: center;\">Beautiful, loveable\nYes you, hey, yes you, hey\nBeautiful, loveable\nYes you, hey, yes you, hey\nNow let’s go until the end\nBig brother is ...</span>\nFinish this hit with words in the original language or in English."
       },
       "answer":
       {
-        "text": "Префиксов телефонных кодов стран.",
-        "desc": "Чтобы позвонить в Россию вы же набираете вначале \"7\"? А в США, вы же набираете \"1\"?\nUIFN - Universal International Freephone Number."
+        "audio": "5a.mp3",
+        "params":
+        {
+          "stay": true
+        },
+        "text": "Gangnam Style.",
+        "keyword": "style"
       }
     },
     "6":
     {
       "question":
       {
-        "text": "Внимание на мою ассистентку.\n\nТо что носит Марина в Англии Елизаветинской эпохи считалось вредным для здоровья поскольку это не позволяет влаге испарятся естественным способом.\n\nТо что носит Марина, в XIII веке обязательно носила определённая группа людей для демонстрации их принадлежности к королевскому роду.\n\nВопрос: Так что же носит Марина?"
+        "text": "Here are two facts about 18th century America:\n\n• On Sunday it was customary to go to Church.\n• Sometimes it took a day to ride to a closest town.\n\nSince then much in America changed. However, because of the logic above, what do we still do on a Tuesday?"
       },
       "answer":
       {
-        "text": "Косметика."
+        "text": "Vote in U.S. Elections.",
+        "desc": "To ensure that everyone have a chance to vote, U.S. allowed for 1 day to ride to a polling station after attending a church on Sunday.",
+        "keyword": ["vote", "elections"]
       }
     },
     "7":
     {
       "question":
       {
-        "text": "Вопрос: Закончите куплет из детской песни Андрея Макаревича одним словом:\n\n<span style=\"display: block; text-align: center;\">Я вопросом озабочен:\nОтчего скворец свистит?\n- От того, что легкий, очень\nИ летит, куда хотит.</span>"
+        "text": "Anti-Turkish alliance, which Poland signed in 1683 with Leopold I, was backdated to March 31. Why?"
       },
       "answer":
       {
-        "text": "Хочет.",
-        "desc": "Нет такого слова \"хотит\"."
+        "text": "Because they did not want to date it April 1st",
+        "desc": "Conviction about April's Fool's Day was so strong in Poland that they did not want to risk people thinking this alliance was a joke.",
+        "keyword": ["april", "fools"]
       }
     },
     "8":
     {
       "question":
       {
-        "image": "8q.jpg",
-        "text": "Вопрос: Люди какой профессии, часто получающие зарплату больше миллиона долларов, пользуются профессионально такой детской игрушкой для рисования?"
+        "text": "Yahoo, Walmart Stores, Ruby Sky\n\nWhat is wrong with all those trademarks?"
       },
       "answer":
       {
-        "image": "8a.jpg",
-        "video": "8a.mp4",
-        "params":
-        {
-          "_keep-alive": true,
-          "loop": true,
-          "volume": 0
-        },
-        "text": "Спортивные (баскетбольные) тренеры."
+        "text": "Spelling.",
+        "desc": "As officially registered:\n\nYahoo! (with \"!\")\nWal-Mart Stores (with \"–\")\nRuby Skye (with \"e\")",
+        "keyword": ["spelled", "spelling", "misspelled", "missing"]
       }
     },
     "9":
     {
       "question":
       {
-        "text": "Песня Юрия Визбора и Оскара Гингсбурга: \"Мадагаскар\".\n\nПо свидетельствам студентов присутствующих при рождении первой песни Юрия Визбора, название песни \"пришло к ним как рифма к ...\".\n\nВопрос: Рифма к чему?"
+        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is not on a tea itself but blow ... how?"
       },
       "answer":
       {
-        "audio": "9a.mp3",
-        "params":
-        {
-          "stay": true
-        },
-        "text": "ОскАр.",
+        "text": "Above the tea.",
+        "desc": "• The way hot liquid cools off is by interacting with much cooler air.\n\n• Heat, which escapes from hot liquid, creates a BUFFER ABOVE THE CUP.\n\n• So we blow to blow away that BUFFER OF HOT AIR ABOVE THE CUP.",
+        "keyword": "above"
       }
     },
     "10":
     {
       "question":
       {
-        "image": "10q.jpg",
-        "text": "FedEx хотел передать девиз: \"движение, скорость, и динамичный характер своей компании\" в виде определённого знака.\n\nВопрос: Воспроизведите этот знак."
+        "text": "Residents of San Diego are advised by local government to turn off the lights after 11pm. What is located near those resident's houses?"
       },
       "answer":
       {
-        "image": "10a.jpg",
-        "text": "СТРЕЛА. Между буквами Е и Х."
+        "text": "Observatory (planetarium)",
+        "desc": "Famous Palomar Observatory is complaining of \"light pollution\" because stars cannot clearly be seen.",
+        "keyword": ["observatory", "planetarium"]
       }
     },
     "11":
     {
       "question":
       {
-        "text": "Один из самых больших скачков в количестве пользователей сайта Search.com был зафиксирован ночью 6-го ноября 2011 года.\n\nВопрос: Через 60 секунд ответьте то над чем ломали головы лучшие умы Кремниевой долины: так что же произошло той ночью?"
+        "text": "This country does not have the Government of its own.\n\nThis country does not have the Constitution at all.\n\nThis country's language even though used by other countries is not regulated by any authority.\n\nName that country."
       },
       "answer":
       {
-        "text": "Переход на Зимнее время.",
-        "desc": "Часы переводят назад и час с 1<sup>AM</sup> до 2<sup>AM</sup> считается два раза. Количество пользователей просто посчитали два раза."
+        "text": "England.",
+        "desc": "There is UK government but not an English one.\n\nLaw in England is based on court's decisions, there is no Constitution.\n\nThere is no organization regulating English language.",
+        "keyword": "england"
       }
     },
     "12":
     {
       "question":
       {
-        "text": "16-го декабря 1965 года астронавты NASA, Том Стафорд и Валли Ширра послали на Землю сообщение: \"Мы видим спутник, двигающийся по направлению с Севера на Юг. Я вижу основной блок впереди которого 8 блоков меньшего размера.\"\n\nВопрос: Так что же это было по мнению астронавтов?"
+        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\nThere were two main rival gangs: Metropolitans and Municipals.\nMunicipals whore shiny metal badges and Metropolitans did not.\nWhat term, widely used today, do we call Municipals now and why?"
       },
       "answer":
       {
-        "text": "Санта Клaус и 8 оленей."
-      }
-    },
-    "audience":
-    {
-      "question":
-      {
-        "text": "Эта песня была написана ко Дню Благодарения, но сейчас она является одной из самых известных песней другого популярного праздника. Её исполняли Френк Синатра, Луи Армстронг, Дюк Эллингтон, Бони М и многие другие.\n\nВопрос: Назовите эту песню."
-      },
-      "answer":
-      {
-        "text": "Jingle Bells.",
-        "desc": "Традиционные песни для праздников в США в основном на Christmas. Дальше надо найти в какой из них говорится про зиму, но нет ни Санта Клауса, ни слова Christmas."
+        "text": "Cops. Badges were made of copper.",
+        "desc": "Private security gangs developed into Police Officers.\n\nRival gang of Metropolitans called Municipals \"cops\" (short from \"copper\" because they wore copper badges) this is how the name for Police Officers came about.",
+        "keyword": "cop"
       }
     },
     "playoff 1":
     {
       "question":
       {
-        "text": "Вопрос: зачем знаменитая Итальянская оперная певица Мария Калас склонилась во время одного из спектаклей в реверансе перед публикой и произнесла реплику \"forte!\" которой в тексте не было."
+        "text": "A slightly mispronounced famous line from a famous movie saga defined the exact calendar date when fans celebrate this movie's day."
       },
       "answer":
       {
-        "text": "Ей не было слышно суфлёра.",
-        "desc": "Форте, как многие знают из музыки, означает \"громче\"."
+        "text": "May the 4th.",
+        "desc": "\"May the Force be with you\"."
       }
     },
     "playoff 2":
     {
       "question":
       {
-        "text": "Вопрос: Если под яблоком написано \"Один Бесконечный Цикл\", что это означает?"
+        "text": "Sylvilagus palustris hefneri – is an endangered subspecies of marsh rabbit.\n\nQuestion: What organization sponsored the research of this rabbit?"
       },
       "answer":
       {
-        "text": "Это адрес фирмы Apple.",
-        "desc": "1 Infinite Loop."
+        "text": "Playboy."
       }
     },
     "playoff 3":
     {
       "question":
       {
-        "text": "Когда-то в Армии существовал офицер, который вооружённый зеркальцем, наподобие тех которые используют чтобы искать бомбы под машинами, проверял чтобы сотрудники не одевали под юбки нижнее бельё.\n\nВопрос: А где находится музей v котором рассказывается этот реальный исторический факт."
+        "text": "Captain Nemo, in Jules Verne 1870 novel \"20,000 leagues under the sea\", lived in a submarine near the bottom of the ocean. What was special about his watch?"
       },
       "answer":
       {
-        "text": "Шотландия."
+        "text": "It had 24 hours.",
+        "desc": "He couldn't tell day from night under the sea."
       }
     },
     "playoff X1":
     {
       "question":
       {
-        "text": "Агент ЦРУ Тони Мендез описывает в своей книге как, в марте 1989 года, он помог бежать сотрунику КГБ Леоновy, работающему на ЦРУ, прямо из центра Москвы.\n\nПрямо с концерта в Кремле, Мендез вывел Леонова подземными ходами соединяющими Кремль и всю Москву.\n\nВопрос: А для чего ещё, намного более важного чем похищение сотрудника КГБ, как пишет Мендез, он воспользовался этими подземными ходами в ту же ночь?"
+        "text": "Why, according to hotel owners, do they prefer to put up large pictures on the hotel walls rather than smaller ones?"
       },
       "answer":
       {
-        "text": "Он подключился к телефонной сети\nправительства СССР."
+        "text": "Large pictures are harder to steal."
       }
     },
     "playoff X2":
     {
       "question":
       {
-        "text": "Представьте себе человека всасывающего лимон. Представили?\n\nДжеймс Брэйд объяснял как работает влияние лечебного гипноза на человеческие органы на примере человека который всасывает лимон.\n\nВопрос: Через минуту напишите это объяснение."
+        "text": "In 1858 HH Stephenson took three wickets in three balls for the team England at a cricket game. What element of clothing did organizers buy him from the proceeds?"
       },
       "answer":
       {
-        "text": "Когда человек ДУМАЕТ о всасывании лимона\nу него выделяется СЛЮНА."
+        "text": "Hat (as in Hat-Trick).",
+        "desc": "Until this day when someone scores 3 goals it is called \"Hat-Trick\" (and spectators throw hats into a field/ice)."
       }
     }
 

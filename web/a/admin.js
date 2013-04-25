@@ -20,7 +20,7 @@ var Nav =
   {
     // clean up
     $('button', this.base).remove();
-
+console.log(['dd', data]);
     // {{{ create questions
     if ('questions' in data)
     {
@@ -134,6 +134,19 @@ var handlers =
     $('#button_round').attr('data-label', data.round ? 'New Round' : 'Start Game');
     // update current question in the nav
     Nav.refresh();
+  },
+  // listen to the timer
+  'sound': function(data)
+  {
+console.log(['sound', data]);
+    // if (data.time > -1)
+    // {
+    //   $('#button_timer').addClass('active').attr('data-timer', ' '+data.time);
+    // }
+    // else
+    // {
+    //   $('#button_timer').removeClass('active').removeAttr('data-timer');
+    // }
   },
   // listen to the timer
   'timer': function(data)
@@ -266,7 +279,7 @@ connect(handlers,
 
     $('body>footer').on('button:not(.content)', 'mousedown touchstart', statActions);
 
-    // special treatment for the cover, rules and wifi
+    // special treatment for the cover, rules and sms
     $('body>footer').on('button.content', 'mousedown touchstart', contentActions);
 
     // special questions

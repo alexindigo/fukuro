@@ -1,73 +1,65 @@
 [
   {
-    "full": "12.5 Degrees"
+    "full": "Perfect Strangers",
+    "short": "Strangers"
   },
   {
-    "full": "Astral Cats"
+    "full": "Dickbats"
   },
   {
-    "full": "Berkeley"
+    "full": "Trulia"
   },
   {
-    "full": "Бузина"
+    "full": "Clubbers"
   },
   {
-    "full": "East Bay"
+    "full": "SF House Gangsters",
+    "short": "Gangsters"
   },
   {
-    "full": "ГосДеп"
+    "full": "Mist Raiders"
   },
   {
-    "full": "Hikers"
+    "full": "RWB"
   },
   {
-    "full": "Hikers"
+    "full": "Normal Group"
   },
   {
-    "full": "Livejournal"
+    "full": "Twin Peaks"
   },
   {
-    "full": "Musketeers"
+    "full": "Belarus"
   },
   {
-    "full": "Нормальная Группа",
-    "short": "Нормальные"
-  },
-  {
-    "full": "Poluostrov"
-  },
-  {
-    "full": "Poslednie Romantiki",
-    "short": "Romantiki"
-  },
-  {
-    "full": "Russians Without Borders",
-    "short": "Russians"
+    "full": "UC Berkeley",
+    "short": "Berkeley"
   },
   {
     "full": "South Bay"
   },
   {
+    "full": "Musketeers"
+  },
+  {
+    "full": "Peninsula"
+  },
+  {
     "full": "Stanford"
-  },
-  {
-    "full": "TwinPeaks"
-  },
-  {
-    "full": "Walnut Geek"
-  },
-  {
-    "full": "Александр Друзь",
-    "short": "Друзь",
-    "guest": true
-  },
-  {
-    "full": "Сборная Сан-Франциско",
-    "short": "Сан-Франциско",
-    "collective": true
-  },
-  {
-    "full": "Belarus",
-    "short": "Belarus"
   }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

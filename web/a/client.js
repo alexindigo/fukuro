@@ -18,7 +18,7 @@ var Content =
   init: function(data)
   {
     var el;
-
+console.log(['cc', data]);
     // check for alternate language
     if ($('body').data('lang'))
     {
@@ -33,9 +33,9 @@ var Content =
     }
     // }}}
 
-    // {{{ prepare rules and wifi
+    // {{{ prepare rules and sms
     this.rules = make($('#rules'), {});
-    this.wifi = make($('#wifi'), {});
+    this.sms = make($('#sms'), {});
     // }}}
 
     // {{{
@@ -58,6 +58,18 @@ var Content =
       }, this));
     }
     // }}}
+
+    // sounds
+    if ('sounds' in data)
+    {
+      $.each(data.sounds, $.bind(function(item, key)
+      {
+        var s = $('<div id="sound_'+key+'" class="sound"></div>').prependTo('body');
+        if (!this.sounds) this.sounds = {};
+        this.sounds[key] = make(s, item);
+      }, this));
+console.log(['sounds', this.sounds]);
+    }
 
     // {{{ Timer
     if (data.timer)
@@ -83,6 +95,13 @@ var misc =
     {
       socket.emit('off', data);
     }
+  },
+  deferredSoundOff: function(key)
+  {
+    return function()
+    {
+      socket.emit('sound', {key: key, action: 'stop'});
+    }
   }
 }
 
@@ -106,9 +125,9 @@ var handlers =
         fn({item: 'rules', status: 'on'});
         break;
 
-      case 'wifi':
-        Content.wifi.on(misc.deferredOff(data));
-        fn({item: 'wifi', status: 'on'});
+      case 'sms':
+        Content.sms.on(misc.deferredOff(data));
+        fn({item: 'sms', status: 'on'});
         break;
 
 
@@ -180,9 +199,9 @@ var handlers =
         fn({item: 'rules', status: 'off'});
         break;
 
-      case 'wifi':
-        Content.wifi.off();
-        fn({item: 'wifi', status: 'off'});
+      case 'sms':
+        Content.sms.off();
+        fn({item: 'sms', status: 'off'});
         break;
 
       case 'question':
@@ -225,6 +244,24 @@ var handlers =
   {
     // and update round
     Round.update(data.round, 2000);
+  },
+  // listen to the timer
+  'sound': function(data)
+  {
+    if (data.action == 'play')
+    {
+      if (data.key && Content.sounds[data.key])
+      {
+        Content.sounds[data.key].on(misc.deferredSoundOff(data.key));
+      }
+    }
+    else
+    {
+      if (data.key && Content.sounds[data.key])
+      {
+        Content.sounds[data.key].off();
+      }
+    }
   },
   // listen to the timer
   'timer': function(data)

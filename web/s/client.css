@@ -182,7 +182,7 @@ video:after
 /* special */
 #cover,
 #rules,
-#wifi
+#sms
 {
   -webkit-transition: all 3s;
 }
@@ -392,7 +392,7 @@ body.final .team.winner
 
 /* rules */
 #rules ol,
-#wifi ol
+#sms ol
 {
   list-style: "1.";
 
@@ -404,15 +404,15 @@ body.final .team.winner
   margin: 10px 0px;
 }
 
-#wifi ol
+#sms ol
 {
   font-size: 40px;
 }
-#wifi ol li
+#sms ol li
 {
   margin: 20px 0px;
 }
-#wifi i
+#sms i
 {
   font-style: normal;
   opacity: 0.6;
