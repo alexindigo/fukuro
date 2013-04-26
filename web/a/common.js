@@ -320,7 +320,7 @@ var oAudio = Base.extend(
 
     return res;
   },
-  populate: function(path)
+  populate: function(html)
   {
     // add elements first
     var res = this._parent.populate.apply(this, arguments);

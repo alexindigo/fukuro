@@ -1,3 +1,7 @@
+body
+{
+  -webkit-transform-origin: center center;
+}
 /* cover up */
 body:before
 {

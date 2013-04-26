@@ -24,6 +24,11 @@ var _      = require('utile')
   , router = require('./lib/router')
   ;
 
+process.on('uncaughtException', function(err) {
+  console.log('Caught exception: ' + err);
+  process.exit(1);
+});
+
 // {{{ get configuations
 conf.argv().env().use('memory');
 
@@ -87,8 +92,13 @@ function start()
         {
           socket.get('password', function(err, password)
           {
-            // kust formality
-            if (err) return console.log(['ERROR', err]);
+            // just formality
+            if (err)
+            {
+              console.log(['ERROR-password', err]);
+              console.trace();
+              return;
+            }
 
             // check the password
             // double equal to compare nothing with empty string
@@ -120,7 +130,8 @@ function start()
           catch (e)
           {
             // TODO: Add flatiron/errs
-            console.log(['ERROR', e]);
+            console.log(['ERROR-process', e, handle, method, thisArg, funArgs]);
+            console.trace();
           }
         }
 

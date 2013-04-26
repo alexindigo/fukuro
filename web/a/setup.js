@@ -14,6 +14,13 @@
 var handlers =
 {
   // update round
+  'scale': function(scale)
+  {
+    if (!$('#scale_range').data('interacted'))
+    {
+      $('#scale_range')[0].value = Math.floor(scale * 100);
+    }
+  },
   'round': function(data)
   {
     Round.update(data.round);
@@ -52,6 +59,17 @@ var addTeam = function(button)
   });
 };
 
+// listen to scale changes
+var scaleActions = function(e)
+{
+  var scale;
+
+  // get volume, 1 is the limit
+  scale = Math.min(this.value / 100, 1);
+
+  // notify the server
+  socket.emit('admin:scale', scale);
+};
 
 // listen to the footer button events
 var statActions = function(e)
@@ -210,11 +228,29 @@ connect(handlers,
     // init teams
     Teams.init(data.teams, data.points);
 
+    if (data.scale)
+    {
+      $('#scale_range')[0].value = Math.floor(data.scale * 100);
+    }
+
     // listen for the buttons
     $('body>footer').on('button', 'click touchstart', statActions);
 
     // teams
     $('#teams').on('.team', 'click touchstart', teamActions);
+
+    // scale
+    $('#scale_range').on('change', scaleActions);
+    // prevent from feedback loop
+    $('#scale_range').on('mousedown', function(e)
+    {
+      var el = $(this);
+      el.data('interacted', true);
+      $(document).one('mouseup', function(e)
+      {
+        el.data('interacted', false);
+      });
+    });
   }
 });
 

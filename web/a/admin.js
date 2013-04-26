@@ -20,7 +20,7 @@ var Nav =
   {
     // clean up
     $('button', this.base).remove();
-console.log(['dd', data]);
+
     // {{{ create questions
     if ('questions' in data)
     {
@@ -67,6 +67,10 @@ console.log(['dd', data]);
   {
     this.played = data;
     this.refresh();
+  },
+  setSound: function(key)
+  {
+    $('#button_sound_'+key).addClass('active');
   },
   refresh: function()
   {
@@ -129,6 +133,8 @@ var handlers =
     {
       item.removeClass('active');
     }
+    $('#volume').addClass('disabled');
+    $('#volume_range')[0].value = 0;
   },
   // update round
   'round': function(data)
@@ -146,15 +152,28 @@ var handlers =
   // listen to the timer
   'sound': function(data)
   {
-console.log(['sound', data]);
     if (data.action == 'play')
     {
       $('#button_sound_'+data.key).addClass('active');
     }
-    else
+    else if (data.action == 'stop')
     {
       $('#button_sound_'+data.key).removeClass('active');
+      $('#volume').addClass('disabled');
+      $('#volume_range')[0].value = 0;
     }
+    else if (data.action == 'volume')
+    {
+      if (!$('#volume_range').data('interacted'))
+      {
+        $('#volume_range')[0].value = Math.floor(data.volume * 100);
+      }
+    }
+  },
+  'sound_volume': function(volume)
+  {
+    $('#volume_range')[0].value = Math.floor(volume * 100);
+    $('#volume').removeClass('disabled');
   },
   // listen to the timer
   'timer': function(data)
@@ -239,13 +258,24 @@ var soundActions = function(e)
   key = button.data('item');
 
   // notify the server
-  socket.emit('admin:sound', {key: key, action: action}, function(data)
+  socket.emit('admin:sound', {key: key, action: action}, function()
   {
     // got the answer, unflag button
     button.removeClass('busy');
   });
 };
 
+// listen to volume changes
+var volumeActions = function(e)
+{
+  var volume;
+
+  // get volume, 1 is the limit
+  volume = Math.min(this.value / 100, 1);
+
+  // notify the server
+  socket.emit('admin:sound', {volume: volume, action: 'volume'});
+};
 
 // listen to the footer button events
 var statActions = function(e)
@@ -314,6 +344,11 @@ connect(handlers,
     // get already played questions
     Nav.setPlayed(data.played);
 
+    if (data.sound)
+    {
+      Nav.setSound(data.sound);
+    }
+
     // init teams
     Teams.init(data.teams, data.points, data.flags);
 
@@ -336,6 +371,18 @@ connect(handlers,
     // sounds
     $('#sounds').on('button', 'mousedown touchstart', soundActions);
 
+    // volume
+    $('#volume_range').on('change', volumeActions);
+    // prevent from feedback loop
+    $('#volume_range').on('mousedown', function(e)
+    {
+      var el = $(this);
+      el.data('interacted', true);
+      $(document).one('mouseup', function(e)
+      {
+        el.data('interacted', false);
+      });
+    });
 
     // teams
     $('#teams').on('.team', 'click touchstart', teamActions);

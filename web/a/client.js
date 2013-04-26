@@ -18,7 +18,7 @@ var Content =
   init: function(data)
   {
     var el;
-console.log(['cc', data]);
+
     // check for alternate language
     if ($('body').data('lang'))
     {
@@ -67,7 +67,6 @@ console.log(['cc', data]);
         if (!this.sounds) this.sounds = {};
         this.sounds[key] = Sound.create(item);
       }, this));
-console.log(['sounds', this.sounds]);
     }
 
     // {{{ Timer
@@ -99,7 +98,6 @@ var misc =
   {
     return function()
     {
-console.log(['stop all', key]);
       socket.emit('sound_stop', key);
     }
   }
@@ -245,27 +243,49 @@ var handlers =
     // and update round
     Round.update(data.round, 2000);
   },
-  // listen to the timer
+  // when everybody stopped
+  'sound_stop': function(key)
+  {
+    if (key && Content.sounds[key])
+    {
+      Content.sounds[key].off();
+    }
+  },
+  // listen to the sounds of music
   'sound': function(data)
   {
+    var volume
+      , sound
+      ;
+
     if (data.action == 'play')
     {
       if (data.key && Content.sounds[data.key])
       {
-        Content.sounds[data.key].on(misc.deferredSoundOff(data.key));
+        volume = Content.sounds[data.key].on(misc.deferredSoundOff(data.key));
+        socket.emit('sound_volume', volume);
       }
     }
-    else
+    else if (data.action == 'stop')
     {
       if (data.key && Content.sounds[data.key])
       {
         Content.sounds[data.key].off();
       }
     }
+    else if (data.action == 'volume')
+    {
+      if (sound = Sound.current())
+      {
+        sound.volume(data.volume);
+      }
+    }
   },
   // listen to the timer
   'timer': function(data)
   {
+    var volume;
+
     if (data.time > -1)
     {
       Timer.on(data.time);
@@ -274,6 +294,12 @@ var handlers =
     {
       Timer.off();
     }
+  },
+  // listen to the sounds of music
+  'scale': function(scale)
+  {
+    scale = Math.max(scale, 0) || 1;
+    $('body').css('webkitTransform', 'scale('+scale+')');
   },
   'team': function(data, parent)
   {
@@ -541,6 +567,12 @@ connect(handlers,
   data: {me: 'client'},
   callback: function(data)
   {
+    // scale
+    if (data.scale)
+    {
+      handlers.scale(data.scale);
+    }
+
     // set stats
     Round.update(data.round);
 
@@ -549,6 +581,12 @@ connect(handlers,
 
     // init teams
     Teams.init(data.teams, data.points, data.flags);
+
+    // get sound
+    if (data.sound && Content.sounds[data.sound])
+    {
+      Content.sounds[data.sound].on(misc.deferredSoundOff(data.sound));
+    }
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);
@@ -561,7 +599,7 @@ connect(handlers,
 var Timer =
 {
   _el: null,
-  _media: null,
+  sound: null,
   options: {},
   create: function(data)
   {
@@ -575,65 +613,30 @@ var Timer =
       this._el.append('<li class="fill"></li>');
     }
 
-    return this;
-  },
-  init: function()
-  {
-    // init sound
-    if ('Audio' in window)
+    if (data.audio)
     {
-      if (!window.__audio) window.__audio = {};
-      if (!(this.options.audio in window.__audio))
-      {
-        window.__audio[this.options.audio] = new Audio();
-        window.__audio[this.options.audio].src = '/content/'+this.options.audio;
-
-        // off itself on stop
-        $(window.__audio[this.options.audio]).on('ended', $.bind(function()
-        {
-          // call deffered if there is one
-          if (this._deffered) this._deffered();
-          this.off();
-        }, this));
-      }
-      // store mdeia element
-      this._media = window.__audio[this.options.audio];
-
-      // add options
-      for (opt in this.options.params)
-      {
-        // filter out custom options
-        if (opt[0] != '_') this._media[opt] = this.options.params[opt];
-      }
+      this.sound = Sound.create(data);
     }
 
-    // return itself
     return this;
   },
   on: function(time)
   {
-    // create element if needed
-    if (!this._media) this.init();
+    var volume;
 
     this._el.addClass('playing').removeClass('hold');
     if (time < 11) this._el.addClass('ending');
 
     $('li:nth-last-child(-n+'+Math.max(this.options.length-time, 0)+')', this._el).removeClass('fill');
 
-    // canplay gives us HAVE_FUTURE_DATA(3), checking that it's great than HAVE_CURRENT_DATA(2)
-    if (!this.isPlaying && this._media.readyState > this._media.HAVE_CURRENT_DATA)
+    if (this.sound && !this.sound.isPlaying())
     {
-      // small hack to accomodate current audio file
-      this.isPlaying = true;
-      this._media.currentTime = Math.max(this._media.duration - time - 0.5, 0.1);
-      this._media.play();
+      volume = this.sound.on(time);
+      socket.emit('sound_volume', volume);
     }
   },
   off: function()
   {
-    // clean up defferend
-    this._deffered = null;
-
     // reset visual
 //    this._el.removeClass('playing').removeClass('ending');
     // special for Jim
@@ -646,14 +649,10 @@ var Timer =
       $('li', this._el).addClass('fill');
     }, 1500);
 
-    if (this._media)
+    if (this.sound)
     {
-      // small hack to prevent cutting off the last piece
-      this.isPlaying = false;
-      if (!this._media.paused)
-      {
-        if (this._media.currentTime < this.options.length) this._media.pause();
-      }
+      this.sound.off();
+      socket.emit('sound_stop', 'timer');
     }
   }
 };
@@ -664,6 +663,7 @@ var Sound =
   _el: null,
   _media: null,
   _current: null,
+  _goingToPlay: null,
   options: {},
   current: function(o)
   {
@@ -748,29 +748,67 @@ var Sound =
 
     return this;
   },
-  on: function(deffered)
+  isPlaying: function()
   {
-    var previous;
+    return (!this._media0.paused || !this._media1.paused);
+  },
+  volume: function(volume)
+  {
+    if (this._media0)
+    {
+      this._media0.volume = volume;
+    }
+    if (this._media1)
+    {
+      this._media1.volume = volume;
+    }
+  },
+  on: function(time, deffered)
+  {
+    var previous
+      ;
 
-console.log(['play', this]);
+    time = time || 0;
+
+    // play with arguments
+    if (typeof time == 'function')
+    {
+      deffered = time;
+      time = 0;
+    }
+
     if (deffered) this._deffered = deffered;
 
     // race condition
-    if (previous = this.current())
+    if ((previous = this.current()) && previous != this)
     {
       if (previous._deffered) previous._deffered();
       previous.off();
     }
     this.current(this);
 
-    if (this._media0)
+    if (this._media0 && this._media0.readyState > this._media0.HAVE_CURRENT_DATA)
     {
+      // TODO: Wait for Chrome to fix it
+//      this._media0.currentTime = Math.max(this._media0.duration - (+time) - 0.5, 0.1);
       this._media0.play();
     }
+    else if (!this._goingToPlay)
+    {
+      $(this._media0).one('canplay', $.bind(function()
+      {
+        // TODO: Wait for Chrome to fix it
+//        this._media0.currentTime = Math.max(this._media0.duration - (+time) - 0.5, 0.1);
+        this._media0.play();
+        this._goingToPlay = null;
+      }, this));
+      this._goingToPlay = true;
+    }
+
+    return this._media0.volume;
   },
   off: function()
   {
-console.log(['stop', this]);
     // clean up defferend
     this._deffered = null;
     this.current(null);

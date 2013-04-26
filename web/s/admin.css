@@ -24,9 +24,10 @@ body>nav
 body>footer
 {
   position: absolute;
-  bottom: 80px;
+  bottom: 84px;
   width: 100%;
   height: 90px;
+  padding-bottom: 6px;
   text-align: center;
   border-bottom: 1px dotted #cccccc;
 }
@@ -35,7 +36,7 @@ body>footer:before
 {
   content: "Round " attr(data-round);
   position: absolute;
-  bottom: 50px;
+  top: -20px;
   margin-left: 16px;
   font-size: 18px;
   color: #999999;
@@ -48,9 +49,55 @@ body>footer:before
   width: 125%;
   height: 60px;
   text-align: center;
+  z-index: 1;
   -webkit-transform: scale(0.8);
   -webkit-transform-origin: 0px 0px;
 }
+#volume,
+#scale
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 380px;
+  margin-left: -190px;
+  text-align: center;
+  background-color: #000000;
+  background-image: url("/i/dark_pixels.png");
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  border-radius: 24px;
+  -webkit-transform: scale(1.5);
+  -webkit-transform-origin: center center;
+}
+  #scale
+  {
+    top: auto;
+    bottom: 20px;
+  }
+#volume_range,
+#scale_range
+{
+  width: 250px;
+  margin: 0px 5px;
+}
+#volume_range::-webkit-slider-runnable-track,
+#scale_range::-webkit-slider-runnable-track
+{
+  background-color: #333333;
+  border-radius: 16px;
+}
+  #volume.disabled
+  {
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }
+  #volume.disabled #volume_range
+  {
+    opacity: 0.3;
+  }
+
+
 /* audience */
 #audience
 {

@@ -39,6 +39,16 @@
         "volume": 1
       }
     },
+    "assist":
+    {
+      "audio": "sounds/assist.mp3",
+      "desc": "Invisible Touch",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
     "rules":
     {
       "audio": "sounds/rules.mp3",
