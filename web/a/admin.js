@@ -47,7 +47,7 @@ var Nav =
         else
         {
           // show playoffs as shorten label
-          t = (n == 'audience') ? 'Club' : n.replace(/^playoff/, 'PO').replace(/^PO X/, 'EX ');
+          t = (n == 'audience') ? 'Club' : n.replace(/^playoff/, 'PO').replace(/^PO X/, 'BK ');
           // add (show) question button
           $('<button id="button_question_'+id+'" class="'+(isManual ? 'manual' : '')+'" data-label="'+t+'" data-item="question" data-number="'+n+'">'+t+'</button>').appendTo(this.special);
           // add (show) answer button
@@ -263,6 +263,17 @@ var soundActions = function(e)
     // got the answer, unflag button
     button.removeClass('busy');
   });
+
+  // turn on teams music together with cover video
+  if (key == 'teams')
+  {
+    socket.emit('admin:'+(action == 'play' ? 'show' : 'hide'), {item: 'cover'}, function(){});
+  }
+
+  if (key == 'rules')
+  {
+    socket.emit('admin:'+(action == 'play' ? 'show' : 'hide'), {item: 'rules'}, function(){});
+  }
 };
 
 // listen to volume changes

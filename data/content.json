@@ -175,8 +175,8 @@
       },
       "answer":
       {
-        "text": "Hussein (Barack Hussein Obama)",
-        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <span style=\"font-size: 32px;\">Herbert</span> Bush\nBill Jefferson Clinton\nGeorge Walker Bush</span>",
+        "text": "Hussein (Barack <b>Hussein</b> Obama)",
+        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <b>Herbert</b> Bush\nBill <b>Jefferson</b> Clinton\nGeorge <b>Walker</b> Bush</span>",
         "keyword": ["hussein", "husein", "husine"]
       }
     },
@@ -232,7 +232,7 @@
       {
         "manual": true,
         "image": "8q.png",
-        "text": "Yahoo, Walmart Stores, Ruby Sky\n\nWhat is wrong with all those trademarks?"
+        "text": "What is wrong with all those trademarks?"
       },
       "answer":
       {
@@ -245,7 +245,7 @@
     {
       "question":
       {
-        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is <span style=\"font-size: 42px;\">not</span> on a tea itself but blow ... how?"
+        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is <b>not</b> on a tea itself but blow ... how?"
       },
       "answer":
       {

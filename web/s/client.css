@@ -98,7 +98,7 @@ section>p
     }
 
 /* show questions only with timer */
-#timer:not(.playing) ~ section.question>p.text
+#timer:not(.playing) ~ section.question:not(.playoff)>p.text
 {
   font-size: 0px;
   line-height: 0px;
@@ -115,6 +115,17 @@ section>p
   max-height: 0px;
 }
 /* make text smaller if there is image for the question */
+
+section.answer:before
+{
+  content: "Answer";
+  display: block;
+  margin-bottom: 1em;
+  font-size: 36px;
+  color: #999999;
+}
+
+
 section.question>img ~ p,
 section.answer>img ~ p
 section.answer>video ~ p
@@ -237,11 +248,11 @@ body>footer:before
    * only together with scoreboard */
   body.playing>footer:before
   {
-    content: "Раунд " attr(data-round);
+    content: "Round " attr(data-round);
   }
   body.audience>footer:before
   {
-    content: "Помощь клуба";
+    content: "Audience";
   }
   body.playoff>footer:before
   {
@@ -257,24 +268,10 @@ body>footer:before
   }
 body>footer:after
 {
-  content: " (прошло)";
+  content: " (past)";
   display: block;
 }
-/* audience */
-#audience:before
-{
-  content: "Правильно ответил";
-  position: absolute;
-  opacity: 0.5;
-  top: 70px;
-  left: 0px;
-  width: 100%;
-  line-height: 50px;
-  font-size: 24px;
-  font-family: "Ubuntu Condensed", sans-serif;
-  text-align: center;
-  z-index: 1;
-}
+
 /* timer */
 #timer
 {
@@ -396,14 +393,16 @@ body.final .team.winner
 
 /* rules */
 #rules ol,
-#sms ol
+#sms ol,
+#playoff ol
 {
   list-style: "1.";
 
   font-size: 32px;
   line-height: 64px;
 }
-#rules ol li
+#rules ol li,
+#playoff ol li
 {
   margin: 10px 0px;
 }

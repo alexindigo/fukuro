@@ -33,9 +33,10 @@ var Content =
     }
     // }}}
 
-    // {{{ prepare rules and sms
+    // {{{ prepare rules
     this.rules = make($('#rules'), {});
     this.sms = make($('#sms'), {});
+    this.playoff = make($('#playoff'), {});
     // }}}
 
     // {{{
@@ -44,7 +45,7 @@ var Content =
       $.each(data.questions, $.bind(function(item, n)
       {
         var id = makeHandle(n)
-          , q = $('<section id="question_'+id+'" class="question"></section>').prependTo('body')
+          , q = $('<section id="question_'+id+'" class="question'+(n.match(/^playoff/) ? ' playoff' : '')+'"></section>').prependTo('body')
           , a = $('<section id="answer_'+id+'" class="answer"></section>').prependTo('body')
           ;
 
@@ -128,6 +129,10 @@ var handlers =
         fn({item: 'sms', status: 'on'});
         break;
 
+      case 'playoff':
+        Content.playoff.on(misc.deferredOff(data));
+        fn({item: 'playoff', status: 'on'});
+        break;
 
       case 'question':
 
@@ -200,6 +205,11 @@ var handlers =
       case 'sms':
         Content.sms.off();
         fn({item: 'sms', status: 'off'});
+        break;
+
+      case 'playoff':
+        Content.playoff.off();
+        fn({item: 'playoff', status: 'off'});
         break;
 
       case 'question':

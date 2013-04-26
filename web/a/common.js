@@ -347,8 +347,9 @@ var oAudio = Base.extend(
     // off itself on stop
     $(this._media).on('ended', $.bind(function()
     {
+console.log(['ened', this.options['_keep_alive'], this.options]);
         // check options if it needs to stay
-        if (this.options['_keep-alive'])
+        if (this.options['_keep_alive'])
         {
           this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0.1;
         }
