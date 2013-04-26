@@ -61,6 +61,22 @@ var common =
       $('.points', team).text(data.points);
     }
   },
+  'team_highlight': function(team)
+  {
+    var prev = $('.team.highlight').attr('id');
+
+    if (prev)
+    {
+      prev = prev.replace(/^team_/, '');
+    }
+
+    $('.team.highlight').removeClass('highlight');
+
+    if (team.id != prev)
+    {
+      $('#team_'+team.id).addClass('highlight');
+    }
+  },
   // add team
   'add': function(data)
   {

@@ -253,6 +253,12 @@ var handlers =
     // and update round
     Round.update(data.round, 2000);
   },
+  // listen to the sounds of music
+  'scale': function(scale)
+  {
+    scale = Math.max(scale, 0) || 1;
+    $('body').css('webkitTransform', 'scale('+scale+')');
+  },
   // when everybody stopped
   'sound_stop': function(key)
   {
@@ -304,12 +310,6 @@ var handlers =
     {
       Timer.off();
     }
-  },
-  // listen to the sounds of music
-  'scale': function(scale)
-  {
-    scale = Math.max(scale, 0) || 1;
-    $('body').css('webkitTransform', 'scale('+scale+')');
   },
   'team': function(data, parent)
   {

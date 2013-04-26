@@ -331,7 +331,7 @@ var teamActions = function(e)
     team.addClass('busy');
 
     // notify the server
-    socket.emit('admin:team', {id: id}, function(data)
+    socket.emit('admin:team', {id: id}, function()
     {
       // got the answer, unflag team
       team.removeClass('busy');

@@ -96,6 +96,10 @@ audio
   {
     z-index: 1;
   }
+  body.waiting .team.highlight
+  {
+    color: #ffffff;
+  }
 .team>span
 {
   display: block;

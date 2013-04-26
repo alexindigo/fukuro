@@ -24,11 +24,6 @@ var _      = require('utile')
   , router = require('./lib/router')
   ;
 
-process.on('uncaughtException', function(err) {
-  console.log('Caught exception: ' + err);
-  process.exit(1);
-});
-
 // {{{ get configuations
 conf.argv().env().use('memory');
 
