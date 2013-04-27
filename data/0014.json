@@ -1,0 +1,172 @@
+{
+  "current": {
+    "item": "players"
+  },
+  "sound": null,
+  "players": {
+    "+14088346198": {
+      "id": "+14088346198",
+      "name": "Alex Indigo",
+      "played": {},
+      "points": 0
+    },
+    "+14088813014": {
+      "id": "+14088813014",
+      "name": "eri nose",
+      "played": {},
+      "points": 0
+    }
+  },
+  "answers": {},
+  "scale": 1,
+  "round": 0,
+  "rounds": [],
+  "played": [],
+  "teams": {
+    "strangers": {
+      "full": "Perfect Strangers",
+      "short": "Strangers",
+      "handle": "strangers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "east_bay": {
+      "full": "East Bay",
+      "short": "East Bay",
+      "handle": "east_bay",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "stanford": {
+      "full": "Stanford",
+      "short": "Stanford",
+      "handle": "stanford",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "peninsula": {
+      "full": "Peninsula",
+      "short": "Peninsula",
+      "handle": "peninsula",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "musketeers": {
+      "full": "Musketeers",
+      "short": "Musketeers",
+      "handle": "musketeers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "south_bay": {
+      "full": "South Bay",
+      "short": "South Bay",
+      "handle": "south_bay",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "berkeley": {
+      "full": "Berkeley",
+      "short": "Berkeley",
+      "handle": "berkeley",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "belarus": {
+      "full": "Belarus",
+      "short": "Belarus",
+      "handle": "belarus",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "twin_peaks": {
+      "full": "Twin Peaks",
+      "short": "Twin Peaks",
+      "handle": "twin_peaks",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "subgroup": {
+      "full": "Normal Subgroup",
+      "short": "Subgroup",
+      "handle": "subgroup",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "rwb": {
+      "full": "RWB",
+      "short": "RWB",
+      "handle": "rwb",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "hamsters": {
+      "full": "Space Hamsters",
+      "short": "Hamsters",
+      "handle": "hamsters",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "sf_house": {
+      "full": "SF House Gangsters",
+      "short": "SF House",
+      "handle": "sf_house",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "clubbers": {
+      "full": "Clubbers",
+      "short": "Clubbers",
+      "handle": "clubbers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "trulia": {
+      "full": "Trulia",
+      "short": "Trulia",
+      "handle": "trulia",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "fat_pandas": {
+      "full": "Fat Pandas",
+      "short": "Fat Pandas",
+      "handle": "fat_pandas",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "gleemonex": {
+      "full": "Gleemonex",
+      "short": "Gleemonex",
+      "handle": "gleemonex",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "dickbats": {
+      "full": "Dickbats",
+      "short": "Dickbats",
+      "handle": "dickbats",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    }
+  },
+  "flags": {}
+}

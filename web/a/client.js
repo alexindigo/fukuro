@@ -10,6 +10,8 @@
  * client.js: clientUI controller
  */
 
+var smsPlayers = {};
+
 // Content controller
 var Content =
 {
@@ -37,6 +39,7 @@ var Content =
     this.rules = make($('#rules'), {});
     this.sms = make($('#sms'), {});
     this.playoff = make($('#playoff'), {});
+    this.players = make($('#players'), {});
     // }}}
 
     // {{{
@@ -134,6 +137,11 @@ var handlers =
         fn({item: 'playoff', status: 'on'});
         break;
 
+      case 'players':
+        Content.players.on(misc.deferredOff(data));
+        fn({item: 'players', status: 'on'});
+        break;
+
       case 'question':
 
         if (data.number == 'audience')
@@ -212,6 +220,11 @@ var handlers =
         fn({item: 'playoff', status: 'off'});
         break;
 
+      case 'players':
+        Content.players.off();
+        fn({item: 'players', status: 'off'});
+        break;
+
       case 'question':
         if (data.number && Content.questions[data.number])
         {
@@ -246,6 +259,20 @@ var handlers =
   {
     // other peer asked to clean up leftovers
     if (data) handlers.hide(data, misc.noCallback);
+  },
+  'player_new': function(data)
+  {
+    var p = data['new'];
+console.log(['new', data]);
+
+    if (p)
+    {
+      addPlayer(p);
+    }
+  },
+  'player_answer': function(data)
+  {
+console.log(['answer', data]);
   },
   //
   'round': function(data)
@@ -561,6 +588,21 @@ var make = function(el, data, options)
   return res;
 };
 
+// players
+function addPlayer(p)
+{
+  id = 'player_' + p.id.replace(/\D/g, '');
+  smsPlayers[id] =
+  {
+    id: id,
+    name: p.name,
+    points: p.points || 0,
+    el: $('<span id="'+id+'" class="player">'+p.name+' ('+(p.points || 0)+')</span>')
+  };
+
+  $('#players').append(smsPlayers[id].el);
+}
+
 // override team sorting
 function sortTeams(data)
 {
@@ -597,6 +639,16 @@ connect(handlers,
     {
       Content.sounds[data.sound].on(misc.deferredSoundOff(data.sound));
     }
+
+    // players and answers
+    for (var p in data.players)
+    {
+      if (!data.players.hasOwnProperty(p)) continue;
+
+      addPlayer(data.players[p]);
+    }
+
+console.log(['data', data]);
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);

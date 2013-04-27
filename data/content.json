@@ -134,7 +134,7 @@
       {
         "text": "Puzzle (look upside down).",
         "image": "1a.png",
-        "keyword": "puzzle"
+        "keyword": "\\bpuzzle\\b"
       }
     },
     "2":
@@ -150,7 +150,7 @@
         "image": "2a.png",
         "text": "Signature (IVMeer)",
         "desc": "Roman numeral \"IV\" - 4.",
-        "keyword": ["signature", "iv"]
+        "keyword": "\\b(signature|iv|ivmeer)\\b"
       }
     },
     "3":
@@ -164,7 +164,7 @@
       {
         "text": "Chicken and Egg.",
         "desc": "In dictionary \"C\" in Chicken comes before \"E\" in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
-        "keyword": ["chicken egg"]
+        "keyword": "(\\bchicken\\b.*\\begg\\b)|(\\begg\\b.*\\bchicken\\b)"
       }
     },
     "4":
@@ -177,7 +177,7 @@
       {
         "text": "Hussein (Barack <b>Hussein</b> Obama)",
         "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <b>Herbert</b> Bush\nBill <b>Jefferson</b> Clinton\nGeorge <b>Walker</b> Bush</span>",
-        "keyword": ["hussein", "husein", "husine"]
+        "keyword": "\\b(hussein|husein|husine)\\b"
       }
     },
     "5":
@@ -197,7 +197,7 @@
         },
         "text": "Gangnam Style.",
         "desc": "<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is Gangnam Style.</span>",
-        "keyword": ["gangnam", "style"]
+        "keyword": "\\b(gangnam|style)\\b"
       }
     },
     "6":
@@ -210,7 +210,7 @@
       {
         "text": "Vote in U.S. Elections.",
         "desc": "To ensure that everyone have a chance to vote, U.S. allowed for 1 day to ride to a polling station after attending a church on Sunday.",
-        "keyword": ["vote", "elections"]
+        "keyword": "\\b(vote|elections)\\b"
       }
     },
     "7":
@@ -223,7 +223,7 @@
       {
         "text": "Because they did not want to date it April 1st",
         "desc": "Conviction about April's Fool's Day was so strong in Poland that they did not want to risk people thinking this alliance was a joke.",
-        "keyword": ["april", "fool", "fools"]
+        "keyword": "\\b(april|fool|fools)\\b"
       }
     },
     "8":
@@ -238,7 +238,7 @@
       {
         "text": "Spelling.",
         "desc": "As officially registered:\n\nYahoo! (with \"!\")\nWal-Mart Stores (with \"–\")\nRuby Skye (with \"e\")",
-        "keyword": ["spelled", "spelling", "misspelled", "missing"]
+        "keyword": "\\b(spelled|spelling|misspelled|missing)\\b"
       }
     },
     "9":
@@ -251,7 +251,7 @@
       {
         "text": "Above the tea.",
         "desc": "• The way hot liquid cools off is by interacting with much cooler air.\n\n• Heat, which escapes from hot liquid, creates a BUFFER ABOVE THE CUP.\n\n• So we blow to blow away that BUFFER OF HOT AIR ABOVE THE CUP.",
-        "keyword": ["above", "over"]
+        "keyword": "\\b(above|over)\\b"
       }
     },
     "10":
@@ -264,7 +264,7 @@
       {
         "text": "Observatory (planetarium)",
         "desc": "Famous Palomar Observatory is complaining of \"light pollution\" because stars cannot clearly be seen.",
-        "keyword": ["observatory", "planetarium"]
+        "keyword": "\\b(observatory|planetarium)\\b"
       }
     },
     "11":
@@ -277,7 +277,7 @@
       {
         "text": "England.",
         "desc": "There is UK government but not an English one.\n\nLaw in England is based on court's decisions, there is no Constitution.\n\nThere is no organization regulating English language.",
-        "keyword": "england"
+        "keyword": "\\bengland\\b"
       }
     },
     "12":
@@ -290,7 +290,7 @@
       {
         "text": "Cops. Badges were made of <b>copper</b>.",
         "desc": "Private security gangs developed into Police Officers.\n\nRival gang of Metropolitans called Municipals \"cops\" (short from \"copper\" because they wore copper badges) this is how the name for Police Officers came about.",
-        "keyword": ["cop", "copper"]
+        "keyword": "\\b(cop|copper)\\b"
       }
     },
     "playoff 1":
