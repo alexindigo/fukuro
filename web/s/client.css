@@ -401,12 +401,17 @@ body.final .team.winner
   list-style: "1.";
 
   font-size: 32px;
-  line-height: 64px;
+  line-height: 48px;
 }
+  #rules ol
+  {
+    font-size: 26px;
+    line-height: 36px;
+  }
 #rules ol li,
 #playoff ol li
 {
-  margin: 10px 0px;
+  margin: 16px 0px;
 }
 
 #sms ol

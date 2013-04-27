@@ -257,6 +257,12 @@ var soundActions = function(e)
   // get item data
   key = button.data('item');
 
+  // hack
+  if (key == 'assist')
+  {
+    socket.emit('admin:hide', {item: 'rules'}, function(){});
+  }
+
   // notify the server
   socket.emit('admin:sound', {key: key, action: action}, function()
   {

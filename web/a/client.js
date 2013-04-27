@@ -17,6 +17,8 @@ var Content =
 {
   lang: 'en', // english by default
 
+  satelite: false,
+
   init: function(data)
   {
     var el;
@@ -25,6 +27,12 @@ var Content =
     if ($('body').data('lang'))
     {
       this.lang = $('body').data('lang');
+    }
+
+    // satelite
+    if ($('body').hasClass('satelite'))
+    {
+      this.satelite = true;
     }
 
     // {{{ get cover
@@ -64,7 +72,7 @@ var Content =
     // }}}
 
     // sounds
-    if ('sounds' in data)
+    if ('sounds' in data && !(window.x.isIPad || Content.satelite))
     {
       $.each(data.sounds, $.bind(function(item, key)
       {
@@ -289,6 +297,8 @@ console.log(['answer', data]);
   // when everybody stopped
   'sound_stop': function(key)
   {
+    if (!Content.sounds) return;
+
     if (key && Content.sounds[key])
     {
       Content.sounds[key].off();
@@ -300,6 +310,8 @@ console.log(['answer', data]);
     var volume
       , sound
       ;
+
+    if (!Content.sounds) return;
 
     if (data.action == 'play')
     {
@@ -529,7 +541,7 @@ var make = function(el, data, options)
 
   if ('video' in data)
   {
-    if (window.x.isIPad && 'image' in data)
+    if ((window.x.isIPad || Content.satelite) && 'image' in data)
     {
       res = oImage.init(el, options).populate('<img class="video" src="/content/'+data.image+'" alt="">');
     }
@@ -545,7 +557,14 @@ var make = function(el, data, options)
   }
   else if ('audio' in data)
   {
-    res = oAudio.init(el, options).populate('<audio preload="auto" '+(options.loop ? 'loop ' : '')+'><source src="/content/'+data.audio+'" type="audio/mpeg"></audio>');
+    if (window.x.isIPad || Content.satelite)
+    {
+      res = oBlank.init(el, options);
+    }
+    else
+    {
+      res = oAudio.init(el, options).populate('<audio preload="auto" '+(options.loop ? 'loop ' : '')+'><source src="/content/'+data.audio+'" type="audio/mpeg"></audio>');
+    }
   }
 
   // we should have text most of the time
@@ -635,7 +654,7 @@ connect(handlers,
     Teams.init(data.teams, data.points, data.flags);
 
     // get sound
-    if (data.sound && Content.sounds[data.sound])
+    if (Content.sounds && data.sound && Content.sounds[data.sound])
     {
       Content.sounds[data.sound].on(misc.deferredSoundOff(data.sound));
     }
@@ -675,7 +694,7 @@ var Timer =
       this._el.append('<li class="fill"></li>');
     }
 
-    if (data.audio)
+    if (data.audio && !(window.x.isIPad || Content.satelite))
     {
       this.sound = Sound.create(data);
     }
