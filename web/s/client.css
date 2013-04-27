@@ -468,7 +468,7 @@ body.final .team.winner
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  padding: 4% 1%;
+  padding: 4% 5%;
   font-size: 24px;
   text-align: center;
 }
@@ -481,56 +481,71 @@ body.final .team.winner
   position: relative;
   display: inline-block;
   -webkit-box-flex: 0;
-  width: 14%;
-  height: 70px;
-  margin: 0.1em 0.5em;
+  max-width: 25%;
+  margin: 0.25em 0.5em;
   padding: 0.4em;
+  font-size: 28px;
   font-family: "Ubuntu Condensed", sans-serif;
   color: #808080;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   background-clip: padding-box;
-  -webkit-transition: top 0.8s, left 0.8s;
-}
-  .player.checked
-  {
-    color: #ffffff;
-  }
-  .player.moving
-  {
-    z-index: 1;
-  }
-  body.waiting .player.highlight
-  {
-    color: #ffffff;
-  }
-.player>span
-{
-  display: block;
-  padding: 5px 0px;
-  text-align: center;
-}
-.player>.short
-{
-  width: 100%;
-  border-bottom: 1px dotted #888888;
   white-space: nowrap;
 }
-.player>.full
+.player>span
 {
-  box-sizing: border-box;
-  display: none;
-  position: absolute;
-  width: 100%;
-  padding: 5px 9px;
-  margin-left: -9px;
-  font-size: 18px;
-  opacity: 0.7;
+  display: inline-block;
+  padding: 0px 5px;
+}
+.player>.name
+{
+  border-right: 1px dotted #888888;
+  color: #ffffff;
+  text-align: right;
 }
 .player>.points
 {
   font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
+  text-align: left;
+}
+
+.player:first-child
+{
+  position: absolute;
+  left: 50%;
+  width: 300px;
+  margin-top: -80px;
+  margin-left: -160px;
+  font-size: 36px;
+}
+.player:nth-child(n+4)
+{
+  font-size: 24px;
+}
+.player:nth-child(n+8)
+{
+  font-size: 20px;
+}
+.player:nth-child(n+12)
+{
+  font-size: 16px;
+}
+.player:nth-child(n+20)
+{
+  font-size: 12px;
+}
+.player:nth-child(n+30)
+{
+  font-size: 8px;
+}
+.player:nth-child(n+40)
+{
+  font-size: 4px;
+}
+.player:nth-child(n+100)
+{
+  font-size: 0px;
 }
 
 

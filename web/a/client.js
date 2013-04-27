@@ -280,6 +280,10 @@ console.log(['new', data]);
   },
   'player_answer': function(data)
   {
+    if (data && data['new'])
+    {
+      updatePlayer(data['new']);
+    }
 console.log(['answer', data]);
   },
   //
@@ -610,17 +614,65 @@ var make = function(el, data, options)
 // players
 function addPlayer(p)
 {
-  id = 'player_' + p.id.replace(/\D/g, '');
+  id = 'player_' + (''+p.id).replace(/\D/g, '');
   smsPlayers[id] =
   {
     id: id,
     name: p.name,
     points: p.points || 0,
-    el: $('<span id="'+id+'" class="player">'+p.name+' ('+(p.points || 0)+')</span>')
+    pos: p.pos || 0
   };
 
-  $('#players').append(smsPlayers[id].el);
+  renderPlayers();
 }
+
+function updatePlayer(p)
+{
+  id = 'player_' + (''+p.id).replace(/\D/g, '');
+
+  smsPlayers[id] =
+  {
+    id: id,
+    name: p.name,
+    points: p.points || 0,
+    pos: p.pos || 0
+  };
+
+  renderPlayers();
+}
+
+function renderPlayers()
+{
+  var html = '';
+
+  $.sortBy(smsPlayers, function(pl)
+  {
+    // there is no chance for more than 50 round/points
+//console.log(-1 * (20-pl.points) * pl.pos, pl.points, pl.pos);
+    return parseFloat( ''+(20-pl.points)+'.'+aaa(pl.pos));
+  }).forEach(function(pl)
+  {
+    html += '<span id="'+pl.id+'" class="player"><span class="name">'+pl.name.substr(0, 20)+'</span><span class="points">'+(pl.points || 0)+'</span></span>\n';
+  });
+
+  $('#players').html(html);
+}
+
+function aaa(pos)
+{
+  pos = ''+pos;
+  var con = 14;
+  var len = pos.length;
+
+  return (new Array(Math.max(con-len+1, 0))).join('0')+pos;
+}
+
+// setTimeout(function()
+// {
+//   new Array(20).join(',').split(',').forEach(function(v, i){ addPlayer({id: 'a_'+i, name: 'Player '+i, points: 3, pos: 10000 * i}); });
+//   new Array(20).join(',').split(',').forEach(function(v, i){ addPlayer({id: ''+(10*i), name: 'Player B'+i, points: 2, pos: 10000 * i}); });
+
+// }, 3000);
 
 // override team sorting
 function sortTeams(data)
