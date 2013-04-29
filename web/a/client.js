@@ -652,10 +652,21 @@ function renderPlayers()
     return parseFloat( ''+(20-pl.points)+'.'+aaa(pl.pos));
   }).forEach(function(pl)
   {
+    var chunk;
+
     i++;
-    if (i < 120)
+    if (i < 150)
     {
-      html += '<span id="'+pl.id+'" class="player"><span class="name">'+pl.name.substr(0, 20)+'</span><span class="points">'+(pl.points || 0)+'</span></span>\n';
+      chunk = '<span id="'+pl.id+'" class="player pos_'+getPosLev(i)+'"><span class="name">'+pl.name.substr(0, 20)+'</span><span class="points">'+(pl.points || 0)+'</span></span>\n';
+
+      if (i%2)
+      {
+        html = chunk + html;
+      }
+      else
+      {
+        html += chunk;
+      }
     }
   });
 
@@ -663,6 +674,46 @@ function renderPlayers()
   if (i > 5)
   {
     $('#players').addClass('scoring');
+  }
+}
+
+function getPosLev(n)
+{
+  if (n == 1)
+  {
+    return 1;
+  }
+  else if (n < 5)
+  {
+    return 4;
+  }
+  else if (n < 9)
+  {
+    return 8;
+  }
+  else if (n < 13)
+  {
+    return 12;
+  }
+  else if (n < 21)
+  {
+    return 20;
+  }
+  else if (n < 31)
+  {
+    return 30;
+  }
+  else if (n < 51)
+  {
+    return 50;
+  }
+  else if (n < 101)
+  {
+    return 100;
+  }
+  else
+  {
+    return 150;
   }
 }
 
