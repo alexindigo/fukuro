@@ -493,6 +493,7 @@ body.final .team.winner
   background-clip: padding-box;
   white-space: nowrap;
 }
+
 .player>span
 {
   display: inline-block;
@@ -512,11 +513,6 @@ body.final .team.winner
 
 .player:first-child
 {
-  position: absolute;
-  left: 50%;
-  width: 300px;
-  margin-top: -80px;
-  margin-left: -160px;
   font-size: 36px;
 }
 .player:nth-child(n+4)

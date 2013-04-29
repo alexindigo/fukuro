@@ -643,7 +643,7 @@ function updatePlayer(p)
 
 function renderPlayers()
 {
-  var html = '';
+  var i=0, html = '';
 
   $.sortBy(smsPlayers, function(pl)
   {
@@ -652,10 +652,18 @@ function renderPlayers()
     return parseFloat( ''+(20-pl.points)+'.'+aaa(pl.pos));
   }).forEach(function(pl)
   {
-    html += '<span id="'+pl.id+'" class="player"><span class="name">'+pl.name.substr(0, 20)+'</span><span class="points">'+(pl.points || 0)+'</span></span>\n';
+    i++;
+    if (i < 120)
+    {
+      html += '<span id="'+pl.id+'" class="player"><span class="name">'+pl.name.substr(0, 20)+'</span><span class="points">'+(pl.points || 0)+'</span></span>\n';
+    }
   });
 
   $('#players').html(html);
+  if (i > 5)
+  {
+    $('#players').addClass('scoring');
+  }
 }
 
 function aaa(pos)
