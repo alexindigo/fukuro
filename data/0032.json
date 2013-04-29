@@ -1,0 +1,422 @@
+{
+  "current": null,
+  "sound": null,
+  "players": {
+    "+14088346198": {
+      "id": "+14088346198",
+      "name": "Pasha",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19495995523": {
+      "id": "+19495995523",
+      "name": "Cody ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14153104985": {
+      "id": "+14153104985",
+      "name": "Trulia",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14155954785": {
+      "id": "+14155954785",
+      "name": "David West",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16502243709": {
+      "id": "+16502243709",
+      "name": "ZAZ \" Je veux\" ( For Belyana)",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16508882208": {
+      "id": "+16508882208",
+      "name": "Your Name",
+      "played": {},
+      "points": 1,
+      "pos": 46922117245
+    },
+    "+14152009554": {
+      "id": "+14152009554",
+      "name": "your name",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+18589451721": {
+      "id": "+18589451721",
+      "name": "Dmitri G",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14152037726": {
+      "id": "+14152037726",
+      "name": "Esfir Shrayber",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507877810": {
+      "id": "+16507877810",
+      "name": "Maks",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19254517283": {
+      "id": "+19254517283",
+      "name": "Irina Asadchaya",
+      "played": {},
+      "points": 1,
+      "pos": 61352975146
+    },
+    "+14045184518": {
+      "id": "+14045184518",
+      "name": "Anakin",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156528683": {
+      "id": "+14156528683",
+      "name": "Tanya ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088349135": {
+      "id": "+14088349135",
+      "name": "sklanna",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16503355474": {
+      "id": "+16503355474",
+      "name": "apolovin",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+15108467996": {
+      "id": "+15108467996",
+      "name": "Vadim",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504550749": {
+      "id": "+16504550749",
+      "name": "Irina Nov Filmore",
+      "played": {},
+      "points": 1,
+      "pos": 50827550788
+    },
+    "+16507409276": {
+      "id": "+16507409276",
+      "name": "Steven hom ",
+      "played": {},
+      "points": 1,
+      "pos": 53131326814
+    },
+    "+14154704625": {
+      "id": "+14154704625",
+      "name": "lena",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14153749923": {
+      "id": "+14153749923",
+      "name": "Yuliya_Kh",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+15108478057": {
+      "id": "+15108478057",
+      "name": "ooow mexican border",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    }
+  },
+  "answers": {
+    "8": {
+      "+16508882208": {
+        "id": "+16508882208",
+        "name": "Your Name",
+        "data": {
+          "number": 8,
+          "time": 46922117245,
+          "answer": "Spelled wrong"
+        },
+        "points": 1,
+        "pos": 46922117245
+      },
+      "+16507409276": {
+        "id": "+16507409276",
+        "name": "Steven hom ",
+        "data": {
+          "number": 8,
+          "time": 53131326814,
+          "answer": "Spelled incorrectly"
+        },
+        "points": 1,
+        "pos": 53131326814
+      },
+      "+19254517283": {
+        "id": "+19254517283",
+        "name": "Irina Asadchaya",
+        "data": {
+          "number": 8,
+          "time": 61352975146,
+          "answer": "Misspelled"
+        },
+        "points": 1,
+        "pos": 61352975146
+      }
+    },
+    "10": {
+      "+16504550749": {
+        "id": "+16504550749",
+        "name": "Irina Nov Filmore",
+        "data": {
+          "number": 10,
+          "time": 50827550788,
+          "answer": "play Irina observatory"
+        },
+        "points": 1,
+        "pos": 50827550788
+      }
+    }
+  },
+  "scale": 1,
+  "round": 7,
+  "rounds": [
+    null,
+    {
+      "dickbats": null,
+      "gleemonex": 1,
+      "stanford": 1,
+      "belarus": 1,
+      "east_bay": 1,
+      "subgroup": 1,
+      "peninsula": 1,
+      "fat_pandas": 1
+    },
+    {
+      "dickbats": null,
+      "fat_pandas": null,
+      "south_bay": 1,
+      "peninsula": 1,
+      "rwb": 1,
+      "twin_peaks": 1,
+      "subgroup": 1
+    },
+    {
+      "strangers": 1,
+      "fat_pandas": 1,
+      "gleemonex": 1,
+      "rwb": 1,
+      "twin_peaks": 1,
+      "stanford": 1,
+      "berkeley": 1,
+      "musketeers": 1,
+      "peninsula": 1,
+      "subgroup": 1,
+      "east_bay": 1,
+      "sf_house": 1,
+      "trulia": 1
+    },
+    {
+      "gleemonex": 1,
+      "rwb": 1,
+      "trulia": 1,
+      "hamsters": 1,
+      "subgroup": 1,
+      "east_bay": 1
+    },
+    {
+      "twin_peaks": 1,
+      "belarus": 1,
+      "trulia": 1,
+      "strangers": 1,
+      "gleemonex": 1,
+      "musketeers": 1,
+      "peninsula": 1,
+      "stanford": 1,
+      "subgroup": 1,
+      "sf_house": 1,
+      "fat_pandas": 1
+    },
+    {
+      "fat_pandas": 1
+    }
+  ],
+  "played": [
+    null,
+    4,
+    10,
+    8,
+    7,
+    6,
+    11
+  ],
+  "teams": {
+    "strangers": {
+      "full": "Perfect Strangers",
+      "short": "Strangers",
+      "handle": "strangers",
+      "points": 2,
+      "guest": false,
+      "collective": false
+    },
+    "east_bay": {
+      "full": "East Bay",
+      "short": "East Bay",
+      "handle": "east_bay",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "stanford": {
+      "full": "Stanford",
+      "short": "Stanford",
+      "handle": "stanford",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "peninsula": {
+      "full": "Peninsula",
+      "short": "Peninsula",
+      "handle": "peninsula",
+      "points": 4,
+      "guest": false,
+      "collective": false
+    },
+    "musketeers": {
+      "full": "Musketeers",
+      "short": "Musketeers",
+      "handle": "musketeers",
+      "points": 2,
+      "guest": false,
+      "collective": false
+    },
+    "south_bay": {
+      "full": "South Bay",
+      "short": "South Bay",
+      "handle": "south_bay",
+      "points": 1,
+      "guest": false,
+      "collective": false
+    },
+    "berkeley": {
+      "full": "Berkeley",
+      "short": "Berkeley",
+      "handle": "berkeley",
+      "points": 1,
+      "guest": false,
+      "collective": false
+    },
+    "belarus": {
+      "full": "Belarus",
+      "short": "Belarus",
+      "handle": "belarus",
+      "points": 2,
+      "guest": false,
+      "collective": false
+    },
+    "twin_peaks": {
+      "full": "Twin Peaks",
+      "short": "Twin Peaks",
+      "handle": "twin_peaks",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "subgroup": {
+      "full": "Normal Subgroup",
+      "short": "Subgroup",
+      "handle": "subgroup",
+      "points": 5,
+      "guest": false,
+      "collective": false
+    },
+    "rwb": {
+      "full": "RWB",
+      "short": "RWB",
+      "handle": "rwb",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "hamsters": {
+      "full": "Space Hamsters",
+      "short": "Hamsters",
+      "handle": "hamsters",
+      "points": 1,
+      "guest": false,
+      "collective": false
+    },
+    "sf_house": {
+      "full": "SF House Gangsters",
+      "short": "SF House",
+      "handle": "sf_house",
+      "points": 2,
+      "guest": false,
+      "collective": false
+    },
+    "clubbers": {
+      "full": "Clubbers",
+      "short": "Clubbers",
+      "handle": "clubbers",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "trulia": {
+      "full": "Trulia",
+      "short": "Trulia",
+      "handle": "trulia",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "fat_pandas": {
+      "full": "Fat Pandas",
+      "short": "Fat Pandas",
+      "handle": "fat_pandas",
+      "points": 4,
+      "guest": false,
+      "collective": false
+    },
+    "gleemonex": {
+      "full": "Gleemonex",
+      "short": "Gleemonex",
+      "handle": "gleemonex",
+      "points": 4,
+      "guest": false,
+      "collective": false
+    },
+    "dickbats": {
+      "full": "Dickbats",
+      "short": "Dickbats",
+      "handle": "dickbats",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    }
+  },
+  "flags": {}
+}

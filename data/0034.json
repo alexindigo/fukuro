@@ -4,17 +4,10 @@
   },
   "sound": null,
   "players": {
-    "+14088346198": {
-      "id": "+14088346198",
-      "name": "Alex Indigo",
+    "undefined": {
       "played": {},
-      "points": 0
-    },
-    "+14088813014": {
-      "id": "+14088813014",
-      "name": "eri nose",
-      "played": {},
-      "points": 0
+      "points": 0,
+      "pos": 0
     }
   },
   "answers": {},
@@ -159,10 +152,10 @@
       "guest": false,
       "collective": false
     },
-    "dickbats": {
-      "full": "Dickbats",
-      "short": "Dickbats",
-      "handle": "dickbats",
+    "drunken": {
+      "full": "Drunken",
+      "short": "Drunken",
+      "handle": "drunken",
       "points": 0,
       "guest": false,
       "collective": false
