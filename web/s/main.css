@@ -109,8 +109,10 @@ audio
 .team>.short
 {
   width: 100%;
+  font-size: 22px;
   border-bottom: 1px dotted #888888;
   white-space: nowrap;
+  overflow: hidden;
 }
 .team>.full
 {
@@ -152,7 +154,7 @@ audio
   }
 
 /* show full name when waiting for the game */
-body.waiting .team>.full
+/*body.waiting .team>.full
 {
   display: block;
 }
@@ -160,7 +162,7 @@ body.waiting .team>.points
 {
   display: none;
 }
-
+*/
 
 /* adjusting for special guest feature */
 #teams.special_guest:before
@@ -223,7 +225,7 @@ body.waiting .team>.points
   {
     display: none;
   }
-  body.waiting #teams.special_guest>.team.static>span.full
+/*  body.waiting #teams.special_guest>.team.static>span.full
   {
     display: block;
   }
@@ -231,7 +233,7 @@ body.waiting .team>.points
   {
     display: none;
   }
-
+*/
 #teams.special_guest>.team.static>.short
 {
   width: 200px;

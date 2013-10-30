@@ -1,0 +1,356 @@
+{
+  "cover":
+  {
+    "image": "cover.jpg",
+    "video": "cover.m4v",
+    "params":
+    {
+      "volume": 0
+    }
+  },
+  "timer":
+  {
+    "audio": "sounds/minute.mp3",
+    "length": 60,
+    "params":
+    {
+      "volume": 0.2
+    }
+  },
+  "sounds":
+  {
+    "intro":
+    {
+      "audio": "sounds/intro.mp3",
+      "desc": "Alan Parsons Project",
+      "params":
+      {
+        "loop": false,
+        "volume": 1
+      }
+    },
+    "teams":
+    {
+      "audio": "sounds/teams.mp3",
+      "desc": "Zarustra",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "assist":
+    {
+      "audio": "sounds/assist.mp3",
+      "desc": "Invisible Touch",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "rules":
+    {
+      "audio": "sounds/rules.mp3",
+      "desc": "Space Wind",
+      "params":
+      {
+        "loop": true,
+        "volume": 0.6
+      }
+    },
+    "playoff":
+    {
+      "audio": "sounds/place_2nd.mp3",
+      "desc": "Blue Raprosdy",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "horse":
+    {
+      "audio": "sounds/horse.mp3",
+      "desc": "Wild Horse",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "blackbox":
+    {
+      "audio": "sounds/blackbox.mp3",
+      "desc": "Ra-ta-ta",
+      "params":
+      {
+        "loop": false,
+        "volume": 1
+      }
+    },
+    "place_3rd":
+    {
+      "audio": "sounds/place_3rd.mp3",
+      "desc": "Homage to the Mountaints",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "place_2nd":
+    {
+      "audio": "sounds/place_2nd.mp3",
+      "desc": "Blue Raprosdy",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    },
+    "place_1st":
+    {
+      "audio": "sounds/place_1st.mp3",
+      "desc": "Dance Macabre",
+      "params":
+      {
+        "loop": true,
+        "volume": 1
+      }
+    }
+  },
+  "questions":
+  {
+    "1":
+    {
+      "question":
+      {
+        "manual": true,
+        "text": "What word did authors encode at the end of this puzzle book?",
+        "image": "1q.png"
+      },
+      "answer":
+      {
+        "text": "Puzzle (look upside down).",
+        "image": "1a.png",
+        "keyword": "\\bpuzzle\\b"
+      }
+    },
+    "2":
+    {
+      "question":
+      {
+        "manual": true,
+        "text": "Attention: Iohannes Vermeer. \"A Maid Asleep\"\n\nWhere exactly on this painting is number 4?",
+        "image": "2q.jpg"
+      },
+      "answer":
+      {
+        "image": "2a.png",
+        "text": "Signature (IVMeer)",
+        "desc": "Roman numeral \"IV\" - 4.",
+        "keyword": "\\b(signature|iv|ivmeer)\\b"
+      }
+    },
+    "3":
+    {
+      "question":
+      {
+        "manual": true,
+        "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be definitely answered by science, but can be answered using a dictionary.\n\nAll subjects of this question are in the black box.\n\nWhat is in Black Box?"
+      },
+      "answer":
+      {
+        "text": "Chicken and Egg.",
+        "desc": "In dictionary \"C\" in Chicken comes before \"E\" in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
+        "keyword": "(\\bchicken\\b.*\\begg\\b)|(\\begg\\b.*\\bchicken\\b)"
+      }
+    },
+    "4":
+    {
+      "question":
+      {
+        "text": "Listen to these names (in order)\n\nHerbert, Jefferson, Walker, ???\n\nQuestion: What is the next name in this sequence?"
+      },
+      "answer":
+      {
+        "text": "Hussein (Barack <b>Hussein</b> Obama)",
+        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <b>Herbert</b> Bush\nBill <b>Jefferson</b> Clinton\nGeorge <b>Walker</b> Bush</span>",
+        "keyword": "\\b(hussein|husein|husine)\\b"
+      }
+    },
+    "5":
+    {
+      "question":
+      {
+        "text": "Here is an English translation of this famous hit song:\n\n<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is ...</span>\nFinish this hit with words in the original language or in English."
+      },
+      "answer":
+      {
+        "audio": "5a.mp3",
+        "params":
+        {
+          "loop": false,
+          "volume": 1,
+          "_keep_alive": true
+        },
+        "text": "Gangnam Style.",
+        "desc": "<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is Gangnam Style.</span>",
+        "keyword": "\\b(gangnam|style)\\b"
+      }
+    },
+    "6":
+    {
+      "question":
+      {
+        "text": "Here are two facts about 18th century America:\n\n• On Sunday it was customary to go to Church.\n• Sometimes it took a day to ride to a closest town.\n\nSince then much in America changed. However, because of the logic above, what do we still do on a Tuesday?"
+      },
+      "answer":
+      {
+        "text": "Vote in U.S. Elections.",
+        "desc": "To ensure that everyone have a chance to vote, U.S. allowed for 1 day to ride to a polling station after attending a church on Sunday.",
+        "keyword": "\\b(vote|elections)\\b"
+      }
+    },
+    "7":
+    {
+      "question":
+      {
+        "text": "Anti-Turkish alliance, which Poland signed in 1683 with Leopold I, was backdated to March 31. Why?"
+      },
+      "answer":
+      {
+        "text": "Because they did not want to date it April 1st",
+        "desc": "Conviction about April's Fool's Day was so strong in Poland that they did not want to risk people thinking this alliance was a joke.",
+        "keyword": "\\b(april|fool|fools)\\b"
+      }
+    },
+    "8":
+    {
+      "question":
+      {
+        "manual": true,
+        "image": "8q.png",
+        "text": "What is wrong with all those trademarks?"
+      },
+      "answer":
+      {
+        "text": "Spelling.",
+        "desc": "As officially registered:\n\nYahoo! (with \"!\")\nWal-Mart Stores (with \"–\")\nRuby Skye (with \"e\")",
+        "keyword": "\\b(spelled|spelling|misspelled|missing)\\b"
+      }
+    },
+    "9":
+    {
+      "question":
+      {
+        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is <b>not</b> on a tea itself but blow ... how?"
+      },
+      "answer":
+      {
+        "text": "Above the tea.",
+        "desc": "• The way hot liquid cools off is by interacting with much cooler air.\n\n• Heat, which escapes from hot liquid, creates a BUFFER ABOVE THE CUP.\n\n• So we blow to blow away that BUFFER OF HOT AIR ABOVE THE CUP.",
+        "keyword": "\\b(above|over)\\b"
+      }
+    },
+    "10":
+    {
+      "question":
+      {
+        "text": "Residents of San Diego are advised by local government to turn off the lights after 11pm. What is located near those resident's houses?"
+      },
+      "answer":
+      {
+        "text": "Observatory (planetarium)",
+        "desc": "Famous Palomar Observatory is complaining of \"light pollution\" because stars cannot clearly be seen.",
+        "keyword": "\\b(observatory|planetarium)\\b"
+      }
+    },
+    "11":
+    {
+      "question":
+      {
+        "text": "This country does not have the Government of its own.\nThis country does not have the Constitution at all.\nThis country's language, even though used by other countries, is not regulated by any authority.\n\nName that country."
+      },
+      "answer":
+      {
+        "text": "England.",
+        "desc": "There is UK government but not an English one.\n\nLaw in England is based on court's decisions, there is no Constitution.\n\nThere is no organization regulating English language.",
+        "keyword": "\\bengland\\b"
+      }
+    },
+    "12":
+    {
+      "question":
+      {
+        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\nThere were two main rival gangs: Metropolitans and Municipals.\nMunicipals whore shiny metal badges and Metropolitans did not.\nWhat term, widely used today, do we call Municipals now <b>and</b> why?"
+      },
+      "answer":
+      {
+        "text": "Cops. Badges were made of <b>copper</b>.",
+        "desc": "Private security gangs developed into Police Officers.\n\nRival gang of Metropolitans called Municipals \"cops\" (short from \"copper\" because they wore copper badges) this is how the name for Police Officers came about.",
+        "keyword": "\\b(cop|copper)\\b"
+      }
+    },
+    "playoff 1":
+    {
+      "question":
+      {
+        "text": "A slightly mispronounced famous line from a famous movie saga defined the exact calendar date when fans celebrate this movie's day."
+      },
+      "answer":
+      {
+        "text": "May the 4th.",
+        "desc": "\"<b>May the Force</b> be with you\"."
+      }
+    },
+    "playoff 2":
+    {
+      "question":
+      {
+        "text": "Sylvilagus palustris hefneri – is an endangered subspecies of marsh rabbit.\n\nQuestion: What organization sponsored the research of this rabbit?"
+      },
+      "answer":
+      {
+        "text": "Playboy."
+      }
+    },
+    "playoff 3":
+    {
+      "question":
+      {
+        "text": "Captain Nemo, in Jules Verne 1870 novel \"20,000 leagues under the sea\", lived in a submarine near the bottom of the ocean. What was special about his watch?"
+      },
+      "answer":
+      {
+        "text": "It had 24 hours.",
+        "desc": "He couldn't tell day from night under the sea."
+      }
+    },
+    "playoff X1":
+    {
+      "question":
+      {
+        "text": "Why, according to hotel owners, do they prefer to put up large pictures on the hotel walls rather than smaller ones?"
+      },
+      "answer":
+      {
+        "text": "Large pictures are harder to steal."
+      }
+    },
+    "playoff X2":
+    {
+      "question":
+      {
+        "text": "In 1858 HH Stephenson took three wickets in three balls for the team England at a cricket game. What element of clothing did organizers buy him from the proceeds?"
+      },
+      "answer":
+      {
+        "text": "Hat (as in Hat-Trick).",
+        "desc": "Until this day when someone scores 3 goals it is called \"Hat-Trick\" (and spectators throw hats into a field/ice)."
+      }
+    }
+
+  }
+}

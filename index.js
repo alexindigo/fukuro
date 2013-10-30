@@ -157,6 +157,7 @@ function start()
 
   // start listening
   app.listen(conf.get('port'));
+  console.log('listening on '+conf.get('port'));
 }
 
 // {{{ http requests handler

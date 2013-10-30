@@ -316,6 +316,15 @@ var statActions = function(e)
       // got the answer, unflag button
       button.removeClass('busy');
     });
+
+    if (action == 'round' && $('body>footer').attr('data-round') != '0')
+    {
+      // play new round sound
+      socket.emit('admin:sound', {key: 'horse', action: 'play'}, function()
+      {
+        // do nothing
+      });
+    }
   }
 };
 

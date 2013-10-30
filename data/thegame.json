@@ -1,755 +1,96 @@
 {
   "current": null,
   "sound": null,
-  "players": {
-    "+14088346198": {
-      "id": "+14088346198",
-      "name": "Pasha",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+19495995523": {
-      "id": "+19495995523",
-      "name": "Cody ",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+14153104985": {
-      "id": "+14153104985",
-      "name": "Trulia",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+14155954785": {
-      "id": "+14155954785",
-      "name": "David West",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+16502243709": {
-      "id": "+16502243709",
-      "name": "ZAZ \" Je veux\" ( For Belyana)",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+16508882208": {
-      "id": "+16508882208",
-      "name": "Your Name",
-      "played": {
-        "4": {
-          "number": 4,
-          "time": 106680630442,
-          "answer": "Play badmattitude Jackson"
-        },
-        "8": {
-          "number": 8,
-          "time": 46922117245,
-          "answer": "Spelled wrong"
-        }
-      },
-      "points": 2,
-      "pos": 153602747687
-    },
-    "+14152009554": {
-      "id": "+14152009554",
-      "name": "your name",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+18589451721": {
-      "id": "+18589451721",
-      "name": "Dmitri G",
-      "played": {
-        "4": {
-          "number": 4,
-          "time": 84614445821,
-          "answer": "bush"
-        },
-        "10": {
-          "number": 10,
-          "time": 57971565849,
-          "answer": "marine base"
-        },
-        "11": {
-          "number": 11,
-          "time": 90447968811,
-          "answer": "Vatican"
-        }
-      },
-      "points": 3,
-      "pos": 233033980481
-    },
-    "+14152037726": {
-      "id": "+14152037726",
-      "name": "Esfir Shrayber",
-      "played": {
-        "10": {
-          "number": 10,
-          "time": 47627611334,
-          "answer": "Aquarium"
-        }
-      },
-      "points": 1,
-      "pos": 47627611334
-    },
-    "+16507877810": {
-      "id": "+16507877810",
-      "name": "Maks",
-      "played": {
-        "8": {
-          "number": 8,
-          "time": 72387459211,
-          "answer": "Red color"
-        },
-        "10": {
-          "number": 10,
-          "time": 41474620256,
-          "answer": "Airbase"
-        }
-      },
-      "points": 2,
-      "pos": 113862079467
-    },
-    "+19254517283": {
-      "id": "+19254517283",
-      "name": "Irina Asadchaya",
-      "played": {
-        "4": {
-          "number": 4,
-          "time": 85646090059,
-          "answer": "Bush"
-        },
-        "8": {
-          "number": 8,
-          "time": 61352975146,
-          "answer": "Misspelled"
-        },
-        "10": {
-          "number": 10,
-          "time": 79444819990,
-          "answer": "Port"
-        },
-        "11": {
-          "number": 11,
-          "time": 77121515818,
-          "answer": "Moldova"
-        }
-      },
-      "points": 4,
-      "pos": 303565401013
-    },
-    "+14045184518": {
-      "id": "+14045184518",
-      "name": "Anakin",
-      "played": {
-        "4": {
-          "number": 4,
-          "time": 71219313262,
-          "answer": "Lincoln"
-        },
-        "6": {
-          "number": 6,
-          "time": 73334149428,
-          "answer": "Bath"
-        },
-        "7": {
-          "number": 7,
-          "time": 83187184231,
-          "answer": "Different calendar"
-        },
-        "8": {
-          "number": 8,
-          "time": 61653221101,
-          "answer": "Nothing"
-        },
-        "10": {
-          "number": 10,
-          "time": 58148685770,
-          "answer": "Gas lamp district"
-        },
-        "11": {
-          "number": 11,
-          "time": 54291268612,
-          "answer": "Puerto Rico"
-        }
-      },
-      "points": 6,
-      "pos": 401833822404
-    },
-    "+14156528683": {
-      "id": "+14156528683",
-      "name": "Tanya ",
-      "played": {
-        "8": {
-          "number": 8,
-          "time": 53091000508,
-          "answer": "Анаграммы"
-        },
-        "10": {
-          "number": 10,
-          "time": 43663975917,
-          "answer": "Летучие мыши "
-        },
-        "11": {
-          "number": 11,
-          "time": 69863388559,
-          "answer": "Ватикан"
-        }
-      },
-      "points": 3,
-      "pos": 166618364984
-    },
-    "+14088349135": {
-      "id": "+14088349135",
-      "name": "sklanna",
-      "played": {
-        "10": {
-          "number": 10,
-          "time": 39920897080,
-          "answer": "San Diego zoo"
-        },
-        "11": {
-          "number": 11,
-          "time": 60976631339,
-          "answer": "Vatican"
-        }
-      },
-      "points": 2,
-      "pos": 100897528419
-    },
-    "+16503355474": {
-      "id": "+16503355474",
-      "name": "apolovin",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+15108467996": {
-      "id": "+15108467996",
-      "name": "Vadim",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+16504550749": {
-      "id": "+16504550749",
-      "name": "Irina Nov Filmore",
-      "played": {
-        "6": {
-          "number": 6,
-          "time": 110164871473,
-          "answer": "play Irina laundry day"
-        },
-        "10": {
-          "number": 10,
-          "time": 50827550788,
-          "answer": "play Irina observatory"
-        }
-      },
-      "points": 2,
-      "pos": 160992422261
-    },
-    "+16507409276": {
-      "id": "+16507409276",
-      "name": "Steven hom ",
-      "played": {
-        "4": {
-          "number": 4,
-          "time": 111254253498,
-          "answer": "Jackson"
-        },
-        "6": {
-          "number": 6,
-          "time": 101587564907,
-          "answer": "Go to mass"
-        },
-        "7": {
-          "number": 7,
-          "time": 100067417102,
-          "answer": " Birthday"
-        },
-        "8": {
-          "number": 8,
-          "time": 53131326814,
-          "answer": "Spelled incorrectly"
-        },
-        "10": {
-          "number": 10,
-          "time": 68769555834,
-          "answer": "The beach"
-        },
-        "11": {
-          "number": 11,
-          "time": 110245589958,
-          "answer": "Canada"
-        }
-      },
-      "points": 6,
-      "pos": 545055708113
-    },
-    "+14154704625": {
-      "id": "+14154704625",
-      "name": "lena",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+14153749923": {
-      "id": "+14153749923",
-      "name": "Yuliya_Kh",
-      "played": {
-        "10": {
-          "number": 10,
-          "time": 88527813951,
-          "answer": "Military base, air force. "
-        },
-        "11": {
-          "number": 11,
-          "time": 55837268866,
-          "answer": "Vatican City"
-        }
-      },
-      "points": 2,
-      "pos": 144365082817
-    },
-    "+15108478057": {
-      "id": "+15108478057",
-      "name": "ooow mexican border",
-      "played": {
-        "11": {
-          "number": 11,
-          "time": 110243584699,
-          "answer": "play ooow Vatican"
-        }
-      },
-      "points": 1,
-      "pos": 110243584699
-    },
-    "+14155190794": {
-      "id": "+14155190794",
-      "name": "Liana",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    },
-    "+15105172820": {
-      "id": "+15105172820",
-      "name": "Alexp",
-      "played": {},
-      "points": 0,
-      "pos": 0
-    }
-  },
-  "answers": {
-    "4": {
-      "+16508882208": {
-        "id": "+16508882208",
-        "name": "Your Name",
-        "data": {
-          "number": 4,
-          "time": 106680630442,
-          "answer": "Play badmattitude Jackson"
-        }
-      },
-      "+18589451721": {
-        "id": "+18589451721",
-        "name": "Dmitri G",
-        "data": {
-          "number": 4,
-          "time": 84614445821,
-          "answer": "bush"
-        }
-      },
-      "+19254517283": {
-        "id": "+19254517283",
-        "name": "Irina Asadchaya",
-        "data": {
-          "number": 4,
-          "time": 85646090059,
-          "answer": "Bush"
-        }
-      },
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 4,
-          "time": 71219313262,
-          "answer": "Lincoln"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 4,
-          "time": 111254253498,
-          "answer": "Jackson"
-        }
-      }
-    },
-    "6": {
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 6,
-          "time": 73334149428,
-          "answer": "Bath"
-        }
-      },
-      "+16504550749": {
-        "id": "+16504550749",
-        "name": "Irina Nov Filmore",
-        "data": {
-          "number": 6,
-          "time": 110164871473,
-          "answer": "play Irina laundry day"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 6,
-          "time": 101587564907,
-          "answer": "Go to mass"
-        }
-      }
-    },
-    "7": {
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 7,
-          "time": 83187184231,
-          "answer": "Different calendar"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 7,
-          "time": 100067417102,
-          "answer": " Birthday"
-        }
-      }
-    },
-    "8": {
-      "+16508882208": {
-        "id": "+16508882208",
-        "name": "Your Name",
-        "data": {
-          "number": 8,
-          "time": 46922117245,
-          "answer": "Spelled wrong"
-        }
-      },
-      "+16507877810": {
-        "id": "+16507877810",
-        "name": "Maks",
-        "data": {
-          "number": 8,
-          "time": 72387459211,
-          "answer": "Red color"
-        }
-      },
-      "+19254517283": {
-        "id": "+19254517283",
-        "name": "Irina Asadchaya",
-        "data": {
-          "number": 8,
-          "time": 61352975146,
-          "answer": "Misspelled"
-        }
-      },
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 8,
-          "time": 61653221101,
-          "answer": "Nothing"
-        }
-      },
-      "+14156528683": {
-        "id": "+14156528683",
-        "name": "Tanya ",
-        "data": {
-          "number": 8,
-          "time": 53091000508,
-          "answer": "Анаграммы"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 8,
-          "time": 53131326814,
-          "answer": "Spelled incorrectly"
-        }
-      }
-    },
-    "10": {
-      "+18589451721": {
-        "id": "+18589451721",
-        "name": "Dmitri G",
-        "data": {
-          "number": 10,
-          "time": 57971565849,
-          "answer": "marine base"
-        }
-      },
-      "+14152037726": {
-        "id": "+14152037726",
-        "name": "Esfir Shrayber",
-        "data": {
-          "number": 10,
-          "time": 47627611334,
-          "answer": "Aquarium"
-        }
-      },
-      "+16507877810": {
-        "id": "+16507877810",
-        "name": "Maks",
-        "data": {
-          "number": 10,
-          "time": 41474620256,
-          "answer": "Airbase"
-        }
-      },
-      "+19254517283": {
-        "id": "+19254517283",
-        "name": "Irina Asadchaya",
-        "data": {
-          "number": 10,
-          "time": 79444819990,
-          "answer": "Port"
-        }
-      },
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 10,
-          "time": 58148685770,
-          "answer": "Gas lamp district"
-        }
-      },
-      "+14156528683": {
-        "id": "+14156528683",
-        "name": "Tanya ",
-        "data": {
-          "number": 10,
-          "time": 43663975917,
-          "answer": "Летучие мыши "
-        }
-      },
-      "+14088349135": {
-        "id": "+14088349135",
-        "name": "sklanna",
-        "data": {
-          "number": 10,
-          "time": 39920897080,
-          "answer": "San Diego zoo"
-        }
-      },
-      "+16504550749": {
-        "id": "+16504550749",
-        "name": "Irina Nov Filmore",
-        "data": {
-          "number": 10,
-          "time": 50827550788,
-          "answer": "play Irina observatory"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 10,
-          "time": 68769555834,
-          "answer": "The beach"
-        }
-      },
-      "+14153749923": {
-        "id": "+14153749923",
-        "name": "Yuliya_Kh",
-        "data": {
-          "number": 10,
-          "time": 88527813951,
-          "answer": "Military base, air force. "
-        }
-      }
-    },
-    "11": {
-      "+18589451721": {
-        "id": "+18589451721",
-        "name": "Dmitri G",
-        "data": {
-          "number": 11,
-          "time": 90447968811,
-          "answer": "Vatican"
-        }
-      },
-      "+19254517283": {
-        "id": "+19254517283",
-        "name": "Irina Asadchaya",
-        "data": {
-          "number": 11,
-          "time": 77121515818,
-          "answer": "Moldova"
-        }
-      },
-      "+14045184518": {
-        "id": "+14045184518",
-        "name": "Anakin",
-        "data": {
-          "number": 11,
-          "time": 54291268612,
-          "answer": "Puerto Rico"
-        }
-      },
-      "+14156528683": {
-        "id": "+14156528683",
-        "name": "Tanya ",
-        "data": {
-          "number": 11,
-          "time": 69863388559,
-          "answer": "Ватикан"
-        }
-      },
-      "+14088349135": {
-        "id": "+14088349135",
-        "name": "sklanna",
-        "data": {
-          "number": 11,
-          "time": 60976631339,
-          "answer": "Vatican"
-        }
-      },
-      "+16507409276": {
-        "id": "+16507409276",
-        "name": "Steven hom ",
-        "data": {
-          "number": 11,
-          "time": 110245589958,
-          "answer": "Canada"
-        }
-      },
-      "+14153749923": {
-        "id": "+14153749923",
-        "name": "Yuliya_Kh",
-        "data": {
-          "number": 11,
-          "time": 55837268866,
-          "answer": "Vatican City"
-        }
-      },
-      "+15108478057": {
-        "id": "+15108478057",
-        "name": "ooow mexican border",
-        "data": {
-          "number": 11,
-          "time": 110243584699,
-          "answer": "play ooow Vatican"
-        }
-      }
-    }
-  },
+  "players": {},
+  "answers": {},
   "scale": 1,
-  "round": 7,
+  "round": 3,
   "rounds": [
     null,
     {
-      "dickbats": null,
-      "gleemonex": 1,
-      "stanford": 1,
-      "belarus": null,
-      "east_bay": 1,
-      "subgroup": 1,
-      "peninsula": 1,
-      "fat_pandas": 1
-    },
-    {
-      "dickbats": null,
-      "fat_pandas": null,
-      "south_bay": 1,
-      "peninsula": 1,
-      "rwb": 1,
       "twin_peaks": 1,
-      "subgroup": 1
-    },
-    {
-      "strangers": 1,
-      "fat_pandas": 1,
-      "gleemonex": 1,
-      "rwb": 1,
-      "twin_peaks": 1,
-      "stanford": 1,
-      "berkeley": 1,
+      "san-francisko": "0.56",
       "musketeers": 1,
-      "peninsula": 1,
-      "subgroup": 1,
-      "east_bay": 1,
-      "sf_house": 1,
-      "trulia": 1,
-      "drunken": 1
-    },
-    {
-      "gleemonex": 1,
-      "rwb": 1,
-      "trulia": 1,
-      "hamsters": 1,
-      "subgroup": 1,
-      "east_bay": 1
-    },
-    {
-      "twin_peaks": 1,
-      "belarus": null,
-      "trulia": 1,
-      "strangers": 1,
-      "gleemonex": 1,
-      "musketeers": 1,
-      "peninsula": 1,
+      "mercury": 1,
+      "astral_cats": 1,
+      "livejournal": 1,
       "stanford": 1,
-      "subgroup": 1,
-      "sf_house": 1,
-      "fat_pandas": 1,
-      "drunken": 1
+      "normalxnaa_gruppa": 1,
+      "poluostrov": 1,
+      "xaynik_vina": 1,
+      "uc_berkeley": 1
     },
     {
-      "fat_pandas": 1,
-      "drunken": 1
+      "mercury": 1,
+      "san-francisko": "1.06",
+      "twin_peaks": 1,
+      "stanford": 1,
+      "livejournal": 1,
+      "normalxnaa_gruppa": 1,
+      "poluostrov": 1,
+      "xaynik_vina": 1,
+      "uc_berkeley": 1,
+      "musketeers": 1,
+      "east_bay": null
     },
     {
-      "belarus": null
+      "normalxnaa_gruppa": 1,
+      "san-francisko": "1.39",
+      "stanford": 1,
+      "twin_peaks": 1,
+      "poluostrov": 1,
+      "xaynik_vina": 1,
+      "uc_berkeley": 1,
+      "musketeers": 1
     }
   ],
-  "played": [
-    null,
-    4,
-    10,
-    8,
-    7,
-    6,
-    11
-  ],
+  "played": [],
   "teams": {
-    "strangers": {
-      "full": "Perfect Strangers",
-      "short": "Strangers",
-      "handle": "strangers",
+    "degrees": {
+      "full": "12.5 Degrees",
+      "short": "12.5 Degrees",
+      "handle": "degrees",
       "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "ambar": {
+      "full": "Ambar",
+      "short": "Ambar",
+      "handle": "ambar",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "astral_cats": {
+      "full": "Astral Cats",
+      "short": "Astral Cats",
+      "handle": "astral_cats",
+      "points": 1,
+      "guest": false,
+      "collective": false
+    },
+    "bejazz": {
+      "full": "BEJazz",
+      "short": "BEJazz",
+      "handle": "bejazz",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "buzina": {
+      "full": "Бузина",
+      "short": "Бузина",
+      "handle": "buzina",
+      "points": 0,
+      "guest": false,
+      "collective": false
+    },
+    "xaynik_vina": {
+      "full": "Чайник Вина",
+      "short": "Чайник Вина",
+      "handle": "xaynik_vina",
+      "points": 3,
       "guest": false,
       "collective": false
     },
@@ -761,19 +102,27 @@
       "guest": false,
       "collective": false
     },
-    "stanford": {
-      "full": "Stanford",
-      "short": "Stanford",
-      "handle": "stanford",
+    "f1": {
+      "full": "F1",
+      "short": "F1",
+      "handle": "f1",
       "points": 0,
       "guest": false,
       "collective": false
     },
-    "peninsula": {
-      "full": "Peninsula",
-      "short": "Peninsula",
-      "handle": "peninsula",
-      "points": 0,
+    "livejournal": {
+      "full": "Livejournal",
+      "short": "Livejournal",
+      "handle": "livejournal",
+      "points": 2,
+      "guest": false,
+      "collective": false
+    },
+    "mercury": {
+      "full": "Mercury",
+      "short": "Mercury",
+      "handle": "mercury",
+      "points": 2,
       "guest": false,
       "collective": false
     },
@@ -781,6 +130,30 @@
       "full": "Musketeers",
       "short": "Musketeers",
       "handle": "musketeers",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "normalxnaa_gruppa": {
+      "full": "Нормальная Группа",
+      "short": "Нормальная Группа",
+      "handle": "normalxnaa_gruppa",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "poluostrov": {
+      "full": "Полуостров",
+      "short": "Полуостров",
+      "handle": "poluostrov",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "rwb": {
+      "full": "RWB",
+      "short": "RWB",
+      "handle": "rwb",
       "points": 0,
       "guest": false,
       "collective": false
@@ -793,19 +166,11 @@
       "guest": false,
       "collective": false
     },
-    "berkeley": {
-      "full": "Berkeley",
-      "short": "Berkeley",
-      "handle": "berkeley",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "belarus": {
-      "full": "Belarus",
-      "short": "Belarus",
-      "handle": "belarus",
-      "points": -2,
+    "stanford": {
+      "full": "Stanford",
+      "short": "Stanford",
+      "handle": "stanford",
+      "points": 3,
       "guest": false,
       "collective": false
     },
@@ -813,82 +178,37 @@
       "full": "Twin Peaks",
       "short": "Twin Peaks",
       "handle": "twin_peaks",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "subgroup": {
-      "full": "Normal Subgroup",
-      "short": "Subgroup",
-      "handle": "subgroup",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "rwb": {
-      "full": "RWB",
-      "short": "RWB",
-      "handle": "rwb",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "hamsters": {
-      "full": "Space Hamsters",
-      "short": "Hamsters",
-      "handle": "hamsters",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "sf_house": {
-      "full": "SF House Gangsters",
-      "short": "SF House",
-      "handle": "sf_house",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "clubbers": {
-      "full": "Clubbers",
-      "short": "Clubbers",
-      "handle": "clubbers",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "trulia": {
-      "full": "Trulia",
-      "short": "Trulia",
-      "handle": "trulia",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "fat_pandas": {
-      "full": "Fat Pandas",
-      "short": "Fat Pandas",
-      "handle": "fat_pandas",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "gleemonex": {
-      "full": "Gleemonex",
-      "short": "Gleemonex",
-      "handle": "gleemonex",
-      "points": 0,
-      "guest": false,
-      "collective": false
-    },
-    "drunken": {
-      "full": "Drunken",
-      "short": "Drunken",
-      "handle": "drunken",
       "points": 3,
       "guest": false,
       "collective": false
+    },
+    "uc_berkeley": {
+      "full": "UC Berkeley",
+      "short": "UC Berkeley",
+      "handle": "uc_berkeley",
+      "points": 3,
+      "guest": false,
+      "collective": false
+    },
+    "novikov": {
+      "full": "Новиков",
+      "short": "Новиков",
+      "handle": "novikov",
+      "points": 0,
+      "guest": true,
+      "collective": false
+    },
+    "san-francisko": {
+      "full": "Сан-Франциско",
+      "short": "Сан-Франциско",
+      "handle": "san-francisko",
+      "points": "1.39",
+      "guest": false,
+      "collective": true
     }
   },
-  "flags": {}
+  "flags": {
+    "guest": "novikov",
+    "collective": "san-francisko"
+  }
 }

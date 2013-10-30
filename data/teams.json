@@ -1,59 +1,65 @@
 [
   {
-    "full": "Perfect Strangers",
-    "short": "Strangers"
+    "full": "12.5 Degrees"
+  },
+  {
+    "full": "Ambar"
+  },
+  {
+    "full": "Astral Cats"
+  },
+  {
+    "full": "BEJazz"
+  },
+  {
+    "full": "Бузина"
+  },
+  {
+    "full": "Чайник Вина"
   },
   {
     "full": "East Bay"
   },
   {
-    "full": "Stanford"
+    "full": "F1"
   },
   {
-    "full": "Peninsula"
+    "full": "Livejournal"
+  },
+  {
+    "full": "Mercury"
   },
   {
     "full": "Musketeers"
   },
   {
-    "full": "South Bay"
+    "full": "Нормальная Группа"
   },
   {
-    "full": "UC Berkeley",
-    "full": "Berkeley"
-  },
-  {
-    "full": "Belarus"
-  },
-  {
-    "full": "Twin Peaks"
-  },
-  {
-    "full": "Normal Subgroup",
-    "short": "Subgroup"
+    "full": "Полуостров"
   },
   {
     "full": "RWB"
   },
   {
-    "full": "Space Hamsters",
-    "short": "Hamsters"
+    "full": "South Bay"
   },
   {
-    "full": "SF House Gangsters",
-    "short": "SF House"
+    "full": "Stanford"
   },
   {
-    "full": "Trulia"
+    "full": "Twin Peaks"
   },
   {
-    "full": "Fat Pandas"
+    "full": "UC Berkeley"
   },
   {
-    "full": "Gleemonex"
+    "full": "Новиков",
+    "guest": true
   },
   {
-    "full": "Drunken"
+    "full": "Сан-Франциско",
+    "collective": true
   }
 ]
 
