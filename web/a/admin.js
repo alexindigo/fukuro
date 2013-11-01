@@ -258,7 +258,7 @@ var soundActions = function(e)
   key = button.data('item');
 
   // hack
-  if (key == 'assist')
+  if (key == 'assist' || key == 'guest_star')
   {
     socket.emit('admin:hide', {item: 'rules'}, function(){});
   }

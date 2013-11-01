@@ -49,6 +49,16 @@
         "volume": 1
       }
     },
+    "guest_star":
+    {
+      "audio": "sounds/guest_star.mp3",
+      "desc": "DJ Karas Chto Gde Kogda",
+      "params":
+      {
+        "loop": false,
+        "volume": 1
+      }
+    },
     "rules":
     {
       "audio": "sounds/rules.mp3",
