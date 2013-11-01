@@ -127,14 +127,14 @@
       "question":
       {
         "manual": true,
-        "text": "What word did authors encode at the end of this puzzle book?",
-        "image": "1q.png"
+        "text": "Какая обувь лежит в чёрном ящике?",
+        "image": "1q.jpg"
       },
       "answer":
       {
-        "text": "Puzzle (look upside down).",
-        "image": "1a.png",
-        "keyword": "\\bpuzzle\\b"
+        "text": "Чешки.",
+        "desc": "финка, вьетнамка, панамка, ...чешка",
+        "keyword": "чешки, чешка, cheshki, cheshka, gymnastic shoe, gym shoe"
       }
     },
     "2":
@@ -142,15 +142,13 @@
       "question":
       {
         "manual": true,
-        "text": "Attention: Iohannes Vermeer. \"A Maid Asleep\"\n\nWhere exactly on this painting is number 4?",
+        "text": "По сей день в США в юридической практике используется тест Миллера для определения непристойного материала. Этот тест состоит из трёх критериев:\n1) Средний человек, применяя современные общественные моральные нормы, посчитает, что материал в целом вызывает похотливый интерес.\n2) Материал изображает в явно оскорбительном виде сексуальные действия, в особенности — оговоренные соответствующим законодательством.\nВопрос: назовите третий критерий, благодаря которому в США были, например, разрешены «Лолита» Набокова или фильм «Калигула».",
         "image": "2q.jpg"
       },
       "answer":
       {
-        "image": "2a.png",
-        "text": "Signature (IVMeer)",
-        "desc": "Roman numeral \"IV\" - 4.",
-        "keyword": "\\b(signature|iv|ivmeer)\\b"
+        "text": "Материал не должен иметь художественной ценности.",
+        "keyword": "ценности, ценность, cennost, tsennost, value, artistic"
       }
     },
     "3":
@@ -158,197 +156,208 @@
       "question":
       {
         "manual": true,
-        "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be definitely answered by science, but can be answered using a dictionary.\n\nAll subjects of this question are in the black box.\n\nWhat is in Black Box?"
+        "image": "3q.jpg",
+        "text": "Как зовут того кто на этом рисунке придумал партию белых, и красных?"
       },
       "answer":
       {
-        "text": "Chicken and Egg.",
-        "desc": "In dictionary \"C\" in Chicken comes before \"E\" in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
-        "keyword": "(\\bchicken\\b.*\\begg\\b)|(\\begg\\b.*\\bchicken\\b)"
+        "text": "Льюис Кэрролл.",
+        "desc": "Перед вами оригинальная иллюстрация к книге «Алиса в Зазеркалье» Льюиса Кэрролла.  Белая пешка – это Алиса. Диаграмма изображает встречу Алисы с Белой Королевой и Чёрной Королевой (в оригинале: Red Queen).",
+        "keyword": "кэррол, кэрол, керрол, керол, carrol, carol, доджсон, dodgson"
       }
     },
     "4":
     {
       "question":
       {
-        "text": "Listen to these names (in order)\n\nHerbert, Jefferson, Walker, ???\n\nQuestion: What is the next name in this sequence?"
+        "manual": true,
+        "text": "Вы прослушали отрывок из известной джазовой композиции «Водные лыжи» Томаша Диака - преподавателя джаза Школы Музыкальной Культуры в Будапеште.\nВозможно, выбор пал на эту композицию из-за того, что Диак был учителем.\nЭто произведение можно было услышать перед песнями группы «Песняры», группы «Земляне», Высоцкого, Пугачёвой и других.\nА что было между этой композицией и песнями остальных перечисленных авторов?",
+        "image": "4q.jpg",
+        "video": "4q.m4v",
+        "params":
+        {
+          "loop": false,
+          "volume": 1,
+          "_keep-alive": true
+        }
       },
       "answer":
       {
-        "text": "Hussein (Barack <b>Hussein</b> Obama)",
-        "desc": "Middle names of U.S. Presidents:\n\n<span style=\"display: block; text-align: center;\">George <b>Herbert</b> Bush\nBill <b>Jefferson</b> Clinton\nGeorge <b>Walker</b> Bush</span>",
-        "keyword": "\\b(hussein|husein|husine)\\b"
+        "desc": "Композиция, играющая во время титров — заставка «Ну, погоди!».",
+        "keyword": "погоди, pogodi, pogody",
+        "image": "4a.jpg",
+        "video": "4a.m4v",
+        "params":
+        {
+          "loop": false,
+          "volume": 1,
+          "_keep-alive": true
+        }
       }
     },
     "5":
     {
       "question":
       {
-        "text": "Here is an English translation of this famous hit song:\n\n<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is ...</span>\nFinish this hit with words in the original language or in English."
+        "text": "Одной из причин того что люди стареют является то что обычные клетки перестают делиться.\nА происходит это из-за того что Теломеры - концевые участки предохраняющие ДНК - уменьшаются при каждом делении.\nУченные из группы SENS спокойно могут это починить при помощи Теломераза, и клетки смогут теоретически делиться бесконечно, что потенциально приведёт человека к бессмертию.\nПочему же они этого не делают?"
       },
       "answer":
       {
-        "audio": "5a.mp3",
-        "params":
-        {
-          "loop": false,
-          "volume": 1,
-          "_keep_alive": true
-        },
-        "text": "Gangnam Style.",
-        "desc": "<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is Gangnam Style.</span>",
-        "keyword": "\\b(gangnam|style)\\b"
+        "text": "Клетки рака так же будут размножаться бесконечно.",
+        "desc": "Обратное кстате тоже правда: уже сейчас можно потенциально полностью остановить рак, но к сожалению тогда возникнут, как вы видите, другие проблемы.",
+        "keyword": "рак, rak, cancer"
       }
     },
     "6":
     {
       "question":
       {
-        "text": "Here are two facts about 18th century America:\n\n• On Sunday it was customary to go to Church.\n• Sometimes it took a day to ride to a closest town.\n\nSince then much in America changed. However, because of the logic above, what do we still do on a Tuesday?"
+        "text": "5 апреля 1242 года Александр Невский разбил псов-рыцарей Тевтонского ордена на Чудском озере.\n\nВопрос: люди какой профессии любят упоминать этот факт, когда им предъявляют претензии?"
       },
       "answer":
       {
-        "text": "Vote in U.S. Elections.",
-        "desc": "To ensure that everyone have a chance to vote, U.S. allowed for 1 day to ride to a polling station after attending a church on Sunday.",
-        "keyword": "\\b(vote|elections)\\b"
+        "text": "Синоптики.",
+        "desc": "Задолбали синоптиков вопросами про плохую погоду. Ледовое Побоище 5 апреля по новому стилю произошло. Лед, ЛЕД на Чудском озере лежал!!! А вам в марте лето подавай.",
+        "keyword": "синоптик, sinoptik, synoptik, forecaster, weather, pogoda"
       }
     },
     "7":
     {
       "question":
       {
-        "text": "Anti-Turkish alliance, which Poland signed in 1683 with Leopold I, was backdated to March 31. Why?"
+        "text": "В США, между прочим, большинство взрослых являются пролетариями, особенно выходцы из Мексики.\nВ государстве Нигер почти все пролетарии, причём многие по семь раз.\nА в современной России – проблема с пролетариями. За увеличение числа пролетариев в России борется Владимир Владимирович Путин.\nПереведите слово «пролетарий» с латыни на русский.\n"
       },
       "answer":
       {
-        "text": "Because they did not want to date it April 1st",
-        "desc": "Conviction about April's Fool's Day was so strong in Poland that they did not want to risk people thinking this alliance was a joke.",
-        "keyword": "\\b(april|fool|fools)\\b"
+        "text": "Производящий потомство.",
+        "desc": "Происходит от латинского Prōlētārius – «гражданин, который служит государству только тем, что имеет детей» (букв. «производящий потомство»).",
+        "keyword": "потомство, potomstvo"
       }
     },
     "8":
     {
       "question":
       {
-        "manual": true,
-        "image": "8q.png",
-        "text": "What is wrong with all those trademarks?"
+        "text": "Выберете правильный ответ.\n\nВопрос: про какую азиатскую гору я сейчас подумал?\nа) Jamalungma\nб) Gerlachovský štít\nв) Cho Oyu\nг) Everest\nд) Pamir"
       },
       "answer":
       {
-        "text": "Spelling.",
-        "desc": "As officially registered:\n\nYahoo! (with \"!\")\nWal-Mart Stores (with \"–\")\nRuby Skye (with \"e\")",
-        "keyword": "\\b(spelled|spelling|misspelled|missing)\\b"
+        "text": "в) Cho Oyu",
+        "desc": "Everest и Jamalungma - это одно и то же, а вопрос был выберете лучший ответ а не ответы.\nGerlachovský štít - явно восточно-европейское, и не азиатское имя (Словакия).\nПамир, хоть и в Азии, но это горная группа, как Карпаты или Альпы, а вопрос был про гору, одну.\nИ у вас просто выбора не остаётся: Cho Oyu (хрен его знает что это, но это явно в Азии!) (в Китае/Тибете)",
+        "keyword": "в, v, c, cho, oyu"
       }
     },
     "9":
     {
       "question":
       {
-        "text": "If you know why we blow on a hot cup of tea to cool it off, then you’ll easily answer that the most effective way to blow is <b>not</b> on a tea itself but blow ... how?"
+        "text": "Многие ученные соглашаются с тем, что Макс Тегмарк доказал, что существует вселенная параллельная нашей.\nДопустите что пространство бесконечно, и через минуту докажите, что существует параллельная вселенная."
       },
       "answer":
       {
-        "text": "Above the tea.",
-        "desc": "• The way hot liquid cools off is by interacting with much cooler air.\n\n• Heat, which escapes from hot liquid, creates a BUFFER ABOVE THE CUP.\n\n• So we blow to blow away that BUFFER OF HOT AIR ABOVE THE CUP.",
-        "keyword": "\\b(above|over)\\b"
+        "text": "Вероятность равна единице.",
+        "desc": "Если пространство бесконечно, то вероятность того, что в этом пространстве есть ещё какая-то вселенная, равна единице (т.е. 100%).",
+        "keyword": "бесконечно, бесконечная, бесконечность, beskonecho, beskonechnaya, beskonechnost, infinite, infinity, вероятность, veroyatnost, veroyatnost, probability"
       }
     },
     "10":
     {
       "question":
       {
-        "text": "Residents of San Diego are advised by local government to turn off the lights after 11pm. What is located near those resident's houses?"
+        "text": "Любовная история:\nВ письме к Боткин, она писала что весной 1960 года она встретила его на занятиях по Русскому Языку.\nОни полюбили друг друга и поженились.\nИ хотя они вскоре разъехались по разным университетам, их сын вырос и сейчас является известным военачальником.\nА как зовут их сына?"
       },
       "answer":
       {
-        "text": "Observatory (planetarium)",
-        "desc": "Famous Palomar Observatory is complaining of \"light pollution\" because stars cannot clearly be seen.",
-        "keyword": "\\b(observatory|planetarium)\\b"
+        "text": "Барак Обама.",
+        "desc": "Стэнли Эн Дурхам, мать Барака Обамы познакомилась с африканским студентом Бараком Обамой-старшим в классе русского языка. Боткин - это фамилия Американки, лучшей подруги матери Обама. Так что, если бы не русский язык, то президент Обама вообще бы не родился.\nБарак Обама является Верховным главнокомандующим Вооружённых Сил США.",
+        "keyword": "обама, obama, барак, barack"
       }
     },
     "11":
     {
       "question":
       {
-        "text": "This country does not have the Government of its own.\nThis country does not have the Constitution at all.\nThis country's language, even though used by other countries, is not regulated by any authority.\n\nName that country."
+        "text": "Уильям Хёрст был большим американским магнатом, большим коллекционером искусства и мужчиной больших размеров – 6'4\" (193 см), да ещё и в меру упитанным.\nВнимание, вопрос: почему же в замке Хёрста, где он сам жил, низкие и узкие дверные проходы?"
       },
       "answer":
       {
-        "text": "England.",
-        "desc": "There is UK government but not an English one.\n\nLaw in England is based on court's decisions, there is no Constitution.\n\nThere is no organization regulating English language.",
-        "keyword": "\\bengland\\b"
+        "text": "Проходы тоже импортированные произведения искусства!",
+        "desc": "Хёрст импортировал картины, скульптуры и даже архитектурные детали для своего дома из старинных европейских замков и домов, где использовались низкие арки и дверные проходы. Так что искусство требует жертв.",
+        "keyword": "искусств, искуств, исскуств, iskusstv, iskustv, isskustv, art"
       }
     },
     "12":
     {
       "question":
       {
-        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\nThere were two main rival gangs: Metropolitans and Municipals.\nMunicipals whore shiny metal badges and Metropolitans did not.\nWhat term, widely used today, do we call Municipals now <b>and</b> why?"
+        "text": "Власти Великобритании заставили газету Guardian уничтожить все жёсткие диски, на которых были файлы, переданные Эдвардом Сноуденом, так как (цитата) «агенты Китая или России могут взломать вашу сеть».\nГазета объясняла, что компьютер с этими данными не подключён ни к какой сети.\nНо правительственное агентство заявило, что информация уязвима, так как в комнате где стоит компьютер, хоть и нет ни шпионов ни их техники, разговаривают люди и есть ЭТО.\nНазовите ЭТО."
       },
       "answer":
       {
-        "text": "Cops. Badges were made of <b>copper</b>.",
-        "desc": "Private security gangs developed into Police Officers.\n\nRival gang of Metropolitans called Municipals \"cops\" (short from \"copper\" because they wore copper badges) this is how the name for Police Officers came about.",
-        "keyword": "\\b(cop|copper)\\b"
+        "text": "Окно.",
+        "desc": "Объяснение правительственного эксперта: «Иностранные шпионы могут использовать лазер, чтобы подслушивать разговоры,  считывая вибрации стекла» (принцип, сходный с тем, по которому работает обычный телефон – звук считывается с колебаний мембраны в трубке).",
+        "keyword": "окно, okno, стекло, window, glass"
+      }
+    },
+    "13":
+    {
+      "question":
+      {
+        "text": "В романе Артура Хейли заместитель директора аэропорта должен, получив сообщение об определённом событии, изменить взлётные полосы.\nВнимание, вопрос: какой известный персонаж менял своё поведение, когда происходило абсолютно такое же событие?"
+      },
+      "answer":
+      {
+        "text": "Мэри Поппинс.",
+        "desc": "Получив сообщение, что «ветер переменился», заместитель директора аэропорта вынужден поменять направление взлётных полос, а Мэри Поппинс при перемене ветра улетала от своих очередных подопечных.",
+        "keyword": "поппинс, попинс, popins, poppins"
+      }
+    },
+    "14":
+    {
+      "question":
+      {
+        "text": "В городе Пало-Альто есть два однотипных учреждения, которые имеют общую автостоянку. Каждое из этих учреждений в среднем заполняет 3/4 стоянки, но места всегда хватает и тем, и другим. Это возможно из-за типа этих учреждений.\n\nВопрос: назовите эти учреждения, которые тысячелетиями не могли ужиться друг с другом, а сейчас сотрудничают."
+      },
+      "answer":
+      {
+        "text": "Церковь и Синагога.",
+        "desc": "Церковь заполняет стоянку по воскресеньям, а Синагога по субботам.",
+        "keyword": "церковь и синагога, церковь синагога, cerkov i sinagoga, cerkov i synagoga, tserkov i sinagoga, tserkov i synagoga, church synagogue, church and synagogue"
       }
     },
     "playoff 1":
     {
       "question":
       {
-        "text": "A slightly mispronounced famous line from a famous movie saga defined the exact calendar date when fans celebrate this movie's day."
+        "text": "«ОНИ молчат когда надо, и говорят, открывая перед тобой мир, при надобности».\n\nВопрос: Назовите ИХ, упомянутых в этой знаменитой цитате."
       },
       "answer":
       {
-        "text": "May the 4th.",
-        "desc": "\"<b>May the Force</b> be with you\"."
+        "text": "Книги."
       }
     },
     "playoff 2":
     {
       "question":
       {
-        "text": "Sylvilagus palustris hefneri – is an endangered subspecies of marsh rabbit.\n\nQuestion: What organization sponsored the research of this rabbit?"
+        "text": "В морской воде есть золото. В океанах его 15,000 тон, то есть на $750,000,000,000! Почему же нет бизнесса добываюшего это золото из воды?"
       },
       "answer":
       {
-        "text": "Playboy."
+        "text": "Это не выгодно!",
+        "desc": "Извлечь золото из воды обойдётся дороже, чем стоимость самого золота!"
       }
     },
     "playoff 3":
     {
       "question":
       {
-        "text": "Captain Nemo, in Jules Verne 1870 novel \"20,000 leagues under the sea\", lived in a submarine near the bottom of the ocean. What was special about his watch?"
+        "text": "Назовите самого лучшего друга шведа Сванте Свантесона?"
       },
       "answer":
       {
-        "text": "It had 24 hours.",
-        "desc": "He couldn't tell day from night under the sea."
-      }
-    },
-    "playoff X1":
-    {
-      "question":
-      {
-        "text": "Why, according to hotel owners, do they prefer to put up large pictures on the hotel walls rather than smaller ones?"
-      },
-      "answer":
-      {
-        "text": "Large pictures are harder to steal."
-      }
-    },
-    "playoff X2":
-    {
-      "question":
-      {
-        "text": "In 1858 HH Stephenson took three wickets in three balls for the team England at a cricket game. What element of clothing did organizers buy him from the proceeds?"
-      },
-      "answer":
-      {
-        "text": "Hat (as in Hat-Trick).",
-        "desc": "Until this day when someone scores 3 goals it is called \"Hat-Trick\" (and spectators throw hats into a field/ice)."
+        "text": "Карлсон.",
+        "desc": "Сванте Свантесон - так звали Малыша из книги «Малыш и Карлсон»."
       }
     }
 

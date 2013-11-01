@@ -284,6 +284,7 @@ var oVideo = Base.extend(
     // off itself on stop
     $(this._media).on('ended', $.bind(function()
     {
+console.log(['ened-v', this.options['_keep-alive'], this.options]);
         // check options if it needs to stay
         if (this.options['_keep-alive'])
         {
@@ -363,9 +364,9 @@ var oAudio = Base.extend(
     // off itself on stop
     $(this._media).on('ended', $.bind(function()
     {
-console.log(['ened', this.options['_keep_alive'], this.options]);
+console.log(['ened', this.options['_keep-alive'], this.options]);
         // check options if it needs to stay
-        if (this.options['_keep_alive'])
+        if (this.options['_keep-alive'])
         {
           this._media.currentTime = this.options['_stop'] ? this.options['_stop'] : 0.1;
         }

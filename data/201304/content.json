@@ -193,7 +193,7 @@
         {
           "loop": false,
           "volume": 1,
-          "_keep_alive": true
+          "_keep-alive": true
         },
         "text": "Gangnam Style.",
         "desc": "<span style=\"display: block; text-align: center;\">Beautiful, loveable, Yes you, hey, yes you, hey\nBeautiful, loveable, Yes you, hey, yes you, hey\nNow let’s go until the end, Big brother is Gangnam Style.</span>",

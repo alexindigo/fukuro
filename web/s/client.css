@@ -398,7 +398,7 @@ body.final .team.winner
 #sms ol,
 #playoff ol
 {
-  list-style: "1.";
+  list-style: decimal;
 
   font-size: 32px;
   line-height: 48px;
