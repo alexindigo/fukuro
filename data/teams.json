@@ -1,60 +1,79 @@
 [
   {
-    "full": "12.5 Degrees"
+    "full": "12.5 Degrees",
+    "keyword": "12.5, degree"
   },
   {
-    "full": "Ambar"
+    "full": "Ambar",
+    "keyword": "ambar"
   },
   {
-    "full": "Astral Cats"
+    "full": "BEJazz",
+    "keyword": "jazz"
   },
   {
-    "full": "BEJazz"
+    "full": "Бузина",
+    "keyword": "бузина, buzina, busina"
   },
   {
-    "full": "Бузина"
+    "full": "Чайник Вина",
+    "keyword": "чайник, вина, chainik, chaynik, chaynyk, chainyk, vina, wina"
   },
   {
-    "full": "Чайник Вина"
+    "full": "East Bay",
+    "keyword": "east"
   },
   {
-    "full": "East Bay"
+    "full": "F1",
+    "keyword": "f1"
   },
   {
-    "full": "F1"
+    "full": "Livejournal",
+    "keyword": "livejournal, журнал"
   },
   {
-    "full": "Livejournal"
+    "full": "Mercury",
+    "keyword": "mercury, merkury"
   },
   {
-    "full": "Mercury"
+    "full": "Musketeers",
+    "keyword": "musket, мушкет"
   },
   {
-    "full": "Musketeers"
+    "full": "Нормальная Группа",
+    "keyword": "нормальн, груп, normal, group, grup"
   },
   {
-    "full": "Нормальная Группа"
+    "full": "Полуостров",
+    "keyword": "остров, peninsula, ostrov"
   },
   {
-    "full": "Полуостров"
+    "full": "Последние Романтики",
+    "keyword": "последн, романтик, posled, romant"
   },
   {
-    "full": "RWB"
+    "full": "RWB",
+    "keyword": "rwb, russian"
   },
   {
-    "full": "South Bay"
+    "full": "South Bay",
+    "keyword": "south"
   },
   {
-    "full": "Stanford"
+    "full": "Stanford",
+    "keyword": "stanford, standford"
   },
   {
-    "full": "Twin Peaks"
+    "full": "Twin Peaks",
+    "keyword": "twin, peak"
   },
   {
-    "full": "UC Berkeley"
+    "full": "UC Berkeley",
+    "keyword": "berkeley, berkley"
   },
   {
     "full": "Новиков",
+    "keyword": "новиков, novikov, novicov, знаток",
     "guest": true
   },
   {

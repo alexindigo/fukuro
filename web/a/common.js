@@ -284,7 +284,6 @@ var oVideo = Base.extend(
     // off itself on stop
     $(this._media).on('ended', $.bind(function()
     {
-console.log(['ened-v', this.options['_keep-alive'], this.options]);
         // check options if it needs to stay
         if (this.options['_keep-alive'])
         {
@@ -364,7 +363,6 @@ var oAudio = Base.extend(
     // off itself on stop
     $(this._media).on('ended', $.bind(function()
     {
-console.log(['ened', this.options['_keep-alive'], this.options]);
         // check options if it needs to stay
         if (this.options['_keep-alive'])
         {
@@ -405,7 +403,7 @@ var oTeams = Base.extend(
     isGuest = team.guest ? ' guest static' : '';
     isCollective = team.collective ? ' collective static' : '';
 
-    el = $('<span id="team_'+team.handle+'" class="team'+isGuest+isCollective+'"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span></span>');
+    el = $('<span id="team_'+team.handle+'" class="team'+isGuest+isCollective+'"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span><span class="points_plus"></span><span class="points_minus"></span></span>');
 
     if (before)
     {

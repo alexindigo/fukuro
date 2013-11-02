@@ -304,3 +304,57 @@ body:not([data-panel=setup]) #teams.special_guest>.team.static
   {
     background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0, #777777), color-stop(1, #cccccc));
   }
+
+body.audience_team_team .team:not(.collective) .points_plus,
+body.audience_team_team .team:not(.collective) .points_minus
+{
+  position: absolute;
+  display: block;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  color: #808080;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  z-index: 2;
+}
+  body.audience_team_team .team:not(.collective) .points_plus
+  {
+    top: 20px;
+  }
+  body.audience_team_team .team:not(.collective) .points_minus
+  {
+    top: 47px;
+  }
+
+  body.audience_team_team .team:not(.collective) .points_plus:hover,
+  body.audience_team_team .team:not(.collective) .points_minus:hover
+  {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+body.audience_team_team .team:not(.collective) .points_plus:before,
+body.audience_team_team .team:not(.collective) .points_minus:before
+{
+  content: none;
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+  body.audience_team_team .team:not(.collective) .points_plus:before
+  {
+    content: "+";
+  }
+  body.audience_team_team .team:not(.collective) .points_minus:before
+  {
+    content: "–";
+  }
+
+body.player_answer_team #button_audience_team:before
+{
+  color: hsl(120,100%,50%);
+}

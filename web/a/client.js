@@ -120,8 +120,12 @@ var handlers =
 {
   'show': function(data, fn)
   {
+    var teamRef;
+
     // hack
     $('#audience').removeClass('active').html('');
+
+console.log(['show', data]);
 
     switch (data.item)
     {
@@ -191,6 +195,34 @@ var handlers =
         fn({item: 'teams', status: 'on'});
         break;
 
+      case 'audience_team':
+console.log(['audience_team', data]);
+        if (data.player && data.player.name)
+        {
+          $('#audience').html('<p>'+data.player.name+'</p>').addClass('active');
+        }
+        else
+        {
+          $('#audience').html('<p class="additional_info">[ nobody ]</p>').addClass('active');
+        }
+        fn({item: 'audience_team', player: data.player, status: 'on'});
+        break;
+
+      case 'audience_team_team':
+console.log(['audience_team_team', data]);
+        if (data.player && data.player.team && (teamRef = $('#team_'+data.player.team)).length)
+        {
+          $('#audience').html('<p>'+$('.short', teamRef).html()+'</p>').addClass('active');
+        }
+        else
+        {
+          $('#audience').html('<p class="additional_info">[ no team selected ]</p>').addClass('active');
+        }
+        fn({item: 'audience_team_team', player: data.player, status: 'on'});
+        break;
+
+
+      // old thing, not used anymore
       case 'audience':
         if (data.player && data.answer)
         {
@@ -261,6 +293,17 @@ var handlers =
         Teams.board.off();
         fn({item: 'teams', status: 'off'});
         break;
+
+      case 'audience_team':
+        $('#audience').html('').removeClass('active');
+        fn({item: 'audience_team', status: 'off'});
+        break;
+
+      case 'audience_team_team':
+        $('#audience').html('').removeClass('active');
+        fn({item: 'audience_team_team', status: 'off'});
+        break;
+
     }
   },
   'off': function(data)
@@ -271,7 +314,6 @@ var handlers =
   'player_new': function(data)
   {
     var p = data['new'];
-console.log(['new', data]);
 
     if (p)
     {
@@ -284,11 +326,11 @@ console.log(['new', data]);
     {
       updatePlayer(data['new']);
     }
-console.log(['answer', data]);
   },
   //
   'round': function(data)
   {
+    $('body').removeClass('player_answer_team');
     // and update round
     Round.update(data.round, 2000);
   },
@@ -504,8 +546,12 @@ console.log(['answer', data]);
       $(item).css({transform: 'scale('+scale+') translate('+Math.floor((x-p.left)/scale)+'px, '+Math.floor((y-p.top)/scale)+'px)'});
     });
 
+  },
+  'player_answer_team': function(data)
+  {
+    $('body').addClass('player_answer_team');
   }
-  // end fo handlers
+  // end of handlers
 };
 
 function scrableText(text, lang)
@@ -777,8 +823,6 @@ connect(handlers,
 
       addPlayer(data.players[p]);
     }
-
-console.log(['data', data]);
 
     // check and set current
     if (data.current) handlers.show(data.current, misc.noCallback);

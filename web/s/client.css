@@ -142,6 +142,14 @@ section.answer>video ~ p
     font-size: 30px;
     line-height: 48px;
   }
+  section.question>img ~ p.long.extra,
+  section.answer>img ~ p.long.extra,
+  section.answer>video ~ p.long.extra
+  {
+    margin-top: 2em;
+    font-size: 24px;
+    line-height: 42px;
+  }
 
 /* no desc for questions */
 section.question .desc
@@ -273,6 +281,12 @@ body>footer:after
   content: " (past)";
   display: block;
 }
+  /* for host with IE */
+  body.player_answer_team>footer:after
+  {
+    content: " (past) + (audience answer w/ team)";
+    display: block;
+  }
 
 /* timer */
 #timer
@@ -603,3 +617,8 @@ html.x-msie section.answer
   outline: 1px dashed #ff0000;
 }
 */
+
+.additional_info
+{
+  opacity: 0.5;
+}

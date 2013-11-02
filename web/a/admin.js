@@ -107,6 +107,13 @@ var handlers =
     }
     // }}}
 
+    // {{{ extra stuff, means hack on hack
+    if (data.item == 'audience_team_team')
+    {
+      $('body').addClass('audience_team_team');
+    }
+    // }}}
+
     var item = $('#button_'+data.item+(data.number ? '_'+makeHandle(data.number) : ''));
     if (item)
     {
@@ -120,6 +127,14 @@ var handlers =
   },
   'off': function(data)
   {
+
+    // {{{ extra stuff, means hack on hack
+    if (data.item == 'audience_team_team')
+    {
+      $('body').removeClass('audience_team_team');
+    }
+    // }}}
+
     var item = $('#button_'+data.item+(data.number ? '_'+makeHandle(data.number) : ''));
     if (item)
     {
@@ -142,10 +157,12 @@ var handlers =
     // hack
     $('#audience').removeClass('active').html('');
 
+    $('body').removeClass('player_answer_team');
+
     Round.update(data.round);
     // update new round button
     // TODO: Add support for Final, round: -1
-    $('#button_round').attr('data-label', data.round ? 'New Round' : 'Start Game');
+//    $('#button_round').attr('data-label', data.round ? 'New Round' : 'Start Game');
     // update current question in the nav
     Nav.refresh();
   },
@@ -190,8 +207,12 @@ var handlers =
   'final': function(data)
   {
     Round.update(-1);
+  },
+  'player_answer_team': function(data)
+  {
+    $('body').addClass('player_answer_team');
   }
-  // end fo handlers
+  // end of handlers
 };
 
 // listen to the navbar button events
@@ -360,7 +381,6 @@ connect(handlers,
   data: {me: 'admin'},
   callback: function(data)
   {
-
     // set round
     handlers.round({round: data.round});
 
@@ -412,6 +432,34 @@ connect(handlers,
 
     // teams
     $('#teams').on('.team', 'click touchstart', teamActions);
+
+    // manual points adjustment
+    $('.points_plus, .points_minus', '#teams').on('click touchstart', function(e)
+    {
+      var el = $(this)
+        , action
+        , team
+        ;
+
+      if (!el.parent().hasClass('team') || !(team = el.parent().attr('id').replace(/^team_/, '')))
+      {
+        return;
+      }
+
+      e.stop();
+
+      if (el.hasClass('points_plus'))
+      {
+        action = 'add';
+      }
+      else
+      {
+        action = 'remove';
+      }
+
+      socket.emit('admin:team_'+action+'_point', {id: team});
+    });
+
   }
 });
 

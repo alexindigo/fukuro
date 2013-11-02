@@ -231,19 +231,33 @@ button.careful:before
   }
 
   /* red buttons */
+  #button_audience_team + button.careful:before,
   .special>button.careful:before
   {
     content: attr(data-label);
   }
+    #button_audience_team + button.careful,
     .special>button.careful
     {
       width: 47px;
       margin: -20px 0px 0px -52px;
     }
+    #button_audience_team + button.careful:before,
     .special>button.careful:before
     {
       width: 38px;
     }
+
+    #button_audience_team + button.careful
+    {
+      width: 100px;
+      margin-left: -105px;
+    }
+    #button_audience_team + button.careful:before
+    {
+      width: 91px;
+    }
+
 
 /* hide answer buttons by default */
 
@@ -258,7 +272,8 @@ button.careful
  * or hover on already played questions
  */
 button.careful.active,
-button.current + button.careful
+button.current + button.careful,
+button.active + button.careful
 {
   opacity: 1;
   pointer-events: auto;
