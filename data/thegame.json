@@ -1,305 +1,767 @@
 {
-  "current": {
-    "item": "teams"
-  },
-  "sound": "horse",
+  "current": null,
+  "sound": null,
   "players": {
     "+14088346198": {
       "id": "+14088346198",
-      "name": "😭🔥🙀🚉",
-      "played": {
-        "1": {
-          "number": 1,
-          "time": 39177343732,
-          "answer": "чешка"
-        },
-        "2": {
-          "number": 2,
-          "time": 33953858827,
-          "answer": "художественная ценность"
-        },
-        "3": {
-          "number": 3,
-          "time": 33706524076,
-          "answer": "льюис кэррол"
-        },
-        "5": {
-          "number": 5,
-          "time": 39500511483,
-          "answer": "рак"
-        },
-        "6": {
-          "number": 6,
-          "time": 51960513701,
-          "answer": "синоптики"
-        },
-        "8": {
-          "number": 8,
-          "time": 59379434985,
-          "answer": "в)"
-        },
-        "9": {
-          "number": 9,
-          "time": 56746139589,
-          "answer": "вероятность 100%"
-        },
-        "10": {
-          "number": 10,
-          "time": 50852846769,
-          "answer": "Барак"
-        }
-      },
-      "team": "musketeers",
-      "points": 9,
-      "pos": 409248312963
+      "name": "Alex",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "normalxnaa_gruppa"
     },
-    "+14086767243": {
-      "id": "+14086767243",
-      "name": "potap",
-      "played": {
-        "1": {
-          "number": 1,
-          "time": 27849290362,
-          "answer": "cheshki"
-        },
-        "3": {
-          "number": 3,
-          "time": 22803967706,
-          "answer": "carrol"
-        },
-        "5": {
-          "number": 5,
-          "time": 30049046696,
-          "answer": "cancer"
-        },
-        "6": {
-          "number": 6,
-          "time": 231114508305,
-          "answer": "sinoptiki"
-        },
-        "8": {
-          "number": 8,
-          "time": 45676600615,
-          "answer": "cho oyu"
-        },
-        "9": {
-          "number": 9,
-          "time": 38103331090,
-          "answer": "probability equals 1"
-        },
-        "10": {
-          "number": 10,
-          "time": 35884766189,
-          "answer": "obama"
-        }
-      },
-      "points": 8,
-      "pos": 463171532149
+    "+14156064717": {
+      "id": "+14156064717",
+      "name": "Anastasia",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+18183126234": {
+      "id": "+18183126234",
+      "name": "Cobras",
+      "played": {},
+      "points": 2,
+      "pos": 301470324131,
+      "team": "ambar"
+    },
+    "+13107212985": {
+      "id": "+13107212985",
+      "name": "Boris",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16503355474": {
+      "id": "+16503355474",
+      "name": "polovina",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159997410": {
+      "id": "+14159997410",
+      "name": "Ilya Gurevich",
+      "played": {},
+      "points": 2,
+      "pos": 224056383295
+    },
+    "+19492027128": {
+      "id": "+19492027128",
+      "name": "Nastia",
+      "played": {},
+      "points": 4,
+      "pos": 444654879327,
+      "team": "ambar"
+    },
+    "+14152009554": {
+      "id": "+14152009554",
+      "name": "Artemio",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14157676111": {
+      "id": "+14157676111",
+      "name": "Nikola",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19253375802": {
+      "id": "+19253375802",
+      "name": "Sergey Faleev",
+      "played": {},
+      "points": 2,
+      "pos": 268641341117,
+      "team": "musketeers"
+    },
+    "+16504003212": {
+      "id": "+16504003212",
+      "name": "leha-kosmonavt",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "poluostrov"
+    },
+    "+14085332110": {
+      "id": "+14085332110",
+      "name": "[LiM]",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19259563554": {
+      "id": "+19259563554",
+      "name": "Mila P.",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16178165999": {
+      "id": "+16178165999",
+      "name": "Taya",
+      "played": {},
+      "points": 1,
+      "pos": 53353370993,
+      "team": "stanford"
+    },
+    "+14155956737": {
+      "id": "+14155956737",
+      "name": "Nadia Huselnikava",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14157068853": {
+      "id": "+14157068853",
+      "name": "Maria",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16506906089": {
+      "id": "+16506906089",
+      "name": "RiSe",
+      "played": {},
+      "points": 1,
+      "pos": 96049055470
+    },
+    "+17072285226": {
+      "id": "+17072285226",
+      "name": "my name Lina Stewart",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "normalxnaa_gruppa"
+    },
+    "+14083159741": {
+      "id": "+14083159741",
+      "name": "evgenii",
+      "played": {},
+      "points": 3,
+      "pos": 291623211239
+    },
+    "+14084640265": {
+      "id": "+14084640265",
+      "name": "Mikhail",
+      "played": {},
+      "points": 1,
+      "pos": 120119957142,
+      "team": "poluostrov"
+    },
+    "+14086211985": {
+      "id": "+14086211985",
+      "name": "Tatiana",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504659466": {
+      "id": "+16504659466",
+      "name": "Konstantin Pervyshev",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16508236111": {
+      "id": "+16508236111",
+      "name": "trabelev",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159333249": {
+      "id": "+14159333249",
+      "name": "born in the USSR",
+      "played": {},
+      "points": 2,
+      "pos": 135323798354
+    },
+    "+19545576099": {
+      "id": "+19545576099",
+      "name": "Vitali Kniazeu",
+      "played": {},
+      "points": 2,
+      "pos": 241086069930,
+      "team": "novikov"
+    },
+    "+13476627469": {
+      "id": "+13476627469",
+      "name": "your name Anastasiya muting I",
+      "played": {},
+      "points": 1,
+      "pos": 121014565754
+    },
+    "+16509966662": {
+      "id": "+16509966662",
+      "name": "Vadim Brik",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+18455129566": {
+      "id": "+18455129566",
+      "name": "Yuliya Magrilova",
+      "played": {},
+      "points": 4,
+      "pos": 493593409877
+    },
+    "+14156539205": {
+      "id": "+14156539205",
+      "name": "your name Ivan Sharamok",
+      "played": {},
+      "points": 2,
+      "pos": 229367714012
+    },
+    "+19257084544": {
+      "id": "+19257084544",
+      "name": "Slava Krayzbukh",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14153737745": {
+      "id": "+14153737745",
+      "name": "your name",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14155096347": {
+      "id": "+14155096347",
+      "name": "Kostya Davydov",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088349135": {
+      "id": "+14088349135",
+      "name": "sklanna",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "novikov"
+    },
+    "+14084839200": {
+      "id": "+14084839200",
+      "name": "Oxana Puharic",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16508470830": {
+      "id": "+16508470830",
+      "name": "sergey",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507877810": {
+      "id": "+16507877810",
+      "name": "Maks",
+      "played": {},
+      "points": 0,
+      "pos": 0
     }
   },
   "answers": {
-    "1": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
-        "data": {
-          "number": 1,
-          "time": 39177343732,
-          "answer": "чешка"
-        }
-      },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
-        "data": {
-          "number": 1,
-          "time": 27849290362,
-          "answer": "cheshki"
-        }
-      }
-    },
     "2": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
+      "+19492027128": {
+        "id": "+19492027128",
+        "name": "Nastia",
         "data": {
           "number": 2,
-          "time": 33953858827,
-          "answer": "художественная ценность"
-        }
-      }
-    },
-    "3": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
-        "data": {
-          "number": 3,
-          "time": 33706524076,
-          "answer": "льюис кэррол"
-        }
-      },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
-        "data": {
-          "number": 3,
-          "time": 22803967706,
-          "answer": "carrol"
-        }
-      }
-    },
-    "4": {
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
-        "data": {
-          "number": 4,
-          "time": 31690021186,
-          "answer": "nu pogodi"
+          "time": 89382288322,
+          "answer": "Не представляет художественной ценности"
         },
-        "points": 8,
-        "pos": 463171532149
-      },
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
-        "data": {
-          "number": 4,
-          "time": 43971139801,
-          "answer": "ну погоди"
-        },
-        "points": 9,
-        "pos": 409248312963
+        "points": 1,
+        "pos": 89382288322
       }
     },
     "5": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
+      "+14159333249": {
+        "id": "+14159333249",
+        "name": "born in the USSR",
         "data": {
           "number": 5,
-          "time": 39500511483,
-          "answer": "рак"
-        }
+          "time": 65312255711,
+          "answer": "Will give cancer"
+        },
+        "points": 2,
+        "pos": 135323798354
       },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuliya Magrilova",
         "data": {
           "number": 5,
-          "time": 30049046696,
-          "answer": "cancer"
-        }
+          "time": 85812895461,
+          "answer": "Cancer the cells dont stop dividing"
+        },
+        "points": 2,
+        "pos": 215601807352
+      },
+      "+14083159741": {
+        "id": "+14083159741",
+        "name": "evgenii",
+        "data": {
+          "number": 5,
+          "time": 88593684104,
+          "answer": "Eto privodit k raku"
+        },
+        "points": 2,
+        "pos": 189677754123
+      },
+      "+16506906089": {
+        "id": "+16506906089",
+        "name": "RiSe",
+        "data": {
+          "number": 5,
+          "time": 96049055470,
+          "answer": "Вероятность рака возрастает "
+        },
+        "points": 1,
+        "pos": 96049055470
+      },
+      "+14156539205": {
+        "id": "+14156539205",
+        "name": "your name Ivan Sharamok",
+        "data": {
+          "number": 5,
+          "time": 102807237335,
+          "answer": "It causes cancer"
+        },
+        "points": 2,
+        "pos": 229367714012
+      },
+      "+14159997410": {
+        "id": "+14159997410",
+        "name": "Ilya Gurevich",
+        "data": {
+          "number": 5,
+          "time": 114988132217,
+          "answer": "Рак"
+        },
+        "points": 1,
+        "pos": 114988132217
+      },
+      "+19492027128": {
+        "id": "+19492027128",
+        "name": "Nastia",
+        "data": {
+          "number": 5,
+          "time": 115563333144,
+          "answer": "Все бы умерли от рака"
+        },
+        "points": 3,
+        "pos": 339721811409
+      },
+      "+14084640265": {
+        "id": "+14084640265",
+        "name": "Mikhail",
+        "data": {
+          "number": 5,
+          "time": 120119957142,
+          "answer": "Rak"
+        },
+        "points": 1,
+        "pos": 120119957142
+      },
+      "+18183126234": {
+        "id": "+18183126234",
+        "name": "Cobras",
+        "data": {
+          "number": 5,
+          "time": 141236231920,
+          "answer": "Cancer"
+        },
+        "points": 2,
+        "pos": 301470324131
       }
     },
     "6": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
+      "+16178165999": {
+        "id": "+16178165999",
+        "name": "Taya",
         "data": {
           "number": 6,
-          "time": 51960513701,
-          "answer": "синоптики"
-        }
-      },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
+          "time": 53353370993,
+          "answer": "Weather"
+        },
+        "points": 1,
+        "pos": 53353370993
+      }
+    },
+    "7": {
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuliya Magrilova",
         "data": {
-          "number": 6,
-          "time": 231114508305,
-          "answer": "sinoptiki"
-        }
+          "number": 7,
+          "time": 116926637635,
+          "answer": "potomstvo/dete"
+        },
+        "points": 3,
+        "pos": 332528444987
       }
     },
     "8": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
+      "+14159333249": {
+        "id": "+14159333249",
+        "name": "born in the USSR",
         "data": {
           "number": 8,
-          "time": 59379434985,
-          "answer": "в)"
-        }
+          "time": 70011542643,
+          "answer": "Everest"
+        },
+        "points": 1,
+        "pos": 70011542643
       },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
+      "+14083159741": {
+        "id": "+14083159741",
+        "name": "evgenii",
         "data": {
           "number": 8,
-          "time": 45676600615,
-          "answer": "cho oyu"
-        }
-      }
-    },
-    "9": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
-        "data": {
-          "number": 9,
-          "time": 56746139589,
-          "answer": "вероятность 100%"
-        }
+          "time": 101084070019,
+          "answer": "V"
+        },
+        "points": 1,
+        "pos": 101084070019
       },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
+      "+13476627469": {
+        "id": "+13476627469",
+        "name": "your name Anastasiya muting I",
         "data": {
-          "number": 9,
-          "time": 38103331090,
-          "answer": "probability equals 1"
-        }
+          "number": 8,
+          "time": 121014565754,
+          "answer": "Everest"
+        },
+        "points": 1,
+        "pos": 121014565754
+      },
+      "+14156539205": {
+        "id": "+14156539205",
+        "name": "your name Ivan Sharamok",
+        "data": {
+          "number": 8,
+          "time": 126560476677,
+          "answer": "Gerlachovsky stit"
+        },
+        "points": 1,
+        "pos": 126560476677
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuliya Magrilova",
+        "data": {
+          "number": 8,
+          "time": 129788911891,
+          "answer": "Cho oyu"
+        },
+        "points": 1,
+        "pos": 129788911891
+      },
+      "+19253375802": {
+        "id": "+19253375802",
+        "name": "Sergey Faleev",
+        "data": {
+          "number": 8,
+          "time": 133184457731,
+          "answer": "Everest"
+        },
+        "points": 1,
+        "pos": 133184457731
+      },
+      "+19492027128": {
+        "id": "+19492027128",
+        "name": "Nastia",
+        "data": {
+          "number": 8,
+          "time": 134776189943,
+          "answer": "Эверест"
+        },
+        "points": 2,
+        "pos": 224158478265
+      },
+      "+18183126234": {
+        "id": "+18183126234",
+        "name": "Cobras",
+        "data": {
+          "number": 8,
+          "time": 160234092211,
+          "answer": "Everest"
+        },
+        "points": 1,
+        "pos": 160234092211
       }
     },
     "10": {
-      "+14088346198": {
-        "id": "+14088346198",
-        "name": "😭🔥🙀🚉",
+      "+19545576099": {
+        "id": "+19545576099",
+        "name": "Vitali Kniazeu",
         "data": {
           "number": 10,
-          "time": 50852846769,
-          "answer": "Барак"
-        }
+          "time": 122382776574,
+          "answer": "Барак Обама"
+        },
+        "points": 2,
+        "pos": 241086069930
       },
-      "+14086767243": {
-        "id": "+14086767243",
-        "name": "potap",
+      "+19253375802": {
+        "id": "+19253375802",
+        "name": "Sergey Faleev",
         "data": {
           "number": 10,
-          "time": 35884766189,
-          "answer": "obama"
-        }
+          "time": 135456883386,
+          "answer": "Obama "
+        },
+        "points": 2,
+        "pos": 268641341117
+      }
+    },
+    "11": {
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuliya Magrilova",
+        "data": {
+          "number": 11,
+          "time": 161064964890,
+          "answer": "Earthquake"
+        },
+        "points": 4,
+        "pos": 493593409877
+      }
+    },
+    "12": {
+      "+14083159741": {
+        "id": "+14083159741",
+        "name": "evgenii",
+        "data": {
+          "number": 12,
+          "time": 101945457116,
+          "answer": "Okno"
+        },
+        "points": 3,
+        "pos": 291623211239
+      },
+      "+19492027128": {
+        "id": "+19492027128",
+        "name": "Nastia",
+        "data": {
+          "number": 12,
+          "time": 104933067918,
+          "answer": "Окно"
+        },
+        "points": 4,
+        "pos": 444654879327
+      },
+      "+14159997410": {
+        "id": "+14159997410",
+        "name": "Ilya Gurevich",
+        "data": {
+          "number": 12,
+          "time": 109068251078,
+          "answer": "Стекло окон вибрация"
+        },
+        "points": 2,
+        "pos": 224056383295
+      },
+      "+19545576099": {
+        "id": "+19545576099",
+        "name": "Vitali Kniazeu",
+        "data": {
+          "number": 12,
+          "time": 118703293356,
+          "answer": "Окно"
+        },
+        "points": 1,
+        "pos": 118703293356
       }
     }
   },
   "scale": 1,
-  "round": 2,
+  "round": 13,
   "rounds": [
     null,
     {
-      "musketeers": 1,
-      "san-francisko": "0.22",
-      "buzina": 1,
+      "normalxnaa_gruppa": 1,
+      "san-francisko": "0.56",
+      "xaynik_vina": 1,
       "uc_berkeley": 1,
+      "twin_peaks": 1,
+      "ambar": null,
+      "stanford": 1,
+      "east_bay": 1,
       "poluostrov": 1,
+      "f1": 1,
+      "livejournal": 1,
+      "rwb": 1,
       "novikov": 1
     },
     {
-      "musketeers": 1
+      "novikov": 1,
+      "east_bay": 1,
+      "san-francisko": "0.89",
+      "poluostrov": 1,
+      "musketeers": 1,
+      "uc_berkeley": 1,
+      "degrees": 1,
+      "south_bay": 1
+    },
+    {
+      "rwb": 1,
+      "san-francisko": "1.28",
+      "poluostrov": 1,
+      "ambar": 1,
+      "normalxnaa_gruppa": 1,
+      "buzina": 1,
+      "xaynik_vina": 1,
+      "degrees": 1
+    },
+    {
+      "novikov": 1,
+      "bejazz": 1,
+      "san-francisko": "1.50",
+      "degrees": 1,
+      "buzina": 1,
+      "poluostrov": 1
+    },
+    {
+      "poslednie_romantiki": 1,
+      "san-francisko": "2.28",
+      "xaynik_vina": 1,
+      "normalxnaa_gruppa": 1,
+      "buzina": 1,
+      "twin_peaks": 1,
+      "degrees": 1,
+      "uc_berkeley": 1,
+      "musketeers": 1,
+      "bejazz": 1,
+      "poluostrov": 1,
+      "f1": 1,
+      "stanford": 1,
+      "east_bay": 1,
+      "ambar": 1
+    },
+    {
+      "novikov": 1,
+      "stanford": 1,
+      "san-francisko": "2.89",
+      "ambar": 1,
+      "poluostrov": 1,
+      "livejournal": 1,
+      "rwb": 1,
+      "degrees": 1,
+      "uc_berkeley": 1,
+      "normalxnaa_gruppa": 1,
+      "buzina": 1,
+      "mercury": 1,
+      "bejazz": 1
+    },
+    {
+      "buzina": 1,
+      "san-francisko": "3.00",
+      "bejazz": 1
+    },
+    {
+      "novikov": 1,
+      "bejazz": 1,
+      "san-francisko": "3.33",
+      "degrees": 1,
+      "buzina": 1,
+      "mercury": 1,
+      "stanford": 1,
+      "east_bay": 1
+    },
+    {
+      "novikov": 1,
+      "twin_peaks": 1,
+      "san-francisko": "3.89",
+      "uc_berkeley": 1,
+      "xaynik_vina": 1,
+      "normalxnaa_gruppa": 1,
+      "musketeers": 1,
+      "bejazz": 1,
+      "poluostrov": 1,
+      "rwb": 1,
+      "ambar": 1,
+      "east_bay": 1
+    },
+    {
+      "novikov": 1,
+      "south_bay": 1,
+      "san-francisko": "4.22",
+      "uc_berkeley": 1,
+      "buzina": 1,
+      "normalxnaa_gruppa": 1,
+      "livejournal": 1,
+      "poluostrov": 1
+    },
+    {
+      "novikov": 1
+    },
+    {
+      "bejazz": 1,
+      "san-francisko": "4.50",
+      "buzina": 1,
+      "uc_berkeley": 1,
+      "livejournal": 1,
+      "east_bay": 1
+    },
+    {
+      "buzina": 1,
+      "san-francisko": "4.56"
     }
   ],
   "played": [
     null,
-    4
+    2,
+    6,
+    8,
+    3,
+    5,
+    7,
+    9,
+    11,
+    12,
+    1,
+    4,
+    "playoff 1"
   ],
+  "audience_team": {
+    "1": {
+      "id": "+19492027128",
+      "name": "Nastia",
+      "team": "ambar"
+    },
+    "3": {
+      "id": "+19253375802",
+      "name": "Sergey Faleev",
+      "team": "musketeers"
+    },
+    "5": {
+      "id": "+19492027128",
+      "name": "Nastia",
+      "team": "ambar"
+    },
+    "9": {
+      "id": "+19492027128",
+      "name": "Nastia",
+      "team": "ambar"
+    },
+    "12": {
+      "id": "+19545576099",
+      "name": "Vitali Kniazeu",
+      "team": "novikov"
+    }
+  },
   "teams": {
     "degrees": {
       "full": "12.5 Degrees",
       "short": "12.5 Degrees",
       "handle": "degrees",
-      "points": 0,
+      "points": 6,
       "keyword": "12.5, degree",
       "guest": false,
       "collective": false
@@ -308,7 +770,7 @@
       "full": "Ambar",
       "short": "Ambar",
       "handle": "ambar",
-      "points": 0,
+      "points": 4,
       "keyword": "ambar",
       "guest": false,
       "collective": false
@@ -317,7 +779,7 @@
       "full": "BEJazz",
       "short": "BEJazz",
       "handle": "bejazz",
-      "points": 0,
+      "points": 7,
       "keyword": "jazz",
       "guest": false,
       "collective": false
@@ -326,7 +788,7 @@
       "full": "Бузина",
       "short": "Бузина",
       "handle": "buzina",
-      "points": 1,
+      "points": 9,
       "keyword": "бузина, buzina, busina",
       "guest": false,
       "collective": false
@@ -335,7 +797,7 @@
       "full": "Чайник Вина",
       "short": "Чайник Вина",
       "handle": "xaynik_vina",
-      "points": 0,
+      "points": 4,
       "keyword": "чайник, вина, chainik, chaynik, chaynyk, chainyk, vina, wina",
       "guest": false,
       "collective": false
@@ -344,7 +806,7 @@
       "full": "East Bay",
       "short": "East Bay",
       "handle": "east_bay",
-      "points": 0,
+      "points": 6,
       "keyword": "east",
       "guest": false,
       "collective": false
@@ -353,7 +815,7 @@
       "full": "F1",
       "short": "F1",
       "handle": "f1",
-      "points": 0,
+      "points": 2,
       "keyword": "f1",
       "guest": false,
       "collective": false
@@ -362,7 +824,7 @@
       "full": "Livejournal",
       "short": "Livejournal",
       "handle": "livejournal",
-      "points": 0,
+      "points": 4,
       "keyword": "livejournal, журнал",
       "guest": false,
       "collective": false
@@ -371,7 +833,7 @@
       "full": "Mercury",
       "short": "Mercury",
       "handle": "mercury",
-      "points": 0,
+      "points": 2,
       "keyword": "mercury, merkury",
       "guest": false,
       "collective": false
@@ -389,7 +851,7 @@
       "full": "Нормальная Группа",
       "short": "Нормальная Группа",
       "handle": "normalxnaa_gruppa",
-      "points": 0,
+      "points": 6,
       "keyword": "нормальн, груп, normal, group, grup",
       "guest": false,
       "collective": false
@@ -398,7 +860,7 @@
       "full": "Полуостров",
       "short": "Полуостров",
       "handle": "poluostrov",
-      "points": 1,
+      "points": 8,
       "keyword": "остров, peninsula, ostrov",
       "guest": false,
       "collective": false
@@ -407,8 +869,8 @@
       "full": "Последние Романтики",
       "short": "Последние Романтики",
       "handle": "poslednie_romantiki",
-      "points": 0,
-      "keyword": "astral, cats",
+      "points": 1,
+      "keyword": "последн, романтик, posled, romant",
       "guest": false,
       "collective": false
     },
@@ -416,7 +878,7 @@
       "full": "RWB",
       "short": "RWB",
       "handle": "rwb",
-      "points": 0,
+      "points": 4,
       "keyword": "rwb, russian",
       "guest": false,
       "collective": false
@@ -425,7 +887,7 @@
       "full": "South Bay",
       "short": "South Bay",
       "handle": "south_bay",
-      "points": 0,
+      "points": 2,
       "keyword": "south",
       "guest": false,
       "collective": false
@@ -434,7 +896,7 @@
       "full": "Stanford",
       "short": "Stanford",
       "handle": "stanford",
-      "points": 0,
+      "points": 4,
       "keyword": "stanford, standford",
       "guest": false,
       "collective": false
@@ -443,7 +905,7 @@
       "full": "Twin Peaks",
       "short": "Twin Peaks",
       "handle": "twin_peaks",
-      "points": 0,
+      "points": 3,
       "keyword": "twin, peak",
       "guest": false,
       "collective": false
@@ -452,7 +914,7 @@
       "full": "UC Berkeley",
       "short": "UC Berkeley",
       "handle": "uc_berkeley",
-      "points": 1,
+      "points": 7,
       "keyword": "berkeley, berkley",
       "guest": false,
       "collective": false
@@ -461,7 +923,7 @@
       "full": "Новиков",
       "short": "Новиков",
       "handle": "novikov",
-      "points": 1,
+      "points": 9,
       "keyword": "новиков, novikov, novicov, знаток",
       "guest": true,
       "collective": false
@@ -470,7 +932,7 @@
       "full": "Сан-Франциско",
       "short": "Сан-Франциско",
       "handle": "san-francisko",
-      "points": "0.28",
+      "points": "4.56",
       "keyword": "",
       "guest": false,
       "collective": true
@@ -479,12 +941,5 @@
   "flags": {
     "guest": "novikov",
     "collective": "san-francisko"
-  },
-  "audience_team": {
-    "1": {
-      "id": "+14088346198",
-      "name": "😭🔥🙀🚉",
-      "team": "musketeers"
-    }
   }
 }

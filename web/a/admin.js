@@ -252,7 +252,7 @@ var contentActions = function(e)
     socket.emit('admin:sound', {key: 'teams', action: (action == 'show' ? 'play' : 'stop')}, function(){});
   }
 
-  if (item.item == 'rules')
+  if (item.item == 'rules' || item.item == 'sms')
   {
     socket.emit('admin:sound', {key: 'rules', action: (action == 'show' ? 'play' : 'stop')}, function(){});
   }
