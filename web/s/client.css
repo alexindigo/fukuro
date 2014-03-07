@@ -45,6 +45,37 @@ body:after
 }
 
 /* content */
+.team
+{
+  width: 15%;
+  height: 100px;
+  margin: 0.2em 0.6em;
+  padding: 0.5em;
+  color: #999999;
+}
+.team>.short
+{
+  font-size: 36px;
+  border-bottom: 1px dotted #999999;
+}
+.team>.points
+{
+  font-size: 42px;
+}
+#teams.special_guest>.team.static.collective>.short
+{
+  width: 300px;
+}
+#teams.special_guest>.team.static>.points
+{
+  font-size: 42px;
+}
+#teams.special_guest>.team.static.collective:before
+{
+  top: 8px;
+  font-size: 42px;
+}
+
 section
 {
   position: absolute;
@@ -88,13 +119,13 @@ section>p
 }
   section>p.long
   {
-    font-size: 38px;
-    line-height: 54px;
+    font-size: 46px;
+    line-height: 60px;
   }
     section>p.long.extra
     {
-      font-size: 28px;
-      line-height: 46px;
+      font-size: 38px;
+      line-height: 54px;
     }
 
 /* show questions only with timer */
@@ -131,24 +162,24 @@ section.answer>img ~ p
 section.answer>video ~ p
 {
   margin-top: 1em;
-  font-size: 38px;
-  line-height: 54px;
+  font-size: 46px;
+  line-height: 60px;
 }
   section.question>img ~ p.long,
   section.answer>img ~ p.long,
   section.answer>video ~ p.long
   {
     margin-top: 2em;
-    font-size: 30px;
-    line-height: 48px;
+    font-size: 38px;
+    line-height: 54px;
   }
   section.question>img ~ p.long.extra,
   section.answer>img ~ p.long.extra,
   section.answer>video ~ p.long.extra
   {
     margin-top: 2em;
-    font-size: 24px;
-    line-height: 42px;
+    font-size: 30px;
+    line-height: 48px;
   }
 
 /* no desc for questions */
@@ -373,13 +404,13 @@ body.final .team.winner
 #teams.atleast_15
 {
   padding: 5% 0.5% 2%;
-  font-size: 24px;
+  font-size: 32px;
 }
 #teams.atleast_20,
 #teams.atleast_25
 {
   padding: 5% 0.5% 2%;
-  font-size: 20px;
+  font-size: 24px;
 }
 #teams.atleast_20>.team,
 #teams.atleast_25>.team
@@ -499,7 +530,7 @@ body.final .team.winner
   padding: 0.4em;
   font-size: 28px;
   font-family: "Ubuntu Condensed", sans-serif;
-  color: #808080;
+  color: #999999;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;

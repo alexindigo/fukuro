@@ -171,12 +171,12 @@ function handler(req, res)
       // serve top level html files as simple uris
       if (match = req.url.match(/^(\/[a-z]+)\/?$/)) req.url = match[1]+'.html';
       // add mime type
-      if (req.url.match(/\.m4v$/)) res.setHeader("Content-Type", "video/mp4"); //Content-Length: 1647961
+      if (req.url.match(/\.(m4v|mp4)$/)) res.setHeader("Content-Type", "video/mp4");
       // continue breath normally
       file.serve(req, res);
 
       // TODO: Add 404 error handler
-    });
+    }).resume();
 }
 // }}}
 

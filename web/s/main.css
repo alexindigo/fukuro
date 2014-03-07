@@ -77,11 +77,11 @@ audio
   display: inline-block;
   -webkit-box-flex: 0;
   width: 14%;
-  height: 70px;
+  height: 90px;
   margin: 0.1em 0.5em;
   padding: 0.4em;
   font-family: "Ubuntu Condensed", sans-serif;
-  color: #808080;
+  color: #999999;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;

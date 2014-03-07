@@ -8,24 +8,32 @@
     "keyword": "ambar"
   },
   {
+    "full": "А ну-ка, девушки!",
+    "keyword": "girls, dewushk, devushk"
+  },
+  {
+    "full": "Astral Cats",
+    "keyword": "astral, cats"
+  },
+  {
     "full": "BEJazz",
     "keyword": "jazz"
+  },
+  {
+    "full": "Berkeley.kz",
+    "keyword": "berkeley.kz"
   },
   {
     "full": "Бузина",
     "keyword": "бузина, buzina, busina"
   },
   {
-    "full": "Чайник Вина",
-    "keyword": "чайник, вина, chainik, chaynik, chaynyk, chainyk, vina, wina"
+    "full": "F2",
+    "keyword": "f2"
   },
   {
-    "full": "East Bay",
-    "keyword": "east"
-  },
-  {
-    "full": "F1",
-    "keyword": "f1"
+    "full": "Hikers",
+    "keyword": "hiker"
   },
   {
     "full": "Livejournal",
@@ -36,24 +44,12 @@
     "keyword": "mercury, merkury"
   },
   {
-    "full": "Musketeers",
-    "keyword": "musket, мушкет"
-  },
-  {
-    "full": "Нормальная Группа",
+    "full": "Normal Group",
     "keyword": "нормальн, груп, normal, group, grup"
   },
   {
     "full": "Полуостров",
     "keyword": "остров, peninsula, ostrov"
-  },
-  {
-    "full": "Последние Романтики",
-    "keyword": "последн, романтик, posled, romant"
-  },
-  {
-    "full": "RWB",
-    "keyword": "rwb, russian"
   },
   {
     "full": "South Bay",
@@ -64,16 +60,20 @@
     "keyword": "stanford, standford"
   },
   {
-    "full": "Twin Peaks",
-    "keyword": "twin, peak"
-  },
-  {
     "full": "UC Berkeley",
-    "keyword": "berkeley, berkley"
+    "keyword": "uc berkeley"
   },
   {
-    "full": "Новиков",
-    "keyword": "новиков, novikov, novicov, знаток",
+    "full": "V6",
+    "keyword": "v6"
+  },
+  {
+    "full": "Вечно Живые",
+    "keyword": "вечно, живые, vechn, zhiv"
+  },
+  {
+    "full": "Борис Бурда",
+    "keyword": "борис, бурда, boris, burda, знаток",
     "guest": true
   },
   {
