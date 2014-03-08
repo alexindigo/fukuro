@@ -48,6 +48,7 @@ var Content =
     this.sms = make($('#sms'), {});
     this.playoff = make($('#playoff'), {});
     this.players = make($('#players'), {});
+    this.ads = make($('#ads'), {});
     // }}}
 
     // {{{
@@ -142,6 +143,11 @@ console.log(['show', data]);
       case 'sms':
         Content.sms.on(misc.deferredOff(data));
         fn({item: 'sms', status: 'on'});
+        break;
+
+      case 'ads':
+        Content.ads.on(misc.deferredOff(data));
+        fn({item: 'ads', status: 'on'});
         break;
 
       case 'playoff':
@@ -253,6 +259,11 @@ console.log(['audience_team_team', data]);
       case 'sms':
         Content.sms.off();
         fn({item: 'sms', status: 'off'});
+        break;
+
+      case 'ads':
+        Content.ads.off();
+        fn({item: 'ads', status: 'off'});
         break;
 
       case 'playoff':

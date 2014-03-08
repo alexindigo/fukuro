@@ -237,6 +237,7 @@ video:after
 #cover,
 #rules,
 #sms,
+#ads,
 #playoff,
 #players
 {
@@ -441,33 +442,33 @@ body.final .team.winner
 /* rules */
 #rules ol,
 #sms ol,
+#ads ul,
 #playoff ol
 {
   list-style: decimal;
 
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 38px;
+  line-height: 54px;
 }
-  #rules ol
-  {
-    font-size: 26px;
-    line-height: 36px;
-  }
+#ads ul
+{
+  list-style: circle;
+}
+#sms ol,
+#ads ul
+{
+  font-size: 48px;
+}
 #rules ol li,
-#playoff ol li
-{
-  margin: 16px 0px;
-}
-
-#sms ol
-{
-  font-size: 40px;
-}
-#sms ol li
+#playoff ol li,
+#sms ol li,
+#ads ul li
 {
   margin: 20px 0px;
+  white-space: nowrap;
 }
-#sms i
+#sms i,
+#ads i
 {
   font-style: normal;
   opacity: 0.6;
