@@ -110,6 +110,11 @@ button:not(.careful):after
       background-image: url("/i/danger.png"), -webkit-gradient( linear, left top, left bottom, from( hsl(0,0%,20%) ), to( hsl(0,0%,15%) ) );
     }
 
+    .questions>button.audience:before
+    {
+      color: #86d50b;
+    }
+
     .questions>button:not(.careful):active:before,
     .questions>button:not(.careful).active:before,
     .questions>button:not(.careful).busy:before

@@ -29,18 +29,29 @@ var Nav =
         var id = makeHandle(n)
           , t
           , isManual = false
+          , isAudience = false
+          , soundAlong
           ;
 
-        if (q.question && q.question.manual)
+        if (q.question)
         {
-          isManual = true;
+          // manual (attention) flag
+          isManual = !!q.question.manual;
+
+          // audience question
+          isAudience = !!q.question.audience;
+
+          // sound along property
+          soundAlong = q.question.sound_along;
+
+
         }
 
         // separate regular and special questions
         if (n == parseInt(n, 10))
         {
           // add (show) question button
-          $('<button id="button_question_'+id+'" class="'+(isManual ? 'manual' : '')+'" data-item="question" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
+          $('<button id="button_question_'+id+'" class="'+(isManual ? ' manual' : '')+(isAudience ? ' audience' : '')+'" data-item="question" data-number="'+id+'"'+(soundAlong ? ' data-sound="'+soundAlong+'"' : '')+'>'+n+'</button>').appendTo(this.base);
           // add (show) answer button
           $('<button id="button_answer_'+id+'" class="careful" data-item="answer" data-number="'+id+'">'+n+'</button>').appendTo(this.base);
         }
@@ -220,7 +231,9 @@ var contentActions = function(e)
 {
   var action
     , item = {}
-    , button = $(this);
+    , button = $(this)
+    , sound
+    ;
 
   e.preventDefault();
   // already doing something don't disturb
@@ -245,6 +258,12 @@ var contentActions = function(e)
     // got the answer, unflag button
     button.removeClass('busy');
   });
+
+  // special sounds
+  if (sound = button.data('sound'))
+  {
+    socket.emit('admin:sound', {key: sound, action: 'play'}, function(){});
+  }
 
   // turn on teams music together with cover video
   if (item.item == 'cover')
