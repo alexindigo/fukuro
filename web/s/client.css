@@ -30,7 +30,7 @@ body:after
   z-index: -1;
   text-align: center;
   font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 36px;
+  font-size: 54px;
   line-height: 100px;
   color: rgba(255, 255, 255, 0.4);
   white-space: pre;
@@ -484,8 +484,8 @@ body.final .team.winner
   z-index: -1;
   text-align: right;
   font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: 54px;
+  line-height: 70px;
   color: rgba(255, 255, 255, 0.8);
   white-space: nowrap;
 }
@@ -496,7 +496,7 @@ body.final .team.winner
 }
 #settings .extra
 {
-  font-size: 24px;
+  font-size: 44px;
   color: rgba(255, 255, 255, 0.6);
 }
 
