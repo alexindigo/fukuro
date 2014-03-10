@@ -1,0 +1,1237 @@
+{
+  "current": null,
+  "sound": null,
+  "players": {
+    "+14156064717": {
+      "id": "+14156064717",
+      "name": "Anastasia Roberts",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "buzina"
+    },
+    "+16502818608": {
+      "id": "+16502818608",
+      "name": "Sophia Maler",
+      "played": {},
+      "points": 1,
+      "pos": 124811159754,
+      "team": "poluostrov"
+    },
+    "+14088349135": {
+      "id": "+14088349135",
+      "name": "lili11",
+      "played": {},
+      "points": 1,
+      "pos": 134086413255
+    },
+    "+14159631746": {
+      "id": "+14159631746",
+      "name": "Rodion",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088880388": {
+      "id": "+14088880388",
+      "name": "Dmitriy",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "mercury"
+    },
+    "+14085332110": {
+      "id": "+14085332110",
+      "name": "Leonid I",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "south_bay"
+    },
+    "+14083134777": {
+      "id": "+14083134777",
+      "name": "your name",
+      "played": {},
+      "points": 1,
+      "pos": 143010548551,
+      "team": "poluostrov"
+    },
+    "+14152542688": {
+      "id": "+14152542688",
+      "name": "Gleb",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14154127537": {
+      "id": "+14154127537",
+      "name": "Victor Myagkikh",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "mercury"
+    },
+    "+18455129566": {
+      "id": "+18455129566",
+      "name": "Yuli",
+      "played": {},
+      "points": 4,
+      "pos": 442481609007,
+      "team": "ambar"
+    },
+    "+14159404591": {
+      "id": "+14159404591",
+      "name": "Sergio",
+      "played": {},
+      "points": 1,
+      "pos": 91320253639
+    },
+    "+12672883207": {
+      "id": "+12672883207",
+      "name": "Apeltsin",
+      "played": {},
+      "points": 3,
+      "pos": 187813862037,
+      "team": "a_nu-ka__devuwki_"
+    },
+    "+16503841577": {
+      "id": "+16503841577",
+      "name": "HOOPOE",
+      "played": {},
+      "points": 1,
+      "pos": 84048576703
+    },
+    "+14156528683": {
+      "id": "+14156528683",
+      "name": "Tanya d",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088388404": {
+      "id": "+14088388404",
+      "name": "Orly",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "mercury"
+    },
+    "+16509193918": {
+      "id": "+16509193918",
+      "name": "VityaKr",
+      "played": {},
+      "points": 1,
+      "pos": 93763594368,
+      "team": "astral_cats"
+    },
+    "+14243332115": {
+      "id": "+14243332115",
+      "name": "Blonde",
+      "played": {},
+      "points": 2,
+      "pos": 269711219176
+    },
+    "+14158164528": {
+      "id": "+14158164528",
+      "name": "Sasha Smith",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14157102650": {
+      "id": "+14157102650",
+      "name": "Konstantin Palamarchuk",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "ambar"
+    },
+    "+16466207583": {
+      "id": "+16466207583",
+      "name": "Camilla",
+      "played": {},
+      "points": 1,
+      "pos": 93474282844
+    },
+    "+14084315167": {
+      "id": "+14084315167",
+      "name": "alik fishman",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16503958365": {
+      "id": "+16503958365",
+      "name": "Vadim Koltovich",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504268309": {
+      "id": "+16504268309",
+      "name": "Nativa",
+      "played": {},
+      "points": 2,
+      "pos": 303353838846
+    },
+    "+14156721200": {
+      "id": "+14156721200",
+      "name": "mark khavkin",
+      "played": {},
+      "points": 1,
+      "pos": 86397137774
+    },
+    "+14088932949": {
+      "id": "+14088932949",
+      "name": "Volodymyr",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156954505": {
+      "id": "+14156954505",
+      "name": "Aryna",
+      "played": {},
+      "points": 2,
+      "pos": 246304015157
+    },
+    "+12404017107": {
+      "id": "+12404017107",
+      "name": "Hasmik",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14154320279": {
+      "id": "+14154320279",
+      "name": "Sergey",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507930851": {
+      "id": "+16507930851",
+      "name": "Dina s",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14158457557": {
+      "id": "+14158457557",
+      "name": "Irina Puhachevsky ",
+      "played": {},
+      "points": 1,
+      "pos": 39778784607
+    },
+    "+14155190794": {
+      "id": "+14155190794",
+      "name": "Liana",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "a_nu-ka__devuwki_"
+    },
+    "+14157064346": {
+      "id": "+14157064346",
+      "name": "Elena Sapegina",
+      "played": {},
+      "points": 1,
+      "pos": 193126449765
+    },
+    "+15103250045": {
+      "id": "+15103250045",
+      "name": "AndreyE",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "ambar"
+    },
+    "+13475544530": {
+      "id": "+13475544530",
+      "name": "Salim",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16097725504": {
+      "id": "+16097725504",
+      "name": "Maya",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "south_bay"
+    },
+    "+19257682402": {
+      "id": "+19257682402",
+      "name": "odessaEN",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16175152514": {
+      "id": "+16175152514",
+      "name": "Evgeny",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504921676": {
+      "id": "+16504921676",
+      "name": "Salk",
+      "played": {},
+      "points": 1,
+      "pos": 204670684758
+    },
+    "+14153851577": {
+      "id": "+14153851577",
+      "name": "Dmitry setrakyan",
+      "played": {},
+      "points": 1,
+      "pos": 70885273940
+    },
+    "+12018875376": {
+      "id": "+12018875376",
+      "name": "Ksenia Liss",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "south_bay"
+    },
+    "+16692259293": {
+      "id": "+16692259293",
+      "name": "jfreem",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14252417672": {
+      "id": "+14252417672",
+      "name": "MishaMil",
+      "played": {},
+      "points": 1,
+      "pos": 129618296782
+    },
+    "+15102955740": {
+      "id": "+15102955740",
+      "name": "Irina Konovalova",
+      "played": {},
+      "points": 2,
+      "pos": 184798892606
+    },
+    "+14155356744": {
+      "id": "+14155356744",
+      "name": "Zarina",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+13144138356": {
+      "id": "+13144138356",
+      "name": "southbay",
+      "played": {},
+      "points": 4,
+      "pos": 285465687690
+    },
+    "+14159333249": {
+      "id": "+14159333249",
+      "name": "your name ",
+      "played": {},
+      "points": 1,
+      "pos": 79031950124
+    },
+    "+14083099254": {
+      "id": "+14083099254",
+      "name": "your name Dionela",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14086674058": {
+      "id": "+14086674058",
+      "name": "ilya",
+      "played": {},
+      "points": 1,
+      "pos": 95265414490,
+      "team": "astral_cats"
+    },
+    "+14153355514": {
+      "id": "+14153355514",
+      "name": "Rika",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16508617111": {
+      "id": "+16508617111",
+      "name": "AlexV",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14152037726": {
+      "id": "+14152037726",
+      "name": "your name Esfir ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19513186682": {
+      "id": "+19513186682",
+      "name": "borovikov",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156322717": {
+      "id": "+14156322717",
+      "name": "Erik",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19252856534": {
+      "id": "+19252856534",
+      "name": "Raman",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507987021": {
+      "id": "+16507987021",
+      "name": "izhur",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16502387574": {
+      "id": "+16502387574",
+      "name": "Dima Y.",
+      "played": {},
+      "points": 0,
+      "pos": 0,
+      "team": "normal_group"
+    },
+    "+17703758351": {
+      "id": "+17703758351",
+      "name": "AlexT",
+      "played": {},
+      "points": 1,
+      "pos": 197027251950,
+      "team": "poluostrov"
+    },
+    "+16785205832": {
+      "id": "+16785205832",
+      "name": "Rusalka",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14086458750": {
+      "id": "+14086458750",
+      "name": "AndreyT",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14158466668": {
+      "id": "+14158466668",
+      "name": "Andrei",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14084427291": {
+      "id": "+14084427291",
+      "name": "Staceyana",
+      "played": {},
+      "points": 1,
+      "pos": 84212963399
+    },
+    "+15105206562": {
+      "id": "+15105206562",
+      "name": "Misha ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159393010": {
+      "id": "+14159393010",
+      "name": "Your Name",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14157489634": {
+      "id": "+14157489634",
+      "name": "Gulba Ramzhanova",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156576505": {
+      "id": "+14156576505",
+      "name": "Marichka",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+17077382689": {
+      "id": "+17077382689",
+      "name": "Oxana",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    }
+  },
+  "answers": {
+    "2": {
+      "+14156954505": {
+        "id": "+14156954505",
+        "name": "Aryna",
+        "data": {
+          "number": 2,
+          "time": 184029769741,
+          "answer": "Все карты были одинаковы. Подменить карты."
+        },
+        "points": 2,
+        "pos": 246304015157
+      },
+      "+14157064346": {
+        "id": "+14157064346",
+        "name": "Elena Sapegina",
+        "data": {
+          "number": 2,
+          "time": 193126449765,
+          "answer": "Карты написаны на 4 конечностях"
+        },
+        "points": 1,
+        "pos": 193126449765
+      },
+      "+17703758351": {
+        "id": "+17703758351",
+        "name": "AlexT",
+        "data": {
+          "number": 2,
+          "time": 197027251950,
+          "answer": "4 cards narisovany s pbeih storon rul"
+        },
+        "points": 1,
+        "pos": 197027251950
+      }
+    },
+    "4": {
+      "+12672883207": {
+        "id": "+12672883207",
+        "name": "Apeltsin",
+        "data": {
+          "number": 4,
+          "time": 57980518148,
+          "answer": "Besmertnaya"
+        },
+        "points": 1,
+        "pos": 57980518148
+      },
+      "+14156954505": {
+        "id": "+14156954505",
+        "name": "Aryna",
+        "data": {
+          "number": 4,
+          "time": 62274245416,
+          "answer": "\nБессмертность"
+        },
+        "points": 1,
+        "pos": 62274245416
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 4,
+          "time": 69728356979,
+          "answer": "Bessmertna"
+        },
+        "points": 1,
+        "pos": 69728356979
+      },
+      "+16466207583": {
+        "id": "+16466207583",
+        "name": "Camilla",
+        "data": {
+          "number": 4,
+          "time": 93474282844,
+          "answer": "Immortality"
+        },
+        "points": 1,
+        "pos": 93474282844
+      },
+      "+16502818608": {
+        "id": "+16502818608",
+        "name": "Sophia Maler",
+        "data": {
+          "number": 4,
+          "time": 124811159754,
+          "answer": "Immortality"
+        },
+        "points": 1,
+        "pos": 124811159754
+      }
+    },
+    "5": {
+      "+12672883207": {
+        "id": "+12672883207",
+        "name": "Apeltsin",
+        "data": {
+          "number": 5,
+          "time": 33956234967,
+          "answer": "Ne yela"
+        },
+        "points": 3,
+        "pos": 187813862037
+      },
+      "+14158457557": {
+        "id": "+14158457557",
+        "name": "Irina Puhachevsky ",
+        "data": {
+          "number": 5,
+          "time": 39778784607,
+          "answer": "Diet"
+        },
+        "points": 1,
+        "pos": 39778784607
+      },
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 5,
+          "time": 68025432827,
+          "answer": "Sidela na dieta"
+        },
+        "points": 4,
+        "pos": 285465687690
+      },
+      "+14084427291": {
+        "id": "+14084427291",
+        "name": "Staceyana",
+        "data": {
+          "number": 5,
+          "time": 84212963399,
+          "answer": "диета"
+        },
+        "points": 1,
+        "pos": 84212963399
+      },
+      "+16504268309": {
+        "id": "+16504268309",
+        "name": "Nativa",
+        "data": {
+          "number": 5,
+          "time": 87065613667,
+          "answer": "Худела"
+        },
+        "points": 2,
+        "pos": 303353838846
+      },
+      "+14086674058": {
+        "id": "+14086674058",
+        "name": "ilya",
+        "data": {
+          "number": 5,
+          "time": 95265414490,
+          "answer": "Диета"
+        },
+        "points": 1,
+        "pos": 95265414490
+      },
+      "+15102955740": {
+        "id": "+15102955740",
+        "name": "Irina Konovalova",
+        "data": {
+          "number": 5,
+          "time": 95700438978,
+          "answer": "Сидела на диете"
+        },
+        "points": 2,
+        "pos": 184798892606
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 5,
+          "time": 116167811282,
+          "answer": "Dieta\n"
+        },
+        "points": 4,
+        "pos": 442481609007
+      }
+    },
+    "7": {
+      "+14159333249": {
+        "id": "+14159333249",
+        "name": "your name ",
+        "data": {
+          "number": 7,
+          "time": 79031950124,
+          "answer": "iPhone"
+        },
+        "points": 1,
+        "pos": 79031950124
+      },
+      "+12672883207": {
+        "id": "+12672883207",
+        "name": "Apeltsin",
+        "data": {
+          "number": 7,
+          "time": 95877108922,
+          "answer": "Iphone"
+        },
+        "points": 2,
+        "pos": 153857627070
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 7,
+          "time": 120701689768,
+          "answer": "Iphone"
+        },
+        "points": 3,
+        "pos": 326313797725
+      },
+      "+14083134777": {
+        "id": "+14083134777",
+        "name": "your name",
+        "data": {
+          "number": 7,
+          "time": 143010548551,
+          "answer": "iPhone "
+        },
+        "points": 1,
+        "pos": 143010548551
+      }
+    },
+    "9": {
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 9,
+          "time": 82399754409,
+          "answer": "B"
+        },
+        "points": 3,
+        "pos": 217440254863
+      }
+    },
+    "10": {
+      "+14243332115": {
+        "id": "+14243332115",
+        "name": "Blonde",
+        "data": {
+          "number": 10,
+          "time": 186772627772,
+          "answer": "Поцелуй"
+        },
+        "points": 2,
+        "pos": 269711219176
+      },
+      "+16504921676": {
+        "id": "+16504921676",
+        "name": "Salk",
+        "data": {
+          "number": 10,
+          "time": 204670684758,
+          "answer": "\n\nПоцелуи"
+        },
+        "points": 1,
+        "pos": 204670684758
+      },
+      "+16504268309": {
+        "id": "+16504268309",
+        "name": "Nativa",
+        "data": {
+          "number": 10,
+          "time": 216288225179,
+          "answer": "Поцелуй"
+        },
+        "points": 1,
+        "pos": 216288225179
+      }
+    },
+    "11": {
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 11,
+          "time": 50727877822,
+          "answer": "Infinity"
+        },
+        "points": 2,
+        "pos": 135040500454
+      },
+      "+16503841577": {
+        "id": "+16503841577",
+        "name": "HOOPOE",
+        "data": {
+          "number": 11,
+          "time": 84048576703,
+          "answer": "Бесконченость"
+        },
+        "points": 1,
+        "pos": 84048576703
+      },
+      "+16509193918": {
+        "id": "+16509193918",
+        "name": "VityaKr",
+        "data": {
+          "number": 11,
+          "time": 93763594368,
+          "answer": "Бесконечная"
+        },
+        "points": 1,
+        "pos": 93763594368
+      }
+    },
+    "12": {
+      "+14153851577": {
+        "id": "+14153851577",
+        "name": "Dmitry setrakyan",
+        "data": {
+          "number": 12,
+          "time": 70885273940,
+          "answer": "\nKino"
+        },
+        "points": 1,
+        "pos": 70885273940
+      },
+      "+14243332115": {
+        "id": "+14243332115",
+        "name": "Blonde",
+        "data": {
+          "number": 12,
+          "time": 82938591404,
+          "answer": "Кино"
+        },
+        "points": 1,
+        "pos": 82938591404
+      },
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 12,
+          "time": 84312622632,
+          "answer": "Kino"
+        },
+        "points": 1,
+        "pos": 84312622632
+      },
+      "+14156721200": {
+        "id": "+14156721200",
+        "name": "mark khavkin",
+        "data": {
+          "number": 12,
+          "time": 86397137774,
+          "answer": "Kino"
+        },
+        "points": 1,
+        "pos": 86397137774
+      },
+      "+15102955740": {
+        "id": "+15102955740",
+        "name": "Irina Konovalova",
+        "data": {
+          "number": 12,
+          "time": 89098453628,
+          "answer": "Кино"
+        },
+        "points": 1,
+        "pos": 89098453628
+      },
+      "+14159404591": {
+        "id": "+14159404591",
+        "name": "Sergio",
+        "data": {
+          "number": 12,
+          "time": 91320253639,
+          "answer": "12. Кино"
+        },
+        "points": 1,
+        "pos": 91320253639
+      },
+      "+14252417672": {
+        "id": "+14252417672",
+        "name": "MishaMil",
+        "data": {
+          "number": 12,
+          "time": 129618296782,
+          "answer": "Кино"
+        },
+        "points": 1,
+        "pos": 129618296782
+      },
+      "+14088349135": {
+        "id": "+14088349135",
+        "name": "lili11",
+        "data": {
+          "number": 12,
+          "time": 134086413255,
+          "answer": "Kinoteatr"
+        },
+        "points": 1,
+        "pos": 134086413255
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 12,
+          "time": 135883750978,
+          "answer": "Kino"
+        },
+        "points": 2,
+        "pos": 205612107957
+      }
+    }
+  },
+  "scale": 1,
+  "round": 12,
+  "rounds": [
+    null,
+    {
+      "south_bay": 1,
+      "san-francisko": "0.11",
+      "buzina": 1
+    },
+    {
+      "astral_cats": 1,
+      "san-francisko": "0.50",
+      "v6": 1,
+      "normal_group": 1,
+      "buzina": 1,
+      "a_nu-ka__devuwki_": 1,
+      "f2": 1,
+      "stanford": 1
+    },
+    {
+      "v6": 1,
+      "san-francisko": "1.17",
+      "normal_group": 1,
+      "mercury": 1,
+      "south_bay": 1,
+      "berkeley_kz": 1,
+      "astral_cats": 1,
+      "boris_burda": 1,
+      "vexno_jivye": 1,
+      "buzina": 1,
+      "f2": 1,
+      "livejournal": 1,
+      "ambar": 1,
+      "stanford": 1
+    },
+    null,
+    {
+      "hikers": 1,
+      "san-francisko": "1.44",
+      "vexno_jivye": 1,
+      "mercury": 1,
+      "stanford": 1
+    },
+    null,
+    null,
+    {
+      "bejazz": 1,
+      "san-francisko": "1.61",
+      "south_bay": 1,
+      "a_nu-ka__devuwki_": 1
+    },
+    {
+      "mercury": 1,
+      "san-francisko": "1.89",
+      "south_bay": 1,
+      "normal_group": 1,
+      "vexno_jivye": 1,
+      "livejournal": 1,
+      "boris_burda": 1
+    },
+    {
+      "stanford": 1,
+      "san-francisko": "2.22",
+      "livejournal": 1,
+      "degrees": 1,
+      "bejazz": 1,
+      "uc_berkeley": 1,
+      "normal_group": 1
+    },
+    {
+      "boris_burda": 1,
+      "bejazz": 1,
+      "san-francisko": "2.89",
+      "hikers": 1,
+      "v6": 1,
+      "normal_group": 1,
+      "mercury": 1,
+      "south_bay": 1,
+      "astral_cats": 1,
+      "vexno_jivye": 1,
+      "degrees": 1,
+      "livejournal": 1,
+      "stanford": 1,
+      "buzina": 1
+    },
+    {
+      "hikers": 1,
+      "san-francisko": "3.72",
+      "bejazz": 1,
+      "v6": 1,
+      "astral_cats": 1,
+      "berkeley_kz": 1,
+      "vexno_jivye": 1,
+      "degrees": 1,
+      "a_nu-ka__devuwki_": 1,
+      "buzina": 1,
+      "ambar": 1,
+      "livejournal": 1,
+      "stanford": 1,
+      "poluostrov": 1,
+      "south_bay": 1,
+      "normal_group": 1
+    }
+  ],
+  "played": [
+    null,
+    6,
+    4,
+    12,
+    3,
+    11,
+    7,
+    10,
+    9,
+    1,
+    8,
+    2,
+    "playoff 1"
+  ],
+  "audience_team": {
+    "2": {
+      "id": "+12672883207",
+      "name": "Apeltsin",
+      "team": "a_nu-ka__devuwki_"
+    },
+    "3": {
+      "id": "+18455129566",
+      "name": "Yuli",
+      "team": "ambar"
+    },
+    "5": {
+      "id": "+16509193918",
+      "name": "VityaKr",
+      "team": "astral_cats"
+    },
+    "6": {
+      "id": "+12672883207",
+      "name": "Apeltsin",
+      "team": "a_nu-ka__devuwki_"
+    },
+    "11": {
+      "id": "+17703758351",
+      "name": "AlexT",
+      "team": "poluostrov"
+    },
+    "12": {
+      "id": "+12672883207",
+      "name": "Apeltsin",
+      "team": "a_nu-ka__devuwki_"
+    }
+  },
+  "teams": {
+    "degrees": {
+      "full": "12.5 Degrees",
+      "short": "12.5 Degrees",
+      "handle": "degrees",
+      "points": 3,
+      "keyword": "12.5, degree",
+      "guest": false,
+      "collective": false
+    },
+    "ambar": {
+      "full": "Ambar",
+      "short": "Ambar",
+      "handle": "ambar",
+      "points": 2,
+      "keyword": "ambar",
+      "guest": false,
+      "collective": false
+    },
+    "a_nu-ka__devuwki_": {
+      "full": "А ну-ка, девушки!",
+      "short": "А ну-ка, девушки!",
+      "handle": "a_nu-ka__devuwki_",
+      "points": 3,
+      "keyword": "girls, dewushk, devushk",
+      "guest": false,
+      "collective": false
+    },
+    "astral_cats": {
+      "full": "Astral Cats",
+      "short": "Astral Cats",
+      "handle": "astral_cats",
+      "points": 5,
+      "keyword": "astral, cats",
+      "guest": false,
+      "collective": false
+    },
+    "bejazz": {
+      "full": "BEJazz",
+      "short": "BEJazz",
+      "handle": "bejazz",
+      "points": 4,
+      "keyword": "jazz",
+      "guest": false,
+      "collective": false
+    },
+    "berkeley_kz": {
+      "full": "Berkeley.kz",
+      "short": "Berkeley.kz",
+      "handle": "berkeley_kz",
+      "points": 2,
+      "keyword": "berkeley.kz",
+      "guest": false,
+      "collective": false
+    },
+    "buzina": {
+      "full": "Бузина",
+      "short": "Бузина",
+      "handle": "buzina",
+      "points": 5,
+      "keyword": "бузина, buzina, busina",
+      "guest": false,
+      "collective": false
+    },
+    "f2": {
+      "full": "F2",
+      "short": "F2",
+      "handle": "f2",
+      "points": 2,
+      "keyword": "f2",
+      "guest": false,
+      "collective": false
+    },
+    "hikers": {
+      "full": "Hikers",
+      "short": "Hikers",
+      "handle": "hikers",
+      "points": 3,
+      "keyword": "hiker",
+      "guest": false,
+      "collective": false
+    },
+    "livejournal": {
+      "full": "Livejournal",
+      "short": "Livejournal",
+      "handle": "livejournal",
+      "points": 5,
+      "keyword": "livejournal, журнал",
+      "guest": false,
+      "collective": false
+    },
+    "mercury": {
+      "full": "Mercury",
+      "short": "Mercury",
+      "handle": "mercury",
+      "points": 4,
+      "keyword": "mercury, merkury",
+      "guest": false,
+      "collective": false
+    },
+    "normal_group": {
+      "full": "Normal Group",
+      "short": "Normal Group",
+      "handle": "normal_group",
+      "points": 6,
+      "keyword": "нормальн, груп, normal, group, grup",
+      "guest": false,
+      "collective": false
+    },
+    "poluostrov": {
+      "full": "Полуостров",
+      "short": "Полуостров",
+      "handle": "poluostrov",
+      "points": 1,
+      "keyword": "остров, peninsula, ostrov",
+      "guest": false,
+      "collective": false
+    },
+    "south_bay": {
+      "full": "South Bay",
+      "short": "South Bay",
+      "handle": "south_bay",
+      "points": 6,
+      "keyword": "south",
+      "guest": false,
+      "collective": false
+    },
+    "stanford": {
+      "full": "Stanford",
+      "short": "Stanford",
+      "handle": "stanford",
+      "points": 6,
+      "keyword": "stanford, standford",
+      "guest": false,
+      "collective": false
+    },
+    "uc_berkeley": {
+      "full": "UC Berkeley",
+      "short": "UC Berkeley",
+      "handle": "uc_berkeley",
+      "points": 1,
+      "keyword": "uc berkeley",
+      "guest": false,
+      "collective": false
+    },
+    "v6": {
+      "full": "V6",
+      "short": "V6",
+      "handle": "v6",
+      "points": 4,
+      "keyword": "v6",
+      "guest": false,
+      "collective": false
+    },
+    "vexno_jivye": {
+      "full": "Вечно Живые",
+      "short": "Вечно Живые",
+      "handle": "vexno_jivye",
+      "points": 5,
+      "keyword": "вечно, живые, vechn, zhiv",
+      "guest": false,
+      "collective": false
+    },
+    "boris_burda": {
+      "full": "Борис Бурда",
+      "short": "Борис Бурда",
+      "handle": "boris_burda",
+      "points": 3,
+      "keyword": "борис, бурда, boris, burda, знаток",
+      "guest": true,
+      "collective": false
+    },
+    "san-francisko": {
+      "full": "Сан-Франциско",
+      "short": "Сан-Франциско",
+      "handle": "san-francisko",
+      "points": "3.72",
+      "keyword": "",
+      "guest": false,
+      "collective": true
+    }
+  },
+  "flags": {
+    "guest": "boris_burda",
+    "collective": "san-francisko"
+  }
+}
