@@ -1,0 +1,624 @@
+body
+{
+  -webkit-transform-origin: center center;
+}
+/* cover up */
+body:before
+{
+  content: "";
+  position: fixed;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: #000000;
+  background-image: url("/content/semi_owl.png");
+  background-size: 70% auto;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+body:after
+{
+  content: "facebook.com/djwizard";
+  position: fixed;
+  display: block;
+  bottom: 90px;
+  right: 6%;
+  z-index: -1;
+  text-align: center;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 36px;
+  line-height: 100px;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: pre;
+}
+
+/* control */
+
+/* special */
+.active
+{
+  opacity: 1;
+}
+
+/* content */
+section
+{
+  position: absolute;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 35px 0px;
+  background-color: #000000;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+}
+section>*
+{
+  -webkit-box-flex: 0;
+  display: block;
+  -webkit-transition: all 0.5s;
+}
+section>img
+{
+  max-height: 75%;
+  max-width: 90%;
+}
+section>video
+{
+  height: 75%;
+}
+section>p
+{
+  max-width: 85%;
+  padding: 0.5em 0px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 52px;
+  line-height: 76px;
+  white-space: pre-line;
+  overflow: hidden;
+}
+  section>p.long
+  {
+    font-size: 38px;
+    line-height: 54px;
+  }
+    section>p.long.extra
+    {
+      font-size: 28px;
+      line-height: 46px;
+    }
+
+/* show questions only with timer */
+#timer:not(.playing) ~ section.question:not(.playoff)>p.text
+{
+  font-size: 0px;
+  line-height: 0px;
+  margin-top: 0px;
+}
+/* when timer shrink image and show text */
+#timer.playing ~ section.question>img
+{
+  max-height: 40%;
+}
+#timer.playing ~ section.question>video,
+#timer.playing ~ section.question>.video
+{
+  max-height: 0px;
+}
+/* make text smaller if there is image for the question */
+
+section.answer:before
+{
+  content: "Answer";
+  display: block;
+  margin-bottom: 1em;
+  font-size: 36px;
+  color: #999999;
+}
+
+
+section.question>img ~ p,
+section.answer>img ~ p
+section.answer>video ~ p
+{
+  margin-top: 1em;
+  font-size: 38px;
+  line-height: 54px;
+}
+  section.question>img ~ p.long,
+  section.answer>img ~ p.long,
+  section.answer>video ~ p.long
+  {
+    margin-top: 2em;
+    font-size: 30px;
+    line-height: 48px;
+  }
+  section.question>img ~ p.long.extra,
+  section.answer>img ~ p.long.extra,
+  section.answer>video ~ p.long.extra
+  {
+    margin-top: 2em;
+    font-size: 24px;
+    line-height: 42px;
+  }
+
+/* no desc for questions */
+section.question .desc
+{
+  display: none;
+}
+
+section.answer .desc
+{
+  margin-top: 2.5em;
+  padding: 25px 0px 0px;
+  font-size: 26px;
+  line-height: 30px;
+  border-top: 1px dotted #999999;
+  text-align: justify;
+}
+
+
+/* custom/extra text */
+section:after
+{
+  content: attr(data-text);
+  -webkit-box-flex: 0;
+  position: relative;
+  display: inline-block;
+  padding: 0px 15px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  white-space: pre-line;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+video:after
+{
+  content: attr(data-text);
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  width: 100%;
+  margin-top: -25px;
+  padding: 0px 15px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  white-space: pre-line;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+
+/* special */
+#cover,
+#rules,
+#sms,
+#playoff,
+#players
+{
+  -webkit-transition: all 3s;
+}
+#cover>video
+{
+  max-width: 1000px;
+}
+
+/* presentation types */
+
+/* stats in the footer */
+body>footer
+{
+  position: absolute;
+  opacity: 0;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #cccccc;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: all 0.5s 0s;
+  z-index: 1;
+}
+  body.playing>#teams.active~footer
+  {
+    opacity: 0.8;
+    -webkit-transition: all 1s 0s;
+  }
+  /* don't show anything other than cover */
+  body>#cover.active~footer
+  {
+    opacity: 0;
+    -webkit-transition: all 0.15s 0s;
+  }
+body>footer:before
+{
+  display: inline-block;
+  padding: 0px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+  /* During the game show round number
+   * only together with scoreboard */
+  body.playing>footer:before
+  {
+    content: "Round " attr(data-round);
+  }
+  body.audience>footer:before
+  {
+    content: "Audience";
+  }
+  body.playoff>footer:before
+  {
+    content: "Playoff";
+  }
+  body.waiting>footer:before
+  {
+    content: none;
+  }
+  body.final>footer:before
+  {
+/*    content: "Final Score"; */
+  }
+body>footer:after
+{
+  content: " (past)";
+  display: block;
+}
+  /* for host with IE */
+  body.player_answer_team>footer:after
+  {
+    content: " (past) + (audience answer w/ team)";
+    display: block;
+  }
+
+/* timer */
+#timer
+{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  height: 24px;
+  margin-left: -370px;
+  padding: 10px;
+  opacity: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+  background-clip: padding-box;
+  z-index: 2;
+  -webkit-transition: opacity 0.8s;
+}
+  #timer.playing:not(.hold)
+  {
+    opacity: 0.85;
+  }
+#timer>li
+{
+  list-style: none;
+  display: inline-block;
+  width: 5px;
+  height: 22px;
+  border: 1px solid #ff0000;
+  margin-right: 5px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.8);
+}
+  #timer>li:last-child
+  {
+    margin-right: 0px;
+  }
+  #timer>li.fill
+  {
+    background-color: #ff0000;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff0000), to(#c00000));
+  }
+  #timer.ending>li
+  {
+    -webkit-animation-name: flashing;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+  }
+@-webkit-keyframes flashing
+{
+  0%
+  {
+    opacity: 1;
+  }
+  20%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+/* final */
+body.final .team
+{
+  opacity: 0.65;
+  z-index: 0;
+  -webkit-transition: -webkit-transform 1.2s;
+}
+body.final .team.winner
+{
+  position: relative !important;
+  color: #ffffff;
+  opacity: 1;
+  z-index: 10;
+}
+
+/* address different number of teams */
+
+#teams.atleast_15
+{
+  padding: 5% 0.5% 2%;
+  font-size: 24px;
+}
+#teams.atleast_20,
+#teams.atleast_25
+{
+  padding: 5% 0.5% 2%;
+  font-size: 20px;
+}
+#teams.atleast_20>.team,
+#teams.atleast_25>.team
+{
+  height: 9%;
+  padding: 0.75% 0.4em;
+}
+#teams.atleast_20>.team>.short,
+#teams.atleast_25>.team>.short
+{
+  box-sizing: border-box;
+  max-height: 48%;
+  overflow: hidden;
+}
+#teams.atleast_20>.team>.full,
+#teams.atleast_25>.team>.full
+{
+  height: 1.6em;
+  overflow: hidden;
+}
+
+#teams.special_guest>.team.static
+{
+  top: 50px;
+  font-size: 30px;
+}
+
+/* rules */
+#rules ol,
+#sms ol,
+#playoff ol
+{
+  list-style: decimal;
+
+  font-size: 32px;
+  line-height: 48px;
+}
+  #rules ol
+  {
+    font-size: 26px;
+    line-height: 36px;
+  }
+#rules ol li,
+#playoff ol li
+{
+  margin: 16px 0px;
+}
+
+#sms ol
+{
+  font-size: 40px;
+}
+#sms ol li
+{
+  margin: 20px 0px;
+}
+#sms i
+{
+  font-style: normal;
+  opacity: 0.6;
+}
+
+/* settings */
+#settings
+{
+  position: absolute;
+  top: 90px;
+  right: 6%;
+  height: 500px;
+  z-index: -1;
+  text-align: right;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 32px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+#settings i
+{
+  margin: 0px 4px;
+  font-style: normal;
+}
+#settings .extra
+{
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* players */
+
+
+/* scoreboard */
+#players
+{
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 2% 15%;
+  font-size: 24px;
+  text-align: center;
+}
+  #players:after
+  {
+    content: none;
+  }
+.player
+{
+  position: relative;
+  display: inline-block;
+  -webkit-box-flex: 0;
+  margin: 0.25em 0.4em;
+  padding: 0.4em;
+  font-size: 28px;
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: #808080;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  background-clip: padding-box;
+  white-space: nowrap;
+}
+
+.player>span
+{
+  display: inline-block;
+  padding: 0px 5px;
+}
+.player>.name
+{
+  border-right: 1px dotted #888888;
+  color: #ffffff;
+  text-align: right;
+}
+.player>.points
+{
+  font-family: "Ubuntu", "Ubuntu Condensed", sans-serif;
+  text-align: left;
+}
+
+.player.pos_1
+{
+  font-size: 36px;
+  border: 1px solid #888888;
+}
+.player.pos_4
+{
+  font-size: 24px;
+}
+.player.pos_8
+{
+  font-size: 20px;
+}
+.player.pos_12
+{
+  font-size: 16px;
+}
+.player.pos_20
+{
+  font-size: 12px;
+}
+.player.pos_30
+{
+  font-size: 8px;
+}
+.player.pos_50
+{
+  font-size: 4px;
+}
+.player.pos_100
+{
+  font-size: 1px;
+}
+.player.pos_150
+{
+  font-size: 0px;
+}
+
+
+/* platform specific modifications */
+
+/* ipad hacks */
+html.x-ipad
+{
+  -webkit-text-size-adjust: 80%;
+}
+html.x-ipad body>footer
+{
+  height: 30px;
+}
+/* surface hacks */
+html.x-msie body>footer
+{
+  height: 80px;
+  line-height: 30px;
+  opacity: 0.8;
+}
+
+html.x-msie #teams
+{
+  padding-top: 180px;
+}
+html.x-msie #teams.special_guest > .team.static > .points,
+html.x-msie #teams.special_guest > .team.static > .full
+{
+  position: absolute;
+  top: 10px;
+}
+html.x-msie #teams.special_guest > .team.static.guest > .full
+{
+  right: 0px;
+}
+html.x-msie #teams.special_guest > .team.static.collective > .short
+{
+  position: absolute;
+  left: 110px;
+}
+html.x-msie #teams.special_guest > .team.static.collective::before
+{
+  top: -15px;
+}
+
+html.x-msie section.question,
+html.x-msie section.answer
+{
+  padding: 80px 50px 50px 100px;
+}
+
+/*html.x-msie #teams.special_guest *
+{
+  outline: 1px dashed #ff0000;
+}
+*/
+
+.additional_info
+{
+  opacity: 0.5;
+}
