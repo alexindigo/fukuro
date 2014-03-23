@@ -1,0 +1,32 @@
+{
+  "name": "fukuro",
+  "version": "0.0.0",
+  "description": "Intellectual games system",
+  "main": "start.js",
+  "scripts": {
+    "start": "(node primer/event_bus.js &) ; (node primer/module.js &) ; (node primer/server.js)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alexindigo/fukuro.git"
+  },
+  "keywords": [
+    "game",
+    "intellectual",
+    "trivia",
+    "control",
+    "system"
+  ],
+  "author": "Alex Indigo <iam@alexindigo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexindigo/fukuro/issues"
+  },
+  "homepage": "https://github.com/alexindigo/fukuro",
+  "dependencies": {
+    "primus": "^2.0.4",
+    "wigwam": "^0.1.1",
+    "ws": "^0.4.31"
+  }
+}

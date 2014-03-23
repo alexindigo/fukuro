@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# CWD
+BASEPATH=$(dirname $(readlink -f $0))
+
+# helper commands separator
+HELP_SEP=") #"
+
+# Shortcuts
+
+function run_docker {
+  docker run -t -i -v ${BASEPATH}:/www -p 80:80 -p 1337:1337 alexindigo/node-app $@
+}
+
+function list_containers {
+  docker ps -a -q
+}
+
+function list_images {
+  docker images -a -q
+}
+
+function clean_containers {
+  list_containers | xargs docker rm | xargs echo 'Removed containers:'
+}
+
+function clean_images {
+  list_images | xargs docker rmi 2>/dev/null
+}
+
+# Two or more arguments, pass them to docker
+if [ $# -gt 1 ]
+then
+
+  run_docker $@
+
+# No arguments, unleash the magic
+elif [ $# -eq 0 ]
+then
+
+  # show cheat sheet
+  echo "Usage: $0 <command>";
+  # grep itself for custom commands
+  grep -h "$HELP_SEP" $0 | grep -v "HELP_SEP" | awk -F"$(printf "%q %q" $HELP_SEP)" '{ printf "%-20s %-40s\n", $1, $2 }'
+  exit 1;
+
+# Exactly one argument, check for magic words
+else
+
+  case "$1" in
+
+    clean_containers) # cleanup container
+      # be defensive
+      if [ `list_containers | wc -l` -eq 0 ]
+      then
+        echo "It's already very clean. No containers to remove"
+      else
+        clean_containers
+      fi
+      ;;
+
+    clean_images) # cleanup containers and images
+      # be defensive
+      # containers are secondary here
+      # don't raise a fuss, we're here for images
+      if [ `list_containers | wc -l` -gt 0 ]
+      then
+        clean_containers
+      fi
+      # clean up images
+      if [ `list_images | wc -l` -eq 0 ]
+      then
+        echo "It's already very clean. No images to remove"
+      else
+        clean_images
+      fi
+      ;;
+
+    install) # install dependencies
+      run_docker npm install
+      ;;
+
+    reset) # reset dependencies
+      run_docker rm -rf node_modules
+      run_docker npm install
+      ;;
+
+    start) # start the server
+      # if node_modules doesn't exists, do npm install
+      if [ ! -d node_modules ]; then run_docker npm install; fi
+      run_docker npm start
+      ;;
+
+    test) # run unit tests
+      run_docker npm test
+      ;;
+
+    *) # passed to the docker container
+      run_docker $1
+      ;;
+
+  esac
+fi
