@@ -51,17 +51,29 @@ body:after
   height: 100px;
   margin: 0.2em 0.6em;
   padding: 0.5em;
-  color: #999999;
 }
 .team>.short
 {
-  font-size: 36px;
+  font-size: 32px;
   border-bottom: 1px dotted #999999;
 }
 .team>.points
 {
   font-size: 42px;
 }
+  /* groups */
+  .team.group_ads>.points
+  {
+    color: #ff2c00;
+  }
+  .team.group_bing>.points
+  {
+    color: #ffbb00;
+  }
+  .team.group_nokia>.points
+  {
+    color: #009ef5;
+  }
 #teams.special_guest>.team.static.collective>.short
 {
   width: 300px;
@@ -70,7 +82,8 @@ body:after
 {
   font-size: 42px;
 }
-#teams.special_guest>.team.static.collective:before
+#teams.special_guest>.team.static.collective:before,
+#teams.special_guest>.team.static.is_group:before
 {
   top: 8px;
   font-size: 42px;
@@ -628,12 +641,14 @@ html.x-msie #teams.special_guest > .team.static.guest > .full
 {
   right: 0px;
 }
-html.x-msie #teams.special_guest > .team.static.collective > .short
+html.x-msie #teams.special_guest > .team.static.collective > .short,
+html.x-msie #teams.special_guest > .team.static.is_group > .short
 {
   position: absolute;
   left: 110px;
 }
-html.x-msie #teams.special_guest > .team.static.collective::before
+html.x-msie #teams.special_guest > .team.static.collective::before,
+html.x-msie #teams.special_guest > .team.static.is_group::before
 {
   top: -15px;
 }

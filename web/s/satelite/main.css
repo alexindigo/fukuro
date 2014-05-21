@@ -197,13 +197,15 @@ body.waiting .team>.points
   {
     margin-left: -360px;
   }
-  #teams.special_guest>.team.static.collective
+  #teams.special_guest>.team.static.collective,
+  #teams.special_guest>.team.static.is_group
   {
     -webkit-box-direction: reverse;
     margin-left: 45px;
     pointer-events: none;
   }
-#teams.special_guest>.team.static.collective:before
+#teams.special_guest>.team.static.collective:before,
+#teams.special_guest>.team.static.is_group:before
 {
   content: "vs";
   position: absolute;
@@ -254,7 +256,8 @@ body.waiting .team>.points
   width: 100px;
 /* outline: 1px dashed #00ffff; */
 }
-  #teams.special_guest>.team.static.guest>.points
+  #teams.special_guest>.team.static.guest>.points,
+  #teams.special_guest>.team.static.is_group>.points
   {
     right: 0px;
   }

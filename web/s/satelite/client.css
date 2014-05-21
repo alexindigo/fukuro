@@ -592,7 +592,8 @@ html.x-msie #teams.special_guest > .team.static > .full
   position: absolute;
   top: 10px;
 }
-html.x-msie #teams.special_guest > .team.static.guest > .full
+html.x-msie #teams.special_guest > .team.static.guest > .full,
+html.x-msie #teams.special_guest > .team.static.is_group > .short
 {
   right: 0px;
 }
@@ -601,7 +602,8 @@ html.x-msie #teams.special_guest > .team.static.collective > .short
   position: absolute;
   left: 110px;
 }
-html.x-msie #teams.special_guest > .team.static.collective::before
+html.x-msie #teams.special_guest > .team.static.collective::before,
+html.x-msie #teams.special_guest > .team.static.is_group::before
 {
   top: -15px;
 }

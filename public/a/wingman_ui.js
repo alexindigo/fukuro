@@ -36,8 +36,8 @@ htmlTeamList = function ()
   {
     objTeam = wingmanApp.teams[team];
 
-    // can't vote for collective
-    if (objTeam.collective) continue;
+    // can't vote for collective or group
+    if (objTeam.collective || objTeam.is_group) continue;
 
     var selected ='';
 

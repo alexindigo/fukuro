@@ -1,128 +1,92 @@
 [
   {
-    "full": "12.5 Degrees",
-    "keyword": "12.5, degree"
+    "full": "MadMen",
+    "keyword": "mad, madmen",
+    "group": "ads"
   },
   {
-    "full": "Ambar",
-    "keyword": "ambar"
+    "full": "B Team",
+    "keyword": "b team",
+    "group": "ads"
   },
   {
-    "full": "А ну-ка, девушки!",
-    "keyword": "girls, dewushk, devushk"
+    "full": "Heartbleed",
+    "keyword": "heartbleed",
+    "group": "ads"
   },
   {
-    "full": "Astral Cats",
-    "keyword": "astral, cats"
+    "full": "N. S. A.",
+    "keyword": "nsa, never",
+    "group": "ads"
   },
   {
-    "full": "BEJazz",
-    "keyword": "jazz"
+    "full": "Megaminds",
+    "keyword": "megaminds, mega",
+    "group": "nokia"
   },
   {
-    "full": "Berkeley.kz",
-    "keyword": "berkeley.kz"
+    "full": "The Clavens",
+    "keyword": "clavens",
+    "group": "nokia"
   },
   {
-    "full": "Бузина",
-    "keyword": "бузина, buzina, busina"
+    "full": "7th Floor Savants",
+    "keyword": "7th, floor, savants",
+    "group": "nokia"
   },
   {
-    "full": "F2",
-    "keyword": "f2"
+    "full": "Goodfellas",
+    "keyword": "goodfellas",
+    "group": "bing"
   },
   {
-    "full": "Hikers",
-    "keyword": "hiker"
+    "full": "Bingmeisters",
+    "keyword": "bingmeisters",
+    "group": "bing"
   },
   {
-    "full": "Livejournal",
-    "keyword": "livejournal, журнал"
+    "full": "XAP Brannigan",
+    "keyword": "xap, brannigan",
+    "group": "bing"
   },
   {
-    "full": "Mercury",
-    "keyword": "mercury, merkury"
+    "full": "Relativity",
+    "keyword": "relativity",
+    "group": "bing"
   },
   {
-    "full": "Normal Group",
-    "keyword": "нормальн, груп, normal, group, grup"
+    "full": "CUSP",
+    "keyword": "cusp",
+    "group": "bing"
   },
   {
-    "full": "Полуостров",
-    "keyword": "остров, peninsula, ostrov"
+    "full": "Lit U Up",
+    "keyword": "lit, up",
+    "group": "bing"
   },
   {
-    "full": "South Bay",
-    "keyword": "south"
+    "full": "O. J. Hoarders",
+    "keyword": "orange, juice, hoarders",
+    "group": "bing"
   },
   {
-    "full": "Stanford",
-    "keyword": "stanford, standford"
+    "full": "ADifferentAngle",
+    "keyword": "adifferentangle, adifferent, angle, adifferent",
+    "group": "bing"
   },
   {
-    "full": "UC Berkeley",
-    "keyword": "uc berkeley"
+    "full": "Ads",
+    "handle": "ads",
+    "is_group": true
   },
   {
-    "full": "V6",
-    "keyword": "v6"
+    "full": "Nokia",
+    "handle": "nokia",
+    "is_group": true
   },
   {
-    "full": "Вечно Живые",
-    "keyword": "вечно, живые, vechn, zhiv"
-  },
-  {
-    "full": "Борис Бурда",
-    "keyword": "борис, бурда, boris, burda, знаток",
-    "guest": true
-  },
-  {
-    "full": "Сан-Франциско",
-    "collective": true
+    "full": "Bing",
+    "handle": "bing",
+    "is_group": true
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

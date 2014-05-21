@@ -398,12 +398,14 @@ var oTeams = Base.extend(
   points: {},
   addTeam: function(team, before)
   {
-    var el, isGuest, isCollective;
+    var el, isGuest, isCollective, isGroup;
 
     isGuest = team.guest ? ' guest static' : '';
     isCollective = team.collective ? ' collective static' : '';
+    isGroup = team.is_group ? ' is_group static group_num_'+($('.team.static.is_group').length+1)+' group_'+team.handle : '';
+    groupName = team.group ? ' group_'+team.group : '';
 
-    el = $('<span id="team_'+team.handle+'" class="team'+isGuest+isCollective+'"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span><span class="points_plus"></span><span class="points_minus"></span></span>');
+    el = $('<span id="team_'+team.handle+'" class="team'+isGuest+isCollective+isGroup+groupName+'"><span class="short">'+team.short+'</span><span class="full">'+team.full+'</span><span class="points">'+team.points+'</span><span class="points_plus"></span><span class="points_minus"></span></span>');
 
     if (before)
     {
@@ -455,7 +457,7 @@ var Teams =
     limit = Math.floor((Object.keys(data).length-1)/5)*5;
 
     // check flags
-    if (flags && flags.guest && flags.collective)
+    if ( flags && (flags.groups || (flags.guest && flags.collective)) )
     {
       specialGuest = ' special_guest';
       // don't include special teams into limit

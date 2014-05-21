@@ -377,7 +377,8 @@ var teamActions = function(e)
   e.preventDefault();
   // already doing something don't disturb
   // and collective team is not an actual team to assign points to manually
-  if (team.hasClass('busy') || team.hasClass('collective')) return;
+  // group team is virtual team
+  if (team.hasClass('busy') || team.hasClass('collective') || team.hasClass('is_group')) return;
 
   // prepare action
   if (id = team.attr('id').replace(/^team_/, ''))
@@ -481,4 +482,3 @@ connect(handlers,
 
   }
 });
-

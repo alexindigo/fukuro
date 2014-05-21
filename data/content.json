@@ -156,183 +156,169 @@
     {
       "question":
       {
-        "manual": true,
-        "sound_along": "sport",
-        "text": "В каком английском городе поселился герцог Бьюфортский когда вернулся из Индии?"
+        "text": "(name of the website is changed to protect privacy)\n\nOne of the biggest jumps in number of visitors of a site search.com was at 2am on November 6, 2011. Number of users doubled.\n\nQuestion: answer in 1 minute what scientists with PhD degrees could not answer for days: What was the reason for the recorded jump?"
       },
       "answer":
       {
-        "text": "Бадминтон.",
-        "desc": "Cуществует всего 2 города в Англии именами которых названы виды спорта: Рэгби и Бадминтон. Врядли Ирина чемпион по рэгби.",
-        "keyword": "badminton, бадминтон"
+        "text": "Daylight Savings Time change.",
+        "desc": "Bug &mdash; users were just counted twice.",
+        "keyword": "time, daylight"
       }
     },
     "2":
     {
       "question":
       {
-        "manual": true,
-        "sound_along": "breathe",
-        "text": "Валерий в прошлом написал на руке то что вы сделаете в будущем.\n\nВыберите ЛЮБУЮ карту.\n\nВалерий, покажите руку на которой написана эта карта.\n\nВопрос: Как Валерий это сделал?"
+        "text": "In 1840s, in New York, rich establishments hired private gangs to guard their property.\n\nThere were two main rival gangs: Metropolitans and Municipals.\n\nMunicipals distinguished themselves from Metropolitans by wearing shiny copper badges.\n\nWhat term, widely used today, do we call Municipals now?"
       },
       "answer":
       {
-        "text": "Все 4 потенциальных ответа были написаны на руке (2 руки, по 2 стороны на каждой руке).",
-        "keyword": "все, vse, 4"
+        "text": "Cops. Badges were made of copper.",
+        "desc": "Private security gangs developed into Police Officers.\nRival gang of Metropolitans called Municipals &laquo;cops&raquo; (short from &laquo;copper&raquo; because they wore copper badges) this is how the name for Police Officers came about.",
+        "keyword": "cop"
       }
     },
     "3":
     {
       "question":
       {
-        "manual": true,
-        "text": "Внимание: праздничный вопрос. Зимой 2009 года газета «Труд» начала высчитывать уровень инфляции потребительских цен на продукты питания.\n\nВ Чёрном Ящике то с помощью чего измеряют этот уровень.\n\nВопрос: Что в Чёрном Ящике?"
+          "text": "A toothpaste factory had a problem: Due to the way the production line was set up, sometimes empty boxes were shipped without the tube inside.\n\nCEO hired experts for $8 million, and they analyzed, designed and implemented solution: when scales showed less than a normal weight, a bell rung and line stopped. The result was &mdash; no empty boxes shipped. So CEO thought this is impossible and he went to the factory only to find &hellip;\n\nQuestion: Name something which costs $20 which actually solved the problem?"
       },
       "answer":
       {
-        "text": "Оливье",
-        "desc": "Индекс Оливье",
-        "keyword": "оливье, olivie, olivye, olive"
+        "text": "Fan.",
+        "desc": "A few feet before the scale, a $20 desk fan was blowing any empty boxes off the belt and into a bin. Puzzled, the CEO turned to one of the workers who stated, &laquo;Oh, that&hellip; One of the guys put it there 'cause he was tired of walking over every time the bell rang!&raquo;",
+        "keyword": "fan"
       }
     },
     "4":
     {
       "question":
       {
-        "text": "Медуза Turritopsis Dohrnii умеет делать то что не умеет делать ни одно животное в мире.\n\nЕсли ей не мешают внешние факторы, то она может бесконечное количество раз достигать сексуальной зрелости, а когда ей это не нужно потом возвращаться в состоянии сексуальной невинности.\n\nВопрос: Чем ещё эта медуза отличается от почти всех в мире существ?"
+        "text": "Sir Francis Bacon, Alexander von Humboldt, and Benjamin Franklin all tried to play a children's game with map of the world. That led to one of the greatest scientific theories of the 20th century. The question is: name that children's game.",
+        "image": "4q.jpg"
       },
       "answer":
       {
-        "text": "Она бессмертна",
-        "desc": "Медуза Turritopsis Dohrnii официально считается бессмертной и может умереть только от болезни или несчастного случая.",
-        "keyword": "бессмерт, бесмерт, immortal, bessmert, besmert"
+        "text": "Puzzle (Jigsaw).",
+        "desc": "Look at the coast of Western Africa and the coast of Eastern South America. Do you see that it looks like they can come together? Also look at Australia and at Eastern Africa. Thus theory of Plate Tectonics was born, which stated that Earth once was one solid continent called Pangea.",
+        "keyword": "puzzle, jigsaw"
       }
     },
     "5":
     {
       "question":
       {
-        "text": "Премия M-Prize присваивается учёным которые смогут продлить жизнь лабораторной мыши на максимальный срок.\n\nСтефан Спиндлер выиграл M-Prize с обыкновенной мышью которой ни давали никаких препаратов, никак не модифицировали, и вообще не трогали. Эта мышь просто делала то же что делает 45% женщин.\n\nВопрос: В чём было отличие этой мыши от других?"
+        "text": "M-Prize is a prize awarded to the scientist who can extend the life of a lab mouse the most.\n\nStefan Spindler won M-Prize with a regular mouse which did was not generically or physiologically altered, did not take any medication and lived just a regular life. The only difference between that mouse and all other mice was the fact that it did same thing as 45% of people in United States.\n\nQuestion: what did a lab mouse which lived the longest do which other mice did not?"
       },
       "answer":
       {
-        "text": "Диета (ела меньше).",
-        "desc": "Caloriе Restriction (лимит употребляемых в пищу калорий) - пока единственное доказанное ученными средство продлевающие жизнь. CR продлевает жизнь на 20-40% (~140 лет у человека).",
-        "keyword": "диета, ела, еда, diet, ela, food"
+        "text": "Diet.",
+        "desc": "Calorie Restriction - so far the only proven method of life extension. Calorie Restriction increases life span 20-40%.",
+        "keyword": "diet, eat, ate"
       }
     },
     "6":
     {
       "question":
       {
-        "text": "У Dj White Cloud есть то, чего не было до XX века даже у Британских королей (хотя, по мнению многих историков, &laquo;изобрели&raquo; это именно в Англии).\n\nУ Dj White Cloud есть то чего нет даже у президента Гримссона.\n\nУ Dj White Cloud есть то чего не было даже у Леонардо Да Винчи.\n\nВопрос: так что же есть у DJ White Cloud и нет у выше перечисленных?"
+        "text": "Finish this sequence with one letter:\n\nF,t,s,w,o, &hellip;"
       },
       "answer":
       {
-        "text": "Фамилии.",
-        "desc": "У Британских королей не было фамилий аж до XX века.\n\nПрезидент Олафур Рагнар Гримссон - президент Исландии, где нет фамилий, и Гримссон означает что он сын Грима, а его сын будет Олафурсон.\n\nУ Леонардо да Винчи не было фамилии, т.к. он был незаконнорожденным, поэтому его звали &laquo;Леонардо да Винчи&raquo; т.е. &laquo;Леонардо из города Винчи&raquo;\n\nА у DJеев, как ни странно, тоже есть фамилии.",
-        "keyword": "фамил, last, surname, famil"
+        "text": "L",
+        "desc": "Please, Finish, This, Sentence, With, One, Letter (first letters of each word of the question).",
+        "keyword": "l"
       }
     },
     "7":
     {
       "question":
       {
-        "text": "Одним одиноким вечером 2000 года John Casey из Сакраменто смотрел фильм &laquo;Fly&raquo; в котором смешиваются гены человека и мухи и появляется человек-муха. Тогда John Casey посмотрел на 2 предмета которые он всегда носил в кармане и ...\n\nВопрос: Изобретателем чего считается историками John Casey?"
+        "text": "In United States high schools there is a tradition of doing a senior prank, so others would remember their graduating class for a long time.\n\nOne group of seniors released 3 pigs inside their school and created a chaos which lasted for days.\n\nFirst pig had &laquo;1&raquo; written on it, second pig had &laquo;2&raquo; written on it.\n\nQuestion: What was written on the 3rd pig? And keep in mind that it does not take much to create a chaos in high school."
       },
       "answer":
       {
-        "text": "iPhone.",
-        "desc": "У него в кармане всегда были iPоd player и мобильный телефон.\n\nИдея совмещения iPoda и мобильного телефона приписывается John Casey. В 2000 он, работая в Apple, послал email, где зафиксировал эту идею.\n\nStevе Jobs планировал делать iPad таблет в это время, но идея John Casey ему понравилась больше.",
-        "keyword": "iphone, айфон"
+        "text": "4",
+        "desc": "Two days school administration was looking for a pig number 3.",
+        "keyword": "4, four"
       }
     },
     "8":
     {
       "question":
       {
-        "manual": true,
-        "text": "Вы видите наброски Инессы Алексеевны Ковалевской. Назовите, абсолютно точно, конечный результат этой работы.",
-        "image": "8q.jpg"
+        "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be answered by science, but can be answered using a dictionary.\n\nBoth subjects of this famous Plutarch's question, which all of you know, are in the Black Box.\n\nWhat is in the Black Box?"
       },
       "answer":
       {
-        "text": "Песня разбойников из м/ф &laquo;Бременские Музыканты&raquo;",
-        "desc": "Перед вами настоящая раскадровка режиссёра Инессы Ковалевской по которой снимали &laquo;Бременские Музыканты&raquo;",
-        "image": "8a.jpg",
-        "video": "8a.mp4",
-        "params":
-        {
-          "loop": false,
-          "volume": 1,
-          "_keep-alive": true
-        },
-        "keyword": "разбо, razbo, gang, band"
+        "text": "Chicken and Egg.",
+        "desc": "In dictionary &laquo;C&raquo; in Chicken comes before &laquo;E&raquo; in Egg.\n\nScientist cannot give definite answer: Evolutional Biologists and Genetic experts say Egg came first, other sciences (like Logic and Mathematics) say problem has no solution.",
+        "keyword": "chicken, egg"
       }
     },
     "9":
     {
       "question":
       {
-        "text": "Вопрос: Закончите последовательность одной буквой: В,З,П,О,..."
+        "text": "Here is an English translation of this famous 2012 number 1 hit song:\n\nBeautiful, loveable\nYes you, hey, yes you, hey\nBeautiful, loveable\nYes you, hey, yes you, hey\nNow let's go until the end\nBig brother is &hellip;\n\nFinish this modern American Billboards charts hit with words in the original language or in English."
       },
       "answer":
       {
-        "text": "Б",
-        "desc": "Первые буквы каждого слова: Вопрос Закончите Последовательность Одной Буквой (В,З,П,О,Б).",
-        "keyword": "б, b"
+        "text": "Gangnam Style",
+        "audio": "9a.mp3",
+        "keyword": "gangnam, style"
       }
     },
     "10":
     {
       "question":
       {
-        "text": "Учёные считают что это появилось в результате кормления детей. Но это так же отличный способ сжигать калории и тренировать мышцы. Широкое всемирное распространение этого, в современной форме, приписывают Голливудским звёздам немого кинематографа, хотя конечно это существовало и до них.\n\nВопрос: я вас не прошу сделать это, я вас прошу написать это."
+        "text": "What you see is the famous painting by Raphael, &laquo;Isabella of Aragon&raquo;. This painting caused a speculation that Isabella of Aragon in fact was a woman all of you know.\nQuestion: Who was Isabella of Aragon, according to speculations caused by this painting?",
+        "image": "10q.jpg"
       },
       "answer":
       {
-        "text": "Поцелуй.",
-        "desc": "Во время поцелуя у вас работают 112 мышц. Вы при этом сжигаете 3 калории в минуту (немного зато приятно).\n\nА ученные считают что матери кормили детей как птицы: разжёвывали пищу и клали им из рта в рот.",
-        "keyword": "поцел, kiss, potsel"
+        "text": "Mona Lisa.",
+        "keyword": "mona, lisa, gioconda, joconde"
       }
     },
     "11":
     {
       "question":
       {
-        "text": "Первый круг я пробежал с средней скоростью 5 миль/час.\n\nВопрос: С какой средней скоростью я должен пробежать второй круг, чтоб моя общая средняя скорость за два круга была равна 10 миль/час?"
+        "text": "One night of the year 2000 Sacramento resident John Casey was watching movie &laquo;Fly&raquo; in which genes of a fly and a man are mixed. Then John Casey thought of two gadgets he was always carrying in his pocket and &hellip;\n\nMost people actually think that person with initials S.J. is an inventor of something that John Casey invented that night.\n\nQuestion: What exactly, according to many historians, did John Casey invent, which some of you have right now in your pockets or purses?"
       },
       "answer":
       {
-        "text": "Это невозможно.",
-        "desc": "Представьте что длина круга 5 миль.\n\nТогда первый круг я пробегаю за 1 час (5 миль/час за 5 миль).\n\nВсё вместе я должен пробежать ТОЖЕ за 1 час (10 миль/час за 10 миль(2 круга каждый по 5 миль))\n\nЕсли я пробегаю 1ый круг за 1 час, и все 2 тоже должен за 1 час, то второй круг я должен пробежать мгновенно – это невозможно.",
-        "keyword": "не, бескон, безкон, мгно, beskon, bezkon, mgno, no, not, impos, infin"
+        "text": "iPhone.",
+        "desc": "iPod player and cell phone where 2 things in his pocket. There is a record of Apple employee John Casey’s email in which idea of the iPhone appears for the first time.",
+        "keyword": "iphone"
       }
     },
     "12":
     {
       "question":
       {
-        "audience": true,
-        "text": "Из воспоминаний: Шла подготовка к записи первого альбома, и требовалось простое название группы из одного слова, которое можно было бы поместить на обложку. Присутствовавшие на собрании музыканты перебрали множество вариантов, но к окончательному решению так и не пришли. Когда придумывали название, главными условиями были — наличие не более двух слогов, распространённость, лёгкое произношение и искусственность. И уже на обратном пути домой, друзья обратили внимание на светящуюся вывеску ...\n\nВопрос: вывеску чего они увидели?"
+        "text": "First lap I ran with the speed of 5 mph.\n\nQuestion: What should my average speed for the second lap be, so total average speed for two laps would equal 10 mph."
       },
       "answer":
       {
-        "text": "Кинотeатра.",
-        "desc": "группа &laquo;Кино&raquo;.",
-        "keyword": "кино, kino, cinema, movie"
+        "text": "It's impossible (infinite).",
+        "desc": "Why not 15? Let’s assume lap is 5 miles. Then first lap I ran for 1 hour (5 mph / 5 miles). If I ran for 15 mph then I would make 3 laps! But problem states only 2 total.\n\nThen two laps together I also need to run 1 hour: (10 mph / 10 miles) two laps, 5 miles each.\n\nIf I already run the first lap at 1 hour and I need to run both laps at 1 hour according to the problem, then I need to run second lap instantly.",
+        "keyword": "no, impossible, infinity, possible, instantaneous"
       }
     },
     "13":
     {
       "question":
       {
-        "text": "В середине 19 века в математике были популярны абстрактные концепции логики, алгебры и не-Евклидовой геометрии. Например, можно было вместо 3-х яблок думать отдельно о яблоке и концепции цифры 3 действующей на яблоко. Но ещё тяжелее было думать о концепции цифры 3 самой по себе вообще без яблока.\n\nВопрос: Как объяснил эту концепцию лектор математики в Оксфордском Christ Church College?"
+        "text": "In the original 1697 version of &laquo;Cinderella&raquo; by Charles Perrault Cinderella lost a right slipper or a left slipper?"
       },
       "answer":
       {
-        "text": "Чеширский Кот.",
-        "desc": "Льюис Кэрролл, лектор математики в Оксфордском Christ Church, придумал Чеширского Кота чтоб объяснить концепцию абстрактной математики.",
+        "text": "They were the same!",
+        "desc": "Only after 1800 right and left shoe became different.",
         "keyword": "------"
       }
     },
@@ -340,48 +326,28 @@
     {
       "question":
       {
-        "text": "В каждой клетке человека есть ДНК. Но не вся ДНК человека находится в ядре клетки. Немного ДНК находится вне ядра в органоиде под названием Митохондрия. Митохондрия отвечает за переработку калорий в энергию.\n\nВопрос: Какой Американский фильм упоминают ученные когда говорят о Митохондрии."
+        "text": "100 years ago London's garbage men were also, as we today, separating the garbage. There were 2 main categories of garbage:\n\n1st one included scrap metal, furniture, broken kitchenware &mdash; everything that cannot be grinded.\n\n2nd one included everything which can be processed, mainly the compost.\n\nTerms used for each one of those categories were given a new meaning in a computer science article by &laquo;American Mathematical Monthly&raquo; journal in 1958.\n\nQuestion: Name those 2 terms, which each of you uses extensively."
       },
       "answer":
       {
-        "text": "Чужие.",
-        "desc": "Ученные считают что Митохондрии когда то были отдельными существами и наши предки их поглотили для того чтоб вырабатывать энергию.",
-        "keyword": "------"
+        "text": "&laquo;Hardware&raquo; and &laquo;Software&raquo;",
+        "desc": "Hardware &mdash; scrap metal, furniture, broken kitchenware. Software &mdash; everything which can be processed, mainly the compost.",
+        "keyword": "software, hardware"
       }
     },
     "playoff 1":
     {
       "question":
       {
-        "text": "По легенде, влюбленным друг в друга Ликасу и Эгле предстояло на какое-то время расстаться. На прощание красавица Эгле, как бы пытаясь что-то сказать своему возлюбленному, всплакнула. Ее слезы превратились в красивый цветок, который она и подарила юноше. Каким именем, в Русском языке, по этой легенде стали называть этот цветок?"
+        "text": "Name the biggest similarity between the official language of United States, Constitution of England, and Bill Gate's brother?"
       },
       "answer":
       {
-        "text": "Незабудка (&laquo;не забудь меня!&raquo;)."
-      }
-    },
-    "playoff 2":
-    {
-      "question":
-      {
-        "text": "Все вы видели картину Леонардо да Винчи &laquo;Джоконда&raquo; или, по крайней мере, ее репродукцию. А теперь вспомните, какие украшения на Моне Лизе?"
-      },
-      "answer":
-      {
-        "text": "Никаких, возможно потому, что истинная красота в украшениях не нуждается."
-      }
-    },
-    "playoff 3":
-    {
-      "question":
-      {
-        "text": "Согласно французской статистике, женщины чаще носят очки, чем мужчины. Это объясняется тремя причинами. Во-первых, женщины больше читают. Во-вторых, рабочие столы рассчитаны на мужской рост.\n\nВопрос: Назовите третью причину."
-      },
-      "answer":
-      {
-        "text": "Для красоты (мода)."
+        "text": "Do not exist.",
+        "desc": "US does not have an official language.\nEngland does not have a Constitution.\nBill Gates does not have a brother."
       }
     }
+
 
   }
 }

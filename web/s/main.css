@@ -81,16 +81,17 @@ audio
   margin: 0.1em 0.5em;
   padding: 0.4em;
   font-family: "Ubuntu Condensed", sans-serif;
-  color: #999999;
+  color: #ffffff;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   background-clip: padding-box;
+  opacity: 0.5;
   -webkit-transition: top 0.8s, left 0.8s;
 }
   .team.checked
   {
-    color: #ffffff;
+    opacity: 1;
   }
   .team.moving
   {
@@ -203,6 +204,23 @@ body.waiting .team>.points
     margin-left: 45px;
     pointer-events: none;
   }
+  #teams.special_guest>.team.static.is_group.group_ads
+  {
+    left: 0.6em;
+    margin-left: 0px;
+    pointer-events: none;
+  }
+  #teams.special_guest>.team.static.is_group.group_bing
+  {
+    margin-left: -150px;
+  }
+  #teams.special_guest>.team.static.is_group.group_nokia
+  {
+    left: auto;
+    right: 0.6em;
+    margin-left: 0px;
+  }
+
 #teams.special_guest>.team.static.collective:before
 {
   content: "vs";
@@ -239,8 +257,11 @@ body.waiting .team>.points
   width: 200px;
   border: 0px;
   white-space: normal;
-/* outline: 1px dashed #ffff00; */
 }
+  #teams.special_guest>.team.static.is_group>.short
+  {
+    width: 100px;
+  }
 #teams.special_guest>.team.static>.full
 {
   position: static;
@@ -254,7 +275,8 @@ body.waiting .team>.points
   width: 100px;
 /* outline: 1px dashed #00ffff; */
 }
-  #teams.special_guest>.team.static.guest>.points
+  #teams.special_guest>.team.static.guest>.points,
+  #teams.special_guest>.team.static.is_group>.points
   {
     right: 0px;
   }
