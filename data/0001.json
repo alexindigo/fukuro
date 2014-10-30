@@ -1,0 +1,898 @@
+{
+  "current": null,
+  "sound": null,
+  "players": {
+    "+16785205832": {
+      "id": "+16785205832",
+      "name": "Rusalka",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088932949": {
+      "id": "+14088932949",
+      "name": "Volodymyr",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14083099254": {
+      "id": "+14083099254",
+      "name": "your name Dionela",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14152542688": {
+      "id": "+14152542688",
+      "name": "Gleb",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14086458750": {
+      "id": "+14086458750",
+      "name": "AndreyT",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14155190794": {
+      "id": "+14155190794",
+      "name": "Liana",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+13475544530": {
+      "id": "+13475544530",
+      "name": "Salim",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14152037726": {
+      "id": "+14152037726",
+      "name": "your name Esfir ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16466207583": {
+      "id": "+16466207583",
+      "name": "Camilla",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+15105206562": {
+      "id": "+15105206562",
+      "name": "Misha ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088349135": {
+      "id": "+14088349135",
+      "name": "lili11",
+      "played": {
+        "12": {
+          "number": 12,
+          "time": 134086413255,
+          "answer": "Kinoteatr"
+        }
+      },
+      "points": 1,
+      "pos": 134086413255
+    },
+    "+14157489634": {
+      "id": "+14157489634",
+      "name": "Gulba Ramzhanova",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507930851": {
+      "id": "+16507930851",
+      "name": "Dina s",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14158466668": {
+      "id": "+14158466668",
+      "name": "Andrei",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159333249": {
+      "id": "+14159333249",
+      "name": "your name ",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16502387574": {
+      "id": "+16502387574",
+      "name": "Dima Y.",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14153851577": {
+      "id": "+14153851577",
+      "name": "Dmitry setrakyan",
+      "played": {
+        "6": {
+          "number": 6,
+          "time": 130333300247,
+          "answer": "High heels"
+        },
+        "12": {
+          "number": 12,
+          "time": 70885273940,
+          "answer": "\nKino"
+        }
+      },
+      "points": 2,
+      "pos": 201218574187
+    },
+    "+18455129566": {
+      "id": "+18455129566",
+      "name": "Yuli",
+      "played": {
+        "5": {
+          "number": 5,
+          "time": 116167811282,
+          "answer": "Dieta\n"
+        },
+        "12": {
+          "number": 12,
+          "time": 135883750978,
+          "answer": "Kino"
+        }
+      },
+      "points": 2,
+      "pos": 252051562260
+    },
+    "+14157102650": {
+      "id": "+14157102650",
+      "name": "Konstantin Palamarchuk",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16509193918": {
+      "id": "+16509193918",
+      "name": "VityaKr",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156322717": {
+      "id": "+14156322717",
+      "name": "Erik",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14086674058": {
+      "id": "+14086674058",
+      "name": "ilya",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14158164528": {
+      "id": "+14158164528",
+      "name": "Sasha Smith",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156954505": {
+      "id": "+14156954505",
+      "name": "Aryna",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14154127537": {
+      "id": "+14154127537",
+      "name": "Victor Myagkikh",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16503958365": {
+      "id": "+16503958365",
+      "name": "Vadim Koltovich",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+12404017107": {
+      "id": "+12404017107",
+      "name": "Hasmik",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159404591": {
+      "id": "+14159404591",
+      "name": "Sergio",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14159393010": {
+      "id": "+14159393010",
+      "name": "Your Name",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16175152514": {
+      "id": "+16175152514",
+      "name": "Evgeny",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19257682402": {
+      "id": "+19257682402",
+      "name": "odessaEN",
+      "played": {
+        "6": {
+          "number": 6,
+          "time": 99988944607,
+          "answer": "Dj mix table "
+        }
+      },
+      "points": 1,
+      "pos": 99988944607
+    },
+    "+14159631746": {
+      "id": "+14159631746",
+      "name": "Rodion",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+15103250045": {
+      "id": "+15103250045",
+      "name": "AndreyE",
+      "played": {
+        "6": {
+          "number": 6,
+          "time": 108098627637,
+          "answer": "Turntable vertushka"
+        }
+      },
+      "points": 1,
+      "pos": 108098627637
+    },
+    "+14088388404": {
+      "id": "+14088388404",
+      "name": "Orly",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14157064346": {
+      "id": "+14157064346",
+      "name": "Elena Sapegina",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14085332110": {
+      "id": "+14085332110",
+      "name": "Leonid I",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156576505": {
+      "id": "+14156576505",
+      "name": "Marichka",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14153355514": {
+      "id": "+14153355514",
+      "name": "Rika",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+12018875376": {
+      "id": "+12018875376",
+      "name": "Ksenia Liss",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+12672883207": {
+      "id": "+12672883207",
+      "name": "Apeltsin",
+      "played": {
+        "12": {
+          "number": 12,
+          "time": 154257151663,
+          "answer": "Knino"
+        }
+      },
+      "points": 1,
+      "pos": 154257151663
+    },
+    "+19252856534": {
+      "id": "+19252856534",
+      "name": "Raman",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16692259293": {
+      "id": "+16692259293",
+      "name": "jfreem",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14084427291": {
+      "id": "+14084427291",
+      "name": "Staceyana",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14088880388": {
+      "id": "+14088880388",
+      "name": "Dmitriy",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14252417672": {
+      "id": "+14252417672",
+      "name": "MishaMil",
+      "played": {
+        "6": {
+          "number": 6,
+          "time": 13637992231,
+          "answer": "play Michael Mil"
+        }
+      },
+      "points": 1,
+      "pos": 13637992231
+    },
+    "+16508617111": {
+      "id": "+16508617111",
+      "name": "AlexV",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14243332115": {
+      "id": "+14243332115",
+      "name": "Blonde",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504921676": {
+      "id": "+16504921676",
+      "name": "Salk",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14083134777": {
+      "id": "+14083134777",
+      "name": "your name",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16507987021": {
+      "id": "+16507987021",
+      "name": "izhur",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+17703758351": {
+      "id": "+17703758351",
+      "name": "AlexT",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14156064717": {
+      "id": "+14156064717",
+      "name": "Anastasia Roberts",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16502818608": {
+      "id": "+16502818608",
+      "name": "Sophia Maler",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+15102955740": {
+      "id": "+15102955740",
+      "name": "Irina Konovalova",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14155356744": {
+      "id": "+14155356744",
+      "name": "Zarina",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+17077382689": {
+      "id": "+17077382689",
+      "name": "Oxana",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16504268309": {
+      "id": "+16504268309",
+      "name": "Nativa",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+16097725504": {
+      "id": "+16097725504",
+      "name": "Maya",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14154320279": {
+      "id": "+14154320279",
+      "name": "Sergey",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+13144138356": {
+      "id": "+13144138356",
+      "name": "southbay",
+      "played": {
+        "5": {
+          "number": 5,
+          "time": 68025432827,
+          "answer": "Sidela na dieta"
+        },
+        "12": {
+          "number": 12,
+          "time": 84312622632,
+          "answer": "Kino"
+        }
+      },
+      "points": 2,
+      "pos": 152338055459
+    },
+    "+16503841577": {
+      "id": "+16503841577",
+      "name": "HOOPOE",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14158457557": {
+      "id": "+14158457557",
+      "name": "Irina Puhachevsky ",
+      "played": {
+        "5": {
+          "number": 5,
+          "time": 39778784607,
+          "answer": "Diet"
+        }
+      },
+      "points": 1,
+      "pos": 39778784607
+    },
+    "+14156528683": {
+      "id": "+14156528683",
+      "name": "Tanya d",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+19513186682": {
+      "id": "+19513186682",
+      "name": "borovikov",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    },
+    "+14084315167": {
+      "id": "+14084315167",
+      "name": "alik fishman",
+      "played": {
+        "6": {
+          "number": 6,
+          "time": 121713914696,
+          "answer": "Noise cancellation"
+        }
+      },
+      "points": 1,
+      "pos": 121713914696
+    },
+    "+14156721200": {
+      "id": "+14156721200",
+      "name": "mark khavkin",
+      "played": {
+        "12": {
+          "number": 12,
+          "time": 86397137774,
+          "answer": "Kino"
+        }
+      },
+      "points": 1,
+      "pos": 86397137774
+    },
+    "+14088346198": {
+      "id": "+14088346198",
+      "name": "Alex",
+      "played": {},
+      "points": 0,
+      "pos": 0
+    }
+  },
+  "answers": {
+    "5": {
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 5,
+          "time": 116167811282,
+          "answer": "Dieta\n"
+        }
+      },
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 5,
+          "time": 68025432827,
+          "answer": "Sidela na dieta"
+        }
+      },
+      "+14158457557": {
+        "id": "+14158457557",
+        "name": "Irina Puhachevsky ",
+        "data": {
+          "number": 5,
+          "time": 39778784607,
+          "answer": "Diet"
+        }
+      }
+    },
+    "6": {
+      "+14153851577": {
+        "id": "+14153851577",
+        "name": "Dmitry setrakyan",
+        "data": {
+          "number": 6,
+          "time": 130333300247,
+          "answer": "High heels"
+        }
+      },
+      "+19257682402": {
+        "id": "+19257682402",
+        "name": "odessaEN",
+        "data": {
+          "number": 6,
+          "time": 99988944607,
+          "answer": "Dj mix table "
+        }
+      },
+      "+15103250045": {
+        "id": "+15103250045",
+        "name": "AndreyE",
+        "data": {
+          "number": 6,
+          "time": 108098627637,
+          "answer": "Turntable vertushka"
+        }
+      },
+      "+14252417672": {
+        "id": "+14252417672",
+        "name": "MishaMil",
+        "data": {
+          "number": 6,
+          "time": 13637992231,
+          "answer": "play Michael Mil"
+        }
+      },
+      "+14084315167": {
+        "id": "+14084315167",
+        "name": "alik fishman",
+        "data": {
+          "number": 6,
+          "time": 121713914696,
+          "answer": "Noise cancellation"
+        }
+      }
+    },
+    "12": {
+      "+14088349135": {
+        "id": "+14088349135",
+        "name": "lili11",
+        "data": {
+          "number": 12,
+          "time": 134086413255,
+          "answer": "Kinoteatr"
+        }
+      },
+      "+14153851577": {
+        "id": "+14153851577",
+        "name": "Dmitry setrakyan",
+        "data": {
+          "number": 12,
+          "time": 70885273940,
+          "answer": "\nKino"
+        }
+      },
+      "+18455129566": {
+        "id": "+18455129566",
+        "name": "Yuli",
+        "data": {
+          "number": 12,
+          "time": 135883750978,
+          "answer": "Kino"
+        }
+      },
+      "+12672883207": {
+        "id": "+12672883207",
+        "name": "Apeltsin",
+        "data": {
+          "number": 12,
+          "time": 154257151663,
+          "answer": "Knino"
+        }
+      },
+      "+13144138356": {
+        "id": "+13144138356",
+        "name": "southbay",
+        "data": {
+          "number": 12,
+          "time": 84312622632,
+          "answer": "Kino"
+        }
+      },
+      "+14156721200": {
+        "id": "+14156721200",
+        "name": "mark khavkin",
+        "data": {
+          "number": 12,
+          "time": 86397137774,
+          "answer": "Kino"
+        }
+      }
+    }
+  },
+  "scale": 1,
+  "round": 0,
+  "rounds": [],
+  "played": [],
+  "audience_team": {},
+  "teams": {
+    "madmen": {
+      "full": "MadMen",
+      "short": "MadMen",
+      "handle": "madmen",
+      "points": 0,
+      "keyword": "mad, madmen",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "b_team": {
+      "full": "B Team",
+      "short": "B Team",
+      "handle": "b_team",
+      "points": 0,
+      "keyword": "b team",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "heartbleed": {
+      "full": "Heartbleed",
+      "short": "Heartbleed",
+      "handle": "heartbleed",
+      "points": 0,
+      "keyword": "heartbleed",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "n__s__a_": {
+      "full": "N. S. A.",
+      "short": "N. S. A.",
+      "handle": "n__s__a_",
+      "points": 0,
+      "keyword": "nsa, never",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "megaminds": {
+      "full": "Megaminds",
+      "short": "Megaminds",
+      "handle": "megaminds",
+      "points": 0,
+      "keyword": "megaminds, mega",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "the_clavens": {
+      "full": "The Clavens",
+      "short": "The Clavens",
+      "handle": "the_clavens",
+      "points": 0,
+      "keyword": "clavens",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "th_floor_savants": {
+      "full": "7th Floor Savants",
+      "short": "7th Floor Savants",
+      "handle": "th_floor_savants",
+      "points": 0,
+      "keyword": "7th, floor, savants",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "goodfellas": {
+      "full": "Goodfellas",
+      "short": "Goodfellas",
+      "handle": "goodfellas",
+      "points": 0,
+      "keyword": "goodfellas",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "bingmeisters": {
+      "full": "Bingmeisters",
+      "short": "Bingmeisters",
+      "handle": "bingmeisters",
+      "points": 0,
+      "keyword": "bingmeisters",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "xap_brannigan": {
+      "full": "XAP Brannigan",
+      "short": "XAP Brannigan",
+      "handle": "xap_brannigan",
+      "points": 0,
+      "keyword": "xap, brannigan",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "relativity": {
+      "full": "Relativity",
+      "short": "Relativity",
+      "handle": "relativity",
+      "points": 0,
+      "keyword": "relativity",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "cusp": {
+      "full": "CUSP",
+      "short": "CUSP",
+      "handle": "cusp",
+      "points": 0,
+      "keyword": "cusp",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "lit_u_up": {
+      "full": "Lit U Up",
+      "short": "Lit U Up",
+      "handle": "lit_u_up",
+      "points": 0,
+      "keyword": "lit, up",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "o__j__hoarders": {
+      "full": "O. J. Hoarders",
+      "short": "O. J. Hoarders",
+      "handle": "o__j__hoarders",
+      "points": 0,
+      "keyword": "orange, juice, hoarders",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "adifferentangle": {
+      "full": "ADifferentAngle",
+      "short": "ADifferentAngle",
+      "handle": "adifferentangle",
+      "points": 0,
+      "keyword": "adifferentangle, adifferent, angle, adifferent",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "ads": {
+      "full": "Ads",
+      "short": "Ads",
+      "handle": "ads",
+      "points": 0,
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    },
+    "nokia": {
+      "full": "Nokia",
+      "short": "Nokia",
+      "handle": "nokia",
+      "points": 0,
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    },
+    "bing": {
+      "full": "Bing",
+      "short": "Bing",
+      "handle": "bing",
+      "points": 0,
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    }
+  },
+  "flags": {
+    "groups": "ads"
+  }
+}

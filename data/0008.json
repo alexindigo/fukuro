@@ -1,0 +1,230 @@
+{
+  "current": {
+    "item": "teams"
+  },
+  "sound": null,
+  "players": {},
+  "answers": {},
+  "scale": 1,
+  "round": 3,
+  "rounds": [
+    null,
+    null,
+    {
+      "heartbleed": 1,
+      "ads": "0.25",
+      "adifferentangle": 1,
+      "bing": "0.14",
+      "the_clavens": 1,
+      "nokia": "0.33"
+    },
+    {
+      "bingmeisters": 1,
+      "bing": "0.29",
+      "madmen": 1,
+      "ads": "0.50",
+      "the_clavens": 1,
+      "nokia": "0.67",
+      "o__j__hoarders": 1
+    }
+  ],
+  "played": [
+    null,
+    1,
+    2,
+    3
+  ],
+  "audience_team": {},
+  "teams": {
+    "madmen": {
+      "full": "MadMen",
+      "short": "MadMen",
+      "handle": "madmen",
+      "points": 1,
+      "keyword": "mad, madmen",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "b_team": {
+      "full": "B Team",
+      "short": "B Team",
+      "handle": "b_team",
+      "points": 0,
+      "keyword": "b team",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "heartbleed": {
+      "full": "Heartbleed",
+      "short": "Heartbleed",
+      "handle": "heartbleed",
+      "points": 1,
+      "keyword": "heartbleed",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "n__s__a_": {
+      "full": "N. S. A.",
+      "short": "N. S. A.",
+      "handle": "n__s__a_",
+      "points": 0,
+      "keyword": "nsa, never",
+      "group": "ads",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "megaminds": {
+      "full": "Megaminds",
+      "short": "Megaminds",
+      "handle": "megaminds",
+      "points": 0,
+      "keyword": "megaminds, mega",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "the_clavens": {
+      "full": "The Clavens",
+      "short": "The Clavens",
+      "handle": "the_clavens",
+      "points": 2,
+      "keyword": "clavens",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "th_floor_savants": {
+      "full": "7th Floor Savants",
+      "short": "7th Floor Savants",
+      "handle": "th_floor_savants",
+      "points": 0,
+      "keyword": "7th, floor, savants",
+      "group": "nokia",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "goodfellas": {
+      "full": "Goodfellas",
+      "short": "Goodfellas",
+      "handle": "goodfellas",
+      "points": 0,
+      "keyword": "goodfellas",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "bingmeisters": {
+      "full": "Bingmeisters",
+      "short": "Bingmeisters",
+      "handle": "bingmeisters",
+      "points": 1,
+      "keyword": "bingmeisters",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "xap_brannigan": {
+      "full": "XAP Brannigan",
+      "short": "XAP Brannigan",
+      "handle": "xap_brannigan",
+      "points": 0,
+      "keyword": "xap, brannigan",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "cusp": {
+      "full": "CUSP",
+      "short": "CUSP",
+      "handle": "cusp",
+      "points": 0,
+      "keyword": "cusp",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "lit_u_up": {
+      "full": "Lit U Up",
+      "short": "Lit U Up",
+      "handle": "lit_u_up",
+      "points": 0,
+      "keyword": "lit, up",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "o__j__hoarders": {
+      "full": "O. J. Hoarders",
+      "short": "O. J. Hoarders",
+      "handle": "o__j__hoarders",
+      "points": 1,
+      "keyword": "orange, juice, hoarders",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "adifferentangle": {
+      "full": "ADifferentAngle",
+      "short": "ADifferentAngle",
+      "handle": "adifferentangle",
+      "points": 1,
+      "keyword": "adifferentangle, adifferent, angle, adifferent",
+      "group": "bing",
+      "guest": false,
+      "collective": false,
+      "is_group": false
+    },
+    "ads": {
+      "full": "Ads",
+      "short": "Ads",
+      "handle": "ads",
+      "points": "0.50",
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    },
+    "nokia": {
+      "full": "Nokia",
+      "short": "Nokia",
+      "handle": "nokia",
+      "points": "0.67",
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    },
+    "bing": {
+      "full": "Bing",
+      "short": "Bing",
+      "handle": "bing",
+      "points": "0.29",
+      "keyword": "",
+      "group": "",
+      "guest": false,
+      "collective": false,
+      "is_group": true
+    }
+  },
+  "flags": {
+    "groups": "ads"
+  }
+}

@@ -195,6 +195,8 @@
     {
       "question":
       {
+        "manual": true,
+        "sound_along": "blackbox",
         "text": "Sir Francis Bacon, Alexander von Humboldt, and Benjamin Franklin all tried to play a children's game with map of the world. That led to one of the greatest scientific theories of the 20th century. The question is: name that children's game.",
         "image": "4q.jpg"
       },
@@ -248,6 +250,8 @@
     {
       "question":
       {
+        "manual": true,
+        "sound_along": "blackbox",
         "text": "Plutarch, in the 1st century, posted a famous question that to this day cannot be answered by science, but can be answered using a dictionary.\n\nBoth subjects of this famous Plutarch's question, which all of you know, are in the Black Box.\n\nWhat is in the Black Box?"
       },
       "answer":
@@ -274,6 +278,8 @@
     {
       "question":
       {
+        "manual": true,
+        "sound_along": "blackbox",
         "text": "What you see is the famous painting by Raphael, &laquo;Isabella of Aragon&raquo;. This painting caused a speculation that Isabella of Aragon in fact was a woman all of you know.\nQuestion: Who was Isabella of Aragon, according to speculations caused by this painting?",
         "image": "10q.jpg"
       },

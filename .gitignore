@@ -1,0 +1,4 @@
+.DS_Store
+.vagrant
+vagrant.ssh.config
+vagrant_local.json

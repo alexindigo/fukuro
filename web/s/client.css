@@ -22,7 +22,7 @@ body:before
 }
 body:after
 {
-  content: "facebook.com/djwizard";
+  /*content: "facebook.com/djwizard";*/
   position: fixed;
   display: block;
   bottom: 90px;
